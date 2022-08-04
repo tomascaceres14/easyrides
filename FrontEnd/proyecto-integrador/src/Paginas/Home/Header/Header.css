@@ -1,0 +1,29 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 15px;
+    padding-top: 25px;
+}
+.header-izquierda{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.header-izquierda > img{
+    margin-left: 30px;
+}
+.header-izquierda > h2 {
+    font-size: 18px;
+    margin-top: 25px;
+}
+.header-derecha{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 80px;
+}
+.boton {
+    color: black;
+}

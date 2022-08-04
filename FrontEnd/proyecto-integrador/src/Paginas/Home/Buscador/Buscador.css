@@ -1,0 +1,13 @@
+.buscador{
+    padding: 30px;
+    background-color: #31363f;
+    text-align: center;
+}
+
+.buscador > h1 {
+    color: white;
+    font-size: 36px;
+}
+.buscador-inputs{
+    margin-top: 20px;
+}

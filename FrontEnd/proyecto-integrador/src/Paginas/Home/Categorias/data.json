@@ -1,0 +1,36 @@
+[
+    {
+        "id": "1",
+        "categoria": {
+            "nombre": "Autos",
+            "descripcion": "5000 autos",
+            "imagen":"https://www.dexter.com.ar/on/demandware.static/-/Sites-dabra-catalog/default/dwcc9b4de8/products/NI_DC3728-006/NI_DC3728-006-1.JPG"
+        }
+    },
+    {
+        "id": "2",
+        "categoria": {
+            "nombre": "Tractores",
+            "descripcion": "5 tractores",
+            "imagen":"https://www.dexter.com.ar/on/demandware.static/-/Sites-dabra-catalog/default/dwb7018b31/products/PU_382116-05/PU_382116-05-1.JPG"
+        }
+
+    },
+    {
+        "id": "3",
+        "categoria": {
+            "nombre": "Camiones",
+            "descripcion": "3000 camiones",
+            "imagen":"https://www.dexter.com.ar/on/demandware.static/-/Sites-dabra-catalog/default/dwad70818c/products/AD_FX3581/AD_FX3581-1.JPG"
+        }
+
+    },
+    {
+        "id": "4",
+        "categoria": {
+            "nombre": "Lanchas",
+            "descripcion": "3000 lanchas",
+            "imagen": "https://www.dexter.com.ar/on/demandware.static/-/Sites-dabra-catalog/default/dwad70818c/products/AD_FX3581/AD_FX3581-1.JPG"
+        }
+    }
+]

@@ -1,0 +1,6 @@
+ .categorias{
+    padding: 0px 0px;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+} 
