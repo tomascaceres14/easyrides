@@ -16,17 +16,18 @@ public class Categoria {
     @Column(name = "descripcion")
     private String descripcion;
 
-    @Column(name = "url")
-    private String url;
+    @Column(name = "url_img")
+    private String url_img;
+
 
 
     public Categoria() {
     }
 
-    public Categoria(String titulo, String descripcion, String url) {
+    public Categoria(String titulo, String descripcion, String url_img) {
         this.titulo = titulo;
         this.descripcion = descripcion;
-        this.url = url;
+        this.url_img = url_img;
     }
 
 
@@ -55,10 +56,10 @@ public class Categoria {
     }
 
     public String getUrl() {
-        return url;
+        return url_img;
     }
 
     public void setUrl(String url) {
-        this.url = url;
+        this.url_img = url;
     }
 }
