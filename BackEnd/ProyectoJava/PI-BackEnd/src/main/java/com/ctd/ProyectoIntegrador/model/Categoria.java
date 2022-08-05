@@ -3,31 +3,38 @@ package com.ctd.ProyectoIntegrador.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name= "categoria")
+@Table
 public class Categoria {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
     private Integer id;
-    
+
     @Column(name = "titulo")
     private String titulo;
 
     @Column(name = "descripcion")
     private String descripcion;
 
-    @Column(name = "url_img")
-    private String url_img;
+    @Column(name = "url")
+    private String url;
 
 
 
     public Categoria() {
     }
 
-    public Categoria(String titulo, String descripcion, String url_img) {
+    public Categoria(String titulo, String descripcion, String url) {
         this.titulo = titulo;
         this.descripcion = descripcion;
-        this.url_img = url_img;
+        this.url = url;
+    }
+
+    public Categoria(Integer id, String titulo, String descripcion, String url_img) {
+        this.id = id;
+        this.titulo = titulo;
+        this.descripcion = descripcion;
+        this.url = url;
     }
 
 
@@ -35,9 +42,7 @@ public class Categoria {
         return id;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
+
 
     public String getTitulo() {
         return titulo;
@@ -56,10 +61,10 @@ public class Categoria {
     }
 
     public String getUrl() {
-        return url_img;
+        return url;
     }
 
     public void setUrl(String url) {
-        this.url_img = url;
+        this.url = url;
     }
 }

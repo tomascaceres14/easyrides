@@ -1,0 +1,3 @@
+INSERT INTO categoria VALUES (null, 'velocidad y desempeño', 'Deportivos', 'https://www.autobild.es/sites/autobild.es/public/styles/855/public/dc/fotos/Ford_Mustanch_Mach_1_01_0.jpg?itok=ZMTYZxsg');
+INSERT INTO categoria VALUES (null, 'detallado, refinado y caro',  'De Lujo', 'https://www.clarin.com/img/2022/05/23/el-rolls-royce-boat-tail___68VF7R7Hi_1256x620__1.jpg');
+INSERT INTO categoria VALUES (null, 'espacioso y comodo para grandes y niños',  'Familiares', 'https://parentesis.com/imagesPosts/Honda-familiar-Odyssey.jpg');

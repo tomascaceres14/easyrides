@@ -1,7 +1,7 @@
 package com.ctd.ProyectoIntegrador.controller;
 
 import com.ctd.ProyectoIntegrador.model.Categoria;
-import com.ctd.ProyectoIntegrador.service.CategoriaService;
+import com.ctd.ProyectoIntegrador.service.impl.CategoriaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,56 +15,29 @@ public class CategoriaController {
     @Autowired
     private CategoriaService categoriaService;
 
-
     @PostMapping()
-    public ResponseEntity<Categoria> registrarCategoria(@RequestBody Categoria categoria){
+    public ResponseEntity<Categoria> guardar(@RequestBody Categoria categoria){
         return ResponseEntity.ok(categoriaService.guardar(categoria));
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<Categoria> buscar(@PathVariable Integer id) {
-        Categoria categoria = categoriaService.buscar(id).orElse(null);
-
-        return ResponseEntity.ok(categoria);
+        return ResponseEntity.ok(categoriaService.buscar(id));
     }
     @PutMapping("/{id}")
-    public ResponseEntity<Categoria> actualizar(@RequestBody Categoria categoria) {
-        categoriaService.actualizar(categoria);
-        return ResponseEntity.ok(categoria);
+    public ResponseEntity<Categoria> actualizar(@PathVariable Integer id, @RequestBody Categoria c) {
+        return ResponseEntity.ok(categoriaService.actualizar(id, c));
     }
-
-       /* ResponseEntity<Categoria> response = null;
-
-        if (categoria.getId() != null && categoriaService.buscar(categoria.getId()).isPresent())
-            response = ResponseEntity.ok(categoriaService.actualizar(categoria));
-        else
-            response = ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-
-        return response;
-        */
-
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> eliminar(@PathVariable Integer id) {
-        categoriaService.eliminar(id);
-        return ResponseEntity.status(201).body(HttpStatus.OK);
+    public ResponseEntity<String> eliminar(@PathVariable Integer id) {
+        return ResponseEntity.ok(categoriaService.eliminar(id));
     }
 
-       /* ResponseEntity<String> response = null;
 
-        if (categoriaService.buscar(id).isPresent()) {
-            categoriaService.eliminar(id);
-            response = ResponseEntity.status(HttpStatus.NO_CONTENT).body("Eliminado");
-        } else {
-            response = ResponseEntity.status(HttpStatus.NOT_FOUND).build();
-        }
-
-        return response;
-
-        */
-       @GetMapping()
-       public ResponseEntity<List<Categoria>> listarTodos(){
-           return ResponseEntity.ok(categoriaService.listarTodos());
-       }
+    @GetMapping()
+    public ResponseEntity<List<Categoria>> listarTodos(){
+        return ResponseEntity.ok(categoriaService.listarTodos());
+    }
 }
 
