@@ -1,12 +1,11 @@
 import './App.css';
-import { Home } from './Paginas/Home/Home';
+import React from 'react';
+import { Login } from "./Paginas/Login/Login.jsx"
 
 function App() {
   return (
     <div className="App">
-      <div className="app">
-        <Home/>
-      </div>
+      <Login />
     </div>
   );
 }
