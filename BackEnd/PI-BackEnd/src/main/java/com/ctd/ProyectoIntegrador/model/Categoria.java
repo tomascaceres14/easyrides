@@ -30,19 +30,16 @@ public class Categoria {
         this.url = url;
     }
 
-    public Categoria(Integer id, String titulo, String descripcion, String url_img) {
+    public Categoria(Integer id, String titulo, String descripcion, String url) {
         this.id = id;
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.url = url;
     }
 
-
     public Integer getId() {
         return id;
     }
-
-
 
     public String getTitulo() {
         return titulo;
