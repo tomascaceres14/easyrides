@@ -1,5 +1,5 @@
 import React from 'react';
-import "../styles-modules/Login.css";
+import "../css/Login.css";
 import { Formik } from "formik";
 
 
@@ -18,19 +18,30 @@ function Login() {
                 validate={(valores) => {
                     let errores = {};
 
+                    //validacion correo
                     if (!valores.correo) {
-                        errores.correo = "Por favor ingresa tu correo";
-                    } else if(!/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(valores.correo)){
+                        errores.correo = 'Por favor ingresa un correo electronico'
+                    } else if (!/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(valores.correo)) {
+                        errores.correo = 'El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.'
+                    }
+
+                    //validacion contraseña
+                    if (!valores.contraseña) {
+                        errores.contraseña = "Por favor ingresa tu contraseña";
+                    } else if (!/^.{4,12}$/.test(valores.contraseña)) {
+                        errores.contraseña = "Por favor ingrese una contraseña de 4 a 12 digitos";
 
                     }
-                    
+
+
+                    return errores;
                 }}
 
                 onSubmit={() => {
                     console.log("Datos ingresados")
                 }}
             >
-                {({ values,errors, handleSubmit, handleChange, handleBlur }) => (
+                {({ values, errors,touched, handleSubmit, handleChange, handleBlur }) => (
                     <div className="contenedor">
                         <form className="formulario" onSubmit={handleSubmit}>
 
@@ -49,7 +60,7 @@ function Login() {
                                     onChange={handleChange}
                                     onBlur={handleBlur}
                                 />
-                                {errors.correo && <div className="error">{errors.correo}</div>}
+                                {touched.correo && errors.correo && <div className="error">{errors.correo}</div>}
                             </div>
 
                             <div>
@@ -64,7 +75,7 @@ function Login() {
                                     onChange={handleChange}
                                     onBlur={handleBlur}
                                 />
-                                 {errors.contraseña && <div className="error">{errors.contraseña}</div>}
+                                {touched.contraseña &&errors.contraseña && <div className="error">{errors.contraseña}</div>}
                             </div>
 
                             <div className="Buttom">
