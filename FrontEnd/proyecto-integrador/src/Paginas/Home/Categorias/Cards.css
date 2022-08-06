@@ -1,21 +1,24 @@
-
-.categoria-card{
-    border: 3px solid transparent;
-    box-sizing: border-box;
-    box-shadow: 0 1px 4px rgb(0 0 0 / 25%);
-    border-radius: 10px;
-    margin-top: 3rem;
+.cardsCategoria{
+    padding: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px, 1fr) );
+    gap: 20px;
     cursor: pointer;
 }
-.categoria-card-img{
-    height: 200px;
-    transition: all .4s ease-in;
-    align-items: center;
+
+.cardsCategoria-unidad{
+    border: 0.5px solid grey;
+    border-radius: .25rem;
+    padding: 5px;
 }
-.categoria-card-nombre{
-    margin-left: 10px;
+.cardsCategoria-unidad-img{
+    width: 100%;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    object-position: center;
 }
-.categoria-card-descripcion {
-    margin-left: 10px;
-    margin-bottom: 10px;
+.cardsCategoria-unidad-descripcion{
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
