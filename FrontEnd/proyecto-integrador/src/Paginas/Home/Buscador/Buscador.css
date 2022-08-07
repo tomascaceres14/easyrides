@@ -3,21 +3,21 @@
     background-color: #31363f;
     text-align: center;
     margin-bottom: 3rem;
+
 }
 
 .buscador-input{
     padding: 10px;
     margin-top: 1rem;
+    margin-right: 1rem;
     border-radius: 5px;
     border-style: none;
-
 }
 .buscador-fecha{
     padding: 10px;
     margin-top: 1rem;
     border-radius: 5px;
     border-style: none;
-
 }
 .buscador > h1 {
     color: white;
@@ -26,3 +26,11 @@
 .buscador-inputs{
     margin-top: 20px;
 }
+
+        .ant-calendar-range{
+            width: 320px;
+        }
+
+        .ant-calendar-range-part{
+            width: 100%;
+        }

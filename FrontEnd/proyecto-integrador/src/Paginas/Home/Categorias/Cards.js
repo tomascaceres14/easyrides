@@ -1,11 +1,9 @@
 import React from "react";
-// import Item from "./Item"
 import data from "./data.json";
 import "./Cards.css";
-export default function Cards() {
 
+export default function Cards() {
   return (
-    
     <div className="cardsCategoria">
       {/* <h2 className="cardsCategoria-titulo">Busca por categorias</h2> */}
 
