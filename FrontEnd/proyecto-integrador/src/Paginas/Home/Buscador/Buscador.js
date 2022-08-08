@@ -3,13 +3,15 @@ import "./Buscador.css";
 import "react-date-range/dist/styles.css";
 import "react-date-range/dist/theme/default.css";
 import { DateRange } from "react-date-range";
+import { SearchBar } from "./SearchBar";
 
 function  Buscador(){
   const [searchInput, setSearchInput] = useState("");
   const [startDate, setStartDate] = useState(new Date());
   const [endDate, setEndDate] = useState(new Date());
   const [mostrarFechas, setMostrarFechas] = useState(false);
-
+  
+  // configuraciones para calendario
   const handleSelect = (ranges) => {
     setStartDate(ranges.selection.startDate);
     setEndDate(ranges.selection.endDate);
@@ -24,22 +26,20 @@ function  Buscador(){
     <div className="buscador">
       <h1>Busca ofertas en autos, camionetas y mucho más</h1>
       <div className="buscadores">
-        <input
-          className="buscador-input"
-          value={searchInput}
-          onChange={(event) => {
-            setSearchInput(event.target.value);
-          }}
-          type="text"
-          placeholder="¿A donde vámos?"
-        />
+        
+        <SearchBar />
         <button
           className="buscador-fecha"
           onClick={() => setMostrarFechas(!mostrarFechas)}
         >
           Buscar Fechas
         </button>
-        <div className="buscador-calendario">
+        
+        <button className= "buscador-submit">
+          Buscar
+        </button>
+      </div>
+      <div className="buscador-calendario">
           {mostrarFechas && (
             <DateRange
               ranges={[selectionRange]}
@@ -49,7 +49,7 @@ function  Buscador(){
             />
           )}
         </div>
-      </div>
+
     </div>
   );
 };

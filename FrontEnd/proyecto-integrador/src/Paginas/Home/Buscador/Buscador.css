@@ -1,36 +1,49 @@
 .buscador{
     padding: 30px;
     background-color: #31363f;
-    text-align: center;
     margin-bottom: 3rem;
-
 }
-
-.buscador-input{
-    padding: 10px;
-    margin-top: 1rem;
-    margin-right: 1rem;
-    border-radius: 5px;
-    border-style: none;
+.buscadores{
+    display: flex;
 }
 .buscador-fecha{
-    padding: 10px;
     margin-top: 1rem;
     border-radius: 5px;
     border-style: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.7rem 2.5rem;
+    border-radius: 0.5rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
 }
+/* .buscador-calendario{
+    margin-top: 50px;
+} */
 .buscador > h1 {
     color: white;
     font-size: 36px;
+    text-align: center;
 }
-.buscador-inputs{
-    margin-top: 20px;
+.buscador-submit{
+    padding: 0.7rem 3.5rem;
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+    border-style: none;
+    cursor: pointer;
 }
+@media only screen and (max-width: 1024px) {
+    .buscadores{
+        display: flex;
+        flex-direction: column;
+    }
 
-        .ant-calendar-range{
-            width: 320px;
-        }
+    .buscador-submit {
+        margin-top: 1rem;
+        padding: 0.7rem 2.5rem;
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
 
-        .ant-calendar-range-part{
-            width: 100%;
-        }
+
+}

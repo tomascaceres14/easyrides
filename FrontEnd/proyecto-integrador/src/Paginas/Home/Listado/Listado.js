@@ -2,11 +2,12 @@ import "./Listado.css"
 import data from "./data.json";
 import React from 'react'
 
-export default function Cards() {
+export default function Listado() {
   return (
-    <div className="cardsProductos">
-      {/* <h2 className="cardsCategoria-titulo">Busca por categorias</h2> */}
-
+    <div>
+      <p className="cardsProductos-titulo">Recomendaciones</p>
+      <div className="cardsProductos">
+    
       {data.map((categoria) => (
         <div className="cardsProductos-unidad">
           <img
@@ -25,5 +26,7 @@ export default function Cards() {
         </div>
       ))}
     </div>
+    </div>
+    
   );
 }

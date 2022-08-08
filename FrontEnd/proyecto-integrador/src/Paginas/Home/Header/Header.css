@@ -32,7 +32,8 @@
 .boton {
     color: black;
 }
-header .header-boton{
+
+header .header-boton {
     cursor: pointer;
     background: transparent;
     border: none;
@@ -41,11 +42,12 @@ header .header-boton{
     opacity: 0;
 }
 
-@media only screen and (max-width: 1024px){
-    header .header-boton{
+@media only screen and (max-width: 1024px) {
+    header .header-boton {
         visibility: visible;
         opacity: 1;
     }
+
     header nav {
         position: fixed;
         top: 0;
@@ -59,13 +61,15 @@ header .header-boton{
         gap: 1.5rem;
         transition: 1s;
         transform: translateY(-100vh);
-        /* background-color: orange; */
+        background-color: white;
         color: white;
     }
+
     header .responsive-header {
         transform: none;
     }
-    nav .header-cerrar-boton{
+
+    nav .header-cerrar-boton {
         position: absolute;
         top: 2.7rem;
         right: 1rem;

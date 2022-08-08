@@ -1,14 +1,19 @@
 .cardsProductos {
     padding: 40px;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
     gap: 20px;
     cursor: pointer;
 }
-
+.cardsProductos-titulo {
+    font-size: 30px;
+    font-weight: 600;
+    margin-left: 2.5rem;
+}
 .cardsProductos-unidad {
-    border: 0.5px solid grey;
+    border: 3px solid transparent;
     border-radius: .25rem;
+    box-shadow: 0 1px 4px rgb(0 0 0 / 25%);
     padding: 5px;
 }
 
@@ -28,10 +33,13 @@
     border: none;
     background-color: grey;
     font-size: 1rem;
-    padding: .75em 7.8em;
+    padding: .75em 18.2em;
     border-radius: .25em;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     cursor: pointer;
 }
 .cardsProductos-unidad-boton:hover , .cardsProductos-unidad-boton:focus {
-    background-color: antiquewhite;
+    background-color: rgb(177, 175, 175);
+    transition: 0.3s;
 }

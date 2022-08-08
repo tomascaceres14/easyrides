@@ -4,9 +4,9 @@ import "./Cards.css";
 
 export default function Cards() {
   return (
-    <div className="cardsCategoria">
-      {/* <h2 className="cardsCategoria-titulo">Busca por categorias</h2> */}
-
+    <div>
+      <h2 className="cardsCategoria-titulo">Busca por categorias</h2>
+      <div className="cardsCategoria">
       {data.map((categoria) => (
         <div className="cardsCategoria-unidad">
           <img
@@ -14,14 +14,16 @@ export default function Cards() {
             src={categoria.categoria.imagen}
             alt=""
             className="cardsCategoria-unidad-img"/>
-          <h2 className="cardsCategoria-unidad-nombre">
+          <p className="cardsCategoria-unidad-nombre">
             {categoria.categoria.nombre}
-          </h2>
+          </p>
           <p className="cardsCategoria-unidad-descripcion">
             {categoria.categoria.descripcion}
           </p>
         </div>
       ))}
     </div>
+    </div>
+    
   );
 }
