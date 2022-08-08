@@ -1,7 +1,6 @@
 import { useRef } from 'react';
 import React from 'react'
 import './Header.css'
-import Button from "@mui/material/Button";
 import logo from "./logo.jpg"
 import {FaBars, FaTimes} from "react-icons/fa"
 
@@ -17,8 +16,8 @@ const Header = () => {
     <header className="header">
       <img className="header-logo" src={logo} alt="logo" />
       <nav ref={navRef} className="header-derecha">
-        <button className="header-derecha-boton">Crear cuenta</button>
-        <button className="header-derecha-boton">Iniciar Sesión</button>
+        <button className="header-derecha-boton cuenta">Crear cuenta</button>
+        <button className="header-derecha-boton sesion">Iniciar Sesión</button>
         {/* botones para mobile */}
         <button
           className="header-boton header-cerrar-boton"
