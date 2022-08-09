@@ -5,16 +5,40 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 
 function Registro() {
 
+	//validacion contraseña
+	const validarContraseña = values => {
+		let error = "";
+		const regexContraseña = /(?=.*[0-9])/;
+		if (!values) {
+			error = "Campo requerido";
+		} else if (values.length < 8) {
+			error = "La contraseña debe tener 8 caracteres.";
+		} else if (!regexContraseña.test(values)) {
+			error = "Contraseña invalida. Debe contener un número.";
+		}
+		return error;
+	};
+
+	//validacion confirmar contraseña
+	const validateConfirmarContraseña = (pass, value) => {
+		let error = "";
+		if (pass && value) {
+			if (pass !== value) {
+				error = "Las contraseñas no coinciden";
+			}
+		}
+		return error;
+	};
+
 	return (
 		<React.Fragment>
 			<Formik
-
 				initialValues={{
 					nombre: "",
 					apellido: "",
 					correo: "",
 					contraseña: "",
-					contraseña2: ""
+					confirmarContraseña: ""
 				}}
 
 				validate={(valores) => {
@@ -40,24 +64,6 @@ function Registro() {
 					} else if (!/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(valores.correo)) {
 						errores.correo = 'El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.'
 					}
-
-					//validacion contraseña
-					if (!valores.contraseña) {
-						errores.contraseña = "Por favor ingresa tu contraseña";
-					} else if (!/^.{4,12}$/.test(valores.contraseña)) {
-						errores.contraseña = "Por favor ingrese una contraseña de 4 a 12 digitos";
-
-					}
-
-					//validacion contraseña2
-					if (!valores.contraseña2) {
-						errores.contraseña2 = "Por favor ingresa tu contraseña";
-					} else if (!/^.{4,12}$/.test(valores.contraseña2)) {
-						errores.contraseña2 = "Ambas contraseñas deben ser iguales";
-
-					}
-
-
 					return errores;
 				}}
 
@@ -66,7 +72,7 @@ function Registro() {
 				}}
 			>
 
-				{({errors}) => (
+				{({ errors, values }) => (
 					<Form className="form">
 						<h1 className="form-titulo">Crear cuenta</h1>
 
@@ -117,24 +123,23 @@ function Registro() {
 									<Field
 										type="password"
 										name="contraseña"
-										placeholder=""
-										id="contraseña"
-									/>
-									<ErrorMessage name="contraseña" component={() => (
-										<div className="error">{errors.contraseña}</div>
-									)} />
-
+										validate={validarContraseña} />
 								</div>
+
+								<ErrorMessage name="contraseña" component={() => (
+									<div className="error">{errors.contraseña}</div>
+								)} />
+
 								<div className="form-contraseña">
 									<label htmlFor="contraseña2">Confirmar contraseña</label>
 									<Field
 										type="password"
-										name="contraseña2"
-										placeholder=""
-										id="contraseña2"
-									/>
-									<ErrorMessage name="contraseña2" component={() => (
-										<div className="error">{errors.contraseña2}</div>
+										name="confirmarContraseña"
+										validate={value =>
+											validateConfirmarContraseña(values.contraseña, value)
+										} />
+									<ErrorMessage name="confirmarContraseña" component={() => (
+										<div className="error">{errors.confirmarContraseña}</div>
 									)} />
 								</div>
 							</div>

@@ -6,6 +6,7 @@ import React from 'react';
 //import { BrowserRouter, Route,Routes } from "react-router-dom";
 //import Header from './Paginas/Home/Header/Header';
 //import Footer from './Paginas/Home/Footer/Footer';
+//import Prueba from "./Paginas/prueba/prueba.jsx"
 
 function App() {
   return (

@@ -12,7 +12,8 @@
 	margin: 0;
 	box-sizing: border-box;
 }
-.form{
+
+.form {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -38,14 +39,15 @@ body {
 	display: flex;
 	justify-content: center;
 }
-.seccion2{
+
+.seccion2 {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
 
 .form-nombre label,
-.form-apellido label{
+.form-apellido label {
 	display: flex;
 	font-weight: 600;
 	font-size: 14px;
@@ -68,7 +70,7 @@ body {
 	margin-left: 20px;
 }
 
-.form input ,
+.form input,
 .form textarea {
 	Width: 218px;
 	Height: 40px;
@@ -83,7 +85,7 @@ body {
 	box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.20);
 }
 
-.form .seccion2 input ,
+.form .seccion2 input,
 .form .seccion2 textarea {
 	Width: 455px;
 	Height: 40px;
@@ -97,6 +99,7 @@ body {
 	color: #31363F;
 	box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.20);
 }
+
 .form .seccion1 .error {
 	text-align: left;
 	color: #e92b2d;
@@ -104,6 +107,7 @@ body {
 	font-size: 12px;
 	Width: 218px;
 }
+
 .form .seccion2 .error {
 	text-align: left;
 	color: #e92b2d;
@@ -112,23 +116,24 @@ body {
 	Width: 455px;
 }
 
-
 .Buttom {
-    margin-top:40px;
-    display:flex;
-    flex-flow:column;
-    justify-content: center;
-    align-items: center;
+	margin-top: 40px;
+	display: flex;
+	flex-flow: column;
+	justify-content: center;
+	align-items: center;
 }
-.Buttom p{
-    color: #31363F;
-    font-size: 12px;
-    font-weight: 900;
-    margin-top:20px;
+
+.Buttom p {
+	color: #31363F;
+	font-size: 12px;
+	font-weight: 900;
+	margin-top: 20px;
 }
-a{
-    text-decoration:none;
-    color: var(--naranja);
+
+a {
+	text-decoration: none;
+	color: var(--naranja);
 }
 
 .form button[type="submit"] {
@@ -138,18 +143,18 @@ a{
 	font-family: var(--font-family);
 	border: none;
 	cursor: pointer;
-    height:40px;
+	height: 40px;
 	width: 240px;
 	padding: 10px;
 	border-radius: 5px;
 	color: #fff;
 	font-size: 16px;
-    align-items: center;
-    justify-content: center;
+	align-items: center;
+	justify-content: center;
 }
 
 .form button[type="submit"]:hover {
 	background: #e84011;
-    transform: scale(1.15);
-    box-shadow: 0px 5px 10px rgba(246, 96, 3, 0.762);
+	transform: scale(1.15);
+	box-shadow: 0px 5px 10px rgba(246, 96, 3, 0.762);
 }
