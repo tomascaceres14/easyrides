@@ -50,7 +50,7 @@ const Header = () => {
             </button>
           </Link>
           <Link to="/registro">
-            <button className="header-derecha-boton sesion">
+            <button className="header-derecha-boton cuenta">
               Crear Cuenta
             </button>
           </Link>
@@ -65,6 +65,8 @@ const Header = () => {
         {/* <Link to="/registro"><button className="header-derecha-boton cuenta" onClick={mostrarBotones}>Crear cuenta</button></Link>
         <Link to="/login"><button className="header-derecha-boton sesion">Iniciar Sesión</button></Link> */}
         {mostrarBotones()}
+
+        
         {/* botones para mobile */}
          <button
           className="header-boton header-cerrar-boton"

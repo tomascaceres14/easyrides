@@ -10,15 +10,16 @@
 .header-derecha {
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    margin-left: 55rem;
 }
 .header-derecha-boton{
     padding: 1rem 2rem;
     margin-right: 2rem;
 }
-.cuenta {
+/* .sesion{
     margin-left: 55rem;
-}
-
+} */
 /* botones hamburguesa */
 .header-boton{
     cursor: pointer;
@@ -34,6 +35,9 @@
         visibility: visible;
         opacity: 1;
         margin-left: 42rem;
+    }
+    .header-derecha{
+        margin-left: 0rem;
     }
     header nav {
         position: fixed;
@@ -56,14 +60,13 @@
         top: 2.7rem;
         right: 1rem;
     }
-    .cuenta{
-        margin-top: 20rem;
-        margin-bottom: 1rem;
-        margin-left: 30rem ;
-    }
     .sesion{
+        margin-top: 18rem;
+        margin-left: 35rem;
+    }
+    .cuenta {
         margin-bottom: 15rem;
-        margin-left: 30rem;
+        margin-left: 35rem;
     }
 
 }
