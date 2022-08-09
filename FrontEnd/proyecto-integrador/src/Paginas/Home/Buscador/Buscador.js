@@ -26,7 +26,6 @@ function  Buscador(){
     <div className="buscador">
       <h1>Busca ofertas en autos, camionetas y mucho más</h1>
       <div className="buscadores">
-        
         <SearchBar />
         <button
           className="buscador-fecha"
@@ -34,22 +33,20 @@ function  Buscador(){
         >
           Buscar Fechas
         </button>
-        
-        <button className= "buscador-submit">
-          Buscar
-        </button>
+
+        <button className="buscador-submit">Buscar</button>
       </div>
       <div className="buscador-calendario">
-          {mostrarFechas && (
-            <DateRange
-              ranges={[selectionRange]}
-              minDate={new Date()}
-              onChange={handleSelect}
-              editableDateInputs={true}
-            />
-          )}
-        </div>
-
+        {mostrarFechas && (
+          <DateRange
+            ranges={[selectionRange]}
+            minDate={new Date()}
+            onChange={handleSelect}
+            editableDateInputs={true}
+            showSelectionPreview={true}
+          />
+        )}
+      </div>
     </div>
   );
 };

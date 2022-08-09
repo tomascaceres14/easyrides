@@ -9,11 +9,11 @@ import Footer from './Footer/Footer'
 export const Home = () => {
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <Buscador />
       <Cards />
       <Listado />
-      <Footer />
+      {/* <Footer /> */}
     </div>
     
   )
