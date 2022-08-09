@@ -17,7 +17,8 @@ public class CategoriaController {
 
     @PostMapping()
     public ResponseEntity<Categoria> guardar(@RequestBody Categoria categoria){
-        return ResponseEntity.ok(categoriaService.guardar(categoria));
+        Categoria response = categoriaService.guardar(categoria);
+        return new ResponseEntity<>(response, HttpStatus.valueOf(201));
     }
 
     @GetMapping("/{id}")
