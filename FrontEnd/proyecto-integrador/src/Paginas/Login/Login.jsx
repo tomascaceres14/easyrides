@@ -1,10 +1,9 @@
 import React from 'react';
 import "../css/Login.css";
-import { Formik } from "formik";
+import { Formik, Form, Field, ErrorMessage } from "formik";
 
 
 function Login() {
-
 
     return (
         <React.Fragment>
@@ -12,7 +11,6 @@ function Login() {
                 initialValues={{
                     correo: "",
                     contraseña: ""
-
                 }}
 
                 validate={(valores) => {
@@ -30,9 +28,7 @@ function Login() {
                         errores.contraseña = "Por favor ingresa tu contraseña";
                     } else if (!/^.{4,12}$/.test(valores.contraseña)) {
                         errores.contraseña = "Por favor ingrese una contraseña de 4 a 12 digitos";
-
                     }
-
 
                     return errores;
                 }}
@@ -41,9 +37,9 @@ function Login() {
                     console.log("Datos ingresados")
                 }}
             >
-                {({ values, errors,touched, handleSubmit, handleChange, handleBlur }) => (
+                {({ errors }) => (
                     <div className="contenedor">
-                        <form className="formulario" onSubmit={handleSubmit}>
+                        <Form className="formulario">
 
 
 
@@ -51,42 +47,38 @@ function Login() {
 
                             <div>
                                 <label htmlFor="correo">Correo electrónico</label>
-                                <input
+                                <Field
                                     type="email"
                                     name="correo"
                                     placeholder="Ej: micorreo@gmail.com"
                                     id="correo"
-                                    value={values.correo}
-                                    onChange={handleChange}
-                                    onBlur={handleBlur}
                                 />
-                                {touched.correo && errors.correo && <div className="error">{errors.correo}</div>}
+                                <ErrorMessage name="correo" component={() => (
+                                    <div className="error">{errors.correo}</div>
+                                )} />
                             </div>
 
                             <div>
                                 <label htmlFor="contraseña">
                                     Contraseña</label>
-                                <input
-                                    type="Password"
+                                <Field
+                                    type="password"
                                     name="contraseña"
                                     placeholder="Ingrese su contraseña"
                                     id="contraseña"
-                                    value={values.contraseña}
-                                    onChange={handleChange}
-                                    onBlur={handleBlur}
                                 />
-                                {touched.contraseña &&errors.contraseña && <div className="error">{errors.contraseña}</div>}
+                                <ErrorMessage name="contraseña" component={() => (
+                                    <div className="error">{errors.contraseña}</div>
+                                )} />
                             </div>
 
                             <div className="Buttom">
                                 <button type="submit">Ingresar</button>
                                 <p> ¿Aún no tienes cuenta? <a href="./Registrer.jsx" target="_self">Registrate</a></p>
                             </div>
-
-                        </form>
+                        </Form>
                     </div>
                 )}
-
             </Formik>
         </React.Fragment>
     )

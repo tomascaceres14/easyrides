@@ -1,7 +1,7 @@
 
 import "./Registro.css";
 import React from 'react';
-import { Formik } from "formik";
+import { Formik, Form, Field, ErrorMessage } from "formik";
 
 function Registro() {
 
@@ -56,102 +56,97 @@ function Registro() {
 						errores.contraseña2 = "Ambas contraseñas deben ser iguales";
 
 					}
-				
+
 
 					return errores;
 				}}
 
-			onSubmit={() => {
-				console.log("Datos ingresados")
-			}}
+				onSubmit={() => {
+					console.log("Datos ingresados")
+				}}
 			>
 
-			{({ values, errors, touched, handleSubmit, handleChange, handleBlur}) => (
-				<form className="form" onSubmit={handleSubmit}>
-					<h1 className="form-titulo">Crear cuenta</h1>
+				{({errors}) => (
+					<Form className="form">
+						<h1 className="form-titulo">Crear cuenta</h1>
 
-					<div className="seccion1">
-						<div className="form-nombre">
-							<label htmlFor="nombre">Nombre</label>
-							<input
-								type="text"
-								name="nombre"
-								placeholder=""
-								id="nombre"
-								value={values.nombre}
-								onChange={handleChange}
-								onBlur={handleBlur}
-							/>
-							{touched.nombre && errors.nombre && <div className="error">{errors.nombre}</div>}
+						<div className="seccion1">
+							<div className="form-nombre">
+								<label htmlFor="nombre">Nombre</label>
+								<Field
+									type="text"
+									name="nombre"
+									placeholder=""
+									id="nombre"
+								/>
+								<ErrorMessage name="nombre" component={() => (
+									<div className="error">{errors.nombre}</div>
+								)} />
+							</div>
+
+							<div className="form-apellido">
+								<label htmlFor="apellido">Apellido</label>
+								<Field
+									type="text"
+									name="apellido"
+									placeholder=""
+									id="apellido"
+								/>
+								<ErrorMessage name="apellido" component={() => (
+									<div className="error">{errors.apellido}</div>
+								)} />
+							</div>
 						</div>
 
-						<div className="form-apellido">
-							<label htmlFor="apellido">Apellido</label>
-							<input
-								type="text"
-								name="apellido"
-								placeholder=""
-								id="apellido"
-								value={values.apellido}
-								onChange={handleChange}
-								onBlur={handleBlur}
-							/>
-							{touched.apellido && errors.apellido && <div className="error">{errors.apellido}</div>}
+						<div className="seccion2">
 
-						</div>
-					</div>
-					<div className="seccion2">
+							<div className="form-correo">
+								<label htmlFor="correo electrónico">Correo electrónico</label>
+								<Field
+									type="email"
+									name="correo"
+									placeholder="Ej: correo@correo.com"
+									id="correo"
+								/>
+								<ErrorMessage name="correo" component={() => (
+									<div className="error">{errors.correo}</div>
+								)} />
 
-						<div className="form-correo">
-							<label htmlFor="correo electrónico">Correo electrónico</label>
-							<input
-								type="email"
-								name="correo"
-								placeholder="Ej: correo@correo.com"
-								id="correo"
-								value={values.correo}
-								onChange={handleChange}
-								onBlur={handleBlur}
-							/>
-							{touched.correo && errors.correo && <div className="error">{errors.correo}</div>}
+								<div className="form-contraseña">
+									<label htmlFor="contraseña">Contraseña</label>
+									<Field
+										type="password"
+										name="contraseña"
+										placeholder=""
+										id="contraseña"
+									/>
+									<ErrorMessage name="contraseña" component={() => (
+										<div className="error">{errors.contraseña}</div>
+									)} />
+
+								</div>
+								<div className="form-contraseña">
+									<label htmlFor="contraseña2">Confirmar contraseña</label>
+									<Field
+										type="password"
+										name="contraseña2"
+										placeholder=""
+										id="contraseña2"
+									/>
+									<ErrorMessage name="contraseña2" component={() => (
+										<div className="error">{errors.contraseña2}</div>
+									)} />
+								</div>
+							</div>
 						</div>
 
-						<div className="form-contraseña">
-							<label htmlFor="contraseña">Contraseña</label>
-							<input
-								type="password"
-								name="contraseña"
-								placeholder=""
-								id="contraseña"
-								value={values.contraseña}
-								onChange={handleChange}
-								onBlur={handleBlur}
-							/>
-							{touched.contraseña && errors.contraseña && <div className="error">{errors.contraseña}</div>}
+						<div className="Buttom">
+							<button type="submit">Crear cuenta</button>
+							<p> ¿Ya tienes cuenta? <a href="../Login/Login.jsx" target="_self">Iniciar sesión</a></p>
 						</div>
-						<div className="form-contraseña">
-							<label htmlFor="contraseña2">Confirmar contraseña</label>
-							<input
-								type="password"
-								name="contraseña2"
-								placeholder=""
-								id="contraseña2"
-								value={values.contraseña2}
-								onChange={handleChange}
-								onBlur={handleBlur}
-								
-							/>
-							{touched.contraseña.campo !== contraseña2.campo && errors.contraseña2 && <div className="error">{errors.contraseña2}</div>}
-						</div>
-					</div>
-
-					<div className="Buttom">
-						<button type="submit">Crear cuenta</button>
-						<p> ¿Ya tienes cuenta? <a href="../Login/Login.jsx" target="_self">Iniciar sesión</a></p>
-					</div>
-				</form>
-			)}
-		</Formik>
+					</Form>
+				)}
+			</Formik>
 		</React.Fragment >
 	);
 }
