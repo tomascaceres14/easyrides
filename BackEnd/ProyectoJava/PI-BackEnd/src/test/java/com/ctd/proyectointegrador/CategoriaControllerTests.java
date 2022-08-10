@@ -1,7 +1,8 @@
-package com.ctd.ProyectoIntegrador;
+package com.ctd.proyectointegrador;
 
-import com.ctd.ProyectoIntegrador.controller.CategoriaController;
-import com.ctd.ProyectoIntegrador.model.Categoria;
+import com.ctd.proyectointegrador.controller.CategoriaController;
+import com.ctd.proyectointegrador.persistance.dto.CategoriaDTO;
+import com.ctd.proyectointegrador.persistance.model.Categoria;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -25,7 +26,7 @@ class CategoriaControllerTests {
 	@Order(2)
 	public void postCategorias(){
 		// Creo una nueva categoria para insertar en base de datos
-		Categoria categoria = new Categoria("Bicicleta", "dos ruedas saludables", "urldeprueba.com");
+		CategoriaDTO categoria = new CategoriaDTO("Bicicleta", "dos ruedas saludables", "urldeprueba.com");
 
 		controller.guardar(categoria);
 
@@ -38,21 +39,21 @@ class CategoriaControllerTests {
 	public void updateOdontologo(){
 
 		// Obtengo instancias actuales de bbdd
-		Categoria categoria1 = controller.buscar(1).getBody();
-		Categoria categoria2 = controller.buscar(2).getBody();
+		CategoriaDTO categoria1 = controller.buscar(1).getBody();
+		CategoriaDTO categoria2 = controller.buscar(2).getBody();
 
 
 		// Creo instancias de categorias con atributos que quiero actualizar
-		Categoria parcheCategoria1 = new Categoria("Veloces", null, "urlActualizadaDesdeTest.com");
-		Categoria parcheCategoria2 = new Categoria("Coches Lujosos", null, null);
+		CategoriaDTO parcheCategoria1 = new CategoriaDTO("Veloces", null, "urlActualizadaDesdeTest.com");
+		CategoriaDTO parcheCategoria2 = new CategoriaDTO("Coches Lujosos", null, null);
 
 		// Actualizo
 		controller.actualizar(1, parcheCategoria1);
 		controller.actualizar(2, parcheCategoria2);
 
 		// Nuevos
-		Categoria newCat1 = controller.buscar(1).getBody();
-		Categoria newCat2 = controller.buscar(2).getBody();
+		CategoriaDTO newCat1 = controller.buscar(1).getBody();
+		CategoriaDTO newCat2 = controller.buscar(2).getBody();
 
 		// Verifico que la anterior categoria sea distinta a la actualizada
 		Assertions.assertNotEquals(categoria1, newCat1);
@@ -69,8 +70,8 @@ class CategoriaControllerTests {
 	public void deleteOdontologo(){
 
 		// Obtengo instancias de la base de datos de odontologos creados anteriormente
-		Categoria categoria1 = controller.buscar(1).getBody();
-		Categoria categoria2 = controller.buscar(2).getBody();
+		CategoriaDTO categoria1 = controller.buscar(1).getBody();
+		CategoriaDTO categoria2 = controller.buscar(2).getBody();
 
 		// Elimino ambas
 		controller.eliminar(categoria1.getId());
@@ -80,6 +81,13 @@ class CategoriaControllerTests {
 		Assertions.assertNull(controller.buscar(1).getBody());
 		Assertions.assertNull(controller.buscar(2).getBody());
 
+	}
+
+	@Test
+	@Order(5)
+	public void buscarTodosOdontologos(){
+		Assertions.assertNotNull(controller.listarTodos().getBody());
+		Assertions.assertTrue(controller.listarTodos().getBody().size() >= 3);
 	}
 
 }

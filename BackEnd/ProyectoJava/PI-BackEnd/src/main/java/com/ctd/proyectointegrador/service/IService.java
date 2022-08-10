@@ -1,4 +1,4 @@
-package com.ctd.ProyectoIntegrador.service;
+package com.ctd.proyectointegrador.service;
 
 import java.util.List;
 
@@ -10,7 +10,7 @@ public interface IService<T> {
 
     public T actualizar(Integer id, T object);
 
-    public String eliminar(Integer id);
+    public boolean eliminar(Integer id);
 
     public List<T> listarTodos();
 }
