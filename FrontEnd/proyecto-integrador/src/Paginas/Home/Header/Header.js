@@ -6,6 +6,7 @@ import {FaBars, FaTimes} from "react-icons/fa"
 import { Link, useLocation } from 'react-router-dom';
 
 
+
 const Header = () => {
 
   const navRef = useRef()
@@ -14,6 +15,9 @@ const Header = () => {
   const mostrarNavBar = () => {
     navRef.current.classList.toggle("responsive-header")
   }
+  const parsearUsuario = JSON.parse(localStorage.getItem("user"));
+  // const nombreUsuario = parsearUsuario.nombre
+
 
   const mostrarBotones = () => {
     if(pathname === '/registro') {
@@ -57,23 +61,36 @@ const Header = () => {
         </>
       );
     }
+    
+  
   }
+  // const mostrarAvatar = () => {
+  // if(parsearUsuario !== undefined){
+  //       return (
+  //         <>
+  //         {<p>{nombreUsuario}</p>}
+  //         </>
+  //         )
+  //   } else{
+  //     mostrarBotones()
+  //   }
+  // } 
   return (
     <header className="header">
-      <Link to="/"><img className="header-logo" src={logo} alt="logo" /></Link>
+      <Link to="/">
+        <img className="header-logo" src={logo} alt="logo" />
+      </Link>
       <nav ref={navRef} className="header-derecha">
-        {/* <Link to="/registro"><button className="header-derecha-boton cuenta" onClick={mostrarBotones}>Crear cuenta</button></Link>
-        <Link to="/login"><button className="header-derecha-boton sesion">Iniciar Sesión</button></Link> */}
         {mostrarBotones()}
+      
 
-        
         {/* botones para mobile */}
-         <button
+        <button
           className="header-boton header-cerrar-boton"
           onClick={mostrarNavBar}
         >
           <FaTimes />
-        </button> 
+        </button>
       </nav>
       <button className="header-boton" onClick={mostrarNavBar}>
         <FaBars />

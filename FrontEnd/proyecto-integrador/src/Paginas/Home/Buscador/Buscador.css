@@ -2,9 +2,12 @@
     padding: 30px;
     background-color: #31363f;
     margin-bottom: 3rem;
+
 }
 .buscadores{
     display: flex;
+    align-items: center;
+    gap: 1rem;
 }
 .buscador-fecha{
     margin-top: 1rem;
@@ -40,9 +43,8 @@
 
     .buscador-submit {
         margin-top: 1rem;
-        padding: 0.7rem 2.5rem;
-        margin-left: 2rem;
-        margin-right: 2rem;
+        padding: 0.7rem 8.2rem;
+        margin-left: 1rem;
     }
 
 

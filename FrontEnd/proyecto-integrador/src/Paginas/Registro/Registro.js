@@ -42,8 +42,9 @@ function Registro() {
           contraseña: "",
           confirmarContraseña: "",
         }}
-        onSubmit={() => {
+        onSubmit={(values) => {
           navigate("/login");
+		    localStorage.setItem('user',JSON.stringify(values));
         }}
         validate={(valores) => {
           let errores = {};

@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 
 function Login() {
-    
+
     const navigate = useNavigate();
 
     return (
@@ -15,8 +15,11 @@ function Login() {
           correo: "",
           contraseña: "",
         }}
-        onSubmit={() => {
-            navigate("/");
+        onSubmit={(values,onSubmitProps) => {
+          navigate("/");
+          //VER ESTO PARA RESETEAR FORM
+          onSubmitProps.resetForm()
+          console.log(values);
         }}
         validate={(valores) => {
           let errores = {};
