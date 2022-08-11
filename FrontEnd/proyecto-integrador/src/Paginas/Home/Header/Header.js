@@ -9,11 +9,11 @@ import AppContext from '../../../Context/AppContext';
 import { useInitialState } from '../../../Hooks/useInitialState';
 
 
-const Header = () => {
+const Header = (user) => {
 
   const navRef = useRef()
   const {pathname} = useLocation();
-  // const [state, setState] = useInitialState()
+  const initialState = useInitialState();
 
   const mostrarNavBar = () => {
     navRef.current.classList.toggle("responsive-header")
@@ -65,7 +65,6 @@ const Header = () => {
       );
     }
     
-  
   }
   // const mostrarAvatar = () => {
   // if(setValores !== undefined){
@@ -87,6 +86,8 @@ const Header = () => {
       <nav ref={navRef} className="header-derecha">
         {/* <p>{state.userRegister.nombre}</p> */}
         {mostrarBotones()}
+        {console.log({user})}
+        
         {/* botones para mobile */}
         <button
           className="header-boton header-cerrar-boton"

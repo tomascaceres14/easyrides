@@ -17,7 +17,7 @@ function App() {
     <div className="App">
       <AppContext.Provider value={initialState}>
         <BrowserRouter>
-            <Header />
+            <Header user={initialState}  />
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />

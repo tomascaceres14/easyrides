@@ -53,7 +53,7 @@
         flex-direction: column;
         transition: 1s;
         transform: translateY(-100vh);
-        background-color: orange;
+        background-color: #F0572D;
         position: absolute;
         color: black;
     }
