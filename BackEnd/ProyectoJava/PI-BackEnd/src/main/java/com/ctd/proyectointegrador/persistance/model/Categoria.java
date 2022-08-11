@@ -1,4 +1,6 @@
-package com.ctd.ProyectoIntegrador.model;
+package com.ctd.proyectointegrador.persistance.model;
+
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -19,19 +21,10 @@ public class Categoria {
     @Column(name = "url")
     private String url;
 
-
-
     public Categoria() {
     }
 
     public Categoria(String titulo, String descripcion, String url) {
-        this.titulo = titulo;
-        this.descripcion = descripcion;
-        this.url = url;
-    }
-
-    public Categoria(Integer id, String titulo, String descripcion, String url) {
-        this.id = id;
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.url = url;
@@ -63,5 +56,15 @@ public class Categoria {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    @Override
+    public String toString() {
+        return "Categoria{" +
+                "id=" + id +
+                ", titulo='" + titulo + '\'' +
+                ", descripcion='" + descripcion + '\'' +
+                ", url='" + url + '\'' +
+                '}';
     }
 }
