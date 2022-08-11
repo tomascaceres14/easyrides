@@ -4,6 +4,7 @@
     grid-template-columns: repeat(auto-fill, minmax(440px, 1fr));
     gap: 20px;
     cursor: pointer;
+    background-color: #FFFFFF;
 }
 .cardsProductos-titulo {
     font-size: 30px;
@@ -31,7 +32,7 @@
 }
 .cardsProductos-unidad-boton{
     border: none;
-    background-color: grey;
+    color: black;
     font-size: 1rem;
     padding: .75em 18.2em;
     border-radius: .25em;
@@ -42,4 +43,27 @@
 .cardsProductos-unidad-boton:hover , .cardsProductos-unidad-boton:focus {
     background-color: rgb(177, 175, 175);
     transition: 0.3s;
+}
+
+@media only screen and (max-width: 1024px) {
+    .cardsProductos-unidad-boton{
+        padding: .75rem 16rem;
+    }
+}
+@media only screen and (max-width: 668px) {
+    .cardsProductos-unidad-boton {
+        padding: .75rem 15.5rem;
+    }
+}
+@media only screen and (max-width: 650px) {
+    .cardsProductos {
+            padding: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            cursor: pointer;
+        }
+    .cardsProductos-unidad-boton {
+        padding: .75rem 6rem;
+    }
 }

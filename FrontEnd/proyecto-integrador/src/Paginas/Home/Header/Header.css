@@ -3,6 +3,10 @@
     align-items: center;
     justify-content: space-between;
     padding: 1rem;
+    background-color: #FFFFFF;
+}
+.header-logo{
+    width: 100px;
 }
 .header-izquierda > img{
     margin-left: 1rem;
@@ -34,7 +38,7 @@
     .header-boton{
         visibility: visible;
         opacity: 1;
-        margin-left: 42rem;
+        margin-left: 23rem;
     }
     .header-derecha{
         margin-left: 0rem;
@@ -49,7 +53,7 @@
         flex-direction: column;
         transition: 1s;
         transform: translateY(-100vh);
-        background-color: white;
+        background-color: orange;
         position: absolute;
         color: black;
     }
@@ -62,12 +66,11 @@
         right: 1rem;
     }
     .sesion{
-        margin-top: 18rem;
+        margin-top: 15rem;
         margin-left: 35rem;
     }
     .cuenta {
-        margin-bottom: 15rem;
+        margin-bottom: 18rem;
         margin-left: 35rem;
     }
-
 }

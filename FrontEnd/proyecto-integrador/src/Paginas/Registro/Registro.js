@@ -1,11 +1,16 @@
 
 import "./Registro.css";
-import React from 'react';
+import React,{useContext} from 'react';
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useNavigate } from "react-router-dom";
-function Registro() {
+import AppContext from "../../Context/AppContext";
+import { useInitialState } from "../../Hooks/useInitialState";
 
+
+function Registro() {
+  const {setValores} = useContext(AppContext)
 	const navigate = useNavigate();
+  
 
 	//validacion contraseña
 	const validarContraseña = values => {
@@ -44,7 +49,8 @@ function Registro() {
         }}
         onSubmit={(values) => {
           navigate("/login");
-		    localStorage.setItem('user',JSON.stringify(values));
+		      setValores(values)
+          console.log(values);
         }}
         validate={(valores) => {
           let errores = {};

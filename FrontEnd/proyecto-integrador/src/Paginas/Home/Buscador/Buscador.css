@@ -1,6 +1,6 @@
 .buscador{
     padding: 30px;
-    background-color: #31363f;
+    background-color: #F0572D;;
     margin-bottom: 3rem;
 
 }
@@ -27,6 +27,7 @@
     color: white;
     font-size: 36px;
     text-align: center;
+    
 }
 .buscador-submit{
     padding: 0.7rem 3.5rem;
@@ -34,6 +35,12 @@
     border-radius: 0.5rem;
     border-style: none;
     cursor: pointer;
+}
+.react-daterange-picker__wrapper {
+    border: none;
+}
+.h1{
+    background-color: #FFFFFF;
 }
 @media only screen and (max-width: 1024px) {
     .buscadores{

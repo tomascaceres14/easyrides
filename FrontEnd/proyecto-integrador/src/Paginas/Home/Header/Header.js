@@ -1,21 +1,24 @@
-import { useRef } from 'react';
+import { useRef, useContext } from 'react';
 import React from 'react'
 import './Header.css'
 import logo from "./logo.jpg"
+import logoeasyrides from "./logoeasyrides.jfif";
 import {FaBars, FaTimes} from "react-icons/fa"
 import { Link, useLocation } from 'react-router-dom';
-
+import AppContext from '../../../Context/AppContext';
+import { useInitialState } from '../../../Hooks/useInitialState';
 
 
 const Header = () => {
 
   const navRef = useRef()
   const {pathname} = useLocation();
+  // const [state, setState] = useInitialState()
 
   const mostrarNavBar = () => {
     navRef.current.classList.toggle("responsive-header")
   }
-  const parsearUsuario = JSON.parse(localStorage.getItem("user"));
+  // const parsearUsuario = JSON.parse(localStorage.getItem("user"));
   // const nombreUsuario = parsearUsuario.nombre
 
 
@@ -65,25 +68,25 @@ const Header = () => {
   
   }
   // const mostrarAvatar = () => {
-  // if(parsearUsuario !== undefined){
+  // if(setValores !== undefined){
   //       return (
   //         <>
-  //         {<p>{nombreUsuario}</p>}
+  //         {<p>{setValores.nombre}</p>}
   //         </>
   //         )
-  //   } else{
+  //   } else if (setValores === undefined){
   //     mostrarBotones()
   //   }
   // } 
+
   return (
     <header className="header">
       <Link to="/">
-        <img className="header-logo" src={logo} alt="logo" />
+        <img className="header-logo" src={logoeasyrides} alt="logo" />
       </Link>
       <nav ref={navRef} className="header-derecha">
+        {/* <p>{state.userRegister.nombre}</p> */}
         {mostrarBotones()}
-      
-
         {/* botones para mobile */}
         <button
           className="header-boton header-cerrar-boton"

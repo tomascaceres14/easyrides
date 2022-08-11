@@ -1,3 +1,4 @@
+import { formatRelative } from "date-fns";
 import React from "react";
 import Select from "react-select";
 import ciudades from "./ciudades.json";
@@ -19,6 +20,8 @@ export const SearchBar = () => {
           value: ciudad.id,
         }))}
         onChange={handleSelectChange}
+        styles={{position:"relative", zIndex: 999 }}
+
       />
     </div>
   );

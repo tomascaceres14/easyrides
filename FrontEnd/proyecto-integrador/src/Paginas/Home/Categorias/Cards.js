@@ -5,7 +5,7 @@ import "./Cards.css";
 export default function Cards() {
   return (
     <div>
-      <h2 className="cardsCategoria-titulo">Busca por categorias</h2>
+      <h2 className="cardsCategoria-titulo">Busca por categoria</h2>
       <div className="cardsCategoria">
       {data.map((categoria) => (
         <div className="cardsCategoria-unidad">

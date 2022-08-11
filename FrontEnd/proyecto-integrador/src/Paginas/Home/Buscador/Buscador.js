@@ -15,7 +15,7 @@ function  Buscador(){
       <h1>Busca ofertas en autos, camionetas y mucho más</h1>
       <div className="buscadores">
         <SearchBar />
-        <Calendario />
+        <Calendario className="calendario"/>
         <button className="buscador-submit">Buscar</button>
       </div>
     </div>

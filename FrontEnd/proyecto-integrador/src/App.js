@@ -7,19 +7,26 @@ import { Home } from "./Paginas/Home/Home";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from "./Paginas/Home/Header/Header";
 import Footer from "./Paginas/Home/Footer/Footer";
+import { useInitialState } from "./Hooks/useInitialState";
+import AppContext from "./Context/AppContext";
+
 
 function App() {
+  const initialState = useInitialState()
   return (
     <div className="App">
-      <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/registro" element={<Registro />} />
-        </Routes>
-        <Footer />
-      </BrowserRouter>
+      <AppContext.Provider value={initialState}>
+        <BrowserRouter>
+            <Header />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/registro" element={<Registro />} />
+            </Routes>
+            <Footer />
+        </BrowserRouter>
+      </AppContext.Provider>
+      
 
     </div>
   );

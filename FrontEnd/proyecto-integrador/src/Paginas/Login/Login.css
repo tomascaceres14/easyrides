@@ -2,23 +2,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@700&display=swap');
 
 :root{
-    --body-bg-color:#DFE4EA;
+   
     --font-family:'Quicksand', sans-serif;
     --naranja:#F0572D;
 }
-* {
-	padding: 0px;
-	margin: 0;
-	box-sizing: border-box;
-}
 
 body {
-	background: var(--body-bg-color);
 	font-family: var(--font-family);
 }
 
 .contenedor {
-	min-height: 100vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
