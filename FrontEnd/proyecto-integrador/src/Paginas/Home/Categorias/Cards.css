@@ -1,0 +1,36 @@
+.cardsCategoria{
+    padding: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    cursor: pointer;
+
+}
+.cardsCategoria-titulo{
+    font-size: 30px;
+    margin-left: 2.5rem;
+}
+.cardsCategoria-unidad{
+    border: 3px solid transparent;
+    border-radius: .25rem;
+    padding: 5px;
+    box-shadow: 0 1px 4px rgb(0 0 0 / 25%);
+    /* background-color:#eeeff0 ; */
+    
+}
+.cardsCategoria-unidad-img{
+    width: 100%;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    object-position: center;
+}
+.cardsCategoria-unidad-nombre{
+    font-size: 25px;
+    font-weight: 500;
+}
+.cardsCategoria-unidad-descripcion{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 20px;
+}
