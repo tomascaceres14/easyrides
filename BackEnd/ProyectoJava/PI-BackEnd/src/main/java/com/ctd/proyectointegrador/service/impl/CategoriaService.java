@@ -8,9 +8,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
+import java.util.*;
 
 @Service
 public class CategoriaService implements IService<CategoriaDTO> {
@@ -47,21 +45,29 @@ public class CategoriaService implements IService<CategoriaDTO> {
             c.setUrl(object.getUrl() != null ?  object.getUrl() : c.getUrl());
 
         }
+
         return guardar(c);
     }
 
-    public boolean eliminar(Integer id) {
-        if(categoriaRepository.findById(id).isPresent()) {
+    public Map<String, Object> eliminar(Integer id) {
+        Map<String, Object> respuesta = new HashMap<>();
+
+        if (categoriaRepository.findById(id).isPresent()) {
             categoriaRepository.deleteById(id);
-            return true;
-        } else return false;
+            respuesta.put("codigo", 200);
+            respuesta.put("mensaje","Categoria id: " + id + " eliminada");
+        } else {
+            respuesta.put("codigo", 404);
+            respuesta.put("mensaje","Categoria id: " + id + " no existe");
+        }
+        return respuesta;
     }
 
     public List<CategoriaDTO> listarTodos(){
 
         List<Categoria> listaCat = categoriaRepository.findAll();
 
-        List<CategoriaDTO> listaDTO = new ArrayList<CategoriaDTO>();
+        List<CategoriaDTO> listaDTO = new ArrayList<>();
 
         for (Categoria c: listaCat){
             CategoriaDTO catDTO = mapper.convertValue(c, CategoriaDTO.class);

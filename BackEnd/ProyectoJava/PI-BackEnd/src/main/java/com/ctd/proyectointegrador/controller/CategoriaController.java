@@ -1,10 +1,8 @@
 package com.ctd.proyectointegrador.controller;
 
 import com.ctd.proyectointegrador.persistance.dto.CategoriaDTO;
-import com.ctd.proyectointegrador.persistance.model.Categoria;
 import com.ctd.proyectointegrador.service.impl.CategoriaService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,9 +17,14 @@ public class CategoriaController {
     @Autowired
     private CategoriaService categoriaService;
 
+    @Autowired
+    Map<String, Object> response = new HashMap<>();
+
+    private Integer codigo;
+
     @PostMapping()
     public ResponseEntity<CategoriaDTO> guardar(@RequestBody CategoriaDTO categoria){
-        CategoriaDTO response = categoriaService.guardar (categoria);
+        CategoriaDTO response = categoriaService.guardar(categoria);
         return ResponseEntity.created(URI.create("/categorias")).body(response);
     }
 
@@ -37,14 +40,9 @@ public class CategoriaController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Map<String, Object>> eliminar(@PathVariable Integer id) {
-        Map<String, Object> response = new HashMap<>();
-        if (categoriaService.eliminar(id)){
-            response.put("mensaje", "Categoria id: " + id + " eliminada");
-            return ResponseEntity.ok(response);
-        } else {
-            response.put("mensaje", "Categoria id: " + id + " no existe");
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
-        }
+        response = categoriaService.eliminar(id);
+        codigo = (Integer) response.get("codigo");
+        return ResponseEntity.status(codigo).body(response);
     }
 
     @GetMapping()
