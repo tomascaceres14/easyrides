@@ -1,7 +1,5 @@
 package com.ctd.proyectointegrador.persistance.dto;
 
-
-
 public class CategoriaDTO {
     private Integer id;
     private String titulo;
