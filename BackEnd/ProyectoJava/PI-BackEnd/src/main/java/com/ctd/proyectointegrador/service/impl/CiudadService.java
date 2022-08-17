@@ -1,6 +1,6 @@
 package com.ctd.proyectointegrador.service.impl;
 
-import com.ctd.proyectointegrador.persistance.dto.CategoriaDTO;
+
 import com.ctd.proyectointegrador.persistance.dto.CiudadDTO;
 import com.ctd.proyectointegrador.persistance.model.Ciudad;
 import com.ctd.proyectointegrador.persistance.repository.CiudadRepository;
@@ -43,7 +43,7 @@ public class CiudadService implements IService<CiudadDTO> {
             respuesta.put("codigo", 200);
             respuesta.put("ciudad", mapper.convertValue(ciudad, CiudadDTO.class));
         }else{
-            respuesta.remove("Ciudad");
+            respuesta.remove("ciudad");
             respuesta.put("codigo",404);
             respuesta.put("mensaje", "Ciudad id: "+ id +" no existe");
         }
@@ -59,7 +59,7 @@ public class CiudadService implements IService<CiudadDTO> {
             c.setProvincia(object.getProvincia() != null ? object.getProvincia() : c.getProvincia());
             c.setPais(object.getPais() != null ? object.getPais() : c.getPais());
             ciudadRespository.save(c);
-            respuesta.replace("ciudad", mapper.convertValue(c, CategoriaDTO.class));
+            respuesta.replace("ciudad", mapper.convertValue(c, CiudadDTO.class));
         }
         return respuesta;
     }
