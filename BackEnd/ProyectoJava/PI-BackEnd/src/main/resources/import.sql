@@ -4,3 +4,6 @@ INSERT INTO categoria VALUES (null, 'espacioso y comodo para grandes y niños', 
 INSERT INTO categoria VALUES (null, 'espacioso y comodo para grandes y niños',  'Economicos', 'https://images.unsplash.com/photo-1639640163962-9e845bd7294a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
 
 INSERT INTO producto VALUES (null,'Suv',
+
+
+
