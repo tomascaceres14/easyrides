@@ -1,43 +1,40 @@
-
 import "./Registro.css";
-import React,{useContext} from 'react';
+import React, { useContext } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useNavigate } from "react-router-dom";
 import AppContext from "../../Context/AppContext";
 import { useInitialState } from "../../Hooks/useInitialState";
 
-
 function Registro() {
-  const {setValores} = useContext(AppContext)
-	const navigate = useNavigate();
-  
+  const { setValores } = useContext(AppContext);
+  const navigate = useNavigate();
 
-	//validacion contraseña
-	const validarContraseña = values => {
-		let error = "";
-		const regexContraseña = /(?=.*[0-9])/;
-		if (!values) {
-			error = "Campo requerido";
-		} else if (values.length < 8) {
-			error = "La contraseña debe tener 8 caracteres.";
-		} else if (!regexContraseña.test(values)) {
-			error = "Contraseña invalida. Debe contener un número.";
-		}
-		return error;
-	};
+  //validacion contraseña
+  const validarContraseña = (values) => {
+    let error = "";
+    const regexContraseña = /(?=.*[0-9])/;
+    if (!values) {
+      error = "Campo requerido";
+    } else if (values.length < 8) {
+      error = "La contraseña debe tener 8 caracteres.";
+    } else if (!regexContraseña.test(values)) {
+      error = "Contraseña invalida. Debe contener un número.";
+    }
+    return error;
+  };
 
-	//validacion confirmar contraseña
-	const validateConfirmarContraseña = (pass, value) => {
-		let error = "";
-		if (pass && value) {
-			if (pass !== value) {
-				error = "Las contraseñas no coinciden";
-			}
-		}
-		return error;
-	};
+  //validacion confirmar contraseña
+  const validateConfirmarContraseña = (pass, value) => {
+    let error = "";
+    if (pass && value) {
+      if (pass !== value) {
+        error = "Las contraseñas no coinciden";
+      }
+    }
+    return error;
+  };
 
-	return (
+  return (
     <React.Fragment>
       <Formik
         initialValues={{
@@ -48,9 +45,9 @@ function Registro() {
           confirmarContraseña: "",
         }}
         onSubmit={(values) => {
-          navigate("/login");
-		      setValores(values)
+          setValores(values);
           console.log(values);
+          navigate("/login");
         }}
         validate={(valores) => {
           let errores = {};

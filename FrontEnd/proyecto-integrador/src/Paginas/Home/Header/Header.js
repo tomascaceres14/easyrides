@@ -1,29 +1,29 @@
-import { useRef, useContext } from 'react';
-import React from 'react'
-import './Header.css'
-import logo from "./logo.jpg"
+import { useRef, useContext, useState } from "react";
+import React from "react";
+import "./Header.css";
+import logo from "./logo.jpg";
 import logoeasyrides from "./logoeasyrides.jfif";
-import {FaBars, FaTimes} from "react-icons/fa"
-import { Link, useLocation } from 'react-router-dom';
-import AppContext from '../../../Context/AppContext';
-import { useInitialState } from '../../../Hooks/useInitialState';
-
+import { FaBars, FaTimes } from "react-icons/fa";
+import { Link, useLocation } from "react-router-dom";
+import AppContext from "../../../Context/AppContext";
+import { useInitialState } from "../../../Hooks/useInitialState";
+import AuthContext from "../../../Context/AuthContext";
 
 const Header = (user) => {
-
-  const navRef = useRef()
-  const {pathname} = useLocation();
+  const navRef = useRef();
+  const { pathname } = useLocation();
   const initialState = useInitialState();
 
+  const { auth } = useContext(AuthContext);
+
   const mostrarNavBar = () => {
-    navRef.current.classList.toggle("responsive-header")
-  }
+    navRef.current.classList.toggle("responsive-header");
+  };
   // const parsearUsuario = JSON.parse(localStorage.getItem("user"));
   // const nombreUsuario = parsearUsuario.nombre
 
-
   const mostrarBotones = () => {
-    if(pathname === '/registro') {
+    if (pathname === "/registro") {
       return (
         <>
           <Link to="/login">
@@ -64,8 +64,7 @@ const Header = (user) => {
         </>
       );
     }
-    
-  }
+  };
   // const mostrarAvatar = () => {
   // if(setValores !== undefined){
   //       return (
@@ -76,7 +75,7 @@ const Header = (user) => {
   //   } else if (setValores === undefined){
   //     mostrarBotones()
   //   }
-  // } 
+  // }
 
   return (
     <header className="header">
@@ -84,10 +83,8 @@ const Header = (user) => {
         <img className="header-logo" src={logoeasyrides} alt="logo" />
       </Link>
       <nav ref={navRef} className="header-derecha">
-        {/* <p>{state.userRegister.nombre}</p> */}
-        {mostrarBotones()}
-        {console.log({user})}
-        
+        {auth ? <p>Bienvenido {auth.nombre}</p> : mostrarBotones()}
+
         {/* botones para mobile */}
         <button
           className="header-boton header-cerrar-boton"
@@ -101,6 +98,6 @@ const Header = (user) => {
       </button>
     </header>
   );
-}
+};
 
-export default Header
+export default Header;
