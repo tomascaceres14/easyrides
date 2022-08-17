@@ -1,7 +1,4 @@
 package com.ctd.proyectointegrador.persistance.model;
-
-import lombok.*;
-
 import javax.persistence.*;
 
 @Entity
@@ -12,13 +9,13 @@ public class Categoria {
     @Column(name="id")
     private Integer id;
 
-    @Column(name = "titulo")
+    @Column(name = "titulo", nullable = false)
     private String titulo;
 
-    @Column(name = "descripcion")
+    @Column(name = "descripcion", nullable = false)
     private String descripcion;
 
-    @Column(name = "url")
+    @Column(name = "url", nullable = false)
     private String url;
 
     public Categoria() {

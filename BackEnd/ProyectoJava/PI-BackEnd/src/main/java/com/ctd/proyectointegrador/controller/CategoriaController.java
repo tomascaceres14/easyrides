@@ -8,14 +8,13 @@ import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @RestController
 @RequestMapping("/categorias")
 public class CategoriaController {
     @Autowired
-    private CategoriaService categoriaService;
+    CategoriaService categoriaService;
 
     @Autowired
     Map<String, Object> response = new HashMap<>();
@@ -23,30 +22,49 @@ public class CategoriaController {
     private Integer codigo;
 
     @PostMapping()
-    public ResponseEntity<CategoriaDTO> guardar(@RequestBody CategoriaDTO categoria){
-        CategoriaDTO response = categoriaService.guardar(categoria);
+    public ResponseEntity<Map<String, Object>> guardar(@RequestBody CategoriaDTO categoria){
+        // LLamo al metodo del service
+        response = categoriaService.guardar(categoria);
+        // Retorno ResponseEntity, codigo 201 (created).
+        // El metodo guardar(categoria) retorna un HashMap con el codigo de respuesta y la categoria creada.
+        // Eso se almacena en la variable 'response' y se retorna en el body del ResponseEntity.
         return ResponseEntity.created(URI.create("/categorias")).body(response);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<CategoriaDTO> buscar(@PathVariable Integer id) {
-        return ResponseEntity.ok(categoriaService.buscar(id));
+    public ResponseEntity<Map<String, Object>> buscar(@PathVariable Integer id) {
+        // LLamo al metodo del service
+        response = categoriaService.buscar(id);
+        // Extraigo el codigo de respuesta
+        codigo = (Integer) response.get("codigo");
+        // Retorno el ResponseEntity con codigo de respuesta y body correspondiente
+        return ResponseEntity.status(codigo).body(response);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<CategoriaDTO> actualizar(@PathVariable Integer id, @RequestBody CategoriaDTO c) {
-        return ResponseEntity.ok(categoriaService.actualizar(id, c));
+    public ResponseEntity<Map<String, Object>> actualizar(@PathVariable Integer id, @RequestBody CategoriaDTO c) {
+        // LLamo al metodo del service
+        response = categoriaService.actualizar(id, c);
+        // Extraigo el codigo de respuesta
+        codigo = (Integer) response.get("codigo");
+        // Retorno el ResponseEntity con codigo de respuesta y body correspondiente
+        return ResponseEntity.status(codigo).body(response);
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Map<String, Object>> eliminar(@PathVariable Integer id) {
+        // LLamo al metodo del service
         response = categoriaService.eliminar(id);
+        // Extraigo el codigo de respuesta
         codigo = (Integer) response.get("codigo");
+        // Retorno el ResponseEntity con codigo de respuesta y body correspondiente
         return ResponseEntity.status(codigo).body(response);
     }
 
     @GetMapping()
-    public ResponseEntity<List<CategoriaDTO>> listarTodos(){
-        return ResponseEntity.ok(categoriaService.listarTodos());
+    public ResponseEntity<Map<String, Object>> listarTodos(){
+        response = categoriaService.listarTodos();
+        codigo = (Integer) response.get("codigo");
+        return ResponseEntity.status(codigo).body(response);
     }
 }
