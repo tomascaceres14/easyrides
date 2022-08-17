@@ -21,6 +21,7 @@ public class CategoriaController {
 
     private Integer codigo;
 
+
     @PostMapping()
     public ResponseEntity<Map<String, Object>> guardar(@RequestBody CategoriaDTO categoria){
         // LLamo al metodo del service
