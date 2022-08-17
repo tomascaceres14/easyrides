@@ -9,6 +9,7 @@ import Footer from "./Paginas/Home/Footer/Footer";
 import { useInitialState } from "./Hooks/useInitialState";
 import AppContext from "./Context/AppContext";
 import { AuthProvider } from "./Context/AuthContext";
+import Producto from "./Paginas/Home/Listado/Producto/Producto";
 
 function App() {
   const initialState = useInitialState();
@@ -22,6 +23,7 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
               <Route path="/registro" element={<Registro />} />
+              <Route path="/producto" element={<Producto />} />
             </Routes>
             <Footer />
           </BrowserRouter>
