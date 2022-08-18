@@ -9,7 +9,7 @@ function Calendario() {
 
   return (
     <div className="calendario">
-      <DateRangePicker onChange={onChange} value={value} />
+      <DateRangePicker onChange={onChange} value={value} minDate={new Date()}/>
     </div>
   );
 }

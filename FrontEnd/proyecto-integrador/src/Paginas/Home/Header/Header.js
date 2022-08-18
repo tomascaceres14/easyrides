@@ -37,7 +37,8 @@ const Header = (user) => {
         <img className="header-logo" src={logoeasyrides} alt="logo" />
       </Link>
       <nav ref={navRef} className="header-derecha">
-        {auth ? <p>Bienvenido {auth.nombre}</p> : <BotonesLoginRegister/>}
+        {/* //mostarr avatar en un solo compontente */}
+        {auth ? <p>Bienvenido {auth.nombre}</p>  : <BotonesLoginRegister/>}
 
         {/* botones para mobile */}
         <button
