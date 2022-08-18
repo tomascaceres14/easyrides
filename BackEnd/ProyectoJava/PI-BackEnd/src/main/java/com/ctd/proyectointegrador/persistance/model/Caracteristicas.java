@@ -18,9 +18,9 @@ public class Caracteristicas {
     @Column(name = "descripcion", nullable = false)
     private String descripcion;
 
-    @ManyToMany(mappedBy = "Caracteristicas", fetch = FetchType.LAZY)
-    @JsonIgnore
-    private Set<Productos> productos = new HashSet<>();
+  //  @ManyToMany(mappedBy = "Caracteristicas", fetch = FetchType.LAZY)
+    //@JsonIgnore
+    //private Set<Productos> productos = new HashSet<>();
 
 
     public Caracteristicas() {
@@ -29,7 +29,7 @@ public class Caracteristicas {
     public Caracteristicas(String titulo, String descripcion, Set<Productos> productos) {
         this.titulo = titulo;
         this.descripcion = descripcion;
-        this.productos = productos;
+       // this.productos = productos;
     }
 
     public Integer getId() {
@@ -52,13 +52,13 @@ public class Caracteristicas {
         this.descripcion = descripcion;
     }
 
-    public Set<Productos> getProductos() {
+    /*public Set<Productos> getProductos() {
         return productos;
     }
 
     public void setProductos(Set<Productos> productos) {
         this.productos = productos;
-    }
+    }*/
 
     @Override
     public String toString() {
