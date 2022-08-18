@@ -8,17 +8,16 @@ import { useInitialState } from "../../../Hooks/useInitialState";
 import AuthContext from "../../../Context/AuthContext";
 import { BotonesLoginRegister } from "./BotonesLoginRegister";
 
-const Header = (user) => {
+const Header = () => {
   const navRef = useRef();
   const initialState = useInitialState();
 
   const { auth } = useContext(AuthContext);
 
   const mostrarNavBar = () => {
+    navRef.style.display = "";
     navRef.current.classList.toggle("responsive-header");
   };
-  // const parsearUsuario = JSON.parse(localStorage.getItem("user"));
-  // const nombreUsuario = parsearUsuario.nombre
 
   // const mostrarAvatar = () => {
   // if(setValores !== undefined){
@@ -31,13 +30,14 @@ const Header = (user) => {
   //     mostrarBotones()
   //   }
   // }
+  
   return (
     <header className="header">
       <Link to="/">
         <img className="header-logo" src={logoeasyrides} alt="logo" />
       </Link>
       <nav ref={navRef} className="header-derecha">
-        {auth ? <p>Bienvenido {auth.nombre}</p> : <BotonesLoginRegister/>}
+        {auth ? <p>Bienvenido {auth.nombre}</p> : <BotonesLoginRegister />}
 
         {/* botones para mobile */}
         <button

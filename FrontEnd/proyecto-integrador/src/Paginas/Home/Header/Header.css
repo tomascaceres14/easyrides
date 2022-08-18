@@ -30,7 +30,7 @@
     background: transparent;
     border: none;
     outline: none;
-    visibility: hidden;
+    display: none;
     opacity: 0;
 }
 
