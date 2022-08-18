@@ -2,8 +2,11 @@ import "./Listado.css";
 import data from "./data.json";
 import React from "react";
 import { Link } from "react-router-dom";
+import useFetch from "../../../Hooks/useFetch";
 
 export default function Listado() {
+  // const urlCategorias = "http://localhost:8080/categorias";
+  // const { data } = useFetch(urlCategorias);
   return (
     <div>
       <p className="cardsProductos-titulo">Recomendaciones</p>
