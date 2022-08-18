@@ -22,7 +22,7 @@ public class Ciudades {
 
     //@OneToMany(mappedBy = "Ciudades")
     //@JsonIgnore
-    //private List<Productos> productos;
+    private List<Productos> productos;
 
 
     public Ciudades() {
@@ -32,7 +32,7 @@ public class Ciudades {
         this.nombre = nombre;
         this.provincia = provincia;
         this.pais = pais;
-        //this.productos = productos;
+        this.productos = productos;
     }
 
     public Integer getId() {
@@ -63,13 +63,13 @@ public class Ciudades {
         this.pais = pais;
     }
 
-   // public List<Productos> getProductos() {
-        //return productos;
-   // }
+    public List<Productos> getProductos() {
+        return productos;
+    }
 
-    //public void setProductos(List<Productos> productos) {
-      //  this.productos = productos;
-   // }
+    public void setProductos(List<Productos> productos) {
+       this.productos = productos;
+    }
 
     @Override
     public String toString() {

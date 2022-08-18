@@ -20,11 +20,12 @@ public class Productos {
 
     @Column(name = "url", nullable = false)
     private String url;
-
+/*
     @OneToMany(mappedBy = "Productos")
     @JsonIgnore
     private List<Caracteristicas> caracteristicas;
-
+    
+*/
     public Productos() {
     }
 
