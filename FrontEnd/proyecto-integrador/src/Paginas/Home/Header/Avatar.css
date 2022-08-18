@@ -1,0 +1,7 @@
+.avatar{
+    display: flex;
+}
+.avatar-sesion{
+    margin-left: 1rem;
+    cursor: pointer;
+}
