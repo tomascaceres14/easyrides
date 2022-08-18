@@ -1,18 +1,18 @@
 package com.ctd.proyectointegrador.persistance.dto;
 
-public class CiudadDTO {
+public class CiudadesDTO {
     private Integer id;
     private String nombre;
     private String provincia;
     private String pais;
 
-    public CiudadDTO(String nombre, String provincia, String pais) {
+    public CiudadesDTO(String nombre, String provincia, String pais) {
         this.nombre = nombre;
         this.provincia = provincia;
         this.pais = pais;
     }
 
-    public CiudadDTO() {
+    public CiudadesDTO() {
     }
 
     public Integer getId() {

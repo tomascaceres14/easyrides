@@ -8,7 +8,7 @@ import java.util.List;
 
 @Entity
 @Table
-public class Ciudad {
+public class Ciudades {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
@@ -20,15 +20,15 @@ public class Ciudad {
     @Column(name = "pais", nullable = false)
     private String pais;
 
-    @OneToMany(mappedBy = "ciudad")
+    @OneToMany(mappedBy = "Ciudades")
     @JsonIgnore
-    private List<Producto> productos;
+    private List<Productos> productos;
 
 
-    public Ciudad() {
+    public Ciudades() {
     }
 
-    public Ciudad(String nombre, String provincia, String pais, List<Producto> productos) {
+    public Ciudades(String nombre, String provincia, String pais, List<Productos> productos) {
         this.nombre = nombre;
         this.provincia = provincia;
         this.pais = pais;
@@ -63,11 +63,11 @@ public class Ciudad {
         this.pais = pais;
     }
 
-    public List<Producto> getProductos() {
+    public List<Productos> getProductos() {
         return productos;
     }
 
-    public void setProductos(List<Producto> productos) {
+    public void setProductos(List<Productos> productos) {
         this.productos = productos;
     }
 

@@ -11,7 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/categorias")
+@RequestMapping("/Categorias")
 public class CategoriaController {
     @Autowired
     CategoriaService categoriaService;
@@ -29,7 +29,7 @@ public class CategoriaController {
         // Retorno ResponseEntity, codigo 201 (created).
         // El metodo guardar(categoria) retorna un HashMap con el codigo de respuesta y la categoria creada.
         // Eso se almacena en la variable 'response' y se retorna en el body del ResponseEntity.
-        return ResponseEntity.created(URI.create("/categorias")).body(response);
+        return ResponseEntity.created(URI.create("/Categorias")).body(response);
     }
 
     @GetMapping("/{id}")

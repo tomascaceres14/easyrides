@@ -1,8 +1,8 @@
 package com.ctd.proyectointegrador.service.impl;
 
-import com.ctd.proyectointegrador.persistance.dto.CaracteristicaDTO;
-import com.ctd.proyectointegrador.persistance.model.Caracteristica;
-import com.ctd.proyectointegrador.persistance.repository.CaracteristicaRepository;
+import com.ctd.proyectointegrador.persistance.dto.CaracteristicasDTO;
+import com.ctd.proyectointegrador.persistance.model.Caracteristicas;
+import com.ctd.proyectointegrador.persistance.repository.CaracteristicasRepository;
 import com.ctd.proyectointegrador.service.IService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,9 +14,9 @@ import java.util.List;
 import java.util.Map;
 
 @Service
-public class CaracteristicaService implements IService<CaracteristicaDTO> {
+public class CaracteristicasService implements IService<CaracteristicasDTO> {
     @Autowired
-    CaracteristicaRepository caracteristicaRepository;
+    CaracteristicasRepository caracteristicaRepository;
 
     @Autowired
     ObjectMapper mapper;
@@ -25,12 +25,12 @@ public class CaracteristicaService implements IService<CaracteristicaDTO> {
 
 
     @Override
-    public Map<String, Object> guardar(CaracteristicaDTO object) {
+    public Map<String, Object> guardar(CaracteristicasDTO object) {
         respuesta.clear();
-        Caracteristica caracteristica = mapper.convertValue(object, Caracteristica.class);
-        Caracteristica nuevaCaracteristica= caracteristicaRepository.save(caracteristica);
+        Caracteristicas caracteristica = mapper.convertValue(object, Caracteristicas.class);
+        Caracteristicas nuevaCaracteristica= caracteristicaRepository.save(caracteristica);
         respuesta.put("codigo",200);
-        respuesta.put("caracteristica", mapper.convertValue(nuevaCaracteristica, CaracteristicaDTO.class));
+        respuesta.put("caracteristica", mapper.convertValue(nuevaCaracteristica, CaracteristicasDTO.class));
         return respuesta;
     }
 
@@ -38,9 +38,9 @@ public class CaracteristicaService implements IService<CaracteristicaDTO> {
     public Map<String, Object> buscar(Integer id) {
         respuesta.clear();
         if(caracteristicaRepository.findById(id).isPresent()){
-            Caracteristica caracteristica = caracteristicaRepository.findById(id).get();
+            Caracteristicas caracteristica = caracteristicaRepository.findById(id).get();
             respuesta.put("codigo", 200);
-            respuesta.put("caracteristica", mapper.convertValue(caracteristica, CaracteristicaDTO.class));
+            respuesta.put("caracteristica", mapper.convertValue(caracteristica, CaracteristicasDTO.class));
         }else{
             respuesta.remove("caracteristica");
             respuesta.put("codigo",404);
@@ -50,14 +50,14 @@ public class CaracteristicaService implements IService<CaracteristicaDTO> {
     }
 
     @Override
-    public Map<String, Object> actualizar(Integer id, CaracteristicaDTO object) {
+    public Map<String, Object> actualizar(Integer id, CaracteristicasDTO object) {
         respuesta.clear();
         if(caracteristicaRepository.findById(id).isPresent()){
-            Caracteristica c = mapper.convertValue(respuesta.get("caracteristica"), Caracteristica.class);
+            Caracteristicas c = mapper.convertValue(respuesta.get("caracteristica"), Caracteristicas.class);
             c.setTitulo(object.getTitulo() != null ? object.getTitulo() : c.getTitulo());
             c.setDescripcion(object.getDescripcion() != null ? object.getDescripcion() : c.getDescripcion());
             caracteristicaRepository.save(c);
-            respuesta.replace("caracteristica", mapper.convertValue(c, CaracteristicaDTO.class));
+            respuesta.replace("caracteristica", mapper.convertValue(c, CaracteristicasDTO.class));
         }
         return respuesta;
 
@@ -83,10 +83,10 @@ public class CaracteristicaService implements IService<CaracteristicaDTO> {
     @Override
     public Map<String, Object> listarTodos() {
         respuesta.clear();
-        List<Caracteristica> listaCaracteristicas = caracteristicaRepository.findAll();
-        List<CaracteristicaDTO> listaCaractDTO = new ArrayList<>();
-        for(Caracteristica c : listaCaracteristicas){
-            CaracteristicaDTO CaractDTO =mapper.convertValue(c, CaracteristicaDTO.class);
+        List<Caracteristicas> listaCaracteristicas = caracteristicaRepository.findAll();
+        List<CaracteristicasDTO> listaCaractDTO = new ArrayList<>();
+        for(Caracteristicas c : listaCaracteristicas){
+            CaracteristicasDTO CaractDTO =mapper.convertValue(c, CaracteristicasDTO.class);
             listaCaractDTO.add(CaractDTO);
         }
         respuesta.put("codigo", 200);

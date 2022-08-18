@@ -1,12 +1,27 @@
-package com.ctd.proyectointegrador.persistance.dto;
+package com.ctd.proyectointegrador.persistance.model;
+import javax.persistence.*;
 
-public class ProductoDTO {
+@Entity
+@Table
+public class Imagenes {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id")
     private Integer id;
+
+    @Column(name = "titulo", nullable = false)
     private String titulo;
+
+    @Column(name = "descripcion", nullable = false)
     private String descripcion;
+
+    @Column(name = "url", nullable = false)
     private String url;
 
-    public ProductoDTO(String titulo, String descripcion, String url) {
+    public Imagenes() {
+    }
+
+    public Imagenes(String titulo, String descripcion, String url) {
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.url = url;
@@ -42,7 +57,7 @@ public class ProductoDTO {
 
     @Override
     public String toString() {
-        return "CategoriaDTO{" +
+        return "Categoria{" +
                 "id=" + id +
                 ", titulo='" + titulo + '\'' +
                 ", descripcion='" + descripcion + '\'' +

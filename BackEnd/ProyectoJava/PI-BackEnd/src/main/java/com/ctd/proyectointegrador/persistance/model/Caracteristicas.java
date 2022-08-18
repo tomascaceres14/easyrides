@@ -8,7 +8,7 @@ import java.util.Set;
 
 @Entity
 @Table
-public class Caracteristica {
+public class Caracteristicas {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
@@ -18,15 +18,15 @@ public class Caracteristica {
     @Column(name = "descripcion", nullable = false)
     private String descripcion;
 
-    @ManyToMany(mappedBy = "caracteristicas")
+    @ManyToMany(mappedBy = "Caracteristicas", fetch = FetchType.LAZY)
     @JsonIgnore
-    private Set<Producto> productos = new HashSet<>();
+    private Set<Productos> productos = new HashSet<>();
 
 
-    public Caracteristica() {
+    public Caracteristicas() {
     }
 
-    public Caracteristica(String titulo, String descripcion, Set<Producto> productos) {
+    public Caracteristicas(String titulo, String descripcion, Set<Productos> productos) {
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.productos = productos;
@@ -52,11 +52,11 @@ public class Caracteristica {
         this.descripcion = descripcion;
     }
 
-    public Set<Producto> getProductos() {
+    public Set<Productos> getProductos() {
         return productos;
     }
 
-    public void setProductos(Set<Producto> productos) {
+    public void setProductos(Set<Productos> productos) {
         this.productos = productos;
     }
 

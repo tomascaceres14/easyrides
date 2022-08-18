@@ -1,16 +1,16 @@
 package com.ctd.proyectointegrador.persistance.dto;
 
-public class CaracteristicaDTO {
+public class CaracteristicasDTO {
     private Integer id;
 
     private String titulo;
 
     private String descripcion;
 
-    public CaracteristicaDTO() {
+    public CaracteristicasDTO() {
     }
 
-    public CaracteristicaDTO(String titulo, String descripcion) {
+    public CaracteristicasDTO(String titulo, String descripcion) {
         this.titulo = titulo;
         this.descripcion = descripcion;
     }
