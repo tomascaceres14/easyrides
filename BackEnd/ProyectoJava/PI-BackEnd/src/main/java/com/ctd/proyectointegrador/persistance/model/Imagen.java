@@ -20,7 +20,7 @@ public class Imagen {
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "producto_id")
-    private Integer producto;
+    private Producto producto;
 
     public Imagen() {
     }
