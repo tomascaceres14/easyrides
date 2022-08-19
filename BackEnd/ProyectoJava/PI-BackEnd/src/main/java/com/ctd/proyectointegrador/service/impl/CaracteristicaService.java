@@ -1,6 +1,6 @@
 package com.ctd.proyectointegrador.service.impl;
 
-import com.ctd.proyectointegrador.persistance.dto.CaracteristicasDTO;
+import com.ctd.proyectointegrador.persistance.dto.CaracteristicaDTO;
 import com.ctd.proyectointegrador.persistance.model.Caracteristica;
 import com.ctd.proyectointegrador.persistance.repository.CaracteristicasRepository;
 import com.ctd.proyectointegrador.service.IService;
@@ -14,7 +14,8 @@ import java.util.List;
 import java.util.Map;
 
 @Service
-public class CaracteristicasService implements IService<CaracteristicasDTO> {
+public class CaracteristicaService implements IService<CaracteristicaDTO> {
+
     @Autowired
     CaracteristicasRepository caracteristicaRepository;
 
@@ -25,12 +26,12 @@ public class CaracteristicasService implements IService<CaracteristicasDTO> {
 
 
     @Override
-    public Map<String, Object> guardar(CaracteristicasDTO object) {
+    public Map<String, Object> guardar(CaracteristicaDTO object) {
         respuesta.clear();
         Caracteristica caracteristica = mapper.convertValue(object, Caracteristica.class);
         Caracteristica nuevaCaracteristica= caracteristicaRepository.save(caracteristica);
         respuesta.put("codigo",200);
-        respuesta.put("caracteristica", mapper.convertValue(nuevaCaracteristica, CaracteristicasDTO.class));
+        respuesta.put("caracteristica", mapper.convertValue(nuevaCaracteristica, CaracteristicaDTO.class));
         return respuesta;
     }
 
@@ -40,7 +41,7 @@ public class CaracteristicasService implements IService<CaracteristicasDTO> {
         if(caracteristicaRepository.findById(id).isPresent()){
             Caracteristica caracteristica = caracteristicaRepository.findById(id).get();
             respuesta.put("codigo", 200);
-            respuesta.put("caracteristica", mapper.convertValue(caracteristica, CaracteristicasDTO.class));
+            respuesta.put("caracteristica", mapper.convertValue(caracteristica, CaracteristicaDTO.class));
         }else{
             respuesta.remove("caracteristica");
             respuesta.put("codigo",404);
@@ -50,14 +51,14 @@ public class CaracteristicasService implements IService<CaracteristicasDTO> {
     }
 
     @Override
-    public Map<String, Object> actualizar(Integer id, CaracteristicasDTO object) {
+    public Map<String, Object> actualizar(Integer id, CaracteristicaDTO object) {
         respuesta.clear();
         if(caracteristicaRepository.findById(id).isPresent()){
             Caracteristica c = mapper.convertValue(respuesta.get("caracteristica"), Caracteristica.class);
             c.setTitulo(object.getTitulo() != null ? object.getTitulo() : c.getTitulo());
             c.setDescripcion(object.getDescripcion() != null ? object.getDescripcion() : c.getDescripcion());
             caracteristicaRepository.save(c);
-            respuesta.replace("caracteristica", mapper.convertValue(c, CaracteristicasDTO.class));
+            respuesta.replace("caracteristica", mapper.convertValue(c, CaracteristicaDTO.class));
         }
         return respuesta;
 
@@ -84,9 +85,9 @@ public class CaracteristicasService implements IService<CaracteristicasDTO> {
     public Map<String, Object> listarTodos() {
         respuesta.clear();
         List<Caracteristica> listaCaracteristicas = caracteristicaRepository.findAll();
-        List<CaracteristicasDTO> listaCaractDTO = new ArrayList<>();
+        List<CaracteristicaDTO> listaCaractDTO = new ArrayList<>();
         for(Caracteristica c : listaCaracteristicas){
-            CaracteristicasDTO CaractDTO =mapper.convertValue(c, CaracteristicasDTO.class);
+            CaracteristicaDTO CaractDTO =mapper.convertValue(c, CaracteristicaDTO.class);
             listaCaractDTO.add(CaractDTO);
         }
         respuesta.put("codigo", 200);

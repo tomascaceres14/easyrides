@@ -1,6 +1,7 @@
 package com.ctd.proyectointegrador.persistance.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -11,11 +12,11 @@ public class Ciudad {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
     private Integer id;
-    @Column(name = "nombre", nullable = false)
+    @Column(name = "nombre")
     private String nombre;
-    @Column(name = "provincia", nullable = false)
+    @Column(name = "provincia")
     private String provincia;
-    @Column(name = "pais", nullable = false)
+    @Column(name = "pais")
     private String pais;
 
     @OneToMany(mappedBy = "ciudad")
@@ -24,11 +25,11 @@ public class Ciudad {
     public Ciudad() {
     }
 
-    public Ciudad(String nombre, String provincia, String pais ) {
+    public Ciudad(String nombre, String provincia, String pais, List<Producto> productos ) {
         this.nombre = nombre;
         this.provincia = provincia;
         this.pais = pais;
-       // this.productos = productos;
+        this.productos = new ArrayList<>();
     }
 
     public Integer getId() {

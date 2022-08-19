@@ -15,7 +15,7 @@ public class Caracteristica {
     @Column(name = "descripcion", nullable = false)
     private String descripcion;
 
-    @ManyToMany(mappedBy = "caracteristicas")
+    @ManyToMany(mappedBy = "caracteristicas", fetch = FetchType.LAZY)
     private List<Producto> productos;
 
     public Caracteristica() {

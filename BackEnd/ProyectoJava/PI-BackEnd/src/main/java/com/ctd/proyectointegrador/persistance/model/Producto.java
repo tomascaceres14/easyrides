@@ -23,7 +23,7 @@ public class Producto {
     @OneToMany(mappedBy = "producto")
     private List<Imagen> imagenes;
 
-    @ManyToMany()
+    @ManyToMany(fetch = FetchType.LAZY)
     private List<Caracteristica> caracteristicas;
 
     @ManyToOne(cascade = CascadeType.ALL)
@@ -68,13 +68,40 @@ public class Producto {
         this.url = url;
     }
 
+    public List<Imagen> getImagenes() {
+        return imagenes;
+    }
+
+    public void setImagenes(List<Imagen> imagenes) {
+        this.imagenes = imagenes;
+    }
+
+    public List<Caracteristica> getCaracteristicas() {
+        return caracteristicas;
+    }
+
+    public void setCaracteristicas(List<Caracteristica> caracteristicas) {
+        this.caracteristicas = caracteristicas;
+    }
+
+    public Ciudad getCiudad() {
+        return ciudad;
+    }
+
+    public void setCiudad(Ciudad ciudad) {
+        this.ciudad = ciudad;
+    }
+
     @Override
     public String toString() {
-        return "Categoria{" +
+        return "Producto{" +
                 "id=" + id +
                 ", titulo='" + titulo + '\'' +
                 ", descripcion='" + descripcion + '\'' +
                 ", url='" + url + '\'' +
+                ", imagenes=" + imagenes +
+                ", caracteristicas=" + caracteristicas +
+                ", ciudad=" + ciudad +
                 '}';
     }
 }
