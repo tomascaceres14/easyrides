@@ -1,12 +1,9 @@
 package com.ctd.proyectointegrador.persistance.model;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.*;
-import java.util.List;
 
 @Entity
 @Table
-public class Productos {
+public class Imagen {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
@@ -20,16 +17,15 @@ public class Productos {
 
     @Column(name = "url", nullable = false)
     private String url;
-/*
-    @OneToMany(mappedBy = "Productos")
-    @JsonIgnore
-    private List<Caracteristicas> caracteristicas;
 
-*/
-    public Productos() {
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "producto_id")
+    private Integer producto;
+
+    public Imagen() {
     }
 
-    public Productos(String titulo, String descripcion, String url) {
+    public Imagen(String titulo, String descripcion, String url) {
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.url = url;

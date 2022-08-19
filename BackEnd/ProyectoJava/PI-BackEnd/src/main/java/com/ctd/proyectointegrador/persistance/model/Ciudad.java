@@ -1,14 +1,12 @@
 package com.ctd.proyectointegrador.persistance.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.*;
 import java.util.List;
 
 
 @Entity
 @Table
-public class Ciudades {
+public class Ciudad {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
@@ -20,15 +18,13 @@ public class Ciudades {
     @Column(name = "pais", nullable = false)
     private String pais;
 
-    //@OneToMany(mappedBy = "Ciudades")
-    //@JsonIgnore
-    //private List<Productos> productos;
+    @OneToMany(mappedBy = "ciudad")
+    private List<Producto> productos;
 
-
-    public Ciudades() {
+    public Ciudad() {
     }
 
-    public Ciudades(String nombre, String provincia, String pais ) {
+    public Ciudad(String nombre, String provincia, String pais ) {
         this.nombre = nombre;
         this.provincia = provincia;
         this.pais = pais;

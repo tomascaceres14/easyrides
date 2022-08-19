@@ -1,35 +1,43 @@
 package com.ctd.proyectointegrador.persistance.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.*;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
 
 @Entity
 @Table
-public class Caracteristicas {
+public class Producto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
     private Integer id;
+
     @Column(name = "titulo", nullable = false)
     private String titulo;
+
     @Column(name = "descripcion", nullable = false)
     private String descripcion;
 
-  //  @ManyToMany(mappedBy = "Caracteristicas", fetch = FetchType.LAZY)
-    //@JsonIgnore
-    //private Set<Productos> productos = new HashSet<>();
+    @Column(name = "url", nullable = false)
+    private String url;
 
+    @OneToMany(mappedBy = "producto")
+    private List<Imagen> imagenes;
 
-    public Caracteristicas() {
+    @ManyToMany()
+    private List<Caracteristica> caracteristicas;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "ciudad_id")
+    private Ciudad ciudad;
+
+    public Producto() {
     }
 
-    public Caracteristicas(String titulo, String descripcion, Set<Productos> productos) {
+    public Producto(String titulo, String descripcion, String url,Integer ciudad, List<Caracteristica> caracteristicas) {
         this.titulo = titulo;
         this.descripcion = descripcion;
-       // this.productos = productos;
+        this.url = url;
+        this.caracteristicas = caracteristicas;
     }
 
     public Integer getId() {
@@ -52,20 +60,21 @@ public class Caracteristicas {
         this.descripcion = descripcion;
     }
 
-    /*public Set<Productos> getProductos() {
-        return productos;
+    public String getUrl() {
+        return url;
     }
 
-    public void setProductos(Set<Productos> productos) {
-        this.productos = productos;
-    }*/
+    public void setUrl(String url) {
+        this.url = url;
+    }
 
     @Override
     public String toString() {
-        return "Caracteristica{" +
+        return "Categoria{" +
                 "id=" + id +
                 ", titulo='" + titulo + '\'' +
                 ", descripcion='" + descripcion + '\'' +
+                ", url='" + url + '\'' +
                 '}';
     }
 }

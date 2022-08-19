@@ -2,7 +2,7 @@ package com.ctd.proyectointegrador.service.impl;
 
 
 import com.ctd.proyectointegrador.persistance.dto.CiudadesDTO;
-import com.ctd.proyectointegrador.persistance.model.Ciudades;
+import com.ctd.proyectointegrador.persistance.model.Ciudad;
 import com.ctd.proyectointegrador.persistance.repository.CiudadesRepository;
 import com.ctd.proyectointegrador.service.IService;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.FetchType;
-import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -32,8 +31,8 @@ public class CiudadesService implements IService<CiudadesDTO> {
 
     public Map<String, Object> guardar(CiudadesDTO object) {
         respuesta.clear();
-        Ciudades ciudad = mapper.convertValue(object, Ciudades.class);
-        Ciudades nuevaCiudad= ciudadRespository.save(ciudad);
+        Ciudad ciudad = mapper.convertValue(object, Ciudad.class);
+        Ciudad nuevaCiudad= ciudadRespository.save(ciudad);
         respuesta.put("codigo",200);
         respuesta.put("ciudad", mapper.convertValue(nuevaCiudad, CiudadesDTO.class));
         return respuesta;
@@ -44,7 +43,7 @@ public class CiudadesService implements IService<CiudadesDTO> {
     public Map<String, Object> buscar(Integer id) {
         respuesta.clear();
         if(ciudadRespository.findById(id).isPresent()){
-            Ciudades ciudad = ciudadRespository.findById(id).get();
+            Ciudad ciudad = ciudadRespository.findById(id).get();
             respuesta.put("codigo", 200);
             respuesta.put("ciudad", mapper.convertValue(ciudad, CiudadesDTO.class));
         }else{
@@ -59,7 +58,7 @@ public class CiudadesService implements IService<CiudadesDTO> {
     public Map<String, Object> actualizar(Integer id, CiudadesDTO object) {
         respuesta.clear();
         if(ciudadRespository.findById(id).isPresent()){
-            Ciudades c = mapper.convertValue(respuesta.get("ciudad"), Ciudades.class);
+            Ciudad c = mapper.convertValue(respuesta.get("ciudad"), Ciudad.class);
             c.setNombre(object.getNombre() != null ? object.getNombre() : c.getNombre());
             c.setProvincia(object.getProvincia() != null ? object.getProvincia() : c.getProvincia());
             c.setPais(object.getPais() != null ? object.getPais() : c.getPais());
@@ -87,9 +86,9 @@ public class CiudadesService implements IService<CiudadesDTO> {
 
     public Map<String, Object> listarTodos() {
         respuesta.clear();
-        List<Ciudades> listaCiudades = ciudadRespository.findAll();
+        List<Ciudad> listaCiudades = ciudadRespository.findAll();
         List<CiudadesDTO> listaCiudadesDTO = new ArrayList<>();
-        for(Ciudades c : listaCiudades){
+        for(Ciudad c : listaCiudades){
             CiudadesDTO CiuDTO= mapper.convertValue(c, CiudadesDTO.class);
             listaCiudadesDTO.add(CiuDTO);
         }

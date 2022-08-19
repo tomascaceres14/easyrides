@@ -1,7 +1,7 @@
 package com.ctd.proyectointegrador.service.impl;
 
 import com.ctd.proyectointegrador.persistance.dto.CaracteristicasDTO;
-import com.ctd.proyectointegrador.persistance.model.Caracteristicas;
+import com.ctd.proyectointegrador.persistance.model.Caracteristica;
 import com.ctd.proyectointegrador.persistance.repository.CaracteristicasRepository;
 import com.ctd.proyectointegrador.service.IService;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -27,8 +27,8 @@ public class CaracteristicasService implements IService<CaracteristicasDTO> {
     @Override
     public Map<String, Object> guardar(CaracteristicasDTO object) {
         respuesta.clear();
-        Caracteristicas caracteristica = mapper.convertValue(object, Caracteristicas.class);
-        Caracteristicas nuevaCaracteristica= caracteristicaRepository.save(caracteristica);
+        Caracteristica caracteristica = mapper.convertValue(object, Caracteristica.class);
+        Caracteristica nuevaCaracteristica= caracteristicaRepository.save(caracteristica);
         respuesta.put("codigo",200);
         respuesta.put("caracteristica", mapper.convertValue(nuevaCaracteristica, CaracteristicasDTO.class));
         return respuesta;
@@ -38,7 +38,7 @@ public class CaracteristicasService implements IService<CaracteristicasDTO> {
     public Map<String, Object> buscar(Integer id) {
         respuesta.clear();
         if(caracteristicaRepository.findById(id).isPresent()){
-            Caracteristicas caracteristica = caracteristicaRepository.findById(id).get();
+            Caracteristica caracteristica = caracteristicaRepository.findById(id).get();
             respuesta.put("codigo", 200);
             respuesta.put("caracteristica", mapper.convertValue(caracteristica, CaracteristicasDTO.class));
         }else{
@@ -53,7 +53,7 @@ public class CaracteristicasService implements IService<CaracteristicasDTO> {
     public Map<String, Object> actualizar(Integer id, CaracteristicasDTO object) {
         respuesta.clear();
         if(caracteristicaRepository.findById(id).isPresent()){
-            Caracteristicas c = mapper.convertValue(respuesta.get("caracteristica"), Caracteristicas.class);
+            Caracteristica c = mapper.convertValue(respuesta.get("caracteristica"), Caracteristica.class);
             c.setTitulo(object.getTitulo() != null ? object.getTitulo() : c.getTitulo());
             c.setDescripcion(object.getDescripcion() != null ? object.getDescripcion() : c.getDescripcion());
             caracteristicaRepository.save(c);
@@ -83,9 +83,9 @@ public class CaracteristicasService implements IService<CaracteristicasDTO> {
     @Override
     public Map<String, Object> listarTodos() {
         respuesta.clear();
-        List<Caracteristicas> listaCaracteristicas = caracteristicaRepository.findAll();
+        List<Caracteristica> listaCaracteristicas = caracteristicaRepository.findAll();
         List<CaracteristicasDTO> listaCaractDTO = new ArrayList<>();
-        for(Caracteristicas c : listaCaracteristicas){
+        for(Caracteristica c : listaCaracteristicas){
             CaracteristicasDTO CaractDTO =mapper.convertValue(c, CaracteristicasDTO.class);
             listaCaractDTO.add(CaractDTO);
         }

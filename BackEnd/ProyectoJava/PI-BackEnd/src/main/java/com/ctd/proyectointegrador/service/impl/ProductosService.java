@@ -1,7 +1,7 @@
 package com.ctd.proyectointegrador.service.impl;
 
 import com.ctd.proyectointegrador.persistance.dto.ProductosDTO;
-import com.ctd.proyectointegrador.persistance.model.Productos;
+import com.ctd.proyectointegrador.persistance.model.Producto;
 import com.ctd.proyectointegrador.persistance.repository.ProductosRepository;
 import com.ctd.proyectointegrador.service.IService;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -25,8 +25,8 @@ public class ProductosService implements IService<ProductosDTO> {
 
     public Map<String, Object> guardar(ProductosDTO p){
         respuesta.clear();
-        Productos producto = mapper.convertValue(p, Productos.class);
-        Productos nuevoProd = productosRepository.save(producto);
+        Producto producto = mapper.convertValue(p, Producto.class);
+        Producto nuevoProd = productosRepository.save(producto);
         respuesta.put("codigo", 200);
         respuesta.put("producto", mapper.convertValue(nuevoProd, ProductosDTO.class));
         return respuesta;
@@ -36,7 +36,7 @@ public class ProductosService implements IService<ProductosDTO> {
 
         respuesta.clear();
         if(productosRepository.findById(id).isPresent()){
-            Productos producto = productosRepository.findById(id).get();
+            Producto producto = productosRepository.findById(id).get();
             respuesta.put("codigo", 200);
             respuesta.put("producto", mapper.convertValue(producto, ProductosDTO.class));
         } else {
@@ -53,7 +53,7 @@ public class ProductosService implements IService<ProductosDTO> {
         respuesta.clear();
         respuesta = buscar(id);
         if(productosRepository.findById(id).isPresent()) {
-            Productos p = mapper.convertValue(respuesta.get("producto"), Productos.class);
+            Producto p = mapper.convertValue(respuesta.get("producto"), Producto.class);
             p.setTitulo(object.getTitulo() != null ?  object.getTitulo() : p.getTitulo());
             p.setDescripcion(object.getDescripcion() != null ?  object.getDescripcion() : p.getDescripcion());
             p.setUrl(object.getUrl() != null ?  object.getUrl() : p.getUrl());
@@ -81,10 +81,10 @@ public class ProductosService implements IService<ProductosDTO> {
     public Map<String, Object> listarTodos(){
 
         respuesta.clear();
-        List<Productos> listaProd = productosRepository.findAll();
+        List<Producto> listaProd = productosRepository.findAll();
         List<ProductosDTO> listaDTO = new ArrayList<>();
 
-        for (Productos p: listaProd){
+        for (Producto p: listaProd){
             ProductosDTO prodDTO = mapper.convertValue(p, ProductosDTO.class);
             listaDTO.add(prodDTO);
         }
