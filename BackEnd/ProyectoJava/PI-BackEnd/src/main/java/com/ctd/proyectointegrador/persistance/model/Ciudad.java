@@ -1,18 +1,35 @@
-package com.ctd.proyectointegrador.persistance.dto;
+package com.ctd.proyectointegrador.persistance.model;
 
-public class CiudadesDTO {
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+
+
+@Entity
+@Table
+public class Ciudad {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id")
     private Integer id;
+    @Column(name = "nombre")
     private String nombre;
+    @Column(name = "provincia")
     private String provincia;
+    @Column(name = "pais")
     private String pais;
 
-    public CiudadesDTO(String nombre, String provincia, String pais) {
+    @OneToMany(mappedBy = "ciudad")
+    private List<Producto> productos;
+
+    public Ciudad() {
+    }
+
+    public Ciudad(String nombre, String provincia, String pais, List<Producto> productos ) {
         this.nombre = nombre;
         this.provincia = provincia;
         this.pais = pais;
-    }
-
-    public CiudadesDTO() {
+        this.productos = new ArrayList<>();
     }
 
     public Integer getId() {
@@ -42,9 +59,18 @@ public class CiudadesDTO {
     public void setPais(String pais) {
         this.pais = pais;
     }
+/*
+    public List<Productos> getProductos() {
+        return productos;
+    }
+
+    public void setProductos(List<Productos> productos) {
+       this.productos = productos;
+    }
+*/
     @Override
     public String toString() {
-        return "CiudadDTO{" +
+        return "Ciudad{" +
                 "id=" + id +
                 ", nombre='" + nombre + '\'' +
                 ", provincia='" + provincia + '\'' +

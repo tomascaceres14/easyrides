@@ -1,10 +1,13 @@
 package com.ctd.proyectointegrador.persistance.dto;
 
+import com.ctd.proyectointegrador.persistance.model.Caracteristica;
+import com.ctd.proyectointegrador.persistance.model.Imagen;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -12,7 +15,7 @@ import javax.validation.constraints.NotNull;
 @Setter
 @ToString
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class CategoriaDTO {
+public class ProductoDTO {
 
     @NotEmpty(message = "no debe estar vacio")
     @NotNull(message = "no debe ser nulo")
@@ -29,4 +32,16 @@ public class CategoriaDTO {
     @NotEmpty(message = "no debe estar vacio")
     @NotNull(message = "no debe ser nulo")
     private String url;
+
+    @NotEmpty(message = "no debe estar vacio")
+    @NotNull(message = "no debe ser nulo")
+    private List<Imagen> imagenes;
+
+    @NotEmpty(message = "no debe estar vacio")
+    @NotNull(message = "no debe ser nulo")
+    private List<Caracteristica> caracteristicas;
+
+    @NotEmpty(message = "no debe estar vacio")
+    @NotNull(message = "no debe ser nulo")
+    private CiudadDTO ciudad;
 }
