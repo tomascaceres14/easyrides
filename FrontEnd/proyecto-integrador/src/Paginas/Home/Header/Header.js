@@ -16,7 +16,7 @@ const Header = () => {
   const { auth } = useContext(AuthContext);
 
   const mostrarNavBar = () => {
-    navRef.style.display = "";
+    // navRef.style.display = "";
     navRef.current.classList.toggle("responsive-header");
   };
   return (

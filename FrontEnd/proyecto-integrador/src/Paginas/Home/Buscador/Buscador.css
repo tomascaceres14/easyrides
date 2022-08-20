@@ -1,57 +1,69 @@
-.buscador{
-    padding: 30px;
-    background-color: #F0572D;
+.buscador {
+    padding: 50px;
+    background-color: #f1663f;
     margin-bottom: 3rem;
 }
-.buscadores{
+
+.buscadores {
+    border: 1rem solid transparent;
+    border-radius: .7rem;
+    box-shadow: 0 1px 4px rgb(0 0 0 / 25%);
+    background-color: white;
+    margin-top: .5rem;
+    margin-left: 15rem;
+    margin-right: 15rem;
+    padding: .5rem;
     display: flex;
-    align-items: center;
-    gap: 1rem;
+    /* position: absolute; */
+    z-index: 999;
 }
-.buscador-fecha{
-    margin-top: 1rem;
+
+.buscador-fecha {
     border-radius: 5px;
     border-style: none;
     border: none;
     cursor: pointer;
-    padding: 0.7rem 2.5rem;
     border-radius: 0.5rem;
-    margin-left: 2rem;
-    margin-right: 2rem;
 }
+
 /* .buscador-calendario{
     margin-top: 50px;
 } */
-.buscador > h1 {
+.buscador>h1 {
     color: white;
     font-size: 36px;
     text-align: center;
-    
+
 }
-.buscador-submit{
-    padding: 0.7rem 3.5rem;
-    margin-top: 1rem;
-    border-radius: 0.5rem;
+
+.buscador-submit {
+    padding: 1rem 2rem !important;
+    margin-left: 2rem;
+    border-radius: .7rem;
+    border: none;
+    background-color: #F0572D;
     border-style: none;
+    color: white;
     cursor: pointer;
 }
+
 .react-daterange-picker__wrapper {
     border: none;
 }
-.h1{
+
+.h1 {
     background-color: #FFFFFF;
 }
+
 @media only screen and (max-width: 1024px) {
-    .buscadores{
+    .buscadores {
         display: flex;
         flex-direction: column;
     }
 
-    .buscador-submit {
+    /* .buscador-submit {
         margin-top: 1rem;
-        padding: 0.7rem 8.2rem;
         margin-left: 1rem;
-    }
-
-
+        padding: 0.7rem 1rem;
+    } */
 }

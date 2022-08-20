@@ -3,9 +3,12 @@ import React from "react";
 import Select from "react-select";
 import ciudades from "./ciudades.json";
 import "./SearchBar.css";
+import useFetch from "../../../Hooks/useFetch";
 
 export const SearchBar = () => {
-
+  const urlCiudades = "http://localhost:8080/ciudades";
+  const { data } = useFetch(urlCiudades);
+  console.log(data);
   const handleSelectChange = (event) => {
     console.log(event);
   };
@@ -15,12 +18,12 @@ export const SearchBar = () => {
       <Select
         className="searchBar-individual"
         defaultValue={ciudades[0]}
-        options={ciudades.map((ciudad) => ({
+        options={data&&data.productos.map((ciudad) => ({
           label: ciudad.nombre,
           value: ciudad.id,
         }))}
         onChange={handleSelectChange}
-        styles={{position:"relative", zIndex: 999 }}
+        
 
       />
     </div>
