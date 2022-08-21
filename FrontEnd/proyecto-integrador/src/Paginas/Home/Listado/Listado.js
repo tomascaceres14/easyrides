@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 import useFetch from "../../../Hooks/useFetch";
 
 export default function Listado() {
-  // const urlProductos = "http://localhost:8080/productos";
-  // const { data } = useFetch(urlProductos);
+  const urlProductos = "http://localhost:8080/productos";
+  const { data } = useFetch(urlProductos);
   return (
     <div>
       <p className="cardsProductos-titulo">Recomendaciones</p>

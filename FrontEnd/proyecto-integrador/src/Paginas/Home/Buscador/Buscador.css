@@ -14,7 +14,7 @@
     margin-right: 15rem;
     padding: .5rem;
     display: flex;
-    /* position: absolute; */
+    position: absolute;
     z-index: 999;
 }
 
