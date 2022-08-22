@@ -1,21 +1,23 @@
 import React from "react";
 import "./Producto.css";
 import { FaShare } from "react-icons/fa";
+import useFetch from "../../../../Hooks/useFetch";
 import { MdOutlineArrowBackIos } from "react-icons/md";
 import { AiOutlineHeart } from "react-icons/ai";
 
-const Producto = (data) => {
+const Producto = () => {
+
   return (
     <div>
       <header>
         <div className="header-producto">
           <div>
-            <h4>CATEGORIA</h4>
+            <h4></h4>
             <h2>Titulo del producto</h2>
           </div>
           <button className="boton-volver">
             <MdOutlineArrowBackIos size={"30"} />
-            <p>Volver al Inicio...</p>
+            <strong>Volver al Inicio...</strong>
           </button>
         </div>
         <div className="ubicacion">
