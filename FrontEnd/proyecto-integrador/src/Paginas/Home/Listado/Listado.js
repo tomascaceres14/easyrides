@@ -1,5 +1,4 @@
 import "./Listado.css";
-import data from "./data.json";
 import React from "react";
 import { Link } from "react-router-dom";
 import useFetch from "../../../Hooks/useFetch";
@@ -11,7 +10,7 @@ export default function Listado() {
     <div>
       <p className="cardsProductos-titulo">Recomendaciones</p>
       <div className="cardsProductos">
-        {data&&data.categorias.map((prod) => (
+        {data&&data.productos.map((prod) => (
           <div className="cardsProductos-unidad">
             <img
               key={prod.id}

@@ -1,6 +1,7 @@
 import React from "react";
 import "./Producto.css";
 import { FaShare } from "react-icons/fa";
+import { MdOutlineArrowBackIos } from "react-icons/md";
 import { AiOutlineHeart } from "react-icons/ai";
 
 const Producto = (data) => {
@@ -8,8 +9,14 @@ const Producto = (data) => {
     <div>
       <header>
         <div className="header-producto">
-          <h4>CATEGORIA</h4>
-          <h2>Titulo del producto</h2>
+          <div>
+            <h4>CATEGORIA</h4>
+            <h2>Titulo del producto</h2>
+          </div>
+          <button className="boton-volver">
+            <MdOutlineArrowBackIos size={"30"} />
+            <p>Volver al Inicio...</p>
+          </button>
         </div>
         <div className="ubicacion">
           <div>
@@ -23,8 +30,12 @@ const Producto = (data) => {
       </header>
       <section>
         <div className="icons-prod">
-          <AiOutlineHeart size={"20"} />
-          <FaShare size={"20"}/>
+          <button>
+            <AiOutlineHeart size={"20"} />
+          </button>
+          <button>
+            <FaShare size={"20"} />
+          </button>
         </div>
 
         <div className="galeriaImg">
@@ -69,6 +80,20 @@ const Producto = (data) => {
             brilliant refinement. SE spec is best value, but keen drivers will
             prefer the Sport, with its stiffer suspension and sharper steering.
           </p>
+        </article>
+        <article className="cuerpo">
+          <h2>Que ofrece este producto?</h2>
+          <ul className="caracteristicas">
+            <li>cuatro puertas</li>
+            <li>cuatro puertas</li>
+            <li>cuatro puertas</li>
+            <li>cuatro puertas</li>
+            <li>cuatro puertas</li>
+            <li>cuatro puertas</li>
+            <li>cuatro puertas</li>
+            <li>cuatro puertas</li>
+            <li>cuatro puertas</li>
+          </ul>
         </article>
       </section>
     </div>
