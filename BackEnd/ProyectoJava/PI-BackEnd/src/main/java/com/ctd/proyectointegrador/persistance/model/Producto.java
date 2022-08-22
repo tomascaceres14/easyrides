@@ -25,8 +25,6 @@ public class Producto {
     @Column(name = "descripcion", nullable = false)
     private String descripcion;
 
-    @Column(name = "url", nullable = false)
-    private String url;
 
     @OneToMany(mappedBy = "producto")
     @JsonIgnore

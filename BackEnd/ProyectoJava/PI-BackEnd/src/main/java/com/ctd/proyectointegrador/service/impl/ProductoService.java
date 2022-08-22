@@ -21,7 +21,7 @@ import java.util.Map;
 public class ProductoService implements IService<ProductoDTO> {
     @Autowired
     ProductoRepository productoRepository;
-    
+
     @Autowired
     CiudadRepository ciudadRepository;
 
@@ -63,7 +63,6 @@ public class ProductoService implements IService<ProductoDTO> {
         }
         productoEnBD.setTitulo(actualizar.getTitulo());
         productoEnBD.setDescripcion(actualizar.getDescripcion());
-        productoEnBD.setUrl(actualizar.getUrl());
         productoEnBD.setImagenes(actualizar.getImagenes());
 /*        productoEnBD.setCaracteristicas(actualizar.getCaracteristicas());*/
         productoEnBD.setCiudad(ciudadRepository.findById(actualizar.getCiudad().getId()).get());

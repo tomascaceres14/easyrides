@@ -29,10 +29,6 @@ public class ProductoDTO {
 
     @NotEmpty(message = "no debe estar vacio")
     @NotNull(message = "no debe ser nulo")
-    private String url;
-
-    @NotEmpty(message = "no debe estar vacio")
-    @NotNull(message = "no debe ser nulo")
     private List<Imagen> imagenes;
 
     @NotEmpty(message = "no debe estar vacio")
