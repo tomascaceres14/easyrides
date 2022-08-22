@@ -3,8 +3,8 @@ package com.ctd.proyectointegrador.service.impl;
 import com.ctd.proyectointegrador.persistance.dto.ProductoDTO;
 import com.ctd.proyectointegrador.persistance.model.Ciudad;
 import com.ctd.proyectointegrador.persistance.model.Producto;
-import com.ctd.proyectointegrador.persistance.repository.CiudadesRepository;
-import com.ctd.proyectointegrador.persistance.repository.ProductosRepository;
+import com.ctd.proyectointegrador.persistance.repository.CiudadRepository;
+import com.ctd.proyectointegrador.persistance.repository.ProductoRepository;
 import com.ctd.proyectointegrador.service.IService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,9 +18,9 @@ import java.util.Map;
 @Service
 public class ProductoService implements IService<ProductoDTO> {
     @Autowired
-    ProductosRepository productosRepository;
+    ProductoRepository productoRepository;
     @Autowired
-    CiudadesRepository ciudadRepository;
+    CiudadRepository ciudadRepository;
     @Autowired
     ObjectMapper mapper;
 
@@ -37,18 +37,18 @@ public class ProductoService implements IService<ProductoDTO> {
         Ciudad ciudad = producto.getCiudad();
         Ciudad ciudadBD = ciudadRepository.findById(ciudad.getId()).get();
         producto.setCiudad(ciudadBD);
-        Producto prodRespuesta = productosRepository.save(producto);
+        Producto prodRespuesta = productoRepository.save(producto);
         return buildResponse(mapper.convertValue(prodRespuesta, ProductoDTO.class), "paciente creado", 201);
     }
 
     public Map<String, Object> buscar(Integer id){
-        Producto prodRespuesta = productosRepository.findById(id).get();
+        Producto prodRespuesta = productoRepository.findById(id).get();
         return buildResponse(mapper.convertValue(prodRespuesta, ProductoDTO.class), "paciente encontrado", 201);
     }
 
     public Map<String, Object> actualizar(Integer id, ProductoDTO object){
         Producto actualizar = mapper.convertValue(object, Producto.class);
-        Producto productoEnBD = productosRepository.findById(id).orElse(null);
+        Producto productoEnBD = productoRepository.findById(id).orElse(null);
         if(productoEnBD == null){
             //error
             return buildResponse(new ProductoDTO(),"No existe id "+ id,404);
@@ -59,14 +59,14 @@ public class ProductoService implements IService<ProductoDTO> {
         productoEnBD.setImagenes(actualizar.getImagenes());
         productoEnBD.setCaracteristicas(actualizar.getCaracteristicas());
         productoEnBD.setCiudad(ciudadRepository.findById(actualizar.getCiudad().getId()).get());
-        Producto prodRespuesta = productosRepository.save(productoEnBD);
+        Producto prodRespuesta = productoRepository.save(productoEnBD);
 
         return buildResponse(mapper.convertValue(prodRespuesta, ProductoDTO.class),"cambio Exitoso",201);
     }
 
     public Map<String, Object> eliminar(Integer id) {
-        if (productosRepository.findById(id).isPresent()) {
-            productosRepository.deleteById(id);
+        if (productoRepository.findById(id).isPresent()) {
+            productoRepository.deleteById(id);
             return buildResponse(new ProductoDTO(), "Producto id " + id + " eliminado", 200);
         } else {
             return buildResponse(new ProductoDTO(), "Producto id " + id + " no existe", 404);
@@ -75,7 +75,7 @@ public class ProductoService implements IService<ProductoDTO> {
 
     public Map<String, Object> listarTodos(){
 
-        List<Producto> listaProd = productosRepository.findAll();
+        List<Producto> listaProd = productoRepository.findAll();
         List<ProductoDTO> listaDTO = new ArrayList<>();
 
         for (Producto p: listaProd){
