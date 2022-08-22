@@ -49,7 +49,7 @@ public class ProductoService implements IService<ProductoDTO> {
 
     public Map<String, Object> buscar(Integer id){
         Producto prodRespuesta = productosRepository.findById(id).get();
-        return buildResponse(mapper.convertValue(prodRespuesta, ProductoDTO.class), "paciente encontrado", 201);
+        return buildResponse(mapper.convertValue(prodRespuesta, ProductoDTO.class), "producto encontrado", 201);
     }
 
     public Map<String, Object> actualizar(Integer id, ProductoDTO object){

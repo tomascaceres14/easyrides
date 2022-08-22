@@ -8,10 +8,10 @@ INSERT INTO ciudad VALUES (null, 'Cordoba', 'Argentina', 'Cordoba');
 INSERT INTO ciudad VALUES (null, 'Bogota', 'Colombia', 'Cundinamarca');
 INSERT INTO ciudad VALUES (null, 'Medellin', 'Colombia', 'Antioquia ');
 
-INSERT INTO producto VALUES (null, 'dodge charger para pistear', 'Dodge Charger', 'urldeprueba.com', 1);
-INSERT INTO producto VALUES (null, 'carisimo pero anda re piola', 'Lamborghini Veneno', 'urldeprueba.com', 2);
-INSERT INTO producto VALUES (null, 'auto marca ford modelo fiesta', 'Ford Fiesta', 'urldeprueba.com', 3);
-INSERT INTO producto VALUES (null, 'chiquito pero cojudo', 'Fiat 600', 'urldeprueba.com', 4);
+INSERT INTO producto VALUES (null, 'dodge charger para pistear', 'Dodge Charger', 'urldeprueba.com', 1, 1);
+INSERT INTO producto VALUES (null, 'carisimo pero anda re piola', 'Lamborghini Veneno', 'urldeprueba.com', 2, 2);
+INSERT INTO producto VALUES (null, 'auto marca ford modelo fiesta', 'Ford Fiesta', 'urldeprueba.com', 3, 3);
+INSERT INTO producto VALUES (null, 'chiquito pero cojudo', 'Fiat 600', 'urldeprueba.com', 4, 4);
 
 INSERT INTO caracteristica VALUES (null, '', '');
 INSERT INTO caracteristica VALUES (null, '', '');
