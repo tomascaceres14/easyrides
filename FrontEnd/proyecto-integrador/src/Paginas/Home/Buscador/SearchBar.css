@@ -1,11 +1,9 @@
 /* falta arreglar esto para mobile */
 .searchBar{
-    margin-top: 1rem;
-    margin-left: 17rem;
+    margin-top: .5rem;
     border-radius: 0.5rem;
     width: 300px;
     border: none;
-
 }
 
 @media only screen and (max-width: 1024px) {

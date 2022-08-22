@@ -5,25 +5,25 @@ import { Link } from "react-router-dom";
 import useFetch from "../../../Hooks/useFetch";
 
 export default function Listado() {
-  // const urlCategorias = "http://localhost:8080/categorias";
-  // const { data } = useFetch(urlCategorias);
+  const urlProductos = "http://localhost:8080/productos";
+  const { data } = useFetch(urlProductos);
   return (
     <div>
       <p className="cardsProductos-titulo">Recomendaciones</p>
       <div className="cardsProductos">
-        {data.map((categoria) => (
+        {data&&data.categorias.map((prod) => (
           <div className="cardsProductos-unidad">
             <img
-              key={categoria.id}
-              src={categoria.categoria.imagen}
+              key={prod.id}
+              src={prod.url}
               alt=""
               className="cardsProductos-unidad-img"
             />
             <h2 className="cardsProductos-unidad-nombre">
-              {categoria.categoria.nombre}
+              {prod.titulo}
             </h2>
             <p className="cardsProductos-unidad-descripcion">
-              {categoria.categoria.descripcion}
+              {prod.descripcion}
             </p>
             <Link to="/producto">
               <button className="cardsProductos-unidad-boton">Ver Más</button>

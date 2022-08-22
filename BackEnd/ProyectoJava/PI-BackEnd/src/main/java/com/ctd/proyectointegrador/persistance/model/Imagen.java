@@ -3,7 +3,7 @@ import javax.persistence.*;
 
 @Entity
 @Table
-public class Imagenes {
+public class Imagen {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
@@ -18,10 +18,14 @@ public class Imagenes {
     @Column(name = "url", nullable = false)
     private String url;
 
-    public Imagenes() {
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "producto_id")
+    private Producto producto;
+
+    public Imagen() {
     }
 
-    public Imagenes(String titulo, String descripcion, String url) {
+    public Imagen(String titulo, String descripcion, String url) {
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.url = url;

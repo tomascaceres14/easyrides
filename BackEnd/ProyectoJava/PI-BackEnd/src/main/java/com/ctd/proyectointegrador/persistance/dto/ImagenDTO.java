@@ -12,7 +12,7 @@ import javax.validation.constraints.NotNull;
 @Setter
 @ToString
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class CategoriaDTO {
+public class ImagenDTO {
 
     @NotEmpty(message = "no debe estar vacio")
     @NotNull(message = "no debe ser nulo")
@@ -26,7 +26,4 @@ public class CategoriaDTO {
     @NotNull(message = "no debe ser nulo")
     private String descripcion;
 
-    @NotEmpty(message = "no debe estar vacio")
-    @NotNull(message = "no debe ser nulo")
-    private String url;
 }
