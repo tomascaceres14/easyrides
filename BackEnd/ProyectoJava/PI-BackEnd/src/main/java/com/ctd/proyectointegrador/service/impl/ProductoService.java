@@ -24,15 +24,15 @@ public class ProductoService implements IService<ProductoDTO> {
     @Autowired
     ObjectMapper mapper;
 
-    private Map<String, Object> buildResponse(Object dto, String message, Integer code){
+    private Map<String, Object> buildResponse(Object dto, String message, Integer code) {
         Map<String, Object> response = new HashMap<>();
-        response.put("productos",dto);
-        response.put("message",message);
-        response.put("codigo",code);
+        response.put("productos", dto);
+        response.put("message", message);
+        response.put("codigo", code);
         return response;
     }
 
-    public Map<String, Object> guardar(ProductoDTO p){
+    public Map<String, Object> guardar(ProductoDTO p) {
         Producto producto = mapper.convertValue(p, Producto.class);
         Ciudad ciudad = producto.getCiudad();
         Ciudad ciudadBD = ciudadRepository.findById(ciudad.getId()).get();
@@ -41,17 +41,17 @@ public class ProductoService implements IService<ProductoDTO> {
         return buildResponse(mapper.convertValue(prodRespuesta, ProductoDTO.class), "paciente creado", 201);
     }
 
-    public Map<String, Object> buscar(Integer id){
+    public Map<String, Object> buscar(Integer id) {
         Producto prodRespuesta = productoRepository.findById(id).get();
         return buildResponse(mapper.convertValue(prodRespuesta, ProductoDTO.class), "paciente encontrado", 201);
     }
 
-    public Map<String, Object> actualizar(Integer id, ProductoDTO object){
+    public Map<String, Object> actualizar(Integer id, ProductoDTO object) {
         Producto actualizar = mapper.convertValue(object, Producto.class);
         Producto productoEnBD = productoRepository.findById(id).orElse(null);
-        if(productoEnBD == null){
+        if (productoEnBD == null) {
             //error
-            return buildResponse(new ProductoDTO(),"No existe id "+ id,404);
+            return buildResponse(new ProductoDTO(), "No existe id " + id, 404);
         }
         productoEnBD.setTitulo(actualizar.getTitulo());
         productoEnBD.setDescripcion(actualizar.getDescripcion());
@@ -61,7 +61,7 @@ public class ProductoService implements IService<ProductoDTO> {
         productoEnBD.setCiudad(ciudadRepository.findById(actualizar.getCiudad().getId()).get());
         Producto prodRespuesta = productoRepository.save(productoEnBD);
 
-        return buildResponse(mapper.convertValue(prodRespuesta, ProductoDTO.class),"cambio Exitoso",201);
+        return buildResponse(mapper.convertValue(prodRespuesta, ProductoDTO.class), "cambio Exitoso", 201);
     }
 
     public Map<String, Object> eliminar(Integer id) {
@@ -73,12 +73,12 @@ public class ProductoService implements IService<ProductoDTO> {
         }
     }
 
-    public Map<String, Object> listarTodos(){
+    public Map<String, Object> listarTodos() {
 
         List<Producto> listaProd = productoRepository.findAll();
         List<ProductoDTO> listaDTO = new ArrayList<>();
 
-        for (Producto p: listaProd){
+        for (Producto p : listaProd) {
             ProductoDTO prodDTO = mapper.convertValue(p, ProductoDTO.class);
             listaDTO.add(prodDTO);
         }

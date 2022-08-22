@@ -13,7 +13,7 @@ INSERT INTO producto VALUES (null, 'carisimo pero anda re piola', 'Lamborghini V
 INSERT INTO producto VALUES (null, 'auto marca ford modelo fiesta', 'Ford Fiesta', 'urldeprueba.com', 3);
 INSERT INTO producto VALUES (null, 'chiquito pero cojudo', 'Fiat 600', 'urldeprueba.com', 4);
 
-INSERT INTO caracteristica VALUES (null, '', '');
-INSERT INTO caracteristica VALUES (null, '', '');
-INSERT INTO caracteristica VALUES (null, '', '');
-INSERT INTO caracteristica VALUES (null, '', '');
+INSERT INTO caracteristica VALUES (null, 'Transmision Automatica', 'Cambian automáticamente las marchas del vehículo a medida que éste se mueve, lo que libera al conductor de tener que cambiar de marcha manualmente');
+INSERT INTO caracteristica VALUES (null, 'Sistema de navegacion', 'Permiten a los conductores obtener indicaciones para llegar a un destino,');
+INSERT INTO caracteristica VALUES (null, 'Control crucero', 'Los ajustes del control crucero permiten a los conductores fijar su velocidad, y el sistema se encargará de controlar el acelerador');
+INSERT INTO caracteristica VALUES (null, 'Detección de puntos ciegos', 'La detección del punto ciego alerta a los conductores sobre los autos, camiones, motos y otros objetos que se encuentran fuera de sus líneas de visibilidad mediante el uso de sensores y cámaras.');
