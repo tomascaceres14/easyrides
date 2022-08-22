@@ -2,7 +2,7 @@ package com.ctd.proyectointegrador.service.impl;
 
 import com.ctd.proyectointegrador.persistance.dto.ImagenDTO;
 import com.ctd.proyectointegrador.persistance.model.Imagen;
-import com.ctd.proyectointegrador.persistance.repository.ImagenesRepository;
+import com.ctd.proyectointegrador.persistance.repository.ImagenRepository;
 import com.ctd.proyectointegrador.service.IService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +17,7 @@ import java.util.Map;
 public class ImagenService implements IService<ImagenDTO> {
 
     @Autowired
-    ImagenesRepository imagenesRepository;
+    ImagenRepository imagenRepository;
 
     @Autowired
     ObjectMapper mapper;
@@ -29,7 +29,7 @@ public class ImagenService implements IService<ImagenDTO> {
     public Map<String, Object> guardar(ImagenDTO object) {
         respuesta.clear();
         Imagen imagenes = mapper.convertValue(object, Imagen.class);
-        Imagen nuevaImagenes= imagenesRepository.save(imagenes);
+        Imagen nuevaImagenes= imagenRepository.save(imagenes);
         respuesta.put("codigo",200);
         respuesta.put("imagenes", mapper.convertValue(nuevaImagenes, ImagenDTO.class));
         return respuesta;
@@ -38,8 +38,8 @@ public class ImagenService implements IService<ImagenDTO> {
     @Override
     public Map<String, Object> buscar(Integer id) {
         respuesta.clear();
-        if(imagenesRepository.findById(id).isPresent()){
-            Imagen imagenes = imagenesRepository.findById(id).get();
+        if(imagenRepository.findById(id).isPresent()){
+            Imagen imagenes = imagenRepository.findById(id).get();
             respuesta.put("codigo", 200);
             respuesta.put("imagen", mapper.convertValue(imagenes, ImagenDTO.class));
         }else{
@@ -53,11 +53,11 @@ public class ImagenService implements IService<ImagenDTO> {
     @Override
     public Map<String, Object> actualizar(Integer id, ImagenDTO object) {
         respuesta.clear();
-        if(imagenesRepository.findById(id).isPresent()){
+        if(imagenRepository.findById(id).isPresent()){
             Imagen i = mapper.convertValue(respuesta.get("imagen"), Imagen.class);
             i.setTitulo(object.getTitulo() != null ? object.getTitulo() : i.getTitulo());
             i.setDescripcion(object.getDescripcion() != null ? object.getDescripcion() : i.getDescripcion());
-            imagenesRepository.save(i);
+            imagenRepository.save(i);
             respuesta.replace("imagen", mapper.convertValue(i, ImagenDTO.class));
         }
         return respuesta;
@@ -68,8 +68,8 @@ public class ImagenService implements IService<ImagenDTO> {
     @Override
     public Map<String, Object> eliminar(Integer id) {
         respuesta.clear();
-        if(imagenesRepository.findById(id).isPresent()){
-            imagenesRepository.deleteById(id);
+        if(imagenRepository.findById(id).isPresent()){
+            imagenRepository.deleteById(id);
             respuesta.put("codigo", 200);
             respuesta.put("mensaje", "Imagen id: "+id + " eliminada");
         }else {
@@ -84,7 +84,7 @@ public class ImagenService implements IService<ImagenDTO> {
     @Override
     public Map<String, Object> listarTodos() {
         respuesta.clear();
-        List<Imagen> listaImagenes = imagenesRepository.findAll();
+        List<Imagen> listaImagenes = imagenRepository.findAll();
         List<ImagenDTO> listaImageDTO = new ArrayList<>();
         for(Imagen i : listaImagenes){
             ImagenDTO imageDTO =mapper.convertValue(i, ImagenDTO.class);

@@ -15,16 +15,12 @@ public class Caracteristica {
     @Column(name = "descripcion", nullable = false)
     private String descripcion;
 
-    @ManyToMany(mappedBy = "caracteristicas", fetch = FetchType.LAZY)
-    private List<Producto> productos;
-
     public Caracteristica() {
     }
 
-    public Caracteristica(String titulo, String descripcion, List<Producto> productos) {
+    public Caracteristica(String titulo, String descripcion) {
         this.titulo = titulo;
         this.descripcion = descripcion;
-        this.productos = productos;
     }
 
     public Integer getId() {

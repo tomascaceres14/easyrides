@@ -2,7 +2,7 @@ package com.ctd.proyectointegrador.service.impl;
 
 import com.ctd.proyectointegrador.persistance.dto.CaracteristicaDTO;
 import com.ctd.proyectointegrador.persistance.model.Caracteristica;
-import com.ctd.proyectointegrador.persistance.repository.CaracteristicasRepository;
+import com.ctd.proyectointegrador.persistance.repository.CaracteristicaRepository;
 import com.ctd.proyectointegrador.service.IService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +17,7 @@ import java.util.Map;
 public class CaracteristicaService implements IService<CaracteristicaDTO> {
 
     @Autowired
-    CaracteristicasRepository caracteristicaRepository;
+    CaracteristicaRepository caracteristicaRepository;
 
     @Autowired
     ObjectMapper mapper;

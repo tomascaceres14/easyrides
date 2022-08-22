@@ -3,8 +3,8 @@ package com.ctd.proyectointegrador.service.impl;
 import com.ctd.proyectointegrador.persistance.dto.ProductoDTO;
 import com.ctd.proyectointegrador.persistance.model.Ciudad;
 import com.ctd.proyectointegrador.persistance.model.Producto;
-import com.ctd.proyectointegrador.persistance.repository.CiudadesRepository;
-import com.ctd.proyectointegrador.persistance.repository.ProductosRepository;
+import com.ctd.proyectointegrador.persistance.repository.CiudadRepository;
+import com.ctd.proyectointegrador.persistance.repository.ProductoRepository;
 import com.ctd.proyectointegrador.service.IService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,9 +18,9 @@ import java.util.Map;
 @Service
 public class ProductoService implements IService<ProductoDTO> {
     @Autowired
-    ProductosRepository productosRepository;
+    ProductoRepository productosRepository;
     @Autowired
-    CiudadesRepository ciudadRepository;
+    CiudadRepository ciudadRepository;
     @Autowired
     ObjectMapper mapper;
 
@@ -57,7 +57,7 @@ public class ProductoService implements IService<ProductoDTO> {
         productoEnBD.setDescripcion(actualizar.getDescripcion());
         productoEnBD.setUrl(actualizar.getUrl());
         productoEnBD.setImagenes(actualizar.getImagenes());
-        productoEnBD.setCaracteristicas(actualizar.getCaracteristicas());
+/*        productoEnBD.setCaracteristicas(actualizar.getCaracteristicas());*/
         productoEnBD.setCiudad(ciudadRepository.findById(actualizar.getCiudad().getId()).get());
         Producto prodRespuesta = productosRepository.save(productoEnBD);
 

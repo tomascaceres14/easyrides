@@ -25,7 +25,7 @@ public class Ciudad {
     public Ciudad() {
     }
 
-    public Ciudad(String nombre, String provincia, String pais, List<Producto> productos ) {
+    public Ciudad(String nombre, String provincia, String pais ) {
         this.nombre = nombre;
         this.provincia = provincia;
         this.pais = pais;
