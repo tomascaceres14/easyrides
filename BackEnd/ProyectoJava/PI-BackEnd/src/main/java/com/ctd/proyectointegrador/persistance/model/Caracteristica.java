@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table
@@ -21,8 +21,9 @@ public class Caracteristica {
     @Column(name = "titulo", nullable = false)
     private String titulo;
 
-    @ManyToMany(mappedBy = "caracteristicas", fetch = FetchType.LAZY)
-    private List<Producto> productos;
+    @OneToMany(mappedBy = "caracteristica")
+    private Set<ProdCarac> productos;
+
 
     public void setTitulo(String titulo) {
         this.titulo = titulo;

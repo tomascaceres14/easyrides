@@ -24,7 +24,7 @@ public class ProductoController {
     @PostMapping()
     public ResponseEntity<Map<String, Object>> guardar(@RequestBody ProductoDTO producto){
         response = productoService.guardar(producto);
-        return ResponseEntity.created(URI.create("/Producto")).body(response);
+        return ResponseEntity.created(URI.create("/productos")).body(response);
     }
 
     @GetMapping("/{id}")

@@ -1,0 +1,94 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.header-producto {
+  background: #f0572d;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.boton-volver{
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  background: none;
+  border: none;
+  border-radius: 5px;
+}
+
+.ubicacion {
+  padding: 10px 40px;
+  display: flex;
+  justify-content: space-between;
+  background: #f0572d53;
+}
+
+.valoracion {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.cuerpo {
+  display: flex;
+  flex-direction: column;
+  padding: 5px 20px;
+}
+
+.icons-prod{
+  padding: 10px 0px 0px 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.galeriaImg {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px;
+  padding: 10px;
+}
+
+img {
+    border-radius: 10px;
+  width: 100%;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center;
+}
+.img1 {
+  grid-area: 1 / 1 / 3 / 3;
+}
+.img2 {
+  grid-area: 1 / 3 / 2 / 4;
+}
+.img3 {
+  grid-area: 1 / 4 / 2 / 5;
+}
+.img4 {
+  grid-area: 2 / 3 / 3 / 4;
+}
+.img5 {
+  grid-area: 2 / 4 / 3 / 5;
+}
+
+.descripcion {
+  width: 100%;
+  text-align: justify;
+  padding: 5px 0px;
+}
+
+.caracteristicas {
+  padding: 5px 20px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  }

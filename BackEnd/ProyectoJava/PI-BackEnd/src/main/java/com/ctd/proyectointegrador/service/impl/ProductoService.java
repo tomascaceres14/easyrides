@@ -1,8 +1,10 @@
 package com.ctd.proyectointegrador.service.impl;
 
 import com.ctd.proyectointegrador.persistance.dto.ProductoDTO;
+import com.ctd.proyectointegrador.persistance.model.Categoria;
 import com.ctd.proyectointegrador.persistance.model.Ciudad;
 import com.ctd.proyectointegrador.persistance.model.Producto;
+import com.ctd.proyectointegrador.persistance.repository.CategoriaRepository;
 import com.ctd.proyectointegrador.persistance.repository.CiudadRepository;
 import com.ctd.proyectointegrador.persistance.repository.ProductoRepository;
 import com.ctd.proyectointegrador.service.IService;
@@ -19,8 +21,12 @@ import java.util.Map;
 public class ProductoService implements IService<ProductoDTO> {
     @Autowired
     ProductoRepository productoRepository;
+    
     @Autowired
     CiudadRepository ciudadRepository;
+
+    @Autowired
+    CategoriaRepository categoriaRepository;
     @Autowired
     ObjectMapper mapper;
 
@@ -34,16 +40,18 @@ public class ProductoService implements IService<ProductoDTO> {
 
     public Map<String, Object> guardar(ProductoDTO p) {
         Producto producto = mapper.convertValue(p, Producto.class);
-        Ciudad ciudad = producto.getCiudad();
-        Ciudad ciudadBD = ciudadRepository.findById(ciudad.getId()).get();
+        Ciudad ciudadBD = ciudadRepository.findById(producto.getCiudad().getId()).get();
         producto.setCiudad(ciudadBD);
+        Categoria categoriaDB = categoriaRepository.findById(producto.getCategoria().getId()).get();
+        producto.setCategoria(categoriaDB);
         Producto prodRespuesta = productoRepository.save(producto);
-        return buildResponse(mapper.convertValue(prodRespuesta, ProductoDTO.class), "paciente creado", 201);
+        return buildResponse(mapper.convertValue(prodRespuesta, ProductoDTO.class), "producto creado", 201);
     }
 
-    public Map<String, Object> buscar(Integer id) {
+
+    public Map<String, Object> buscar(Integer id){
         Producto prodRespuesta = productoRepository.findById(id).get();
-        return buildResponse(mapper.convertValue(prodRespuesta, ProductoDTO.class), "paciente encontrado", 201);
+        return buildResponse(mapper.convertValue(prodRespuesta, ProductoDTO.class), "producto encontrado", 201);
     }
 
     public Map<String, Object> actualizar(Integer id, ProductoDTO object) {
@@ -57,7 +65,7 @@ public class ProductoService implements IService<ProductoDTO> {
         productoEnBD.setDescripcion(actualizar.getDescripcion());
         productoEnBD.setUrl(actualizar.getUrl());
         productoEnBD.setImagenes(actualizar.getImagenes());
-        productoEnBD.setCaracteristicas(actualizar.getCaracteristicas());
+/*        productoEnBD.setCaracteristicas(actualizar.getCaracteristicas());*/
         productoEnBD.setCiudad(ciudadRepository.findById(actualizar.getCiudad().getId()).get());
         Producto prodRespuesta = productoRepository.save(productoEnBD);
 
