@@ -1,10 +1,19 @@
 package com.ctd.proyectointegrador.persistance.model;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import net.minidev.json.annotate.JsonIgnore;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 @Table
+@AllArgsConstructor
+@NoArgsConstructor
+@Setter
 public class Categoria {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,9 +31,6 @@ public class Categoria {
 
     @OneToMany(mappedBy = "categoria")
     private List<Producto> productos;
-
-    public Categoria() {
-    }
 
     public Categoria(String titulo, String descripcion, String url) {
         this.titulo = titulo;
@@ -59,23 +65,5 @@ public class Categoria {
 
     public void setUrl(String url) {
         this.url = url;
-    }
-
-    public List<Producto> getProductos() {
-        return productos;
-    }
-
-    public void setProductos(List<Producto> productos) {
-        this.productos = productos;
-    }
-
-    @Override
-    public String toString() {
-        return "Categoria{" +
-                "id=" + id +
-                ", titulo='" + titulo + '\'' +
-                ", descripcion='" + descripcion + '\'' +
-                ", url='" + url + '\'' +
-                '}';
     }
 }

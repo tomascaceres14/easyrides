@@ -3,7 +3,6 @@ package com.ctd.proyectointegrador.service.impl;
 
 import com.ctd.proyectointegrador.persistance.dto.CiudadDTO;
 import com.ctd.proyectointegrador.persistance.model.Ciudad;
-import com.ctd.proyectointegrador.persistance.model.Producto;
 import com.ctd.proyectointegrador.persistance.repository.CiudadesRepository;
 import com.ctd.proyectointegrador.service.IService;
 import com.fasterxml.jackson.databind.ObjectMapper;
