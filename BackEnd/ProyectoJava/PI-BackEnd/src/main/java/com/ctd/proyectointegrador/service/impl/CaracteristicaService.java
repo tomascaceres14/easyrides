@@ -56,7 +56,6 @@ public class CaracteristicaService implements IService<CaracteristicaDTO> {
         if(caracteristicaRepository.findById(id).isPresent()){
             Caracteristica c = mapper.convertValue(respuesta.get("caracteristica"), Caracteristica.class);
             c.setTitulo(object.getTitulo() != null ? object.getTitulo() : c.getTitulo());
-            c.setDescripcion(object.getDescripcion() != null ? object.getDescripcion() : c.getDescripcion());
             caracteristicaRepository.save(c);
             respuesta.replace("caracteristica", mapper.convertValue(c, CaracteristicaDTO.class));
         }

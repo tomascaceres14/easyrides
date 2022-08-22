@@ -24,7 +24,6 @@ public class Caracteristica {
     @OneToMany(mappedBy = "caracteristica")
     private Set<ProdCarac> productos;
 
-
     public void setTitulo(String titulo) {
         this.titulo = titulo;
     }
