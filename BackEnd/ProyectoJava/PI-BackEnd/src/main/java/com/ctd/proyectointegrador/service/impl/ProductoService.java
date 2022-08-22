@@ -1,8 +1,10 @@
 package com.ctd.proyectointegrador.service.impl;
 
 import com.ctd.proyectointegrador.persistance.dto.ProductoDTO;
+import com.ctd.proyectointegrador.persistance.model.Categoria;
 import com.ctd.proyectointegrador.persistance.model.Ciudad;
 import com.ctd.proyectointegrador.persistance.model.Producto;
+import com.ctd.proyectointegrador.persistance.repository.CategoriaRepository;
 import com.ctd.proyectointegrador.persistance.repository.CiudadRepository;
 import com.ctd.proyectointegrador.persistance.repository.ProductoRepository;
 import com.ctd.proyectointegrador.service.IService;
@@ -21,6 +23,9 @@ public class ProductoService implements IService<ProductoDTO> {
     ProductoRepository productosRepository;
     @Autowired
     CiudadRepository ciudadRepository;
+
+    @Autowired
+    CategoriaRepository categoriaRepository;
     @Autowired
     ObjectMapper mapper;
 
@@ -34,11 +39,12 @@ public class ProductoService implements IService<ProductoDTO> {
 
     public Map<String, Object> guardar(ProductoDTO p){
         Producto producto = mapper.convertValue(p, Producto.class);
-        Ciudad ciudad = producto.getCiudad();
-        Ciudad ciudadBD = ciudadRepository.findById(ciudad.getId()).get();
+        Ciudad ciudadBD = ciudadRepository.findById(producto.getCiudad().getId()).get();
         producto.setCiudad(ciudadBD);
+        Categoria categoriaDB = categoriaRepository.findById(producto.getCategoria().getId()).get();
+        producto.setCategoria(categoriaDB);
         Producto prodRespuesta = productosRepository.save(producto);
-        return buildResponse(mapper.convertValue(prodRespuesta, ProductoDTO.class), "paciente creado", 201);
+        return buildResponse(mapper.convertValue(prodRespuesta, ProductoDTO.class), "producto creado", 201);
     }
 
     public Map<String, Object> buscar(Integer id){
