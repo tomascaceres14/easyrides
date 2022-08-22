@@ -5,6 +5,7 @@ import net.minidev.json.annotate.JsonIgnore;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table
@@ -38,4 +39,8 @@ public class Producto {
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "categoria_id")
     private Categoria categoria;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "producto")
+    private Set<ProdCarac> caracteristicas;
 }
