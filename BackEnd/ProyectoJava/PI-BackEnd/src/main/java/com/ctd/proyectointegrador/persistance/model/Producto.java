@@ -30,6 +30,10 @@ public class Producto {
     @JoinColumn(name = "ciudad_id")
     private Ciudad ciudad;
 
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "categoria_id")
+    private Categoria categoria;
+
     public Producto() {
     }
 
@@ -90,6 +94,14 @@ public class Producto {
 
     public void setCiudad(Ciudad ciudad) {
         this.ciudad = ciudad;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
     }
 
     @Override

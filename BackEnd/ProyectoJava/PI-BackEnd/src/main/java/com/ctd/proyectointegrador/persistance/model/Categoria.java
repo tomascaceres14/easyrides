@@ -1,5 +1,7 @@
 package com.ctd.proyectointegrador.persistance.model;
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table
@@ -18,6 +20,9 @@ public class Categoria {
     @Column(name = "url", nullable = false)
     private String url;
 
+    @OneToMany(mappedBy = "categoria")
+    private List<Producto> productos;
+
     public Categoria() {
     }
 
@@ -25,6 +30,7 @@ public class Categoria {
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.url = url;
+        this.productos = new ArrayList<>();
     }
 
     public Integer getId() {
@@ -53,6 +59,14 @@ public class Categoria {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    public List<Producto> getProductos() {
+        return productos;
+    }
+
+    public void setProductos(List<Producto> productos) {
+        this.productos = productos;
     }
 
     @Override

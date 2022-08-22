@@ -1,8 +1,10 @@
 package com.ctd.proyectointegrador.service.impl;
 
 import com.ctd.proyectointegrador.persistance.dto.ProductoDTO;
+import com.ctd.proyectointegrador.persistance.model.Categoria;
 import com.ctd.proyectointegrador.persistance.model.Ciudad;
 import com.ctd.proyectointegrador.persistance.model.Producto;
+import com.ctd.proyectointegrador.persistance.repository.CategoriaRepository;
 import com.ctd.proyectointegrador.persistance.repository.CiudadesRepository;
 import com.ctd.proyectointegrador.persistance.repository.ProductosRepository;
 import com.ctd.proyectointegrador.service.IService;
@@ -22,6 +24,8 @@ public class ProductoService implements IService<ProductoDTO> {
     @Autowired
     CiudadesRepository ciudadRepository;
     @Autowired
+    CategoriaRepository categoriaRepository;
+    @Autowired
     ObjectMapper mapper;
 
     private Map<String, Object> buildResponse(Object dto, String message, Integer code){
@@ -35,8 +39,11 @@ public class ProductoService implements IService<ProductoDTO> {
     public Map<String, Object> guardar(ProductoDTO p){
         Producto producto = mapper.convertValue(p, Producto.class);
         Ciudad ciudad = producto.getCiudad();
+        Categoria categoria = producto.getCategoria();
         Ciudad ciudadBD = ciudadRepository.findById(ciudad.getId()).get();
+        Categoria categoriaBD = categoriaRepository.findById(categoria.getId()).get();
         producto.setCiudad(ciudadBD);
+        producto.setCategoria(categoriaBD);
         Producto prodRespuesta = productosRepository.save(producto);
         return buildResponse(mapper.convertValue(prodRespuesta, ProductoDTO.class), "paciente creado", 201);
     }
@@ -59,6 +66,7 @@ public class ProductoService implements IService<ProductoDTO> {
         productoEnBD.setImagenes(actualizar.getImagenes());
         productoEnBD.setCaracteristicas(actualizar.getCaracteristicas());
         productoEnBD.setCiudad(ciudadRepository.findById(actualizar.getCiudad().getId()).get());
+        productoEnBD.setCategoria(categoriaRepository.findById(actualizar.getCategoria().getId()).get());
         Producto prodRespuesta = productosRepository.save(productoEnBD);
 
         return buildResponse(mapper.convertValue(prodRespuesta, ProductoDTO.class),"cambio Exitoso",201);
