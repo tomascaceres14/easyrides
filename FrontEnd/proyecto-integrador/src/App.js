@@ -17,16 +17,16 @@ function App() {
     <div className="App">
       <AppContext.Provider value={initialState}>
         <AuthProvider>
-          <BrowserRouter>
-            <Header user={initialState} />
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/registro" element={<Registro />} />
-              <Route path="/producto" element={<Producto />} />
-            </Routes>
-            <Footer />
-          </BrowserRouter>
+            <BrowserRouter>
+              <Header user={initialState} />
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/registro" element={<Registro />} />
+                <Route path="/producto" element={<Producto />} />
+              </Routes>
+              <Footer />
+            </BrowserRouter>
         </AuthProvider>
       </AppContext.Provider>
     </div>
