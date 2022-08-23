@@ -50,15 +50,4 @@ public class ProductoController {
         codigo = (Integer) response.get("codigo");
         return ResponseEntity.status(codigo).body(response);
     }
-
-    @GetMapping()
-    public ResponseEntity<Map<String, Object>> listarProductosAleatorios(@RequestHeader("usuario") String usuario, @RequestHeader("password") String password){
-        //TODO: implementar una autentificacion para el usuario y password
-        if(usuario.equals(true) && password.equals(true)){
-            return listarTodos();
-        }
-        response = productoService.listarProductosAleatorios();
-        codigo = (Integer) response.get("codigo");
-        return ResponseEntity.status(codigo).body(response);
-    }
 }

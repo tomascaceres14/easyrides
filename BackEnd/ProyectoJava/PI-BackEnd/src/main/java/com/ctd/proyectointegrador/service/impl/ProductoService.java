@@ -84,27 +84,15 @@ public class ProductoService implements IService<ProductoDTO> {
     public Map<String, Object> listarTodos() {
 
         List<Producto> listaProd = productoRepository.findAll();
+
         List<ProductoDTO> listaDTO = new ArrayList<>();
 
         for (Producto p : listaProd) {
             ProductoDTO prodDTO = mapper.convertValue(p, ProductoDTO.class);
             listaDTO.add(prodDTO);
         }
-        return buildResponse(listaDTO, "lista creada", 200);
 
-    }
-
-    public Map<String, Object> listarProductosAleatorios() {
-        Random r = new Random();
-        r.setSeed(System.currentTimeMillis());
-        List<Producto> listaProd = productoRepository.findAll();
-        Collections.shuffle(listaProd, r);
-        List<ProductoDTO> listaDTO = new ArrayList<>();
-
-        for (Producto p : listaProd) {
-            ProductoDTO prodDTO = mapper.convertValue(p, ProductoDTO.class);
-            listaDTO.add(prodDTO);
-        }
+        Collections.shuffle(listaDTO);
         return buildResponse(listaDTO, "lista creada", 200);
 
     }
