@@ -50,4 +50,11 @@ public class ProductoController {
         codigo = (Integer) response.get("codigo");
         return ResponseEntity.status(codigo).body(response);
     }
+
+    @GetMapping("/ciudad/{id}")
+    public ResponseEntity<Map<String, Object>> listarPorCiudad(@PathVariable Integer id){
+        Map<String, Object> response = productoService.listarPorCiudad(id);
+        codigo=(Integer) response.get("codigo");
+        return ResponseEntity.status(codigo).body(response);
+    }
 }

@@ -17,7 +17,6 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Random;
 
 @Service
 public class ProductoService implements IService<ProductoDTO> {
@@ -53,6 +52,16 @@ public class ProductoService implements IService<ProductoDTO> {
     public Map<String, Object> buscar(Integer id) {
         Producto prodRespuesta = productoRepository.findById(id).get();
         return buildResponse(mapper.convertValue(prodRespuesta, ProductoDTO.class), "producto encontrado", 201);
+    }
+
+    public Map<String,Object> listarPorCiudad(Integer id) {
+        List<Producto> productos = productoRepository.listarPorCiudad(id);
+        System.out.println(productos);
+        List<ProductoDTO> productosPorCiudad = new ArrayList<>();
+        for (Producto producto : productos) {
+            productosPorCiudad.add(mapper.convertValue(producto, ProductoDTO.class));
+        }
+        return buildResponse(productosPorCiudad, "Lista por ciudad", 200);
     }
 
     public Map<String, Object> actualizar(Integer id, ProductoDTO object) {
@@ -91,7 +100,6 @@ public class ProductoService implements IService<ProductoDTO> {
             ProductoDTO prodDTO = mapper.convertValue(p, ProductoDTO.class);
             listaDTO.add(prodDTO);
         }
-
         Collections.shuffle(listaDTO);
         return buildResponse(listaDTO, "lista creada", 200);
 
