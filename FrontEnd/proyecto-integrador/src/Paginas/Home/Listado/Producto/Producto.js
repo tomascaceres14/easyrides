@@ -1,19 +1,22 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import "./Producto.css";
 import { FaShare } from "react-icons/fa";
-import useFetch from "../../../../Hooks/useFetch";
 import { MdOutlineArrowBackIos } from "react-icons/md";
 import { AiOutlineHeart } from "react-icons/ai";
 
 const Producto = () => {
 
+  const producto = useState(JSON.parse(localStorage.getItem("producto")))
+  const prodExtracto = producto[0]
+
   return (
     <div>
+      {console.log(prodExtracto)}
       <header>
         <div className="header-producto">
           <div>
-            <h4></h4>
-            <h2>Titulo del producto</h2>
+            <h4>{prodExtracto.categoria.titulo}</h4>
+            <h2>{prodExtracto.titulo}</h2>
           </div>
           <button className="boton-volver">
             <MdOutlineArrowBackIos size={"30"} />
@@ -22,7 +25,7 @@ const Producto = () => {
         </div>
         <div className="ubicacion">
           <div>
-            <p>Rivadavia 1660, CABA, Buenos Aires, Argentina</p>
+            <p>{prodExtracto.ciudad.nombre}, {prodExtracto.ciudad.provincia}, {prodExtracto.ciudad.pais}</p>
           </div>
           <div className="valoracion">
             <h4>Excelente</h4>
@@ -63,24 +66,9 @@ const Producto = () => {
           ></img>
         </div>
         <article className="cuerpo">
-          <h2>Volkswagen Bora</h2>
+          <h2>{prodExtracto.titulo}</h2>
           <p className="descripcion">
-            By far the most impressive Bora is the recently announced 150bhp
-            diesel - it makes great financial sense and is a super car to drive.
-            There are very few available second-hand, however, and those that do
-            come up for sale are expensive. Instead, go for the 115bhp TDI -
-            it's a fine all-rounder, and VW's diesel engines make petrol power
-            look pointless, with torque on demand, excellent performance and
-            brilliant refinement. SE spec is best value, but keen drivers will
-            prefer the Sport, with its stiffer suspension and sharper steering.
-            By far the most impressive Bora is the recently announced 150bhp
-            diesel - it makes great financial sense and is a super car to drive.
-            There are very few available second-hand, however, and those that do
-            come up for sale are expensive. Instead, go for the 115bhp TDI -
-            it's a fine all-rounder, and VW's diesel engines make petrol power
-            look pointless, with torque on demand, excellent performance and
-            brilliant refinement. SE spec is best value, but keen drivers will
-            prefer the Sport, with its stiffer suspension and sharper steering.
+          {prodExtracto.categoria.descripcion}
           </p>
         </article>
         <article className="cuerpo">
