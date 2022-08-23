@@ -2,6 +2,9 @@ import "./Listado.css";
 import React, { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import useFetch from "../../../Hooks/useFetch";
+import { CiudadesContext } from "../../../Context/CiudadesContext";
+import ListadoCiudades from "./ListadoCiudades";
+
 
 export default function Listado() {
   const urlProductos = "http://localhost:8080/productos";
@@ -35,7 +38,9 @@ export default function Listado() {
               </Link>
             </div>
           ))}
+
       </div>
+      <ListadoCiudades />
     </div>
   );
 }

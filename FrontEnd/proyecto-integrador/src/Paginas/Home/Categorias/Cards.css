@@ -8,6 +8,7 @@
 .cardsCategoria-titulo{
     font-size: 30px;
     margin-left: 2.5rem;
+    margin-top: 5rem;
 }
 .cardsCategoria-unidad{
     border: 3px solid transparent;
@@ -33,4 +34,11 @@
     margin-top: 5px;
     margin-bottom: 5px;
     font-size: 20px;
+}
+@media only screen and (max-width: 1024px){
+    .cardsCategoria-titulo {
+        font-size: 30px;
+        margin-left: 2.5rem;
+        margin-top: 10rem;
+    }
 }
