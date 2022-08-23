@@ -5,6 +5,7 @@ import lombok.*;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -29,4 +30,8 @@ public class CiudadDTO {
     @NotEmpty(message = "no debe estar vacio")
     @NotNull(message = "no debe ser nulo")
     private String pais;
+
+    @NotEmpty(message = "no debe estar vacio")
+    @NotNull(message = "no debe ser nulo")
+    private List<ProductoDTO> productos;
 }

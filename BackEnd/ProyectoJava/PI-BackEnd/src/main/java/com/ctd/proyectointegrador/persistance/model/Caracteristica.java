@@ -2,6 +2,7 @@ package com.ctd.proyectointegrador.persistance.model;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 @Table
@@ -15,16 +16,15 @@ public class Caracteristica {
     @Column(name = "descripcion", nullable = false)
     private String descripcion;
 
-    @ManyToMany(mappedBy = "caracteristicas", fetch = FetchType.LAZY)
-    private List<Producto> productos;
+    @OneToMany(mappedBy = "caracteristica")
+    private Set<ProdCarac> productos;
 
     public Caracteristica() {
     }
 
-    public Caracteristica(String titulo, String descripcion, List<Producto> productos) {
+    public Caracteristica(String titulo, String descripcion) {
         this.titulo = titulo;
         this.descripcion = descripcion;
-        this.productos = productos;
     }
 
     public Integer getId() {

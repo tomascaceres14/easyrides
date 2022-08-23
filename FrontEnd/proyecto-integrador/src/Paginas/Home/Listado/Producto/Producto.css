@@ -6,7 +6,19 @@
 
 .header-producto {
   background: #f0572d;
-  padding: 10px;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.boton-volver{
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  background: none;
+  border: none;
+  border-radius: 5px;
 }
 
 .ubicacion {
@@ -69,4 +81,14 @@ img {
 .descripcion {
   width: 100%;
   text-align: justify;
+  padding: 5px 0px;
 }
+
+.caracteristicas {
+  padding: 5px 20px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  }

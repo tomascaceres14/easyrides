@@ -17,34 +17,31 @@ public class CiudadController {
     @Autowired
     CiudadService ciudadService;
 
-    @Autowired
-    Map<String, Object> response = new HashMap<>();
-
     private Integer codigo;
 
     @PostMapping()
     public ResponseEntity<Map<String, Object>> guardar(@RequestBody CiudadDTO ciudad){
-        response = ciudadService.guardar(ciudad);
+        Map<String, Object> response = ciudadService.guardar(ciudad);
         return ResponseEntity.created(URI.create("/Ciudades")).body(response);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<Map<String, Object>> buscar(@PathVariable Integer id) {
-        response = ciudadService.buscar(id);
+        Map<String, Object> response = ciudadService.buscar(id);
         codigo = (Integer) response.get("codigo");
         return ResponseEntity.status(codigo).body(response);
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<Map<String, Object>> actualizar(@PathVariable Integer id, @RequestBody CiudadDTO c) {
-        response = ciudadService.actualizar(id, c);
+        Map<String, Object> response = ciudadService.actualizar(id, c);
         codigo = (Integer) response.get("codigo");
         return ResponseEntity.status(codigo).body(response);
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Map<String, Object>> eliminar(@PathVariable Integer id) {
-        response = ciudadService.eliminar(id);
+        Map<String, Object> response = ciudadService.eliminar(id);
         codigo = (Integer) response.get("codigo");
         return ResponseEntity.status(codigo).body(response);
     }
@@ -52,7 +49,7 @@ public class CiudadController {
 
     @GetMapping()
     public ResponseEntity<Map<String, Object>> listarTodos(){
-        response = ciudadService.listarTodos();
+        Map<String, Object> response = ciudadService.listarTodos();
         codigo = (Integer) response.get("codigo");
         return ResponseEntity.status(codigo).body(response);
     }

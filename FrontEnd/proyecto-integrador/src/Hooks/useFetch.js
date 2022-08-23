@@ -9,8 +9,8 @@ const useFetch = (url) => {
   useEffect(() => {
     setLoading(true)
 
-    axios
-      .get(url)
+    
+    axios.get(url)
       .then((respuesta) => {
         setData(respuesta.data);
       })

@@ -49,9 +49,9 @@
     opacity: 0;
 }
 
-@media only screen and (max-width: 1024px) {
-    .header-boton {
-        display: block;
+@media only screen and (max-width: 1024px){
+    .header-boton{
+        visibility: visible;
         opacity: 1;
         margin-left: 23rem;
     }
