@@ -13,7 +13,6 @@ body {
 	height: 100vh;
 	width: 100vw;
 	display: flex;
-	align-items: center;
 	justify-content: center;
 }
 @media only screen and (min-width: 600px) {
@@ -22,9 +21,7 @@ body {
 	}
 }
 .formulario {
-	margin-top: 50px;
 	padding: 3 0px;
-    
 }
 
 .formulario > div {

@@ -1,20 +1,9 @@
 package com.ctd.proyectointegrador.persistance.model;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-import net.minidev.json.annotate.JsonIgnore;
-
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 @Table
-@AllArgsConstructor
-@NoArgsConstructor
-@Setter
-public class Categoria {
+public class Imagen {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
@@ -29,14 +18,17 @@ public class Categoria {
     @Column(name = "url", nullable = false)
     private String url;
 
-    @OneToMany(mappedBy = "categoria")
-    private List<Producto> productos;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "producto_id")
+    private Producto producto;
 
-    public Categoria(String titulo, String descripcion, String url) {
+    public Imagen() {
+    }
+
+    public Imagen(String titulo, String descripcion, String url) {
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.url = url;
-        this.productos = new ArrayList<>();
     }
 
     public Integer getId() {
@@ -47,12 +39,33 @@ public class Categoria {
         return titulo;
     }
 
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
     public String getDescripcion() {
         return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
     public String getUrl() {
         return url;
     }
 
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    @Override
+    public String toString() {
+        return "Categoria{" +
+                "id=" + id +
+                ", titulo='" + titulo + '\'' +
+                ", descripcion='" + descripcion + '\'' +
+                ", url='" + url + '\'' +
+                '}';
+    }
 }

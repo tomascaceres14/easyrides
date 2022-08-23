@@ -2,11 +2,9 @@ package com.ctd.proyectointegrador.persistance.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;
-import net.minidev.json.annotate.JsonIgnore;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
-import java.util.List;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -14,7 +12,7 @@ import java.util.List;
 @Setter
 @ToString
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class CategoriaDTO {
+public class ImagenDTO {
 
     @NotEmpty(message = "no debe estar vacio")
     @NotNull(message = "no debe ser nulo")
@@ -28,11 +26,4 @@ public class CategoriaDTO {
     @NotNull(message = "no debe ser nulo")
     private String descripcion;
 
-    @NotEmpty(message = "no debe estar vacio")
-    @NotNull(message = "no debe ser nulo")
-    private String url;
-
-    @NotEmpty(message = "no debe estar vacio")
-    @NotNull(message = "no debe ser nulo")
-    private List<ProductoDTO> productos;
 }

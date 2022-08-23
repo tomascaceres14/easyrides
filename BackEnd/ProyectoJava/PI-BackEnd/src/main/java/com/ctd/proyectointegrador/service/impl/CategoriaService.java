@@ -12,6 +12,7 @@ import java.util.*;
 
 @Service
 public class CategoriaService implements IService<CategoriaDTO> {
+
     @Autowired
     CategoriaRepository categoriaRepository;
 

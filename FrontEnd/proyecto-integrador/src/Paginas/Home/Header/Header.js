@@ -1,89 +1,32 @@
-import { useRef, useContext, useState } from "react";
+import { useRef, useContext } from "react";
 import React from "react";
 import "./Header.css";
-import logo from "./logo.jpg";
 import logoeasyrides from "./logoeasyrides.jfif";
-import { FaBars, FaTimes } from "react-icons/fa";
-import { Link, useLocation } from "react-router-dom";
-import AppContext from "../../../Context/AppContext";
+import { FaBars, FaTimes} from "react-icons/fa";
+import { Link } from "react-router-dom";
 import { useInitialState } from "../../../Hooks/useInitialState";
 import AuthContext from "../../../Context/AuthContext";
+import { BotonesLoginRegister } from "./BotonesLoginRegister";
+import { Avatar } from "./Avatar";
 
-const Header = (user) => {
+const Header = () => {
   const navRef = useRef();
-  const { pathname } = useLocation();
   const initialState = useInitialState();
 
   const { auth } = useContext(AuthContext);
 
   const mostrarNavBar = () => {
+    // navRef.style.display = "";
     navRef.current.classList.toggle("responsive-header");
   };
-  // const parsearUsuario = JSON.parse(localStorage.getItem("user"));
-  // const nombreUsuario = parsearUsuario.nombre
-
-  const mostrarBotones = () => {
-    if (pathname === "/registro") {
-      return (
-        <>
-          <Link to="/login">
-            <button className="header-derecha-boton sesion">
-              Iniciar Sesión
-            </button>
-          </Link>
-        </>
-      );
-    }
-    if (pathname === "/login") {
-      return (
-        <>
-          <Link to="/registro">
-            <button
-              className="header-derecha-boton cuenta"
-              onClick={mostrarBotones}
-            >
-              Crear cuenta
-            </button>
-          </Link>
-        </>
-      );
-    }
-    if (pathname === "/") {
-      return (
-        <>
-          <Link to="/login">
-            <button className="header-derecha-boton sesion">
-              Iniciar Sesión
-            </button>
-          </Link>
-          <Link to="/registro">
-            <button className="header-derecha-boton cuenta">
-              Crear Cuenta
-            </button>
-          </Link>
-        </>
-      );
-    }
-  };
-  // const mostrarAvatar = () => {
-  // if(setValores !== undefined){
-  //       return (
-  //         <>
-  //         {<p>{setValores.nombre}</p>}
-  //         </>
-  //         )
-  //   } else if (setValores === undefined){
-  //     mostrarBotones()
-  //   }
-  // }
-
   return (
     <header className="header">
       <Link to="/">
         <img className="header-logo" src={logoeasyrides} alt="logo" />
       </Link>
       <nav ref={navRef} className="header-derecha">
-        {auth ? <p>Bienvenido {auth.nombre}</p> : mostrarBotones()}
+        {/*mostrar avatar en un solo compontente */}
+        {auth ? <Avatar/>  : <BotonesLoginRegister/>}
 
         {/* botones para mobile */}
         <button

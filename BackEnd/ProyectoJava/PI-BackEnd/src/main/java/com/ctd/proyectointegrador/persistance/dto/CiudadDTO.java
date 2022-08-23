@@ -2,7 +2,6 @@ package com.ctd.proyectointegrador.persistance.dto;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;
-import net.minidev.json.annotate.JsonIgnore;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -14,7 +13,7 @@ import java.util.List;
 @Setter
 @ToString
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class CategoriaDTO {
+public class CiudadDTO {
 
     @NotEmpty(message = "no debe estar vacio")
     @NotNull(message = "no debe ser nulo")
@@ -22,15 +21,15 @@ public class CategoriaDTO {
 
     @NotEmpty(message = "no debe estar vacio")
     @NotNull(message = "no debe ser nulo")
-    private String titulo;
+    private String nombre;
 
     @NotEmpty(message = "no debe estar vacio")
     @NotNull(message = "no debe ser nulo")
-    private String descripcion;
+    private String provincia;
 
     @NotEmpty(message = "no debe estar vacio")
     @NotNull(message = "no debe ser nulo")
-    private String url;
+    private String pais;
 
     @NotEmpty(message = "no debe estar vacio")
     @NotNull(message = "no debe ser nulo")

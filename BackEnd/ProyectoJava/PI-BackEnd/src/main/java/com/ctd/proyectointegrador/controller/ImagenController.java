@@ -1,53 +1,52 @@
 package com.ctd.proyectointegrador.controller;
 
-import com.ctd.proyectointegrador.persistance.dto.CategoriaDTO;
-import com.ctd.proyectointegrador.service.impl.CategoriaService;
+import com.ctd.proyectointegrador.persistance.dto.ImagenDTO;
+import com.ctd.proyectointegrador.service.impl.ImagenService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
+import java.util.HashMap;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/categorias")
-public class CategoriaController {
+@RequestMapping("/imagenes")
+public class ImagenController {
     @Autowired
-    CategoriaService categoriaService;
+    ImagenService imagenService;
 
     private Integer codigo;
 
-
     @PostMapping()
-    public ResponseEntity<Map<String, Object>> guardar(@RequestBody CategoriaDTO categoria){
-        return ResponseEntity.created(URI.create("/Categorias")).body(categoriaService.guardar(categoria));
+    public ResponseEntity<Map<String, Object>> guardar(@RequestBody ImagenDTO imagenes){
+        Map<String, Object> response = imagenService.guardar(imagenes);
+        return ResponseEntity.created(URI.create("/Imagenes")).body(response);
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<Map<String, Object>> buscar(@PathVariable Integer id) {
-        Map<String, Object> response = categoriaService.buscar(id);
+        Map<String, Object> response = imagenService.buscar(id);
         codigo = (Integer) response.get("codigo");
         return ResponseEntity.status(codigo).body(response);
     }
-
     @PutMapping("/{id}")
-    public ResponseEntity<Map<String, Object>> actualizar(@PathVariable Integer id, @RequestBody CategoriaDTO c) {
-        Map<String, Object> response = categoriaService.actualizar(id, c);
+    public ResponseEntity<Map<String, Object>> actualizar(@PathVariable Integer id, @RequestBody ImagenDTO i) {
+        Map<String, Object> response = imagenService.actualizar(id, i);
         codigo = (Integer) response.get("codigo");
         return ResponseEntity.status(codigo).body(response);
     }
-
     @DeleteMapping("/{id}")
     public ResponseEntity<Map<String, Object>> eliminar(@PathVariable Integer id) {
-        Map<String, Object> response = categoriaService.eliminar(id);
+        Map<String, Object> response = imagenService.eliminar(id);
+        codigo = (Integer) response.get("codigo");
+        return ResponseEntity.status(codigo).body(response);
+    }
+    @GetMapping()
+    public ResponseEntity<Map<String, Object>> listarTodos(){
+        Map<String, Object> response = imagenService.listarTodos();
         codigo = (Integer) response.get("codigo");
         return ResponseEntity.status(codigo).body(response);
     }
 
-    @GetMapping()
-    public ResponseEntity<Map<String, Object>> listarTodos(){
-        Map<String, Object> response = categoriaService.listarTodos();
-        codigo = (Integer) response.get("codigo");
-        return ResponseEntity.status(codigo).body(response);
-    }
 }

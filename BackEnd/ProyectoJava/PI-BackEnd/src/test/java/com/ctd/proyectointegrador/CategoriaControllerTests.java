@@ -1,10 +1,6 @@
 package com.ctd.proyectointegrador;
 
-import com.ctd.proyectointegrador.controller.CategoriaController;
-import com.ctd.proyectointegrador.persistance.dto.CategoriaDTO;
-import com.ctd.proyectointegrador.persistance.model.Categoria;
 import org.junit.jupiter.api.*;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
