@@ -1,20 +1,22 @@
 import "./Listado.css";
-import data from "./data.json";
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import useFetch from "../../../Hooks/useFetch";
+import { CiudadesContext } from "../../../Context/CiudadesContext";
+import ListadoCiudades from "./ListadoCiudades";
+
 
 export default function Listado() {
   const urlProductos = "http://localhost:8080/productos";
   const { data } = useFetch(urlProductos);
+
   return (
     <div>
       <p className="cardsProductos-titulo">Recomendaciones</p>
       <div className="cardsProductos">
-        {data&&data.categorias.map((prod) => (
-          <div className="cardsProductos-unidad">
+        {data&&data.productos.map((prod) => (
+          <div key={prod.id} className="cardsProductos-unidad">
             <img
-              key={prod.id}
               src={prod.url}
               alt=""
               className="cardsProductos-unidad-img"
@@ -26,11 +28,12 @@ export default function Listado() {
               {prod.descripcion}
             </p>
             <Link to="/producto">
-              <button className="cardsProductos-unidad-boton">Ver Más</button>
+              <button className="cardsProductos-unidad-boton" >Ver Más</button>
             </Link>
           </div>
         ))}
       </div>
+      <ListadoCiudades />
     </div>
   );
 }

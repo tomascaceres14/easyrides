@@ -12,7 +12,7 @@ export const Avatar = () => {
   }
   return (
     <div className='avatar'>
-      <p className='avatar-nombre'>Bienvenido {auth.nombre}</p>
+      <p className='avatar-nombre'>{auth.nombre}</p>
       <button className='avatar-sesion' onClick={ () => cerrarSesion()}>Cerrar Sesion</button>
     </div>
   );

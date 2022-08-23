@@ -1,8 +1,7 @@
 .footer {
-    border-top: 1px solid lightgray;
     padding: 20px;
     color: white;
-    background-color: #31363F;
+    background-color: #F0572D;
 }
 
 .footer > p {

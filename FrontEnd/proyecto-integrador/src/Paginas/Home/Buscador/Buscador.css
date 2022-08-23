@@ -1,7 +1,6 @@
 .buscador {
     padding: 50px;
     background-color: #f1663f;
-    margin-bottom: 3rem;
 }
 
 .buscadores {
@@ -9,9 +8,8 @@
     border-radius: .7rem;
     box-shadow: 0 1px 4px rgb(0 0 0 / 25%);
     background-color: white;
-    margin-top: .5rem;
-    margin-left: 15rem;
-    margin-right: 15rem;
+    margin-top: .3rem;
+    margin-left: 11rem;
     padding: .5rem;
     display: flex;
     position: absolute;
@@ -33,11 +31,11 @@
     color: white;
     font-size: 36px;
     text-align: center;
-
+    margin-top: -1.5rem;
 }
 
 .buscador-submit {
-    padding: 1rem 2rem !important;
+    padding: 1rem 2rem;
     margin-left: 2rem;
     border-radius: .7rem;
     border: none;
@@ -53,17 +51,23 @@
 
 .h1 {
     background-color: #FFFFFF;
+
 }
 
 @media only screen and (max-width: 1024px) {
-    .buscadores {
+
+    .buscadores{
         display: flex;
         flex-direction: column;
+        margin-top: .5rem;
     }
-
-    /* .buscador-submit {
-        margin-top: 1rem;
-        margin-left: 1rem;
-        padding: 0.7rem 1rem;
-    } */
+    .buscador-submit {
+            padding: .5rem .5rem;
+            border-radius: .7rem;
+            border: none;
+            background-color: #F0572D;
+            border-style: none;
+            color: white;
+            cursor: pointer;
+        }
 }

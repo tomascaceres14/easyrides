@@ -27,7 +27,7 @@ const Header = () => {
       <nav ref={navRef} className="header-derecha">
         {/*mostrar avatar en un solo compontente */}
         {auth ? <Avatar/>  : <BotonesLoginRegister/>}
-
+        
         {/* botones para mobile */}
         <button
           className="header-boton header-cerrar-boton"
