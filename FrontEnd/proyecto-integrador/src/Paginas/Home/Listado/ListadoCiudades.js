@@ -4,16 +4,15 @@ import useFetch from '../../../Hooks/useFetch';
 import { Link } from "react-router-dom";
 import Listado from './Listado';
 
-
-
 const ListadoCiudades = () => {
+  // aca consumo el context de data
     const urlProductos = "http://localhost:8080/productos";
     const { data } = useFetch(urlProductos);
     const { elegirCiudades, setElegirCiudades } = useContext(CiudadesContext);
     
     return (
       <div className="cardsProductos">
-        {data &&
+        {data&&
           data.productos.map((prod) => (
             <>
               {prod.ciudad.nombre === elegirCiudades ? (

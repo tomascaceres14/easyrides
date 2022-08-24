@@ -15,7 +15,7 @@ const Producto = () => {
       <header>
         <div className="header-producto">
           <div>
-            <h4>{prodExtracto.categoria.titulo}</h4>
+            {/* <h4>{prodExtracto.categoria.titulo}</h4> */}
             <h2>{prodExtracto.titulo}</h2>
           </div>
           <button className="boton-volver">

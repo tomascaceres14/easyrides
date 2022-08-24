@@ -54,6 +54,7 @@
         visibility: visible;
         opacity: 1;
         margin-left: 23rem;
+        display: block;
     }
 
     .header-derecha {

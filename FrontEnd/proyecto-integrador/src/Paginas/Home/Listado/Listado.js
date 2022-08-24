@@ -1,15 +1,15 @@
 import "./Listado.css";
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import useFetch from "../../../Hooks/useFetch";
-import { CiudadesContext } from "../../../Context/CiudadesContext";
 import ListadoCiudades from "./ListadoCiudades";
 
 
 export default function Listado() {
   const urlProductos = "http://localhost:8080/productos";
-
+  //context que guarde data con un state 
   const { data } = useFetch(urlProductos);
+  const [mostrarListado, setMostrarListado] = useState(true)
 
   return (
     <div>
