@@ -1,0 +1,73 @@
+.buscador {
+    padding: 50px;
+    background-color: #f1663f;
+}
+
+.buscadores {
+    border: 1rem solid transparent;
+    border-radius: .7rem;
+    box-shadow: 0 1px 4px rgb(0 0 0 / 25%);
+    background-color: white;
+    margin-top: .3rem;
+    margin-left: 11rem;
+    padding: .5rem;
+    display: flex;
+    position: absolute;
+    z-index: 999;
+}
+
+.buscador-fecha {
+    border-radius: 5px;
+    border-style: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 0.5rem;
+}
+
+/* .buscador-calendario{
+    margin-top: 50px;
+} */
+.buscador>h1 {
+    color: white;
+    font-size: 36px;
+    text-align: center;
+    margin-top: -1.5rem;
+}
+
+.buscador-submit {
+    padding: 1rem 2rem;
+    margin-left: 2rem;
+    border-radius: .7rem;
+    border: none;
+    background-color: #F0572D;
+    border-style: none;
+    color: white;
+    cursor: pointer;
+}
+
+.react-daterange-picker__wrapper {
+    border: none;
+}
+
+.h1 {
+    background-color: #FFFFFF;
+
+}
+
+@media only screen and (max-width: 1024px) {
+
+    .buscadores{
+        display: flex;
+        flex-direction: column;
+        margin-top: .5rem;
+    }
+    .buscador-submit {
+            padding: .5rem .5rem;
+            border-radius: .7rem;
+            border: none;
+            background-color: #F0572D;
+            border-style: none;
+            color: white;
+            cursor: pointer;
+        }
+}

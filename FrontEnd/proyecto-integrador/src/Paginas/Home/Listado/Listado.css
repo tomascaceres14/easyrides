@@ -1,0 +1,73 @@
+.cardsProductos {
+    padding: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(440px, 1fr));
+    gap: 20px;
+    background-color: #FFFFFF;
+}
+.cardsProductos-titulo {
+    font-size: 30px;
+    font-weight: 600;
+    margin-left: 2.5rem;
+}
+.cardsProductos-unidad {
+    border: 3px solid transparent;
+    border-radius: .25rem;
+    box-shadow: 0 1px 4px rgb(0 0 0 / 25%);
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.cardsProductos-unidad-img {
+    width: 100%;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    object-position: center;
+}
+
+.cardsProductos-unidad-descripcion {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+.cardsProductos-unidad-boton{
+    border: none;
+    color: black;
+    font-size: 1rem;
+    padding: 8px 50px ;
+    border-radius: .25em;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+.cardsProductos-unidad-boton:hover , .cardsProductos-unidad-boton:focus {
+    background-color: rgb(177, 175, 175);
+    transition: 0.3s;
+}
+
+@media only screen and (max-width: 1024px) {
+    .cardsProductos-unidad-boton{
+        padding: .75rem 16rem;
+    }
+}
+@media only screen and (max-width: 668px) {
+    .cardsProductos-unidad-boton {
+        padding: .75rem 15.5rem;
+    }
+}
+@media only screen and (max-width: 650px) {
+    .cardsProductos {
+            padding: 40px;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            cursor: pointer;
+        }
+    .cardsProductos-unidad-boton {
+        padding: .75rem 6rem;
+    }
+}
