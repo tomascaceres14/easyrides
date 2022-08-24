@@ -1,7 +1,7 @@
 import { useRef, useContext } from "react";
 import React from "react";
 import "./Header.css";
-import logoeasyrides from "./logoeasyrides.jfif";
+import logoeasyrides from "./logoeasyrides.png";
 import { FaBars, FaTimes} from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useInitialState } from "../../../Hooks/useInitialState";

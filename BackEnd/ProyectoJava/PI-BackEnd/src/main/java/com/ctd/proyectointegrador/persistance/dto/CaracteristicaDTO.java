@@ -24,6 +24,7 @@ public class CaracteristicaDTO {
 
     @NotEmpty(message = "no debe estar vacio")
     @NotNull(message = "no debe ser nulo")
-    private String descripcion;
+    private String url;
+
 
 }

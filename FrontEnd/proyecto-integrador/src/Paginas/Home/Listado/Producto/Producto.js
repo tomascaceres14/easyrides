@@ -1,13 +1,13 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import "./Producto.css";
 import { FaShare } from "react-icons/fa";
 import { MdOutlineArrowBackIos } from "react-icons/md";
 import { AiOutlineHeart } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 const Producto = () => {
-
-  const producto = useState(JSON.parse(localStorage.getItem("producto")))
-  const prodExtracto = producto[0]
+  const producto = useState(JSON.parse(localStorage.getItem("producto")));
+  const prodExtracto = producto[0];
 
   return (
     <div>
@@ -18,14 +18,19 @@ const Producto = () => {
             {/* <h4>{prodExtracto.categoria.titulo}</h4> */}
             <h2>{prodExtracto.titulo}</h2>
           </div>
-          <button className="boton-volver">
-            <MdOutlineArrowBackIos size={"30"} />
-            <strong>Volver al Inicio...</strong>
-          </button>
+          <Link to="/">
+            <button className="boton-volver">
+              <MdOutlineArrowBackIos size={"30"} />
+              <strong>Volver al Inicio</strong>
+            </button>
+          </Link>
         </div>
         <div className="ubicacion">
           <div>
-            <p>{prodExtracto.ciudad.nombre}, {prodExtracto.ciudad.provincia}, {prodExtracto.ciudad.pais}</p>
+            <p>
+              {prodExtracto.ciudad.nombre}, {prodExtracto.ciudad.provincia},{" "}
+              {prodExtracto.ciudad.pais}
+            </p>
           </div>
           <div className="valoracion">
             <h4>Excelente</h4>
@@ -44,44 +49,20 @@ const Producto = () => {
         </div>
 
         <div className="galeriaImg">
-          <img
-            className="img1"
-            src="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-          ></img>
-          <img
-            className="img2"
-            src="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-          ></img>
-          <img
-            className="img3"
-            src="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-          ></img>
-          <img
-            className="img4"
-            src="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-          ></img>
-          <img
-            className="img5"
-            src="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-          ></img>
+        {prodExtracto&&prodExtracto.imagenes.map((imagen) => (
+              <img src={imagen.url} className={"img"+imagen.id}></img>
+            ))}
         </div>
         <article className="cuerpo">
           <h2>{prodExtracto.titulo}</h2>
-          <p className="descripcion">
-          {prodExtracto.categoria.descripcion}
-          </p>
+          <p className="descripcion">{prodExtracto.descripcion}</p>
         </article>
         <article className="cuerpo">
           <h2>Que ofrece este producto?</h2>
           <ul className="caracteristicas">
-            <li>cuatro puertas</li>
-            <li>cuatro puertas</li>
-            <li>cuatro puertas</li>
-            <li>cuatro puertas</li>
-            <li>cuatro puertas</li>
-            <li>cuatro puertas</li>
-            <li>cuatro puertas</li>
-            <li>cuatro puertas</li>
+            {prodExtracto&&prodExtracto.caracteristicas.map((carac) => (
+              <li>{carac.titulo}</li>
+            ))}
             <li>cuatro puertas</li>
           </ul>
         </article>

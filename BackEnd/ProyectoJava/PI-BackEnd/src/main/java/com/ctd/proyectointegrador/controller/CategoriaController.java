@@ -50,6 +50,4 @@ public class CategoriaController {
         codigo = (Integer) response.get("codigo");
         return ResponseEntity.status(codigo).body(response);
     }
-
-
 }

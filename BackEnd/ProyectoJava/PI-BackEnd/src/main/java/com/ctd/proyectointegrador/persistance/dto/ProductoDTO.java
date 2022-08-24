@@ -7,6 +7,7 @@ import lombok.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.util.List;
+import java.util.Set;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -29,10 +30,6 @@ public class ProductoDTO {
 
     @NotEmpty(message = "no debe estar vacio")
     @NotNull(message = "no debe ser nulo")
-    private String url;
-
-    @NotEmpty(message = "no debe estar vacio")
-    @NotNull(message = "no debe ser nulo")
     private List<Imagen> imagenes;
 
     @NotEmpty(message = "no debe estar vacio")
@@ -42,4 +39,8 @@ public class ProductoDTO {
     @NotEmpty(message = "no debe estar vacio")
     @NotNull(message = "no debe ser nulo")
     private CategoriaDTO categoria;
+
+    @NotEmpty(message = "no debe estar vacio")
+    @NotNull(message = "no debe ser nulo")
+    private Set<CaracteristicaDTO> caracteristicas;
 }

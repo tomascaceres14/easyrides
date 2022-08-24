@@ -20,10 +20,11 @@ public class ImagenDTO {
 
     @NotEmpty(message = "no debe estar vacio")
     @NotNull(message = "no debe ser nulo")
-    private String titulo;
+    private String url;
 
     @NotEmpty(message = "no debe estar vacio")
     @NotNull(message = "no debe ser nulo")
-    private String descripcion;
+    private ProductoDTO productoDTO;
+
 
 }

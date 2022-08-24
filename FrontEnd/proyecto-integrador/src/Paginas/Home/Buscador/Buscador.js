@@ -13,7 +13,7 @@ function  Buscador(){
   
   return (
     <div className="buscador">
-      <h1>Busca ofertas en autos, camionetas y mucho más</h1>
+      <h1>¿Ya elegiste tu próximo destino?</h1>
       <div className="buscadores">
         <SearchBar />
         <Calendario className="calendario" />

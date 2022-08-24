@@ -19,6 +19,10 @@
   background: none;
   border: none;
   border-radius: 5px;
+  background: #b34121;
+  padding: 7px;
+  cursor: pointer;
+  text-decoration: underline;
 }
 
 .ubicacion {

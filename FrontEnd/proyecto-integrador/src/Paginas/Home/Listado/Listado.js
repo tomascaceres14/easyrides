@@ -12,7 +12,7 @@ export default function Listado() {
   const [mostrarListado, setMostrarListado] = useState(true)
 
   return (
-    <div>
+    <div className="listado-container">
       <p className="cardsProductos-titulo">Recomendaciones</p>
       <div className="cardsProductos">
         {data &&
