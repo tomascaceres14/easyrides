@@ -1,19 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&family=Open+Sans:wght@300&display=swap');
+
+:root {
+    --naranja: #F0572D;
+    --fuente1: 'Aldrich', sans-serif;
+    --fuente2: 'Open Sans', sans-serif;
+}
+
 .buscador {
+    /*Contenedor del buscador*/
+    height: 296px;
+    display: flex;
+    flex-direction: row;
     padding: 50px;
-    background-color: #f1663f;
+    background-image: url('./FondoDel\ Buscador.svg');
+    justify-content: space-between;
+    align-items: center;
 }
 
 .buscadores {
-    border: 1rem solid transparent;
-    border-radius: .7rem;
-    box-shadow: 0 1px 4px rgb(0 0 0 / 25%);
-    background-color: white;
-    margin-top: .3rem;
-    margin-left: 11rem;
-    padding: .5rem;
+    /*Contenedor del buscador para ingresar datos*/
     display: flex;
-    position: absolute;
-    z-index: 999;
+    flex-direction: column;
+    align-items: center;
 }
 
 .buscador-fecha {
@@ -21,53 +29,56 @@
     border-style: none;
     border: none;
     cursor: pointer;
-    border-radius: 0.5rem;
 }
 
-/* .buscador-calendario{
-    margin-top: 50px;
-} */
 .buscador>h1 {
+    /*Mensaje del buscador*/
     color: white;
-    font-size: 36px;
+    font-size: 40px;
     text-align: center;
-    margin-top: -1.5rem;
+    font-family: var(--fuente2);
 }
 
 .buscador-submit {
+    /*Boton del buscador*/
     padding: 1rem 2rem;
-    margin-left: 2rem;
-    border-radius: .7rem;
+    border-radius: 5px;
     border: none;
     background-color: #F0572D;
     border-style: none;
     color: white;
     cursor: pointer;
+    width: 150px;
+    font-family: var(--fuente1);
+    justify-content: center;
 }
 
-.react-daterange-picker__wrapper {
-    border: none;
-}
+/*-------------------------------------
+        DESAROLLO DEL RESPONSIVE
+---------------------------------------*/
 
-.h1 {
-    background-color: #FFFFFF;
+@media only screen and (max-width: 900px) {
 
-}
-
-@media only screen and (max-width: 1024px) {
-
-    .buscadores{
+    .buscadores {
+        /*Contenedor del buscador para ingresar datos*/
         display: flex;
         flex-direction: column;
-        margin-top: .5rem;
+        align-items: center;
     }
+
     .buscador-submit {
-            padding: .5rem .5rem;
-            border-radius: .7rem;
-            border: none;
-            background-color: #F0572D;
-            border-style: none;
-            color: white;
-            cursor: pointer;
-        }
+        /*Boton del buscador*/
+        padding: 1rem 2rem;
+        border-radius: 5px;
+        border: none;
+        background-color: #F0572D;
+        border-style: none;
+        color: white;
+        cursor: pointer;
+        width: 150px;
+        font-family: var(--fuente1);
+        justify-content: center;
+    }
+
+
 }

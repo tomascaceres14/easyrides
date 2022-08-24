@@ -21,8 +21,6 @@
     margin-left: .5rem;
 }
 
-
-
 .header-derecha {
     /*Contenedor de botones*/
     display: flex;
@@ -76,11 +74,6 @@
     transition: all 0.35s;
 }
 
-
-
-
-/* .........................................
-*/
 .cuenta {
     /*Editor de boton cuenta*/
     background-color: #31363F;
@@ -113,13 +106,10 @@
     transition: all 0.35s;
 }
 
-/**/
-
-
-/* botones hamburguesa */
 .header-boton {
+    /* boton hamburguesa */
     cursor: pointer;
-    background: transparent;
+    background: white;
     border: none;
     outline: none;
     display: none;
