@@ -1,6 +1,5 @@
 package com.ctd.proyectointegrador.persistance.model;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -8,14 +7,15 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
+
+
 @Entity
-@Table
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
+@Table
 public class Caracteristica {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
