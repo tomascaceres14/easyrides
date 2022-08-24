@@ -45,7 +45,7 @@ deploy:
   script:
     - echo "Deploy Script"
     - scp -o StrictHostKeyChecking=no ./BackEnd/ProyectoJava/PI-BackEnd/target/*.jar ec2-user@ec2-3-145-197-27.us-east-2.compute.amazonaws.com:~/Backend
-    - ssh -o StrictHostKeyChecking=no ec2-user@ec2-3-145-197-27.us-east-2.compute.amazonaws.com "cd /home/ec2-user/Backend; echo "export SPRING_DATASOURCE_USERNAME=PI_GRUPO11" >> sprenv.sh; echo "export SPRING_DATASOURCE_URL=jdbc:mysql://db.ctd.academy:3306/PI_GRUPO11" >> sprenv.sh ; echo "export SPRING_DATASOURCE_PASSWORD=Mae2iege" >> sprenv.sh ;echo "echo "DONE" " >> sprenv.sh; sudo mv sprenv.sh /etc/profile.d/ ; sh /etc/profile.d/sprenv.sh ; printenv |grep SPRING ; killall -9 java ; echo "starting new artifact" ; nohup java -jar demo-0.0.1-SNAPSHOT.jar & ; echo "DONE"; date >> deployment_date.txt "
+    - ssh -o StrictHostKeyChecking=no ec2-user@ec2-3-145-197-27.us-east-2.compute.amazonaws.com "cd /home/ec2-user/Backend; echo "export SPRING_DATASOURCE_USERNAME=PI_GRUPO11" >> sprenv.sh; echo "export SPRING_DATASOURCE_URL=jdbc:mysql://db.ctd.academy:3306/PI_GRUPO11" >> sprenv.sh ; echo "export SPRING_DATASOURCE_PASSWORD=Mae2iege" >> sprenv.sh ;echo "echo "DONE" " >> sprenv.sh; sudo mv sprenv.sh /etc/profile.d/ ; sh /etc/profile.d/sprenv.sh ; printenv |grep SPRING ; killall -9 java ; echo "starting new artifact" ; nohup java -jar demo-0.0.1-SNAPSHOT.jar > ./nohup.txt 2>&1 &  ; echo "DONE"; date >> deployment_date.txt "
 
 
 
