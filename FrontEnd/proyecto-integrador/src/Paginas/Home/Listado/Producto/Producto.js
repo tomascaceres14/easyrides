@@ -50,7 +50,7 @@ const Producto = () => {
 
         <div className="galeriaImg">
         {prodExtracto&&prodExtracto.imagenes.map((imagen) => (
-              <img src={imagen.url}></img>
+              <img src={imagen.url} className={"img"+imagen.id}></img>
             ))}
         </div>
         <article className="cuerpo">
