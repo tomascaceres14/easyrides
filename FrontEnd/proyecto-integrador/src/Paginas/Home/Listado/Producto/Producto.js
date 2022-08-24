@@ -3,11 +3,11 @@ import "./Producto.css";
 import { FaShare } from "react-icons/fa";
 import { MdOutlineArrowBackIos } from "react-icons/md";
 import { AiOutlineHeart } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 const Producto = () => {
-
-  const producto = useState(JSON.parse(localStorage.getItem("producto")))
-  const prodExtracto = producto[0]
+  const producto = useState(JSON.parse(localStorage.getItem("producto")));
+  const prodExtracto = producto[0];
 
   return (
     <div>
@@ -18,14 +18,19 @@ const Producto = () => {
             <h4>{prodExtracto.categoria.titulo}</h4>
             <h2>{prodExtracto.titulo}</h2>
           </div>
-          <button className="boton-volver">
-            <MdOutlineArrowBackIos size={"30"} />
-            <strong>Volver al Inicio...</strong>
-          </button>
+          <Link to="/">
+            <button className="boton-volver">
+              <MdOutlineArrowBackIos size={"30"} />
+              <strong>Volver al Inicio</strong>
+            </button>
+          </Link>
         </div>
         <div className="ubicacion">
           <div>
-            <p>{prodExtracto.ciudad.nombre}, {prodExtracto.ciudad.provincia}, {prodExtracto.ciudad.pais}</p>
+            <p>
+              {prodExtracto.ciudad.nombre}, {prodExtracto.ciudad.provincia},{" "}
+              {prodExtracto.ciudad.pais}
+            </p>
           </div>
           <div className="valoracion">
             <h4>Excelente</h4>
@@ -67,9 +72,7 @@ const Producto = () => {
         </div>
         <article className="cuerpo">
           <h2>{prodExtracto.titulo}</h2>
-          <p className="descripcion">
-          {prodExtracto.categoria.descripcion}
-          </p>
+          <p className="descripcion">{prodExtracto.categoria.descripcion}</p>
         </article>
         <article className="cuerpo">
           <h2>Que ofrece este producto?</h2>
