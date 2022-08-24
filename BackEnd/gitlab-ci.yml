@@ -1,0 +1,52 @@
+variables:
+  
+  MAVEN_OPTS: "-Dhttps.protocols=TLSv1.2 -Dmaven.repo.local=$CI_PROJECT_DIR/.m2/repository -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=WARN -Dorg.slf4j.simpleLogger.showDateTime=true -Djava.awt.headless=true"
+  
+  MAVEN_CLI_OPTS: "--batch-mode --errors --fail-at-end --show-version -DinstallAtEnd=true -DdeployAtEnd=true"
+
+
+image: maven:3.3.9-jdk-8
+
+
+cache:
+  paths:
+    - .m2/repository
+
+
+
+stages:
+    - build
+    - deploy
+
+build:
+    stage: build
+    image: maven:3.8.6-amazoncorretto-17
+    before_script:
+      - cd ./BackEnd/ProyectoJava/PI-BackEnd
+
+    script:
+        - echo "building app"
+        - mvn package $MAVEN_OPTS $MAVEN_CLI_OPTS
+        - echo "artifact packaged"
+    artifacts:
+        paths:
+            - ./BackEnd/ProyectoJava/PI-BackEnd/target/*.jar
+
+deploy:
+  stage: deploy
+  image: alpine
+  before_script:
+    - echo "Deploy pre script"
+    - apk add openssh-client
+    - eval $(ssh-agent -s)
+    - echo "$SSH_PRIVATE_KEY"| tr -d '\r' | ssh-add -
+    - mkdir -p ~/.ssh
+    - chmod 700 ~/.ssh 
+  script:
+    - echo "Deploy Script"
+    - scp -o StrictHostKeyChecking=no ./BackEnd/ProyectoJava/PI-BackEnd/target/*.jar ec2-user@ec2-3-145-197-27.us-east-2.compute.amazonaws.com:~/Backend
+    - ssh -o StrictHostKeyChecking=no ec2-user@ec2-3-145-197-27.us-east-2.compute.amazonaws.com "cd /home/ec2-user/Backend; java -jar demo-0.0.1-SNAPSHOT.jar; echo "DONE" "
+
+
+
+   
