@@ -45,7 +45,7 @@ deploy:
   script:
     - echo "Deploy Script"
     - scp -o StrictHostKeyChecking=no ./BackEnd/ProyectoJava/PI-BackEnd/target/*.jar ec2-user@ec2-3-145-197-27.us-east-2.compute.amazonaws.com:~/Backend
-    - ssh -o StrictHostKeyChecking=no ec2-user@ec2-3-145-197-27.us-east-2.compute.amazonaws.com "cd /home/ec2-user/Backend; java -jar demo-0.0.1-SNAPSHOT.jar; echo "DONE" "
+    - ssh -o StrictHostKeyChecking=no ec2-user@ec2-3-145-197-27.us-east-2.compute.amazonaws.com "cd /home/ec2-user/Backend; killall -9 java ; echo "starting new artifact" ; java -jar demo-0.0.1-SNAPSHOT.jar; echo "DONE"; date >> deployment_date.txt "
 
 
 
