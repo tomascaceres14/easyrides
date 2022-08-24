@@ -40,7 +40,6 @@ export default function Listado() {
           ))}
 
       </div>
-      <ListadoCiudades />
     </div>
   );
 }

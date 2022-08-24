@@ -27,7 +27,7 @@ export const SearchBar = () => {
         options={
           data &&
           data.productos.map((ciudad) => ({
-            label: ciudad.nombre,
+            label: ciudad.nombre + ", " + ciudad.pais,
             value: ciudad.id,
           }))
         }
