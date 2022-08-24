@@ -1,10 +1,14 @@
 package com.ctd.proyectointegrador.persistance.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -12,7 +16,6 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
-
 public class Caracteristica {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,8 +24,17 @@ public class Caracteristica {
     @Column(name = "titulo", nullable = false)
     private String titulo;
 
-    @OneToMany(mappedBy = "caracteristica")
-    private Set<ProdCarac> productos;
+    @Column(name = "url", nullable = false)
+    private String url;
+
+    @ManyToMany(fetch = FetchType.LAZY,
+            cascade = {
+                    CascadeType.PERSIST,
+                    CascadeType.MERGE
+            },
+            mappedBy = "caracteristicas")
+    @JsonIgnore
+    private Set<Producto> productos = new HashSet<>();
 
     public void setTitulo(String titulo) {
         this.titulo = titulo;
