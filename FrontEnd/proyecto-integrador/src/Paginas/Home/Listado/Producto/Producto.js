@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import "./Producto.css";
 import { FaShare } from "react-icons/fa";
 import { MdOutlineArrowBackIos } from "react-icons/md";
@@ -72,19 +72,14 @@ const Producto = () => {
         </div>
         <article className="cuerpo">
           <h2>{prodExtracto.titulo}</h2>
-          <p className="descripcion">{prodExtracto.categoria.descripcion}</p>
+          <p className="descripcion">{prodExtracto.descripcion}</p>
         </article>
         <article className="cuerpo">
           <h2>Que ofrece este producto?</h2>
           <ul className="caracteristicas">
-            <li>cuatro puertas</li>
-            <li>cuatro puertas</li>
-            <li>cuatro puertas</li>
-            <li>cuatro puertas</li>
-            <li>cuatro puertas</li>
-            <li>cuatro puertas</li>
-            <li>cuatro puertas</li>
-            <li>cuatro puertas</li>
+            {prodExtracto&&prodExtracto.caracteristicas.map((carac) => (
+              <li>{carac.titulo}</li>
+            ))}
             <li>cuatro puertas</li>
           </ul>
         </article>
