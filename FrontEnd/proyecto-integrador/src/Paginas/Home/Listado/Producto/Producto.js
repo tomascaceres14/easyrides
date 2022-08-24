@@ -49,26 +49,9 @@ const Producto = () => {
         </div>
 
         <div className="galeriaImg">
-          <img
-            className="img1"
-            src="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-          ></img>
-          <img
-            className="img2"
-            src="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-          ></img>
-          <img
-            className="img3"
-            src="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-          ></img>
-          <img
-            className="img4"
-            src="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-          ></img>
-          <img
-            className="img5"
-            src="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-          ></img>
+        {prodExtracto&&prodExtracto.imagenes.map((imagen) => (
+              <img src={imagen.url}></img>
+            ))}
         </div>
         <article className="cuerpo">
           <h2>{prodExtracto.titulo}</h2>
