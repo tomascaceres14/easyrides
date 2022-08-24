@@ -1,43 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&family=Open+Sans:wght@300&display=swap');
+
+:root {
+    --naranja: #F0572D;
+    --fuente1: 'Aldrich', sans-serif;
+    --fuente2: 'Open Sans', sans-serif;
+}
+
 .header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 1rem;
-    background-color: #FFFFFF;
+    background-color: var(--naranja);
 }
 
 .header-logo {
-    width: 100px;
+    /*Ajustando tamaño del logo*/
+    width: 360px;
+    height: 110px;
+    margin-left: .5rem;
 }
 
-.header-izquierda>img {
-    margin-left: 1rem;
-}
+
 
 .header-derecha {
+    /*Contenedor de botones*/
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-left: 46rem;
 }
 
 .header-derecha-boton {
-    padding: .8rem 2rem;
-    margin-right: 1rem;
-    border-radius: .7rem;
+    /*Editor de boton general*/
     border: none;
+    padding: 16px 20px;
+    border-radius: 5px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    display: inline-block;
+    justify-content: space-between;
+    width: 200px;
+    font-family: var(--fuente1);
 }
 
 .sesion {
-    margin-left: 2rem;
+    /*Editor de boton sesion*/
+    margin-right: 30px;
     cursor: pointer;
+    background-color: #928C8C;
+    color: white;
 }
 
+.sesion:after {
+    content: "";
+    background: black;
+    /* color de fondo hover */
+    position: absolute;
+    z-index: -1;
+    padding: 16px 20px;
+    top: 0;
+    bottom: 0;
+    left: -100%;
+    right: 100%;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+}
+
+.sesion:hover::after {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+}
+
+
+
+
+/* .........................................
+*/
 .cuenta {
-    background-color: #F0572D;
+    /*Editor de boton cuenta*/
+    background-color: #31363F;
     color: white;
     cursor: pointer;
 }
+
+.cuenta:after {
+    content: "";
+    background: black;
+    /* color de fondo hover */
+    position: absolute;
+    z-index: -1;
+    padding: 16px 20px;
+
+    top: 0;
+    bottom: 0;
+    left: -100%;
+    right: 100%;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+}
+
+.cuenta:hover::after {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+}
+
+/**/
+
 
 /* botones hamburguesa */
 .header-boton {
@@ -49,8 +126,12 @@
     opacity: 0;
 }
 
-@media only screen and (max-width: 1024px){
-    .header-boton{
+
+/*-------------------------------------
+        DESAROLLO DEL RESPONSIVE
+---------------------------------------*/
+@media only screen and (max-width: 1024px) {
+    .header-boton {
         visibility: visible;
         opacity: 1;
         margin-left: 23rem;
