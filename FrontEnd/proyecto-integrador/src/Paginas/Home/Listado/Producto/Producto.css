@@ -25,6 +25,7 @@
   text-decoration: underline;
 }
 
+
 .ubicacion {
   padding: 10px 40px;
   display: flex;
@@ -32,10 +33,23 @@
   background: #f0572d53;
 }
 
+.localidad{
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
 .valoracion {
   display: flex;
   align-items: center;
   gap: 20px;
+}
+
+.valoracion h2{
+  background: #31363F;
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
 }
 
 .cuerpo {
@@ -47,7 +61,15 @@
 .icons-prod{
   padding: 10px 0px 0px 10px;
   display: flex;
+  align-items: center;
   gap: 10px;
+}
+
+.icons-prod button{
+  background: white;
+  border: none;
+  cursor: pointer;
+  color: #31363F;
 }
 
 .galeriaImg {
