@@ -14,28 +14,29 @@ INSERT INTO productos VALUES (null, 'El Ford Fiesta es un automóvil de turismo 
 INSERT INTO productos VALUES (null, 'El Fiat 600 fue un pequeño automóvil diseñado por Dante Giacosa y construido por la empresa italiana Fiat desde 1955 hasta 1969. Fue un éxito mundial que se fabricó en muchos países, en la mayoría de ellos bajo la marca Fiat.', 'Fiat 600', 4, 4);
 
 INSERT INTO imagenes VALUES (null, 'https://www.autonocion.com/wp-content/uploads/2021/02/dodge-charger6-930x639.jpg', 1);
-INSERT INTO imagenes VALUES (null, 'https://www.autonocion.com/wp-content/uploads/2021/02/dodge-charger6-930x639.jpg', 1);
-INSERT INTO imagenes VALUES (null, 'https://www.autonocion.com/wp-content/uploads/2021/02/dodge-charger6-930x639.jpg', 1);
-INSERT INTO imagenes VALUES (null, 'https://www.autonocion.com/wp-content/uploads/2021/02/dodge-charger6-930x639.jpg', 1);
-INSERT INTO imagenes VALUES (null, 'https://www.autonocion.com/wp-content/uploads/2021/02/dodge-charger6-930x639.jpg', 1);
+INSERT INTO imagenes VALUES (null, 'https://i.pinimg.com/originals/d9/af/d2/d9afd24841980df5550c9e66867a179a.jpg', 1);
+INSERT INTO imagenes VALUES (null, 'https://www.borla.com/productImages/misc/140675-vehicle-1-large.jpg', 1);
+INSERT INTO imagenes VALUES (null, 'https://www.topgear.com/sites/default/files/cars-car/carousel/2019/10/dg020_395ch.jpg', 1);
+INSERT INTO imagenes VALUES (null, 'https://noticiasrtv.com/wp-content/uploads/2019/11/SpeedKore-Dodge-Charger-1525hp.-Un-verdadero-monstruo.jpg', 1);
 
 INSERT INTO imagenes VALUES (null, 'https://i0.wp.com/asphalt9.info/wp-content/uploads/2020/05/Lamborghini-Veneno-1.jpg?fit=1062%2C588&ssl=1', 2);
-INSERT INTO imagenes VALUES (null, 'https://i0.wp.com/asphalt9.info/wp-content/uploads/2020/05/Lamborghini-Veneno-1.jpg?fit=1062%2C588&ssl=1', 2);
-INSERT INTO imagenes VALUES (null, 'https://i0.wp.com/asphalt9.info/wp-content/uploads/2020/05/Lamborghini-Veneno-1.jpg?fit=1062%2C588&ssl=1', 2);
-INSERT INTO imagenes VALUES (null, 'https://i0.wp.com/asphalt9.info/wp-content/uploads/2020/05/Lamborghini-Veneno-1.jpg?fit=1062%2C588&ssl=1', 2);
-INSERT INTO imagenes VALUES (null, 'https://i0.wp.com/asphalt9.info/wp-content/uploads/2020/05/Lamborghini-Veneno-1.jpg?fit=1062%2C588&ssl=1', 2);
+INSERT INTO imagenes VALUES (null, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvAoyNl38q_qarRmNXIGeKa5cnIHWVTcJszA&usqp=CAU', 2);
+INSERT INTO imagenes VALUES (null, 'https://i.pinimg.com/originals/b4/c6/d7/b4c6d7b30d910a5ac16a9ca1f49c69ad.jpg', 2);
+INSERT INTO imagenes VALUES (null, 'https://blog.dupontregistry.com/wp-content/uploads/2017/02/lamborghini-veneno-2282017.jpg', 2);
+INSERT INTO imagenes VALUES (null, 'https://www.diariomotor.com/imagenes/picscache/1440x655c/Lamborghini-Aventador_LP750-4_SV-motor-2016-01_1440x655c.jpg', 2);
 
 INSERT INTO imagenes VALUES (null, 'https://upload.wikimedia.org/wikipedia/commons/6/60/2019_Ford_Fiesta_Active_X_Turbo_1.0_Front.jpg', 3);
-INSERT INTO imagenes VALUES (null, 'https://upload.wikimedia.org/wikipedia/commons/6/60/2019_Ford_Fiesta_Active_X_Turbo_1.0_Front.jpg', 3);
-INSERT INTO imagenes VALUES (null, 'https://upload.wikimedia.org/wikipedia/commons/6/60/2019_Ford_Fiesta_Active_X_Turbo_1.0_Front.jpg', 3);
-INSERT INTO imagenes VALUES (null, 'https://upload.wikimedia.org/wikipedia/commons/6/60/2019_Ford_Fiesta_Active_X_Turbo_1.0_Front.jpg', 3);
-INSERT INTO imagenes VALUES (null, 'https://upload.wikimedia.org/wikipedia/commons/6/60/2019_Ford_Fiesta_Active_X_Turbo_1.0_Front.jpg', 3);
+INSERT INTO imagenes VALUES (null, 'https://periodismodelmotor.com/wp-content/uploads/2020/10/ford-fiesta-st-edition-01.jpg', 3);
+INSERT INTO imagenes VALUES (null, 'https://fotos.perfil.com/2021/09/16/ford-fiesta-2022-1231607.jpg', 3);
+INSERT INTO imagenes VALUES (null, 'https://www.topgear.com/sites/default/files/2022/05/51952068138_a79993a8de_k.jpg', 3);
+INSERT INTO imagenes VALUES (null, 'https://carnovo.com/wp-content/uploads/2018/07/Motor-del-Ford-Fiesta-2018.jpg', 3);
 
+INSERT INTO imagenes VALUES (null, 'https://www.autopista.es/uploads/s1/57/79/29/1/article-loca-historia-fiat-600-clasico-motor-rotativo-mazda-5b22393fb5640.jpeg', 4);
+INSERT INTO imagenes VALUES (null, 'https://noficcionweb.com.ar/wp-content/uploads/2021/07/WhatsApp-Image-2021-04-08-at-3.28.19-PM-1-1024x682.jpeg', 4);
 INSERT INTO imagenes VALUES (null, 'https://img.motoryracing.com/noticias/portada/25000/25024-n.jpg', 4);
+INSERT INTO imagenes VALUES (null, 'https://i.pinimg.com/originals/94/51/cd/9451cd4a14cbe30ea99345e1102a7ad4.jpg', 4);
 INSERT INTO imagenes VALUES (null, 'https://img.motoryracing.com/noticias/portada/25000/25024-n.jpg', 4);
-INSERT INTO imagenes VALUES (null, 'https://img.motoryracing.com/noticias/portada/25000/25024-n.jpg', 4);
-INSERT INTO imagenes VALUES (null, 'https://img.motoryracing.com/noticias/portada/25000/25024-n.jpg', 4);
-INSERT INTO imagenes VALUES (null, 'https://img.motoryracing.com/noticias/portada/25000/25024-n.jpg', 4);
+
 
 INSERT INTO caracteristicas VALUES (null, 'Transmision Automatica', '<i class="fa-solid fa-gears"></i>');
 INSERT INTO caracteristicas VALUES (null, 'Sistema de navegacion', '<FontAwesomeIcon icon="fa-solid fa-circle-location-arrow" />');
@@ -50,11 +51,6 @@ INSERT INTO producto_caracteristica VALUES (2, 1);
 INSERT INTO producto_caracteristica VALUES (2, 2);
 INSERT INTO producto_caracteristica VALUES (2, 3);
 INSERT INTO producto_caracteristica VALUES (2, 4);
-INSERT INTO producto_caracteristica VALUES (3, 1);
 INSERT INTO producto_caracteristica VALUES (3, 2);
-INSERT INTO producto_caracteristica VALUES (3, 3);
 INSERT INTO producto_caracteristica VALUES (3, 4);
-INSERT INTO producto_caracteristica VALUES (4, 1);
-INSERT INTO producto_caracteristica VALUES (4, 2);
-INSERT INTO producto_caracteristica VALUES (4, 3);
 INSERT INTO producto_caracteristica VALUES (4, 4);
