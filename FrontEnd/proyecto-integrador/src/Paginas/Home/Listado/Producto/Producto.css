@@ -120,5 +120,8 @@ img {
 }
 .reservaProductos{
   display: flex;
-  
+
+}
+.botones{
+  border: 1px solid black;
 }

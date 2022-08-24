@@ -73,12 +73,13 @@ const Producto = () => {
         </article>
       </section>
       <div className="reservaProductos">
-        <CalendarioProducto />
-          <div>
+        <div>
+          <CalendarioProducto />
+        </div>
+          <div className="botones">
             <p>Agrega tu fecha de reserva</p>
             <button>Inciar Reserva</button>
           </div>
-          
       </div>
     </div>
   );

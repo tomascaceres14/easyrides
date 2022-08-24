@@ -10,17 +10,17 @@ export default function Listado() {
   //context que guarde data con un state 
   const { data } = useFetch(urlProductos);
   const [mostrarListado, setMostrarListado] = useState(true)
-
+  // const { dataProductos } = useContext(DataProductosContext);
   return (
     <div className="listado-container">
       <p className="cardsProductos-titulo">Recomendaciones</p>
       <div className="cardsProductos">
-        {data &&
+        {data&&
           data.productos.map((prod) => (
             <div className="cardsProductos-unidad" key={prod.id}>
               <img
                 key={prod.id}
-                src={prod.url}
+                src={prod.imagenes[0].url}
                 alt=""
                 className="cardsProductos-unidad-img"
               />
