@@ -13,6 +13,12 @@ INSERT INTO producto VALUES (null, 'El Lamborghini Veneno es un automóvil super
 INSERT INTO producto VALUES (null, 'El Ford Fiesta es un automóvil de turismo del segmento B desarrollado por la filial europea de la empresa estadounidense Ford Motor Company, y fabricado en Alemania, España, Brasil, México, China, India y Sudáfrica.', 'Ford Fiesta', 3, 3);
 INSERT INTO producto VALUES (null, 'El Fiat 600 fue un pequeño automóvil diseñado por Dante Giacosa y construido por la empresa italiana Fiat desde 1955 hasta 1969. Fue un éxito mundial que se fabricó en muchos países, en la mayoría de ellos bajo la marca Fiat.', 'Fiat 600', 4, 4);
 
+INSERT INTO imagen VALUES (null, 'https://upload.wikimedia.org/wikipedia/commons/6/60/2019_Ford_Fiesta_Active_X_Turbo_1.0_Front.jpg', 1);
+INSERT INTO imagen VALUES (null, 'https://upload.wikimedia.org/wikipedia/commons/6/60/2019_Ford_Fiesta_Active_X_Turbo_1.0_Front.jpg', 1);
+INSERT INTO imagen VALUES (null, 'https://upload.wikimedia.org/wikipedia/commons/6/60/2019_Ford_Fiesta_Active_X_Turbo_1.0_Front.jpg', 1);
+INSERT INTO imagen VALUES (null, 'https://upload.wikimedia.org/wikipedia/commons/6/60/2019_Ford_Fiesta_Active_X_Turbo_1.0_Front.jpg', 1);
+INSERT INTO imagen VALUES (null, 'https://upload.wikimedia.org/wikipedia/commons/6/60/2019_Ford_Fiesta_Active_X_Turbo_1.0_Front.jpg', 1);
+
 INSERT INTO caracteristica VALUES (null, 'Transmision Automatica', 'urlprueba.com');
 INSERT INTO caracteristica VALUES (null, 'Sistema de navegacion', 'urlprueba.com');
 INSERT INTO caracteristica VALUES (null, 'Control crucero', 'urlprueba.com');

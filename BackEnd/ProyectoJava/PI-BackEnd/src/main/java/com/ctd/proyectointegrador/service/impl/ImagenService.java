@@ -55,8 +55,6 @@ public class ImagenService implements IService<ImagenDTO> {
         respuesta.clear();
         if(imagenRepository.findById(id).isPresent()){
             Imagen i = mapper.convertValue(respuesta.get("imagen"), Imagen.class);
-            i.setTitulo(object.getTitulo() != null ? object.getTitulo() : i.getTitulo());
-            i.setDescripcion(object.getDescripcion() != null ? object.getDescripcion() : i.getDescripcion());
             imagenRepository.save(i);
             respuesta.replace("imagen", mapper.convertValue(i, ImagenDTO.class));
         }
