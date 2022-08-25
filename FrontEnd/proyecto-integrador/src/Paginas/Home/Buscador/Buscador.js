@@ -17,7 +17,7 @@ function  Buscador(){
       <div className="buscadores">
         <SearchBar />
         <Calendario className="calendario" />
-        <button className="buscador-submit" onClick={"asignar aca"}>
+        <button className="buscador-submit">
           Buscar
         </button>
       </div>

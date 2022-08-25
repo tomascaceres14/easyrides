@@ -14,6 +14,7 @@ function CalendarioProducto() {
         value={value}
         minDate={new Date()}
         showDoubleView = {true}
+        selectRange={true}
       />
     </div>
   );
