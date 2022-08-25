@@ -7,7 +7,7 @@ import { DataProductosContext } from "../../../Context/DataProductosContext";
 
 export default function Listado() {
   // traigo el context y hago el booleano
-  const urlProductos = "http://localhost:8080/productos";
+  const urlProductos = "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/productos";
   //context que guarde data con un state 
   const { data } = useFetch(urlProductos);
   const {dataProductos, setDataProductos} = useContext(DataProductosContext)

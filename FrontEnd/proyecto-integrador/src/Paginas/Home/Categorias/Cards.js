@@ -3,7 +3,7 @@ import "./Cards.css";
 import useFetch from "../../../Hooks/useFetch";
 
 export default function Cards() {
-  const urlCategorias = "http://localhost:8080/categorias";
+  const urlCategorias = "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/categorias";
   const { data } = useFetch(urlCategorias)
 
   return (
