@@ -1,27 +1,56 @@
-INSERT INTO categoria VALUES (null, 'velocidad y desempeño', 'Deportivos', 'https://images.unsplash.com/photo-1588127333419-b9d7de223dcf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80');
-INSERT INTO categoria VALUES (null, 'detallado, refinado y caro',  'De Lujo', 'https://images.unsplash.com/photo-1616789916437-bbf724d10dae?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
-INSERT INTO categoria VALUES (null, 'espacioso y comodo para grandes y niños',  'Familiares', 'https://images.unsplash.com/photo-1648902180388-e52c0fdebcd4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80');
-INSERT INTO categoria VALUES (null, 'espacioso y comodo para grandes y niños',  'Economicos', 'https://images.unsplash.com/photo-1639640163962-9e845bd7294a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+INSERT INTO categorias VALUES (null, 'velocidad y desempeño', 'Deportivos', 'https://images.unsplash.com/photo-1588127333419-b9d7de223dcf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80');
+INSERT INTO categorias VALUES (null, 'detallado, refinado y caro',  'De Lujo', 'https://images.unsplash.com/photo-1616789916437-bbf724d10dae?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+INSERT INTO categorias VALUES (null, 'espacioso y comodo para grandes y niños',  'Familiares', 'https://images.unsplash.com/photo-1648902180388-e52c0fdebcd4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80');
+INSERT INTO categorias VALUES (null, 'espacioso y comodo para grandes y niños',  'Economicos', 'https://images.unsplash.com/photo-1639640163962-9e845bd7294a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
 
-INSERT INTO ciudad VALUES (null, 'Mendoza', 'Argentina', 'Mendoza');
-INSERT INTO ciudad VALUES (null, 'Cordoba', 'Argentina', 'Cordoba');
-INSERT INTO ciudad VALUES (null, 'Bogota', 'Colombia', 'Cundinamarca');
-INSERT INTO ciudad VALUES (null, 'Medellin', 'Colombia', 'Antioquia ');
+INSERT INTO ciudades VALUES (null, 'Mendoza', 'Argentina', 'Mendoza');
+INSERT INTO ciudades VALUES (null, 'Cordoba', 'Argentina', 'Cordoba');
+INSERT INTO ciudades VALUES (null, 'Bogota', 'Colombia', 'Cundinamarca');
+INSERT INTO ciudades VALUES (null, 'Medellin', 'Colombia', 'Antioquia ');
 
-INSERT INTO producto VALUES (null, 'El Dodge Charger es un automóvil deportivo producido por el fabricante estadounidense Dodge, división del grupo Stellantis. A la fecha, existen diferentes generaciones en tres diferentes plataformas. Este nombre es asociado generalmente con un modelo de rendimiento en la gama Dodge, aunque también se ha llevado a un Hatchback, un sedán y a un cupé de lujo personal.
+INSERT INTO productos VALUES (null, 'El Dodge Charger es un automóvil deportivo producido por el fabricante estadounidense Dodge, división del grupo Stellantis. A la fecha, existen diferentes generaciones en tres diferentes plataformas.', 'Dodge Charger', 1, 1);
+INSERT INTO productos VALUES (null, 'El Lamborghini Veneno es un automóvil superdeportivo de 2 puertas de tijera biplaza, con motor central-trasero montado longitudinalmente y tracción en las cuatro ruedas, producido por fabricante italiano Lamborghini.', 'Lamborghini Veneno', 2, 2);
+INSERT INTO productos VALUES (null, 'El Ford Fiesta es un automóvil de turismo del segmento B desarrollado por la filial europea de la empresa estadounidense Ford Motor Company, y fabricado en Alemania, España, Brasil, México, China, India y Sudáfrica.', 'Ford Fiesta', 3, 3);
+INSERT INTO productos VALUES (null, 'El Fiat 600 fue un pequeño automóvil diseñado por Dante Giacosa y construido por la empresa italiana Fiat desde 1955 hasta 1969. Fue un éxito mundial que se fabricó en muchos países, en la mayoría de ellos bajo la marca Fiat.', 'Fiat 600', 4, 4);
 
-Sus tres principales iteraciones producidas han sido: una línea de coches tamaño mediano de 1966 a 1978 (B-body); otra línea de tipo subcompacto de 1983 a 1987 (L-body); y la plataforma sedán LX y LD, producida desde 2006.
+INSERT INTO imagenes VALUES (null, 'https://www.autonocion.com/wp-content/uploads/2021/02/dodge-charger6-930x639.jpg', 1);
+INSERT INTO imagenes VALUES (null, 'https://i.pinimg.com/originals/d9/af/d2/d9afd24841980df5550c9e66867a179a.jpg', 1);
+INSERT INTO imagenes VALUES (null, 'https://www.borla.com/productImages/misc/140675-vehicle-1-large.jpg', 1);
+INSERT INTO imagenes VALUES (null, 'https://www.topgear.com/sites/default/files/cars-car/carousel/2019/10/dg020_395ch.jpg', 1);
+INSERT INTO imagenes VALUES (null, 'https://noticiasrtv.com/wp-content/uploads/2019/11/SpeedKore-Dodge-Charger-1525hp.-Un-verdadero-monstruo.jpg', 1);
 
-Este nombre también se llevó a un prototipo de 1999 que difería sustancialmente del modelo original, puesto en producción para el 2006. Un nombre similar Ramcharger, fue empleado para un vehículo tipo camioneta. ', 'Dodge Charger', 1, 1);
-INSERT INTO producto VALUES (null, 'El Lamborghini Veneno es un automóvil superdeportivo de 2 puertas de tijera biplaza, con motor central-trasero montado longitudinalmente y tracción en las cuatro ruedas, producido por fabricante italiano Lamborghini. ', 'Lamborghini Veneno', 2, 2);
-INSERT INTO producto VALUES (null, 'El Ford Fiesta es un automóvil de turismo del segmento B desarrollado por la filial europea de la empresa estadounidense Ford Motor Company, y fabricado en Alemania, España, Brasil, México, China, India y Sudáfrica. Desde su aparición en 1976 ha habido seis generaciones distintas del Fiesta y se han vendido más de doce millones de unidades.1​ Dentro de la gama de Ford, se ha colocado por encima del Ford Ka y por debajo del Ford Escort y el Ford Focus. El Fiesta es el único turismo de la gama europea de Ford que mantiene el nombre del modelo original de 1976, sin modificaciones.
+INSERT INTO imagenes VALUES (null, 'https://i0.wp.com/asphalt9.info/wp-content/uploads/2020/05/Lamborghini-Veneno-1.jpg?fit=1062%2C588&ssl=1', 2);
+INSERT INTO imagenes VALUES (null, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvAoyNl38q_qarRmNXIGeKa5cnIHWVTcJszA&usqp=CAU', 2);
+INSERT INTO imagenes VALUES (null, 'https://i.pinimg.com/originals/b4/c6/d7/b4c6d7b30d910a5ac16a9ca1f49c69ad.jpg', 2);
+INSERT INTO imagenes VALUES (null, 'https://blog.dupontregistry.com/wp-content/uploads/2017/02/lamborghini-veneno-2282017.jpg', 2);
+INSERT INTO imagenes VALUES (null, 'https://www.diariomotor.com/imagenes/picscache/1440x655c/Lamborghini-Aventador_LP750-4_SV-motor-2016-01_1440x655c.jpg', 2);
 
-El modelo se vendía en todo el mundo, hasta 2018. En Estados Unidos y Canadá solo estuvo disponible entre 1978 y 1980, pero en 2010 volvió a dichos mercados importando unidades manufacturadas en la planta de Cuautitlán (México). ', 'Ford Fiesta', 3, 3);
-INSERT INTO producto VALUES (null, 'El Fiat 600 fue un pequeño automóvil diseñado por Dante Giacosa y construido por la empresa italiana Fiat desde 1955 hasta 1969. Fue un éxito mundial que se fabricó en muchos países, en la mayoría de ellos bajo la marca Fiat, siendo conocido popularmente en Argentina como "Fitito" o su apócope "Fito". También se fabricó bajo otras marcas, como los fabricados a través de licencias de producción como SEAT en España del SEAT 600 entre los años 1957 a 1973 o como Zastava en Yugoslavia con el Zastava 750 desde 1962 hasta 1985. El Fiat 500 (lanzado en 1957), es posterior al Fiat 600 y este a su vez posterior al Fiat Topolino (1936).
+INSERT INTO imagenes VALUES (null, 'https://upload.wikimedia.org/wikipedia/commons/6/60/2019_Ford_Fiesta_Active_X_Turbo_1.0_Front.jpg', 3);
+INSERT INTO imagenes VALUES (null, 'https://periodismodelmotor.com/wp-content/uploads/2020/10/ford-fiesta-st-edition-01.jpg', 3);
+INSERT INTO imagenes VALUES (null, 'https://fotos.perfil.com/2021/09/16/ford-fiesta-2022-1231607.jpg', 3);
+INSERT INTO imagenes VALUES (null, 'https://www.topgear.com/sites/default/files/2022/05/51952068138_a79993a8de_k.jpg', 3);
+INSERT INTO imagenes VALUES (null, 'https://carnovo.com/wp-content/uploads/2018/07/Motor-del-Ford-Fiesta-2018.jpg', 3);
 
-Hubo una versión con más capacidad interior, el Fiat 600 Multipla, fabricada exclusivamente en Italia. Este vehículo representó una evolución únicamente en cuanto a carrocería, manteniendo intacta la configuración mecánica del modelo, siendo uno de los primeros monovolúmenes de la historia, con su generoso aprovechamiento del espacio, y capaz de albergar 6 pasajeros. ', 'Fiat 600', 4, 4);
+INSERT INTO imagenes VALUES (null, 'https://www.autopista.es/uploads/s1/57/79/29/1/article-loca-historia-fiat-600-clasico-motor-rotativo-mazda-5b22393fb5640.jpeg', 4);
+INSERT INTO imagenes VALUES (null, 'https://noficcionweb.com.ar/wp-content/uploads/2021/07/WhatsApp-Image-2021-04-08-at-3.28.19-PM-1-1024x682.jpeg', 4);
+INSERT INTO imagenes VALUES (null, 'https://img.motoryracing.com/noticias/portada/25000/25024-n.jpg', 4);
+INSERT INTO imagenes VALUES (null, 'https://i.pinimg.com/originals/94/51/cd/9451cd4a14cbe30ea99345e1102a7ad4.jpg', 4);
+INSERT INTO imagenes VALUES (null, 'https://img.motoryracing.com/noticias/portada/25000/25024-n.jpg', 4);
 
-INSERT INTO caracteristica VALUES (null, 'Transmision Automatica');
-INSERT INTO caracteristica VALUES (null, 'Sistema de navegacion');
-INSERT INTO caracteristica VALUES (null, 'Control crucero');
-INSERT INTO caracteristica VALUES (null, 'Detección de puntos ciegos');
+
+INSERT INTO caracteristicas VALUES (null, 'Transmision Automatica', '<i class="fa-solid fa-gears"></i>');
+INSERT INTO caracteristicas VALUES (null, 'Sistema de navegacion', '<FontAwesomeIcon icon="fa-solid fa-circle-location-arrow" />');
+INSERT INTO caracteristicas VALUES (null, 'Control crucero', '<FontAwesomeIcon icon="fa-solid fa-ship" />');
+INSERT INTO caracteristicas VALUES (null, 'Detección de puntos ciegos', '<FontAwesomeIcon icon="fa-solid fa-eye" />');
+
+INSERT INTO producto_caracteristica VALUES (1, 1);
+INSERT INTO producto_caracteristica VALUES (1, 2);
+INSERT INTO producto_caracteristica VALUES (1, 3);
+INSERT INTO producto_caracteristica VALUES (1, 4);
+INSERT INTO producto_caracteristica VALUES (2, 1);
+INSERT INTO producto_caracteristica VALUES (2, 2);
+INSERT INTO producto_caracteristica VALUES (2, 3);
+INSERT INTO producto_caracteristica VALUES (2, 4);
+INSERT INTO producto_caracteristica VALUES (3, 2);
+INSERT INTO producto_caracteristica VALUES (3, 4);
+INSERT INTO producto_caracteristica VALUES (4, 4);
