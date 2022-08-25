@@ -8,11 +8,11 @@ import lombok.Setter;
 import javax.persistence.*;
 
 @Entity
-@Table
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
+@Table(name = "imagenes")
 public class Imagen {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
