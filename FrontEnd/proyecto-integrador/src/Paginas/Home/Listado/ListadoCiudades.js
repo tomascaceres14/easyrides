@@ -7,7 +7,7 @@ import { DataProductosContext } from '../../../Context/DataProductosContext';
 
 const ListadoCiudades = () => {
   // aca consumo el context de data
-    const urlProductos = "http://localhost:8080/productos";
+    const urlProductos = "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/ciudades";
     const { data } = useFetch(urlProductos);
     const { elegirCiudades } = useContext(CiudadesContext);
     const {dataProductos, setDataProductos} = useContext(DataProductosContext);
@@ -32,7 +32,10 @@ const ListadoCiudades = () => {
                     {prod.descripcion}
                   </p>
                   <Link to="/producto">
-                    <button className="cardsProductos-unidad-boton">
+                    <button className="cardsProductos-unidad-boton" onClick={() =>
+                        localStorage.setItem("producto", JSON.stringify(prod))
+                      }
+                    >
                       Ver Más
                     </button>
                   </Link>
