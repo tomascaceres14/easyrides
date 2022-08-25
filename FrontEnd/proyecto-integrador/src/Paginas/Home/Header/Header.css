@@ -22,39 +22,42 @@
     margin-left: .5rem;
 }
 
-.header-derecha {
-    /*Contenedor de botones*/
+.nav_menu {
+    /*Editor del contenedor de boton*/
+    width: 400px;
+    height: 100px;
     display: flex;
+    flex-direction: row;
+
     align-items: center;
-    justify-content: space-between;
 }
 
-.header-derecha-boton {
+.nav_item {
     /*Editor de boton general*/
-    border: none;
+    width: 200px;
+    color: white;
+    text-decoration: none;
     padding: 16px 20px;
     border-radius: 5px;
+    text-align: center;
     position: relative;
     z-index: 1;
     overflow: hidden;
     display: inline-block;
-    justify-content: space-between;
-    width: 200px;
     font-family: var(--fuente1);
-}
-
-.sesion {
-    /*Editor de boton sesion*/
-    margin-right: 30px;
     cursor: pointer;
-    background-color: #928C8C;
-    color: white;
 }
 
-.sesion:after {
+#Iniciar-sesion {
+    /*Editor de boton iniciar sesion*/
+    background: #928C8C;
+    margin-right: 20px;
+}
+
+#Iniciar-sesion:after {
     content: "";
     background: black;
-    /* color de fondo hover */
+    /*---> color de fondo hover */
     position: absolute;
     z-index: -1;
     padding: 16px 20px;
@@ -66,7 +69,7 @@
     transition: all 0.35s;
 }
 
-.sesion:hover::after {
+#Iniciar-sesion:hover::after {
     left: 0;
     right: 0;
     top: 0;
@@ -75,21 +78,18 @@
     transition: all 0.35s;
 }
 
-.cuenta {
-    /*Editor de boton cuenta*/
+#Crear-cuenta {
+    /*Editor de boton crear cuenta*/
     background-color: #31363F;
-    color: white;
-    cursor: pointer;
 }
 
-.cuenta:after {
+#Crear-cuenta:after {
     content: "";
     background: black;
-    /* color de fondo hover */
+    /*---> color de fondo hover */
     position: absolute;
     z-index: -1;
     padding: 16px 20px;
-
     top: 0;
     bottom: 0;
     left: -100%;
@@ -98,7 +98,7 @@
     transition: all 0.35s;
 }
 
-.cuenta:hover::after {
+#Crear-cuenta:hover:after {
     left: 0;
     right: 0;
     top: 0;
@@ -107,63 +107,121 @@
     transition: all 0.35s;
 }
 
-.header-boton {
-    /* boton hamburguesa */
-    cursor: pointer;
-    background: white;
-    border: none;
-    outline: none;
-    display: none;
-    opacity: 0;
+.nav_input:checked+.nav_menu {
+    background-color: NONE;
 }
 
+.nav_label,
+.nav_input {
+    /*Para que no se vea menu de hamburguesa*/
+    display: none;
+}
+
+.FaBars {
+    width: 1000px;
+    height: 1000px;
+}
+
+.menuHamburguesa {
+    width: 100px;
+    height: 70px;
+    margin-top: 30px;
+}
 
 /*-------------------------------------
         DESAROLLO DEL RESPONSIVE
 ---------------------------------------*/
-@media only screen and (max-width: 1024px) {
-    .header-boton {
-        visibility: visible;
-        opacity: 1;
-        margin-left: 23rem;
+
+@media (max-width: 900px) {
+
+    .nav_label {
+        /*Hace visible el menu hamburguesa*/
+        display: block;
+        cursor: pointer;
     }
 
-    .header-derecha {
-        margin-left: 0rem;
-    }
-
-    header nav {
+    .nav_menu {
         position: fixed;
-        top: 0;
-        left: 0;
-        height: 100%;
+        top: 120px;
+        bottom: 0;
+        background: linear-gradient(white, #6f7277);
         width: 100%;
+        height: 100%;
+        left: 0;
+        display: flex;
+        justify-content: flex-start;
         flex-direction: column;
-        transition: 1s;
-        transform: translateY(-100vh);
-        background-color: #F0572D;
-        position: absolute;
+        align-items: center;
+        clip-path: circle(0 at center);
+        transition: clip-path 1s ease-in-out;
+        z-index: 2;
     }
 
-    header .responsive-header {
-        transform: none;
+    .nav_input:checked+.nav_menu {
+        clip-path: circle(100% at center);
     }
 
-    .header-cerrar-boton {
-        position: absolute;
-        top: 2.7rem;
-        right: 1rem;
+    .nav_item {
+        /*Editor de boton general*/
+        width: 200px;
+        color: white;
+        text-decoration: none;
+
+
+        padding: 16px 20px;
+        border-radius: 5px;
+        text-align: center;
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+        display: inline-block;
+        font-family: var(--fuente1);
+        cursor: pointer;
     }
 
-    .sesion {
-        margin-top: 15rem;
-        margin-left: 35rem;
+    #Iniciar-sesion {
+        /*Editor de boton iniciar sesion*/
+        background: #928C8C;
+        margin-right: 0;
+        margin-top: 30px;
     }
 
-    .cuenta {
-        margin-bottom: 18rem;
-        margin-left: 35rem;
+    #Iniciar-sesion:after {
+        background: var(--naranja);
+        /*---> color de fondo hover */
+    }
 
+    #Crear-cuenta {
+        /*Editor de boton crear cuenta*/
+        background-color: #31363F;
+        margin-top: 30px;
+    }
+
+    #Crear-cuenta:after {
+
+        background: var(--naranja);
+        /*---> color de fondo hover */
     }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*------------------------------------------------------------------------*/
