@@ -1,13 +1,13 @@
 stages:
   - triggers
 
-trigger_frontEnd:
-  stage: triggers
-  trigger:
-    include: FrontEnd/.gitlab-ci.yml
-  rules:
-    - changes:
-        - FrontEnd/*
+#trigger_frontEnd:
+#  stage: triggers
+#  trigger:
+#    include: FrontEnd/.gitlab-ci.yml
+#  rules:
+#    - changes:
+#        - FrontEnd/*
 
 trigger_backEnd:
   stage: triggers
