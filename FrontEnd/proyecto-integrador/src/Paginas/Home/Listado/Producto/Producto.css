@@ -12,7 +12,7 @@
   align-items: center;
 }
 
-.boton-volver{
+.boton-volver {
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
@@ -25,7 +25,6 @@
   text-decoration: underline;
 }
 
-
 .ubicacion {
   padding: 10px 40px;
   display: flex;
@@ -33,7 +32,7 @@
   background: #f0572d53;
 }
 
-.localidad{
+.localidad {
   display: flex;
   align-items: center;
   gap: 7px;
@@ -45,8 +44,8 @@
   gap: 20px;
 }
 
-.valoracion h2{
-  background: #31363F;
+.valoracion h2 {
+  background: #31363f;
   padding: 5px;
   border-radius: 5px;
   color: white;
@@ -58,18 +57,18 @@
   padding: 5px 20px;
 }
 
-.icons-prod{
+.icons-prod {
   padding: 10px 0px 0px 10px;
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
-.icons-prod button{
+.icons-prod button {
   background: white;
   border: none;
   cursor: pointer;
-  color: #31363F;
+  color: #31363f;
 }
 
 .galeriaImg {
@@ -81,7 +80,7 @@
 }
 
 img {
-    border-radius: 10px;
+  border-radius: 10px;
   width: 100%;
   overflow: hidden;
   aspect-ratio: 16 / 9;
@@ -118,10 +117,44 @@ img {
   grid-column-gap: 0px;
   grid-row-gap: 0px;
 }
-.reservaProductos{
+.reservaProductos {
   display: flex;
-
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
 }
-.botones{
-  border: 1px solid black;
+.botones {
+  text-align: center;
+  background-color: #31363f;
+  color: white;
+  border-radius: 5px;
+  width: 300px;
+  padding: 50px;
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+}
+
+.botones button {
+  padding: 5px;
+  background: #000;
+  border: none;
+  border-radius: 5px;
+  color: #b34121;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.calendario-prod {
+  background-color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 5px;
+    border-style: none;
+    border: none;
+    cursor: pointer;
+    border: none;
+    width:100%;
 }

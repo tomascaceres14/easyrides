@@ -3,13 +3,16 @@ import { CiudadesContext } from "../../../Context/CiudadesContext";
 import useFetch from '../../../Hooks/useFetch';
 import { Link } from "react-router-dom";
 import Listado from './Listado';
+import { DataProductosContext } from '../../../Context/DataProductosContext';
 
 const ListadoCiudades = () => {
   // aca consumo el context de data
     const urlProductos = "http://localhost:8080/productos";
     const { data } = useFetch(urlProductos);
-    const { elegirCiudades} = useContext(CiudadesContext);
-    
+    const { elegirCiudades } = useContext(CiudadesContext);
+    const {dataProductos, setDataProductos} = useContext(DataProductosContext);
+
+
     return (
       <div className="cardsProductos">
         {data &&

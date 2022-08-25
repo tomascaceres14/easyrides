@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Producto.css";
 import { FaShare, FaCity } from "react-icons/fa";
 import { MdOutlineArrowBackIos } from "react-icons/md";
@@ -9,6 +9,10 @@ import CalendarioProducto from "./CalendarioProducto";
 const Producto = () => {
   const producto = useState(JSON.parse(localStorage.getItem("producto")));
   const prodExtracto = producto[0];
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   return (
     <div>
@@ -77,8 +81,8 @@ const Producto = () => {
           <CalendarioProducto />
         </div>
           <div className="botones">
-            <p>Agrega tu fecha de reserva</p>
-            <button>Inciar Reserva</button>
+            <p>Elegi las fechas que necesites tu vehiculo y comenza con la aventura!</p>
+            <button>Iniciar Reserva</button>
           </div>
       </div>
     </div>
