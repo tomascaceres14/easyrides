@@ -1,3 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&family=Open+Sans:wght@300&display=swap');
+
+:root {
+    --naranja: #F0572D;
+    --fuente1: 'Aldrich', sans-serif;
+    --fuente2: 'Open Sans', sans-serif;
+}
+
 .cardsCategoria{
     padding: 40px;
     display: grid;
@@ -9,7 +17,11 @@
     font-size: 30px;
     margin-left: 2.5rem;
     margin-top: 5rem;
+    font-family: var(--fuente1);
+    color: var(--naranja);
+    text-align: center;
 }
+
 .cardsCategoria-unidad{
     border: 3px solid transparent;
     border-radius: .25rem;

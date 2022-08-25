@@ -1,26 +1,27 @@
 import "./Listado.css";
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import useFetch from "../../../Hooks/useFetch";
-import { CiudadesContext } from "../../../Context/CiudadesContext";
 import ListadoCiudades from "./ListadoCiudades";
-
+import { DataProductosContext } from "../../../Context/DataProductosContext";
 
 export default function Listado() {
+  // traigo el context y hago el booleano
   const urlProductos = "http://localhost:8080/productos";
-
+  //context que guarde data con un state 
   const { data } = useFetch(urlProductos);
-
+  const {dataProductos, setDataProductos} = useContext(DataProductosContext)
   return (
-    <div>
+    <div className="listado-container">
       <p className="cardsProductos-titulo">Recomendaciones</p>
       <div className="cardsProductos">
-        {data &&
+        {dataProductos ? (
+          data&&
           data.productos.map((prod) => (
             <div className="cardsProductos-unidad" key={prod.id}>
               <img
                 key={prod.id}
-                src={prod.url}
+                src={prod.imagenes[0].url}
                 alt=""
                 className="cardsProductos-unidad-img"
               />
@@ -31,16 +32,21 @@ export default function Listado() {
               <Link to="/producto">
                 <button
                   className="cardsProductos-unidad-boton"
-                  onClick={() => localStorage.setItem("producto", JSON.stringify(prod))}
+                  onClick={() =>
+                    localStorage.setItem("producto", JSON.stringify(prod))
+                  }
                 >
                   Ver Más
                 </button>
               </Link>
             </div>
-          ))}
-
+          ))
+        ) : (
+          <ListadoCiudades /> 
+          
+        )}
       </div>
-      <ListadoCiudades />
+      {/* <ListadoCiudades /> */}
     </div>
   );
 }

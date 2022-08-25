@@ -3,9 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 
 export const BotonesLoginRegister = () => {
   const { pathname } = useLocation();
-
   switch (pathname) {
-        
     case "/registro":
         return (
             <>

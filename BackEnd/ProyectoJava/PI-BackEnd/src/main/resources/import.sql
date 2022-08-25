@@ -38,10 +38,10 @@ INSERT INTO imagenes VALUES (null, 'https://i.pinimg.com/originals/94/51/cd/9451
 INSERT INTO imagenes VALUES (null, 'https://img.motoryracing.com/noticias/portada/25000/25024-n.jpg', 4);
 
 
-INSERT INTO caracteristicas VALUES (null, 'Transmision Automatica', '<i class="fa-solid fa-gears"></i>');
-INSERT INTO caracteristicas VALUES (null, 'Sistema de navegacion', '<FontAwesomeIcon icon="fa-solid fa-circle-location-arrow" />');
-INSERT INTO caracteristicas VALUES (null, 'Control crucero', '<FontAwesomeIcon icon="fa-solid fa-ship" />');
-INSERT INTO caracteristicas VALUES (null, 'Detección de puntos ciegos', '<FontAwesomeIcon icon="fa-solid fa-eye" />');
+INSERT INTO caracteristicas VALUES (null, 'Transmision Automatica', 'fa-solid fa-gears');
+INSERT INTO caracteristicas VALUES (null, 'Sistema de navegacion', 'fa-solid fa-circle-location-arrow');
+INSERT INTO caracteristicas VALUES (null, 'Control crucero', 'fa-solid fa-ship');
+INSERT INTO caracteristicas VALUES (null, 'Detección de puntos ciegos', 'fa-solid fa-ey');
 
 INSERT INTO producto_caracteristica VALUES (1, 1);
 INSERT INTO producto_caracteristica VALUES (1, 2);

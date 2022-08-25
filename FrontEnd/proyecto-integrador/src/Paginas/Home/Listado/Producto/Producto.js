@@ -1,13 +1,18 @@
-import React, { useContext, useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Producto.css";
-import { FaShare } from "react-icons/fa";
+import { FaShare, FaCity } from "react-icons/fa";
 import { MdOutlineArrowBackIos } from "react-icons/md";
-import { AiOutlineHeart } from "react-icons/ai";
+import { AiFillHeart } from "react-icons/ai";
+import { Link } from "react-router-dom";
+import CalendarioProducto from "./CalendarioProducto";
 
 const Producto = () => {
+  const producto = useState(JSON.parse(localStorage.getItem("producto")));
+  const prodExtracto = producto[0];
 
-  const producto = useState(JSON.parse(localStorage.getItem("producto")))
-  const prodExtracto = producto[0]
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
 
   return (
     <div>
@@ -15,20 +20,27 @@ const Producto = () => {
       <header>
         <div className="header-producto">
           <div>
-            <h4>{prodExtracto.categoria.titulo}</h4>
+            {/* <h4>{prodExtracto.categoria.titulo}</h4> */}
             <h2>{prodExtracto.titulo}</h2>
           </div>
-          <button className="boton-volver">
-            <MdOutlineArrowBackIos size={"30"} />
-            <strong>Volver al Inicio...</strong>
-          </button>
+          <Link to="/">
+            <button className="boton-volver">
+              <MdOutlineArrowBackIos size={"30"} />
+              <strong>Volver al Inicio</strong>
+            </button>
+          </Link>
         </div>
         <div className="ubicacion">
-          <div>
-            <p>{prodExtracto.ciudad.nombre}, {prodExtracto.ciudad.provincia}, {prodExtracto.ciudad.pais}</p>
+          <div className="localidad">
+            <FaCity size={"23"} color={"#767070"} />
+            <p>
+              {" "}
+              {prodExtracto.ciudad.nombre}, {prodExtracto.ciudad.provincia},{" "}
+              {prodExtracto.ciudad.pais}
+            </p>
           </div>
           <div className="valoracion">
-            <h4>Excelente</h4>
+            <h4>Puntuación:</h4>
             <h2>10</h2>
           </div>
         </div>
@@ -36,56 +48,43 @@ const Producto = () => {
       <section>
         <div className="icons-prod">
           <button>
-            <AiOutlineHeart size={"20"} />
+            <AiFillHeart size={"26"} />
           </button>
           <button>
-            <FaShare size={"20"} />
+            <FaShare size={"23"} />
           </button>
         </div>
 
         <div className="galeriaImg">
-          <img
-            className="img1"
-            src="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-          ></img>
-          <img
-            className="img2"
-            src="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-          ></img>
-          <img
-            className="img3"
-            src="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-          ></img>
-          <img
-            className="img4"
-            src="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-          ></img>
-          <img
-            className="img5"
-            src="https://images.unsplash.com/photo-1555215695-3004980ad54e?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
-          ></img>
+          <img src={prodExtracto.imagenes[0].url} className={"img1"}></img>
+          <img src={prodExtracto.imagenes[1].url} className={"img2"}></img>
+          <img src={prodExtracto.imagenes[2].url} className={"img3"}></img>
+          <img src={prodExtracto.imagenes[3].url} className={"img4"}></img>
+          <img src={prodExtracto.imagenes[4].url} className={"img5"}></img>
         </div>
         <article className="cuerpo">
           <h2>{prodExtracto.titulo}</h2>
-          <p className="descripcion">
-          {prodExtracto.categoria.descripcion}
-          </p>
+          <p className="descripcion">{prodExtracto.descripcion}</p>
         </article>
         <article className="cuerpo">
           <h2>Que ofrece este producto?</h2>
           <ul className="caracteristicas">
-            <li>cuatro puertas</li>
-            <li>cuatro puertas</li>
-            <li>cuatro puertas</li>
-            <li>cuatro puertas</li>
-            <li>cuatro puertas</li>
-            <li>cuatro puertas</li>
-            <li>cuatro puertas</li>
-            <li>cuatro puertas</li>
-            <li>cuatro puertas</li>
+            {prodExtracto &&
+              prodExtracto.caracteristicas.map((carac) => (
+                <li key={carac.id}>{carac.titulo}</li>
+              ))}
           </ul>
         </article>
       </section>
+      <div className="reservaProductos">
+        <div>
+          <CalendarioProducto />
+        </div>
+          <div className="botones">
+            <p>Elegi las fechas que necesites tu vehiculo y comenza con la aventura!</p>
+            <button>Iniciar Reserva</button>
+          </div>
+      </div>
     </div>
   );
 };
