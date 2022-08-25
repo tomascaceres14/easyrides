@@ -64,3 +64,17 @@
     }
 
 }
+@media only screen and (max-width: 695px) {
+    .buscador>h1 {
+        /*Mensaje del buscador*/
+        font-size: 36px;
+    }
+
+}
+@media only screen and (max-width: 650px) {
+    .buscador>h1 {
+        /*Mensaje del buscador*/
+        font-size: 30px;     
+    }
+   
+}
