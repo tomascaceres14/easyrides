@@ -20,7 +20,6 @@ export const SearchBar = () => {
   
   return (
     <div className="searchBar">
-      {console.log(elegirCiudades)}
       <Select
         className="searchBar-individual"
         defaultValue={""}

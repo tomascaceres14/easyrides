@@ -7,14 +7,14 @@ import { DataProductosContext } from '../../../Context/DataProductosContext';
 
 const ListadoCiudades = () => {
   // aca consumo el context de data
-    const urlProductos = "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/ciudades";
+    const urlProductos = "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/productos";
     const { data } = useFetch(urlProductos);
     const { elegirCiudades } = useContext(CiudadesContext);
     const {dataProductos, setDataProductos} = useContext(DataProductosContext);
 
-
     return (
       <div className="cardsProductos">
+        {console.log(data)}
         {data &&
           data.productos.map((prod) => (
             <>
