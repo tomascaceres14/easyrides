@@ -9,6 +9,7 @@ import Footer from "./Paginas/Home/Footer/Footer";
 import { useInitialState } from "./Hooks/useInitialState";
 import AppContext from "./Context/AppContext";
 import { AuthProvider } from "./Context/AuthContext";
+import { CiudadesProvider } from "./Context/CiudadesContext";
 import Producto from "./Paginas/Home/Listado/Producto/Producto";
 
 function App() {
@@ -16,7 +17,8 @@ function App() {
   return (
     <div className="App">
       <AppContext.Provider value={initialState}>
-        <AuthProvider>
+        <CiudadesProvider>
+            <AuthProvider>
             <BrowserRouter>
               <Header user={initialState} />
               <Routes>
@@ -27,7 +29,9 @@ function App() {
               </Routes>
               <Footer />
             </BrowserRouter>
-        </AuthProvider>
+          </AuthProvider>
+        </CiudadesProvider>
+        
       </AppContext.Provider>
     </div>
   );

@@ -1,7 +1,16 @@
 .avatar{
     display: flex;
 }
+.avatar-nombre{
+    margin-top: .3rem;
+}
 .avatar-sesion{
     margin-left: 1rem;
     cursor: pointer;
+    padding: .5rem .8rem;
+    border: none;
+    color: white;
+    background-color: #f1663f;
+    border-radius: .7rem;
+    transition: 1s;
 }
