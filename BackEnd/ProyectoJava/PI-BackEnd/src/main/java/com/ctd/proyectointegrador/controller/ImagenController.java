@@ -21,7 +21,7 @@ public class ImagenController {
     @PostMapping()
     public ResponseEntity<Map<String, Object>> guardar(@RequestBody ImagenDTO imagenes){
         Map<String, Object> response = imagenService.guardar(imagenes);
-        return ResponseEntity.created(URI.create("/Imagenes")).body(response);
+        return ResponseEntity.created(URI.create("/imagenes")).body(response);
     }
 
     @GetMapping("/{id}")

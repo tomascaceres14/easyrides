@@ -22,7 +22,7 @@ public class CiudadController {
     @PostMapping()
     public ResponseEntity<Map<String, Object>> guardar(@RequestBody CiudadDTO ciudad){
         Map<String, Object> response = ciudadService.guardar(ciudad);
-        return ResponseEntity.created(URI.create("/Ciudades")).body(response);
+        return ResponseEntity.created(URI.create("/ciudades")).body(response);
     }
 
     @GetMapping("/{id}")
