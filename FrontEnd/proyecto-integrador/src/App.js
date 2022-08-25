@@ -18,8 +18,9 @@ function App() {
   return (
     <div className="App">
       <AppContext.Provider value={initialState}>
-        <DataProductosProvider>
+        
           <CiudadesProvider>
+            <DataProductosProvider>
             <AuthProvider>
               <BrowserRouter>
                 <Header user={initialState} />
@@ -32,8 +33,9 @@ function App() {
                 <Footer />
               </BrowserRouter>
             </AuthProvider>
+            </DataProductosProvider>
           </CiudadesProvider>
-        </DataProductosProvider>
+        
         
         
       </AppContext.Provider>
