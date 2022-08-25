@@ -22,75 +22,68 @@ public class ImagenService implements IService<ImagenDTO> {
     @Autowired
     ObjectMapper mapper;
 
-    Map<String, Object> respuesta = new HashMap<>();
+    private Map<String, Object> buildResponse(Object dto, String message, Integer code) {
+        Map<String, Object> response = new HashMap<>();
+        response.put("productos", dto);
+        response.put("message", message);
+        response.put("codigo", code);
+        return response;
+    }
 
 
     @Override
-    public Map<String, Object> guardar(ImagenDTO object) {
-        respuesta.clear();
-        Imagen imagenes = mapper.convertValue(object, Imagen.class);
-        Imagen nuevaImagenes= imagenRepository.save(imagenes);
-        respuesta.put("codigo",200);
-        respuesta.put("imagenes", mapper.convertValue(nuevaImagenes, ImagenDTO.class));
-        return respuesta;
-    }
+        public Map<String, Object> guardar(ImagenDTO object) {
+            Imagen imagenes = mapper.convertValue(object, Imagen.class);
+            Imagen nuevaImagenes= imagenRepository.save(imagenes);
+            return buildResponse(mapper.convertValue(nuevaImagenes, ImagenDTO.class), "Imagen guardada", 201);
+        }
+
+
 
     @Override
     public Map<String, Object> buscar(Integer id) {
-        respuesta.clear();
-        if(imagenRepository.findById(id).isPresent()){
-            Imagen imagenes = imagenRepository.findById(id).get();
-            respuesta.put("codigo", 200);
-            respuesta.put("imagen", mapper.convertValue(imagenes, ImagenDTO.class));
-        }else{
-            respuesta.remove("imagen");
-            respuesta.put("codigo",404);
-            respuesta.put("mensaje", "Imagen id: "+ id +" no existe");
-        }
-        return respuesta;
+        Imagen imagenes = imagenRepository.findById(id).get();
+        return buildResponse(mapper.convertValue(imagenes, ImagenDTO.class),"Imagen encontrada ",201);
     }
+
 
     @Override
     public Map<String, Object> actualizar(Integer id, ImagenDTO object) {
-        respuesta.clear();
-        if(imagenRepository.findById(id).isPresent()){
-            Imagen i = mapper.convertValue(respuesta.get("imagen"), Imagen.class);
-            imagenRepository.save(i);
-            respuesta.replace("imagen", mapper.convertValue(i, ImagenDTO.class));
+        Imagen actualizar = mapper.convertValue(object, Imagen.class);
+        Imagen imagenenBD = imagenRepository.findById(id).orElse(null);
+        if (imagenenBD == null) {
+            return buildResponse(new ImagenDTO(), "No existe la imagen con id" + id, 404);
         }
-        return respuesta;
+        imagenenBD.setUrl(actualizar.getUrl());
+        Imagen imagenr = imagenRepository.save(imagenenBD);
+        return buildResponse(mapper.convertValue(imagenr, ImagenDTO.class),"Actualizacion exitosa",201);
 
     }
 
 
     @Override
     public Map<String, Object> eliminar(Integer id) {
-        respuesta.clear();
-        if(imagenRepository.findById(id).isPresent()){
+        if (imagenRepository.findById(id).isPresent()) {
             imagenRepository.deleteById(id);
-            respuesta.put("codigo", 200);
-            respuesta.put("mensaje", "Imagen id: "+id + " eliminada");
-        }else {
-            respuesta.put("codigo", 404);
-            respuesta.put("mensaje", "Imagen id: "+id + " no existe");
+            return buildResponse(new ImagenDTO(), "Imagen id " + id + "eliminada", 201);
+        } else {
+            return buildResponse(new ImagenDTO(), "Imagen id "+ id + "no existe", 404);
         }
-        return respuesta;
     }
-
 
 
     @Override
     public Map<String, Object> listarTodos() {
-        respuesta.clear();
         List<Imagen> listaImagenes = imagenRepository.findAll();
+
         List<ImagenDTO> listaImageDTO = new ArrayList<>();
+
         for(Imagen i : listaImagenes){
             ImagenDTO imageDTO =mapper.convertValue(i, ImagenDTO.class);
             listaImageDTO.add(imageDTO);
         }
-        respuesta.put("codigo", 200);
-        respuesta.put("Imagenes",listaImageDTO);
-        return respuesta;
+       return buildResponse(listaImageDTO, "Lista creada",200);
     }
+
 
 }
