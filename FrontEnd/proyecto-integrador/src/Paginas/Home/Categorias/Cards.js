@@ -1,13 +1,14 @@
 import React from "react";
 import "./Cards.css";
 import useFetch from "../../../Hooks/useFetch";
+
 export default function Cards() {
   const urlCategorias = "http://localhost:8080/categorias";
   const { data } = useFetch(urlCategorias)
 
   return (
     <div>
-      <h2 className="cardsCategoria-titulo">Busca por categoria</h2>
+      <h2 className="cardsCategoria-titulo">¿Que tipo de carro quieres elegir?</h2>
       <div className="cardsCategoria">
       {data&&data.categorias.map((cat)=>(
         <div key={cat.id} className="cardsCategoria-unidad">

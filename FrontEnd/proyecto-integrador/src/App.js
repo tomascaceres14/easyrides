@@ -10,6 +10,7 @@ import { useInitialState } from "./Hooks/useInitialState";
 import AppContext from "./Context/AppContext";
 import { AuthProvider } from "./Context/AuthContext";
 import { CiudadesProvider } from "./Context/CiudadesContext";
+import { DataProductosProvider } from "./Context/DataProductosContext";
 import Producto from "./Paginas/Home/Listado/Producto/Producto";
 
 function App() {
@@ -17,20 +18,24 @@ function App() {
   return (
     <div className="App">
       <AppContext.Provider value={initialState}>
-        <CiudadesProvider>
+          <CiudadesProvider>
+            <DataProductosProvider>
             <AuthProvider>
-            <BrowserRouter>
-              <Header user={initialState} />
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/registro" element={<Registro />} />
-                <Route path="/producto" element={<Producto />} />
-              </Routes>
-              <Footer />
-            </BrowserRouter>
-          </AuthProvider>
-        </CiudadesProvider>
+              <BrowserRouter>
+                <Header user={initialState} />
+                  <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/login" element={<Login />} />
+                    <Route path="/registro" element={<Registro />} />
+                    <Route path="/producto" element={<Producto />} />
+                  </Routes>
+                <Footer />
+              </BrowserRouter>
+            </AuthProvider>
+            </DataProductosProvider>
+          </CiudadesProvider>
+        
+        
         
       </AppContext.Provider>
     </div>
