@@ -22,76 +22,64 @@ public class CaracteristicaService implements IService<CaracteristicaDTO> {
     @Autowired
     ObjectMapper mapper;
 
-    Map<String, Object> respuesta = new HashMap<>();
+    private Map<String, Object> buildResponse(Object dto, String message, Integer code) {
+        Map<String, Object> response = new HashMap<>();
+        response.put("productos", dto);
+        response.put("message", message);
+        response.put("codigo", code);
+        return response;
+    }
 
 
     @Override
     public Map<String, Object> guardar(CaracteristicaDTO object) {
-        respuesta.clear();
         Caracteristica caracteristica = mapper.convertValue(object, Caracteristica.class);
         Caracteristica nuevaCaracteristica= caracteristicaRepository.save(caracteristica);
-        respuesta.put("codigo",200);
-        respuesta.put("caracteristica", mapper.convertValue(nuevaCaracteristica, CaracteristicaDTO.class));
-        return respuesta;
+        return buildResponse(mapper.convertValue(nuevaCaracteristica, CaracteristicaDTO.class), "Caracteristica guardada", 201);
     }
+
 
     @Override
     public Map<String, Object> buscar(Integer id) {
-        respuesta.clear();
-        if(caracteristicaRepository.findById(id).isPresent()){
-            Caracteristica caracteristica = caracteristicaRepository.findById(id).get();
-            respuesta.put("codigo", 200);
-            respuesta.put("caracteristica", mapper.convertValue(caracteristica, CaracteristicaDTO.class));
-        }else{
-            respuesta.remove("caracteristica");
-            respuesta.put("codigo",404);
-            respuesta.put("mensaje", "Caracteristica id: "+ id +" no existe");
-        }
-        return respuesta;
+        Caracteristica caracteristica = caracteristicaRepository.findById(id).get();
+        return buildResponse(mapper.convertValue(caracteristica, CaracteristicaDTO.class),"Caracteristica id "+id+" encontrada", 201);
     }
 
     @Override
     public Map<String, Object> actualizar(Integer id, CaracteristicaDTO object) {
-        respuesta.clear();
-        if(caracteristicaRepository.findById(id).isPresent()){
-            Caracteristica c = mapper.convertValue(respuesta.get("caracteristica"), Caracteristica.class);
-            c.setTitulo(object.getTitulo() != null ? object.getTitulo() : c.getTitulo());
-            caracteristicaRepository.save(c);
-            respuesta.replace("caracteristica", mapper.convertValue(c, CaracteristicaDTO.class));
+        Caracteristica actualizar = mapper.convertValue(object, Caracteristica.class);
+        Caracteristica caracteristicaenBD = caracteristicaRepository.findById(id).get();
+        if(caracteristicaenBD == null){
+            return buildResponse(new CaracteristicaDTO(), "No existe la caracteristica con id "+ id ,404);
         }
-        return respuesta;
-
+        caracteristicaenBD.setTitulo(actualizar.getTitulo());
+        Caracteristica caracteristicar = caracteristicaRepository.save(caracteristicaenBD);
+        return buildResponse(mapper.convertValue(caracteristicar, CaracteristicaDTO.class),"Actualizacion exitosa",201);
     }
+
 
 
     @Override
     public Map<String, Object> eliminar(Integer id) {
-        respuesta.clear();
         if(caracteristicaRepository.findById(id).isPresent()){
             caracteristicaRepository.deleteById(id);
-            respuesta.put("codigo", 200);
-            respuesta.put("mensaje", "Caracteristica id: "+id + " eliminada");
+            return buildResponse(new CaracteristicaDTO(), "Caracteristica id " + id + "eliminada", 201);
         }else {
-            respuesta.put("codigo", 404);
-            respuesta.put("mensaje", "Caracteristica id: "+id + " no existe");
+            return buildResponse(new CaracteristicaDTO(), "Caracteristica id "+ id + "no existe", 404);
         }
-        return respuesta;
-    }
 
+    }
 
 
     @Override
     public Map<String, Object> listarTodos() {
-        respuesta.clear();
         List<Caracteristica> listaCaracteristicas = caracteristicaRepository.findAll();
         List<CaracteristicaDTO> listaCaractDTO = new ArrayList<>();
         for(Caracteristica c : listaCaracteristicas){
             CaracteristicaDTO CaractDTO =mapper.convertValue(c, CaracteristicaDTO.class);
             listaCaractDTO.add(CaractDTO);
         }
-        respuesta.put("codigo", 200);
-        respuesta.put("caracteristicas",listaCaractDTO);
-        return respuesta;
+        return buildResponse(listaCaractDTO, "Lista creada",200);
     }
 
 }
