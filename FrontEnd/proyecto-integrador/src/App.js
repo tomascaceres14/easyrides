@@ -11,13 +11,18 @@ import AppContext from "./Context/AppContext";
 import { AuthProvider } from "./Context/AuthContext";
 import { CiudadesProvider } from "./Context/CiudadesContext";
 import { DataProductosProvider } from "./Context/DataProductosContext";
+import { CategoriasProvider } from "./Context/CategoriasContext";
 import Producto from "./Paginas/Home/Listado/Producto/Producto";
+import { MostrarCategoriasContext, MostrarCategoriasProvider } from "./Context/MostrarCategoriasContext";
 
 function App() {
   const initialState = useInitialState();
   return (
     <div className="App">
       <AppContext.Provider value={initialState}>
+        <MostrarCategoriasProvider>
+        <CategoriasProvider>
+        
           <CiudadesProvider>
             <DataProductosProvider>
             <AuthProvider>
@@ -34,9 +39,8 @@ function App() {
             </AuthProvider>
             </DataProductosProvider>
           </CiudadesProvider>
-        
-        
-        
+        </CategoriasProvider>
+        </MostrarCategoriasProvider>
       </AppContext.Provider>
     </div>
   );

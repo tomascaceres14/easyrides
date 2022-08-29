@@ -5,31 +5,32 @@
 }
 
 .header-producto {
-  background: #f0572d;
+  background: #ffff;
   padding: 10px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color:  #f0572dd3;
 }
-
+.header-producto h2{
+  margin-left: 1.5rem;
+}
 .boton-volver {
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
   background: none;
   border: none;
-  border-radius: 5px;
-  background: #b34121;
+  border-radius: .7rem;
   padding: 7px;
+  margin-right: 2rem;
   cursor: pointer;
-  text-decoration: underline;
 }
 
 .ubicacion {
   padding: 10px 40px;
   display: flex;
   justify-content: space-between;
-  background: #f0572d53;
 }
 
 .localidad {
@@ -41,13 +42,14 @@
 .valoracion {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 1rem;
+  margin-right: 1rem;
 }
 
 .valoracion h2 {
   background: #31363f;
   padding: 5px;
-  border-radius: 5px;
+  border-radius: .5rem;
   color: white;
 }
 
@@ -61,6 +63,7 @@
   padding: 10px 0px 0px 10px;
   display: flex;
   align-items: center;
+  margin-left: 1.5rem;
   gap: 10px;
 }
 

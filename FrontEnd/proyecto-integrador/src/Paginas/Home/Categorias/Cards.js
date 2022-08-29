@@ -1,31 +1,36 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Cards.css";
 import useFetch from "../../../Hooks/useFetch";
+import { CategoriasContext } from "../../../Context/CategoriasContext";
+import { MostrarCategoriasContext } from "../../../Context/MostrarCategoriasContext";
 
 export default function Cards() {
   const urlCategorias = "http://localhost:8080/categorias";
   const { data } = useFetch(urlCategorias)
+  const { elegirCategorias, setElegirCategorias } = useContext(CategoriasContext);
+  const { mostrarCategorias, setMostrarCategorias } = useContext(MostrarCategoriasContext);
 
   return (
     <div>
-      <h2 className="cardsCategoria-titulo">¿Que tipo de carro quieres elegir?</h2>
+      <h2 className="cardsCategoria-titulo">Busca por categorías</h2>
       <div className="cardsCategoria">
-      {data&&data.categorias.map((cat)=>(
-        <div key={cat.id} className="cardsCategoria-unidad">
-          <img
-            src={cat.url}
-            alt=""
-            className="cardsCategoria-unidad-img"/>
-          <p className="cardsCategoria-unidad-nombre">
-            {cat.titulo}
-          </p>
-          <p className="cardsCategoria-unidad-descripcion">
-            {cat.descripcion}
-          </p>
-        </div>
-      ))}
-    </div> 
+        {data &&
+          data.categorias.map((cat) => (
+            
+            <div
+              key={cat.id}
+              className="cardsCategoria-unidad"
+              onClick={() =>
+                setElegirCategorias(cat.titulo)
+                &&setMostrarCategorias(true)
+              }
+            
+            >
+              <img src={cat.url} alt="" className="cardsCategoria-unidad-img" />
+              <p className="cardsCategoria-unidad-nombre">{cat.titulo}</p>
+            </div>
+          ))}
+      </div>
     </div>
-    
   );
 }

@@ -5,16 +5,12 @@ import Cards from './Categorias/Cards'
 import Listado  from './Listado/Listado'
 import Footer from './Footer/Footer'
 
-
 export const Home = () => {
   return (
     <div>
-      {/* <Header /> */}
       <Buscador />
       <Cards />
       <Listado />
-      {/* <Footer /> */}
     </div>
-    
-  )
+  );
 }

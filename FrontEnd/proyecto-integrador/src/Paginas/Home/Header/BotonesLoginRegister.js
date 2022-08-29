@@ -1,5 +1,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
+import "./Header.css";
+
 
 export const BotonesLoginRegister = () => {
   const { pathname } = useLocation();
@@ -21,7 +23,7 @@ export const BotonesLoginRegister = () => {
                 <button
                   className="header-derecha-boton cuenta"
                 >
-                  Crear cuenta
+                  Crear Cuenta
                 </button>
               </Link>
             </>
