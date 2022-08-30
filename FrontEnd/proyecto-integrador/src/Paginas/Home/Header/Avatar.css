@@ -2,12 +2,14 @@
     display: flex;
 }
 .avatar-nombre{
-    margin-top: .3rem;
+    margin-top: .4rem;
+    font-weight: 600;
 }
 .avatar-sesion{
     margin-left: 1rem;
     cursor: pointer;
-    padding: .5rem .8rem;
+    font-weight: 600;
+    padding: .6rem .8rem;
     border: none;
     color: white;
     background-color: #f1663f;

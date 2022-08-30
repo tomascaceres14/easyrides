@@ -1,39 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Aldrich&family=Open+Sans:wght@300&display=swap');
 
-:root {
-    --naranja: #F0572D;
-    --fuente1: 'Aldrich', sans-serif;
-    --fuente2: 'Open Sans', sans-serif;
-}
+
 
 .cardsCategoria{
-    padding: 40px;
+    padding: 60px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-
+    gap: 40px;
 }
 .cardsCategoria-titulo{
     font-size: 30px;
-    margin-left: 2.5rem;
+    margin-left: 3.8rem;
     margin-top: 5rem;
-    font-family: var(--fuente1);
-    color: var(--naranja);
-    text-align: center;
 }
 
 .cardsCategoria-unidad{
-    border: 3px solid transparent;
-    border-radius: .25rem;
-    padding: 5px;
-    box-shadow: 0 1px 4px rgb(0 0 0 / 25%);
+    border-radius: 1rem;
+    box-shadow: 0 1px 4px rgb(0 0 0 / 15%);
     cursor: pointer;
     /* background-color:#eeeff0 ; */
     
 }
 .cardsCategoria-unidad-img{
     width: 100%;
-    overflow: hidden;
+    border-radius: 15px 15px 0px 0px;
     aspect-ratio: 16 / 9;
     object-fit: cover;
     object-position: center;
@@ -41,10 +31,14 @@
 .cardsCategoria-unidad-nombre{
     font-size: 25px;
     font-weight: 500;
+    margin-left: .8rem;
+    margin-top: .5rem;
+    margin-bottom: 2rem;
 }
 .cardsCategoria-unidad-descripcion{
     margin-top: 5px;
-    margin-bottom: 5px;
+    margin-bottom: 1rem;
+    margin-left: .8rem;
     font-size: 20px;
 }
 @media only screen and (max-width: 1024px){

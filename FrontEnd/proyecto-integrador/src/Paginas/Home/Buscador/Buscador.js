@@ -15,11 +15,15 @@ function  Buscador(){
 
   return (
     <div className="buscador">
-      <h1>¿Ya elegiste tu próximo destino?</h1>
+      <h1 className="buscador-titulo">Buscá, reservá y <br></br> alquilá tu auto</h1>
+      {/* <img src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80" /> */}
       <div className="buscadores">
         <SearchBar />
         <Calendario className="calendario" />
-        <button className="buscador-submit" onClick={() => setDataProductos(false)}>
+        <button
+          className="buscador-submit"
+          onClick={() => setDataProductos(false)}
+        >
           Buscar
         </button>
       </div>

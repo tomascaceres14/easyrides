@@ -1,136 +1,66 @@
 @import url('https://fonts.googleapis.com/css2?family=Aldrich&family=Open+Sans:wght@300&display=swap');
 
-:root {
-    --naranja: #F0572D;
-    --fuente1: 'Aldrich', sans-serif;
-    --fuente2: 'Open Sans', sans-serif;
-}
 
-.header {
+
+.header{
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 1rem;
-    background-color: var(--naranja);
-    height: 122px;
+    background-color: #FFFFFF;
 }
 
-.header-logo {
-    /*Ajustando tamaño del logo*/
-    width: 360px;
-    height: 110px;
-    margin-left: .5rem;
+.header-logo-img{
+    height: 3rem;
+    width: 14rem;
+    margin-left: 1.5rem;
+    object-fit: fill;
 }
-
 .header-derecha {
-    /*Contenedor de botones*/
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
 .header-derecha-boton {
-    /*Editor de boton general*/
+    padding: .8rem 2rem;
+    margin-right: 2.1rem;
+    border-radius: .7rem;
     border: none;
-    padding: 16px 20px;
-    border-radius: 5px;
-    position: relative;
-    z-index: 1;
-    overflow: hidden;
-    display: inline-block;
-    justify-content: space-between;
-    width: 200px;
-    font-family: var(--fuente1);
 }
 
 .sesion {
-    /*Editor de boton sesion*/
-    margin-right: 30px;
+    margin-left: 2rem;
+    font-weight: 500;
     cursor: pointer;
-    background-color: #928C8C;
-    color: white;
-}
-
-.sesion:after {
-    content: "";
-    background: black;
-    /* color de fondo hover */
-    position: absolute;
-    z-index: -1;
-    padding: 16px 20px;
-    top: 0;
-    bottom: 0;
-    left: -100%;
-    right: 100%;
-    -webkit-transition: all 0.35s;
-    transition: all 0.35s;
-}
-
-.sesion:hover::after {
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    -webkit-transition: all 0.35s;
-    transition: all 0.35s;
+    background-color: rgb(237, 238, 238);
 }
 
 .cuenta {
-    /*Editor de boton cuenta*/
-    background-color: #31363F;
+    background-color: #F0572D;
     color: white;
     cursor: pointer;
+    font-weight: 600;
 }
 
-.cuenta:after {
-    content: "";
-    background: black;
-    /* color de fondo hover */
-    position: absolute;
-    z-index: -1;
-    padding: 16px 20px;
-
-    top: 0;
-    bottom: 0;
-    left: -100%;
-    right: 100%;
-    -webkit-transition: all 0.35s;
-    transition: all 0.35s;
-}
-
-.cuenta:hover::after {
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    -webkit-transition: all 0.35s;
-    transition: all 0.35s;
-}
-
+/* botones hamburguesa */
 .header-boton {
-    /* boton hamburguesa */
     cursor: pointer;
-    background: white;
+    background: transparent;
     border: none;
     outline: none;
     display: none;
     opacity: 0;
 }
 
-
-/*-------------------------------------
-        DESAROLLO DEL RESPONSIVE
----------------------------------------*/
 @media only screen and (max-width: 1024px) {
     .header-boton {
-        visibility: visible;
-        opacity: 1;
-        margin-left: 23rem;
         display: block;
+        opacity: 1;
     }
 
-    .header-derecha {
-        margin-left: 0rem;
+    .header-derecha-boton {
+        margin-right: 15rem;
     }
 
     header nav {
@@ -143,7 +73,8 @@
         transition: 1s;
         transform: translateY(-100vh);
         background-color: #F0572D;
-        position: absolute;
+        position: absolute !important;
+        z-index: 999 !important;
     }
 
     header .responsive-header {
@@ -164,7 +95,9 @@
     .cuenta {
         margin-bottom: 18rem;
         margin-left: 35rem;
-
+        background-color: rgb(237, 238, 238);
+        color: black;
+        font-weight: 500;
     }
 
 }

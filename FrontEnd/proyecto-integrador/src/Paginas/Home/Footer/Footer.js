@@ -3,7 +3,7 @@ import "./Footer.css"
 const Footer = () => {
   return (
     <div className="footer">
-      <p>©2021 Digital Booking</p>
+      <p>©2021 EasyRides</p>
     </div>
   );
 }
