@@ -24,7 +24,7 @@ public class CaracteristicaService implements IService<CaracteristicaDTO> {
 
     private Map<String, Object> buildResponse(Object dto, String message, Integer code) {
         Map<String, Object> response = new HashMap<>();
-        response.put("productos", dto);
+        response.put("caracteristicas", dto);
         response.put("message", message);
         response.put("codigo", code);
         return response;

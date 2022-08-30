@@ -21,7 +21,7 @@ public class CategoriaService implements IService<CategoriaDTO> {
 
     private Map<String, Object> buildResponse(Object dto, String message, Integer code) {
         Map<String, Object> response = new HashMap<>();
-        response.put("productos", dto);
+        response.put("categorias", dto);
         response.put("message", message);
         response.put("codigo", code);
         return response;
