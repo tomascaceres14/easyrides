@@ -16,17 +16,19 @@ export default function Cards() {
       <div className="cardsCategoria">
         {data &&
           data.categorias.map((cat) => (
-            
             <div
               key={cat.id}
               className="cardsCategoria-unidad"
-              onClick={() =>
-                setElegirCategorias(cat.titulo)
-                &&setMostrarCategorias(true)
+              onClick={
+                () => {setElegirCategorias(cat.titulo);setMostrarCategorias(true)}
               }
-            
             >
-              <img src={cat.url} alt="" className="cardsCategoria-unidad-img" />
+              <img
+                src={cat.url}
+                alt=""
+                className="cardsCategoria-unidad-img"
+                
+              />
               <p className="cardsCategoria-unidad-nombre">{cat.titulo}</p>
             </div>
           ))}

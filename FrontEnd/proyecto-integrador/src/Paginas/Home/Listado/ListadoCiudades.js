@@ -18,7 +18,7 @@ const ListadoCiudades = () => {
         {data &&
           data.productos.map((prod) => (
             <>
-              {prod.ciudad.nombre === elegirCiudades ? (
+              {prod.ciudad.nombre == elegirCiudades ? (
                 <div key={prod.id} className="listado-unidad">
                   <img
                     src={prod.imagenes[0].url}
@@ -27,7 +27,7 @@ const ListadoCiudades = () => {
                   />
                   <h2 className="listado-unidad-nombre">{prod.titulo}</h2>
                   <p className="cardsProductos-unidad-descripcion">
-                    {prod.descripcion}
+                    {prod.ciudad.nombre + ", " + prod.ciudad.provincia}
                   </p>
                   <Link to="/producto">
                     <button
@@ -40,9 +40,7 @@ const ListadoCiudades = () => {
                     </button>
                   </Link>
                 </div>
-              ) : 
-              null
-              }
+              ) : null}
             </>
           ))}
       </div>

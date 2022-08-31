@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
+import "./Listado.css";
 import { CategoriasContext } from "../../../Context/CategoriasContext";
-import { MostrarCategoriasContext } from "../../../Context/MostrarCategoriasContext";
 import useFetch from "../../../Hooks/useFetch";
 import { Link } from "react-router-dom";
 
@@ -13,21 +13,24 @@ const ListadoCategorias = () => {
 
 
   return (
-    <div className="cardsProductos">
+    <div className="listado-container">
       {data &&
         data.productos.map((prod) => (
           <>
-            {prod.categoria.titulo === elegirCategorias ? (
-              <div key={prod.id} className="cardsProductos-unidad">
+            {prod.categoria.titulo == elegirCategorias ? (
+              <div key={prod.id} className="listado-unidad">
                 <img
                   src={prod.imagenes[0].url}
                   alt=""
                   className="cardsProductos-unidad-img"
                 />
-                <h2 className="cardsProductos-unidad-nombre">{prod.titulo}</h2>
+                <h2 className="listado-unidad-nombre">{prod.titulo}</h2>
+                <p className="cardsProductos-unidad-descripcion">
+                  {prod.ciudad.nombre + ", " + prod.ciudad.provincia}
+                </p>
                 <Link to="/producto">
                   <button
-                    className="cardsProductos-unidad-boton"
+                    className="listado-unidad-boton"
                     onClick={() =>
                       localStorage.setItem("producto", JSON.stringify(prod))
                     }

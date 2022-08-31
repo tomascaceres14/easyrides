@@ -22,7 +22,9 @@ export default function Listado() {
     <div className="listado-container">
       <p className="cardsProductos-titulo">Recomendaciones</p>
       <div className="cardsProductos">
-        {dataProductos ? (
+        {mostrarCategorias ? (
+          <ListadoCategorias />
+        ) : dataProductos ? (
           data &&
           data.productos.map((prod) => (
             <div className="listado-unidad" key={prod.id}>
@@ -52,11 +54,12 @@ export default function Listado() {
           ))
         ) : !dataProductos ? (
           <ListadoCiudades />
-        ) : mostrarCategorias ? (
-          <ListadoCategorias />
-        ) : null}
+        ) 
+        // : mostrarCategorias ? (
+        //   <ListadoCategorias />
+        // ) 
+        : null}
       </div>
-      
     </div>
   );
 }
