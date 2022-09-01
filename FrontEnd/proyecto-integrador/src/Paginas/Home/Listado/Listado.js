@@ -1,11 +1,12 @@
 import "./Listado.css";
 import React, { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import useFetch from "../../../Hooks/useFetch";
 import ListadoCiudades from "./ListadoCiudades";
 import ListadoCategorias from "./ListadoCategorias";
 import { DataProductosContext } from "../../../Context/DataProductosContext";
 import { MostrarCategoriasContext } from "../../../Context/MostrarCategoriasContext";
+import { DataPaginaProductosContext } from "../../../Context/DataPaginaProductosContext";
 
 
 export default function Listado() {
@@ -14,10 +15,10 @@ export default function Listado() {
   //context que guarde data con un state 
   const { data } = useFetch(urlProductos);
   const { dataProductos } = useContext(DataProductosContext)
-  const { mostrarCategorias, setMostrarCategorias } = useContext(
-    MostrarCategoriasContext
-  );
-
+  const { mostrarCategorias, setMostrarCategorias } = useContext(MostrarCategoriasContext);
+  const { elegirDataPaginaProductos, setElegirDataPaginaProductos } = useContext(DataPaginaProductosContext)
+  
+  
   return (
     <div className="listado-container">
       <p className="cardsProductos-titulo">Recomendaciones</p>
@@ -28,6 +29,7 @@ export default function Listado() {
           data &&
           data.productos.map((prod) => (
             <div className="listado-unidad" key={prod.id}>
+              {/* {setElegirDataPaginaProductos(prod.id)} */}
               <img
                 key={prod.id}
                 src={prod.imagenes[0].url}
@@ -40,11 +42,15 @@ export default function Listado() {
               </p>
               {/* <img className="cardsProductos-unidad-caracteristica" src={prod.caracteristicas.url}/> */}
 
-              <Link to="/producto">
+              <Link to={`/producto/${elegirDataPaginaProductos}`}>
+                {/* <Link to={"/producto/"}> */}
                 <button
                   className="listado-unidad-boton"
+                  // onClick={() =>
+                  //   localStorage.setItem("producto", JSON.stringify(prod))
+                  // }
                   onClick={() =>
-                    localStorage.setItem("producto", JSON.stringify(prod))
+                    {setElegirDataPaginaProductos(prod.id)}
                   }
                 >
                   Ver Más
@@ -54,11 +60,10 @@ export default function Listado() {
           ))
         ) : !dataProductos ? (
           <ListadoCiudades />
-        ) 
-        // : mostrarCategorias ? (
+        ) : // : mostrarCategorias ? (
         //   <ListadoCategorias />
-        // ) 
-        : null}
+        // )
+        null}
       </div>
     </div>
   );

@@ -32,9 +32,7 @@ const ListadoCiudades = () => {
                   <Link to="/producto">
                     <button
                       className="listado-unidad-boton"
-                      onClick={() =>
-                        localStorage.setItem("producto", JSON.stringify(prod))
-                      }
+                      
                     >
                       Ver Más
                     </button>
