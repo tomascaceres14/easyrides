@@ -9,7 +9,7 @@ const ListadoCategorias = () => {
   // aca consumo el context de data
   const urlProductos = "http://localhost:8080/productos";
   const { data } = useFetch(urlProductos);
-  const { elegirCategorias, setElegirCategorias } = useContext(CategoriasContext);
+  const { elegirCategorias } = useContext(CategoriasContext);
 
 
   return (
@@ -31,9 +31,7 @@ const ListadoCategorias = () => {
                 <Link to="/producto">
                   <button
                     className="listado-unidad-boton"
-                    onClick={() =>
-                      localStorage.setItem("producto", JSON.stringify(prod))
-                    }
+                    
                   >
                     Ver Más
                   </button>

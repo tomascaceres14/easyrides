@@ -8,8 +8,10 @@ export default function Cards() {
   const urlCategorias = "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/categorias";
   const { data } = useFetch(urlCategorias)
   const { elegirCategorias, setElegirCategorias } = useContext(CategoriasContext);
-  const { mostrarCategorias, setMostrarCategorias } = useContext(MostrarCategoriasContext);
-
+  const {setMostrarCategorias } = useContext(MostrarCategoriasContext);
+  
+  
+  
   return (
     <div>
       <h2 className="cardsCategoria-titulo">Busca por categorías</h2>
@@ -17,10 +19,11 @@ export default function Cards() {
         {data &&
           data.categorias.map((cat) => (
             <div
+              
               key={cat.id}
               className="cardsCategoria-unidad"
               onClick={
-                () => {setElegirCategorias(cat.titulo);setMostrarCategorias(true)}
+                () => {setMostrarCategorias(true) ;setElegirCategorias(cat.titulo) }
               }
             >
               <img
