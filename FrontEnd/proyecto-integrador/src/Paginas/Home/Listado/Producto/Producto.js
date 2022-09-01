@@ -6,7 +6,6 @@ import { AiFillHeart } from "react-icons/ai";
 import { Link } from "react-router-dom";
 import CalendarioProducto from "./CalendarioProducto";
 
-
 const Producto = () => {
   const producto = useState(JSON.parse(localStorage.getItem("producto")));
   const prodExtracto = producto[0];
@@ -57,61 +56,12 @@ const Producto = () => {
         </div>
 
         <div className="galeriaImg">
-          <a href="#img1" className={"img1"}>
-            <img src={prodExtracto.imagenes[0].url} alt="Imagen1"></img>
-          </a>
-          <a href="#img2" className={"img2"}>
-            <img src={prodExtracto.imagenes[1].url} alt="Imagen2"></img>
-          </a>
-          <a href="#img3" className={"img3"}>
-            <img src={prodExtracto.imagenes[2].url} alt="Imagen3"></img>
-          </a>
-
-          <a href="#img4" className={"img4"}>
-            <img src={prodExtracto.imagenes[3].url} alt="Imagen4"></img>
-          </a>
-
-          <a href="#img5" className={"img5"}>
-            <img src={prodExtracto.imagenes[4].url} alt="Imagen5"></img>
-          </a>
-          
-          <article className="light-box" id="img1">
-            <a href="#img5" className="next"> <i class="fa-solid fa-arrow-left"></i></a>
-            <img src={prodExtracto.imagenes[0].url} alt="Imagen1"></img>
-            <a href="#img2" className="next"><i class="fa-solid fa-arrow-right"></i></a>
-            <a href="#" className="close">X</a>
-          </article>
-
-          <article className="light-box" id="img2">
-            <a href="#img1" className="next"> <i class="fa-solid fa-arrow-left"></i></a>
-            <img src={prodExtracto.imagenes[1].url} alt="Imagen2"></img>
-            <a href="#img3" className="next"><i class="fa-solid fa-arrow-right"></i></a>
-            <a href="#" className="close">X</a>
-          </article>
-
-          <article className="light-box" id="img3">
-            <a href="#img2" className="next"> <i class="fa-solid fa-arrow-left"></i></a>
-            <img src={prodExtracto.imagenes[2].url} alt="Imagen2"></img>
-            <a href="#img4" className="next"><i class="fa-solid fa-arrow-right"></i></a>
-            <a href="#" className="close">X</a>
-          </article>
-
-          <article className="light-box" id="img4">
-            <a href="#img3" className="next"> <i class="fa-solid fa-arrow-left"></i></a>
-            <img src={prodExtracto.imagenes[3].url} alt="Imagen2"></img>
-            <a href="#img5" className="next"><i class="fa-solid fa-arrow-right"></i></a>
-            <a href="#" className="close">X</a>
-          </article>
-
-          <article className="light-box" id="img5">
-            <a href="#img4" className="next"> <i class="fa-solid fa-arrow-left"></i></a>
-            <img src={prodExtracto.imagenes[4].url} alt="Imagen2"></img>
-            <a href="#img1" className="next"><i class="fa-solid fa-arrow-right"></i></a>
-            <a href="#" className="close">X</a>
-          </article>
+          <img src={prodExtracto.imagenes[0].url} className={"img1"}></img>
+          <img src={prodExtracto.imagenes[1].url} className={"img2"}></img>
+          <img src={prodExtracto.imagenes[2].url} className={"img3"}></img>
+          <img src={prodExtracto.imagenes[3].url} className={"img4"}></img>
+          <img src={prodExtracto.imagenes[4].url} className={"img5"}></img>
         </div>
-
-
         <article className="cuerpo">
           <h2>{prodExtracto.titulo}</h2>
           <p className="descripcion">{prodExtracto.descripcion}</p>
@@ -130,10 +80,10 @@ const Producto = () => {
         <div>
           <CalendarioProducto />
         </div>
-        <div className="botones">
-          <p>Elegi las fechas que necesites tu vehiculo y comenza con la aventura!</p>
-          <button>Iniciar Reserva</button>
-        </div>
+          <div className="botones">
+            <p>Elegi las fechas que necesites tu vehiculo y comenza con la aventura!</p>
+            <button>Iniciar Reserva</button>
+          </div>
       </div>
     </div>
   );
