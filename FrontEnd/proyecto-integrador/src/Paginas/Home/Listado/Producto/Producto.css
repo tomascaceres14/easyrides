@@ -128,6 +128,57 @@ img {
 .img5 {
   grid-area: 2 / 4 / 3 / 5;
 }
+.light-box{
+  /*Creo que habra q modificar tamaño*/
+  position:fixed;
+  top:0;
+  left:0;
+  transition: transform 0.3s ease-in-out;
+  width:100%;
+  height:100vh;
+  z-index: 1000;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  transform: scale(0);
+  backdrop-filter: blur(20px)
+  
+}
+.light-box img{
+  width:75vw;
+  max-height: 70vh;
+}
+.light-box:target{
+  transform: scale(1)
+}
+.close{
+  display: block;
+  position:absolute;
+  top:40px;
+  right:40px;
+  color: white;
+  background-color: #f0572dd3;
+  width: 40px;
+  height:40px;
+  text-decoration: none;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+}
+
+.next{
+  display: block;
+  color: white;
+  background-color: #f0572dd3;
+  width: 30px;
+  height:30px;
+  text-decoration: none;
+  text-align: center;
+  line-height: 30px;
+}
+
+/*----------------------------------------------------------------*/
+
 
 .light-box {
   /*Creo que habra q modificar tamaño*/
