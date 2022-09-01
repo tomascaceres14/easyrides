@@ -2,7 +2,7 @@ import React, {useContext} from 'react'
 import { CiudadesContext } from "../../../Context/CiudadesContext";
 import useFetch from '../../../Hooks/useFetch';
 import { Link } from "react-router-dom";
-
+import { DataPaginaProductosContext } from '../../../Context/DataPaginaProductosContext';
 
 
 
@@ -11,7 +11,7 @@ const ListadoCiudades = () => {
     const urlProductos = "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/productos";
     const { data } = useFetch(urlProductos);
     const { elegirCiudades } = useContext(CiudadesContext);
-
+    const { elegirDataPaginaProductos, setElegirDataPaginaProductos } = useContext(DataPaginaProductosContext)
   
     return (
       <div className="listado-container">
@@ -29,14 +29,15 @@ const ListadoCiudades = () => {
                   <p className="cardsProductos-unidad-descripcion">
                     {prod.ciudad.nombre + ", " + prod.ciudad.provincia}
                   </p>
-                  <Link to="/producto">
-                    <button
-                      className="listado-unidad-boton"
-                      
-                    >
-                      Ver Más
-                    </button>
+                  <Link
+                    onClick={() => {
+                      setElegirDataPaginaProductos(prod.id);
+                    }}
+                    to={`/producto/${elegirDataPaginaProductos}`}
+                  >
+                    <button className="listado-unidad-boton">Ver Más</button>
                   </Link>
+                  
                 </div>
               ) : null}
             </>
