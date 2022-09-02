@@ -28,9 +28,6 @@ export default function Listado() {
           data.productos.map((prod) => (
             <div className="listado-unidad" key={prod.id}>
               {/* {setElegirDataPaginaProductos(prod.id)} */}
-              {console.log('primer set '+elegirDataPaginaProductos)}
-              
-              
               <img
                 key={prod.id}
                 src={prod.imagenes[0].url}
