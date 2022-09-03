@@ -1,52 +1,36 @@
 package com.ctd.proyectointegrador.persistance.dto;
 
-import com.ctd.proyectointegrador.persistance.model.Imagen;
-import com.ctd.proyectointegrador.persistance.model.Reserva;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;
 
+import javax.persistence.Column;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
+@ToString
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class ProductoDTO {
-
+public class ReservaDTO {
     @NotEmpty(message = "no debe estar vacio")
     @NotNull(message = "no debe ser nulo")
     private Integer id;
 
     @NotEmpty(message = "no debe estar vacio")
     @NotNull(message = "no debe ser nulo")
-    private String titulo;
+    private String horaInicio;
 
     @NotEmpty(message = "no debe estar vacio")
     @NotNull(message = "no debe ser nulo")
-    private String descripcion;
+    private String fechaInicial;
 
     @NotEmpty(message = "no debe estar vacio")
     @NotNull(message = "no debe ser nulo")
-    private List<Imagen> imagenes;
+    private String fechaFinal;
 
     @NotEmpty(message = "no debe estar vacio")
     @NotNull(message = "no debe ser nulo")
-    private CiudadDTO ciudad;
-
-    @NotEmpty(message = "no debe estar vacio")
-    @NotNull(message = "no debe ser nulo")
-    private CategoriaDTO categoria;
-
-    @NotEmpty(message = "no debe estar vacio")
-    @NotNull(message = "no debe ser nulo")
-    private Set<CaracteristicaDTO> caracteristicas;
-
-    @NotEmpty(message = "no debe estar vacio")
-    @NotNull(message = "no debe ser nulo")
-    private Set<Reserva> reservas = new HashSet<>();
+    private ProductoDTO productoDTO;
 }

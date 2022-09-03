@@ -51,4 +51,10 @@ public class Producto {
             inverseJoinColumns = { @JoinColumn(name = "caracteristica_id") })
     @JsonInclude
     private Set<Caracteristica> caracteristicas = new HashSet<>();
+
+
+
+    @OneToMany(mappedBy = "producto")
+    @JsonIgnore
+    private Set<Reserva> reservas = new HashSet<>();
 }
