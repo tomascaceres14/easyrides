@@ -10,7 +10,7 @@ import java.util.List;
 public interface ProductoRepository extends JpaRepository<Producto, Integer> {
 
     @Query(
-            value = "SELECT * FROM Producto p WHERE p.ciudad_id = ?1",
+            value = "SELECT * FROM Productos p WHERE p.ciudad_id = ?1",
             nativeQuery = true)
     List<Producto> listarPorCiudad(Integer id);
 }
