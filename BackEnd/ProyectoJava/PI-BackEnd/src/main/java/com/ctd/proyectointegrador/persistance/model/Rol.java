@@ -15,9 +15,8 @@ import java.util.Set;
 @AllArgsConstructor
 @Getter
 @Setter
-@Table(name = "usuarios")
-public class Usuario {
-
+@Table(name = "roles")
+public class Rol {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
@@ -26,27 +25,9 @@ public class Usuario {
     @Column(name="nombre")
     private String nombre;
 
-    @Column(name="apellido")
-    private String apellido;
-
-    @Column(name="email")
-    private String email;
-
-    @Column(name="password")
-    private String password;
-
-    @Column(name="ciudad")
-    private String ciudad;
-
-    //Relacion reservas
-    @OneToMany(mappedBy = "usuario")
+    @OneToMany(mappedBy = "rol")
     @JsonIgnore
-    private Set<Reserva> reservas = new HashSet<>();
-
-
-    //Relacion roles
-    @ManyToOne
-    @JoinColumn(name = "rol_id")
-    private Rol rol;
+    private Set<Usuario> usuarios = new HashSet<>();
 
 }
+

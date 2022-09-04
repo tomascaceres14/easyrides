@@ -10,18 +10,10 @@ import lombok.*;
 @Setter
 @ToString
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class UsuarioDTO {
+public class RolDTO {
     private Integer id;
 
     private String nombre;
 
-    private String apellido;
-
-    private String email;
-
-    private String password;
-
-    private String ciudad;
-
-    // private Set<ReservaDTO> reservas;
+    //private Set<UsuarioDTO> usuarios;
 }
