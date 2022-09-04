@@ -1,7 +1,10 @@
 package com.ctd.proyectointegrador.service.impl;
 
 import com.ctd.proyectointegrador.persistance.dto.ReservaDTO;
+import com.ctd.proyectointegrador.persistance.model.Ciudad;
+import com.ctd.proyectointegrador.persistance.model.Producto;
 import com.ctd.proyectointegrador.persistance.model.Reserva;
+import com.ctd.proyectointegrador.persistance.repository.ProductoRepository;
 import com.ctd.proyectointegrador.persistance.repository.ReservaRepository;
 import com.ctd.proyectointegrador.service.IService;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -20,6 +23,9 @@ public class ReservaService implements IService<ReservaDTO> {
     ReservaRepository reservaRepository;
 
     @Autowired
+    ProductoRepository productoRepository;
+
+    @Autowired
     ObjectMapper mapper;
 
     private Map<String, Object> buildResponse(Object dto, String message, Integer code) {
@@ -33,8 +39,10 @@ public class ReservaService implements IService<ReservaDTO> {
     @Override
     public Map<String, Object> guardar(ReservaDTO object) {
         Reserva reserva= mapper.convertValue(object, Reserva.class);
-        Reserva nuevaReserva = reservaRepository.save(reserva);
-        return buildResponse(mapper.convertValue(nuevaReserva, ReservaDTO.class), "Reserva guardada",201);
+        Producto productoBD = productoRepository.findById(reserva.getProducto().getId()).get();
+        reserva.setProducto(productoBD);
+        Reserva reservaRespuesta = reservaRepository.save(reserva);
+        return buildResponse(mapper.convertValue(reservaRespuesta, ReservaDTO.class), "Reserva guardada",201);
     }
 
 

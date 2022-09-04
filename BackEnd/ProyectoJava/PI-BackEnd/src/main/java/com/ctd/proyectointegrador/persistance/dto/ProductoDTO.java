@@ -18,35 +18,21 @@ import java.util.Set;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ProductoDTO {
 
-    @NotEmpty(message = "no debe estar vacio")
-    @NotNull(message = "no debe ser nulo")
     private Integer id;
 
-    @NotEmpty(message = "no debe estar vacio")
-    @NotNull(message = "no debe ser nulo")
     private String titulo;
 
-    @NotEmpty(message = "no debe estar vacio")
-    @NotNull(message = "no debe ser nulo")
     private String descripcion;
 
-    @NotEmpty(message = "no debe estar vacio")
-    @NotNull(message = "no debe ser nulo")
     private List<Imagen> imagenes;
 
-    @NotEmpty(message = "no debe estar vacio")
-    @NotNull(message = "no debe ser nulo")
     private CiudadDTO ciudad;
 
-    @NotEmpty(message = "no debe estar vacio")
-    @NotNull(message = "no debe ser nulo")
     private CategoriaDTO categoria;
 
-    @NotEmpty(message = "no debe estar vacio")
-    @NotNull(message = "no debe ser nulo")
     private Set<CaracteristicaDTO> caracteristicas;
 
-    @NotEmpty(message = "no debe estar vacio")
+/*    @NotEmpty(message = "no debe estar vacio")
     @NotNull(message = "no debe ser nulo")
-    private Set<Reserva> reservas = new HashSet<>();
+    private Set<Reserva> reservas = new HashSet<>();*/
 }
