@@ -35,6 +35,11 @@ public class Reserva {
     @JoinColumn(name ="producto_id")
     private Producto producto;
 
+    //Relacion reservas a usuario
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "usuario_id")
+    private Usuario usuario;
+
 
 
 }
