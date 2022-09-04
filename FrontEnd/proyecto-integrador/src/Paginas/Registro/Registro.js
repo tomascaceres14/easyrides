@@ -164,7 +164,7 @@ function Registro() {
 
             <div className="Buttom">
               <button type="submit">Crear cuenta</button>
-              <p>
+              <p className="ParrafoTienesCuenta">
                 {" "}
                 ¿Ya tienes cuenta?{" "}
                 <a href="/login" target="_self">
