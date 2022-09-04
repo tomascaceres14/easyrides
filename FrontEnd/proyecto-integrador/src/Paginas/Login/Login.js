@@ -54,11 +54,10 @@ function Login() {
         //validacion contraseña
         if (!valores.contraseña) {
           errores.contraseña = "Por favor ingresa tu contraseña";
-        } else if (!/^.{4,12}$/.test(valores.contraseña)) {
+        } else if (!/^.{8,8}$/.test(valores.contraseña)) {
           errores.contraseña =
-            "Por favor ingrese una contraseña de 4 a 12 digitos";
+            "Por favor ingrese una contraseña de 8 caracteres";
         }
-
         return errores;
       }}
     >

@@ -12,13 +12,13 @@ function Registro() {
   //validacion contraseña
   const validarContraseña = (values) => {
     let error = "";
-    const regexContraseña = /(?=.*[0-9])/;
+    const regexContraseña = /^.{8,8}$/;
     if (!values) {
       error = "Campo requerido";
     } else if (values.length < 8) {
       error = "La contraseña debe tener 8 caracteres.";
     } else if (!regexContraseña.test(values)) {
-      error = "Contraseña invalida. Debe contener un número.";
+      error = "Contraseña invalida. No cumple con los requisitos.";
     }
     return error;
   };
