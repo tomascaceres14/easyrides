@@ -1,22 +1,26 @@
 package com.ctd.proyectointegrador.service.impl;
 
+import com.ctd.proyectointegrador.enums.Role;
 import com.ctd.proyectointegrador.persistance.dto.UsuarioDTO;
 import com.ctd.proyectointegrador.persistance.model.Usuario;
 import com.ctd.proyectointegrador.persistance.repository.UsuarioRepository;
 import com.ctd.proyectointegrador.service.IService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Service
 public class UsuarioService implements IService<UsuarioDTO> {
     @Autowired
     UsuarioRepository usuarioRepository;
+
+    @Autowired
+    PasswordEncoder passwordEncoder;
 
 
     @Autowired
@@ -32,17 +36,19 @@ public class UsuarioService implements IService<UsuarioDTO> {
 
     @Override
     public Map<String, Object> guardar(UsuarioDTO object) {
-        Usuario usuarios = mapper.convertValue(object, Usuario.class);
-        Usuario nuevoUsuario= usuarioRepository.save(usuarios);
+        Usuario user = mapper.convertValue(object, Usuario.class);
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
+        user.setRole(Role.USER);
+        Usuario nuevoUsuario= usuarioRepository.save(user);
         return buildResponse(mapper.convertValue(nuevoUsuario, UsuarioDTO.class),"Usuario guardado",201);
     }
     @Override
-    public Map<String, Object> buscar(Integer id) {
+    public Map<String, Object> buscar(Long id) {
         Usuario usuarios = usuarioRepository.findById(id).get();
         return buildResponse(mapper.convertValue(usuarios, UsuarioDTO.class), "Usuario encontrado",201);
     }
     @Override
-    public Map<String, Object> actualizar(Integer id, UsuarioDTO object) {
+    public Map<String, Object> actualizar(Long id, UsuarioDTO object) {
         Usuario usuarior= mapper.convertValue(object, Usuario.class);
         Usuario usuarioBD= usuarioRepository.findById(id).orElse(null);
         if(usuarioBD == null){
@@ -57,7 +63,7 @@ public class UsuarioService implements IService<UsuarioDTO> {
         return buildResponse(mapper.convertValue(usuarioact, UsuarioDTO.class), " Actualizacion exitosa",201);
     }
     @Override
-    public Map<String, Object> eliminar(Integer id) {
+    public Map<String, Object> eliminar(Long id) {
         if (usuarioRepository.findById(id).isPresent()) {
             usuarioRepository.deleteById(id);
             return buildResponse(new UsuarioDTO(), "Usuario eliminado", 201);
@@ -76,10 +82,13 @@ public class UsuarioService implements IService<UsuarioDTO> {
         return buildResponse(listaDTO, "Lista creada", 201);
     }
 
+    public Optional<Usuario> findByUserEmail(String email) {
+        return usuarioRepository.findByEmail(email);
+    }
 
-
-
-
-
+    @Transactional //require when executing an update or delete query
+    public void cambiarRol(Role newRole, String username) {
+        usuarioRepository.updateUserRole(username, newRole);
+    }
 
 }

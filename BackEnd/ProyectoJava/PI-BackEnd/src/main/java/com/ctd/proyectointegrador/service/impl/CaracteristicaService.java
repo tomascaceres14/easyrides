@@ -40,13 +40,13 @@ public class CaracteristicaService implements IService<CaracteristicaDTO> {
 
 
     @Override
-    public Map<String, Object> buscar(Integer id) {
+    public Map<String, Object> buscar(Long id) {
         Caracteristica caracteristica = caracteristicaRepository.findById(id).get();
         return buildResponse(mapper.convertValue(caracteristica, CaracteristicaDTO.class),"Caracteristica id "+id+" encontrada", 201);
     }
 
     @Override
-    public Map<String, Object> actualizar(Integer id, CaracteristicaDTO object) {
+    public Map<String, Object> actualizar(Long id, CaracteristicaDTO object) {
         Caracteristica actualizar = mapper.convertValue(object, Caracteristica.class);
         Caracteristica caracteristicaenBD = caracteristicaRepository.findById(id).get();
         if(caracteristicaenBD == null){
@@ -60,7 +60,7 @@ public class CaracteristicaService implements IService<CaracteristicaDTO> {
 
 
     @Override
-    public Map<String, Object> eliminar(Integer id) {
+    public Map<String, Object> eliminar(Long id) {
         if(caracteristicaRepository.findById(id).isPresent()){
             caracteristicaRepository.deleteById(id);
             return buildResponse(new CaracteristicaDTO(), "Caracteristica id " + id + "eliminada", 201);

@@ -26,14 +26,14 @@ public class ReservaController {
 
 
     @GetMapping("/{id}")
-    public ResponseEntity<Map<String, Object>> buscar(@PathVariable Integer id) {
+    public ResponseEntity<Map<String, Object>> buscar(@PathVariable Long id) {
         Map<String, Object> response = reservaService.buscar(id);
         codigo = (Integer) response.get("codigo");
         return ResponseEntity.status(codigo).body(response);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Map<String, Object>> actualizar(@PathVariable Integer id, @RequestBody ReservaDTO r) {
+    public ResponseEntity<Map<String, Object>> actualizar(@PathVariable Long id, @RequestBody ReservaDTO r) {
         Map<String, Object> response = reservaService.actualizar(id, r);
         codigo = (Integer) response.get("codigo");
         return ResponseEntity.status(codigo).body(response);
@@ -41,7 +41,7 @@ public class ReservaController {
 
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Map<String, Object>> eliminar(@PathVariable Integer id) {
+    public ResponseEntity<Map<String, Object>> eliminar(@PathVariable Long id) {
         Map<String, Object> response = reservaService.eliminar(id);
         codigo = (Integer) response.get("codigo");
         return ResponseEntity.status(codigo).body(response);

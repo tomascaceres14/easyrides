@@ -25,19 +25,19 @@ public class ImagenController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Map<String, Object>> buscar(@PathVariable Integer id) {
+    public ResponseEntity<Map<String, Object>> buscar(@PathVariable Long id) {
         Map<String, Object> response = imagenService.buscar(id);
         codigo = (Integer) response.get("codigo");
         return ResponseEntity.status(codigo).body(response);
     }
     @PutMapping("/{id}")
-    public ResponseEntity<Map<String, Object>> actualizar(@PathVariable Integer id, @RequestBody ImagenDTO i) {
+    public ResponseEntity<Map<String, Object>> actualizar(@PathVariable Long id, @RequestBody ImagenDTO i) {
         Map<String, Object> response = imagenService.actualizar(id, i);
         codigo = (Integer) response.get("codigo");
         return ResponseEntity.status(codigo).body(response);
     }
     @DeleteMapping("/{id}")
-    public ResponseEntity<Map<String, Object>> eliminar(@PathVariable Integer id) {
+    public ResponseEntity<Map<String, Object>> eliminar(@PathVariable Long id) {
         Map<String, Object> response = imagenService.eliminar(id);
         codigo = (Integer) response.get("codigo");
         return ResponseEntity.status(codigo).body(response);

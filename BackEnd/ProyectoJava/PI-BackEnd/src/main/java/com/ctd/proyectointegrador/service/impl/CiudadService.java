@@ -36,7 +36,7 @@ public class CiudadService implements IService<CiudadDTO> {
         return buildResponse(mapper.convertValue(ciudadRespuesta, CiudadDTO.class), "ciudad creada",201);
     }
 
-    public Map<String, Object> buscar(Integer id) {
+    public Map<String, Object> buscar(Long id) {
         if(ciudadRespository.findById(id).isPresent()){
             Ciudad ciudadRespuesta = ciudadRespository.findById(id).get();
             return buildResponse(mapper.convertValue(ciudadRespuesta, CiudadDTO.class), "ciudad encontrada",200);
@@ -45,7 +45,7 @@ public class CiudadService implements IService<CiudadDTO> {
         }
     }
 
-    public Map<String, Object> actualizar(Integer id, CiudadDTO object) {
+    public Map<String, Object> actualizar(Long id, CiudadDTO object) {
         Ciudad actualizar = mapper.convertValue(object, Ciudad.class);
         Ciudad ciudadBD = ciudadRespository.findById(id).orElse(null);
         if(ciudadBD == null){
@@ -57,7 +57,7 @@ public class CiudadService implements IService<CiudadDTO> {
         return buildResponse(mapper.convertValue(ciudadBD, CiudadDTO.class), "ciudad actualizada", 201);
     }
 
-    public Map<String, Object> eliminar(Integer id) {
+    public Map<String, Object> eliminar(Long id) {
         if(ciudadRespository.findById(id).isPresent()) {
             ciudadRespository.deleteById(id);
             return buildResponse(new CiudadDTO(), "ciudad id"+id+" eliminada", 200);

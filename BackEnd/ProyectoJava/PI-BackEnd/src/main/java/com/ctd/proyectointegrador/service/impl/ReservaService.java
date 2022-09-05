@@ -47,14 +47,14 @@ public class ReservaService implements IService<ReservaDTO> {
 
 
     @Override
-    public Map<String, Object> buscar(Integer id) {
+    public Map<String, Object> buscar(Long id) {
         Reserva reservas = reservaRepository.findById(id).get();
         return buildResponse(mapper.convertValue(reservas, ReservaDTO.class), "Reserva encontrada",201);
     }
 
 
     @Override
-    public Map<String, Object> actualizar(Integer id, ReservaDTO object) {
+    public Map<String, Object> actualizar(Long id, ReservaDTO object) {
         Reserva actualizar = mapper.convertValue(object, Reserva.class);
         Reserva reservaBD = reservaRepository.findById(id).orElse(null);
         if(reservaBD == null){
@@ -69,7 +69,7 @@ public class ReservaService implements IService<ReservaDTO> {
 
 
     @Override
-    public Map<String, Object> eliminar(Integer id) {
+    public Map<String, Object> eliminar(Long id) {
         if (reservaRepository.findById(id).isPresent()) {
             reservaRepository.deleteById(id);
             return buildResponse(new ReservaDTO(), "Reserva id "+ id + " eliminada", 201);

@@ -1,5 +1,6 @@
 package com.ctd.proyectointegrador.persistance.dto;
 
+import com.ctd.proyectointegrador.enums.Role;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;
 
@@ -9,8 +10,9 @@ import lombok.*;
 @Getter
 @Setter
 @ToString
-@JsonInclude(JsonInclude.Include.NON_NULL)
+/*@JsonInclude(JsonInclude.Include.NON_NULL)*/
 public class UsuarioDTO {
+
     private Integer id;
 
     private String nombre;
@@ -23,5 +25,5 @@ public class UsuarioDTO {
 
     private String ciudad;
 
-    // private Set<ReservaDTO> reservas;
+    private Role rol;
 }

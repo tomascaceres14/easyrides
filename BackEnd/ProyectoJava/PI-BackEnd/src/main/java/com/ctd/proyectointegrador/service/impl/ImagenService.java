@@ -41,14 +41,14 @@ public class ImagenService implements IService<ImagenDTO> {
 
 
     @Override
-    public Map<String, Object> buscar(Integer id) {
+    public Map<String, Object> buscar(Long id) {
         Imagen imagenes = imagenRepository.findById(id).get();
         return buildResponse(mapper.convertValue(imagenes, ImagenDTO.class),"Imagen encontrada ",201);
     }
 
 
     @Override
-    public Map<String, Object> actualizar(Integer id, ImagenDTO object) {
+    public Map<String, Object> actualizar(Long id, ImagenDTO object) {
         Imagen actualizar = mapper.convertValue(object, Imagen.class);
         Imagen imagenenBD = imagenRepository.findById(id).orElse(null);
         if (imagenenBD == null) {
@@ -62,7 +62,7 @@ public class ImagenService implements IService<ImagenDTO> {
 
 
     @Override
-    public Map<String, Object> eliminar(Integer id) {
+    public Map<String, Object> eliminar(Long id) {
         if (imagenRepository.findById(id).isPresent()) {
             imagenRepository.deleteById(id);
             return buildResponse(new ImagenDTO(), "Imagen id " + id + "eliminada", 201);

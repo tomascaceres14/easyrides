@@ -26,21 +26,21 @@ public class CiudadController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Map<String, Object>> buscar(@PathVariable Integer id) {
+    public ResponseEntity<Map<String, Object>> buscar(@PathVariable Long id) {
         Map<String, Object> response = ciudadService.buscar(id);
         codigo = (Integer) response.get("codigo");
         return ResponseEntity.status(codigo).body(response);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Map<String, Object>> actualizar(@PathVariable Integer id, @RequestBody CiudadDTO c) {
+    public ResponseEntity<Map<String, Object>> actualizar(@PathVariable Long id, @RequestBody CiudadDTO c) {
         Map<String, Object> response = ciudadService.actualizar(id, c);
         codigo = (Integer) response.get("codigo");
         return ResponseEntity.status(codigo).body(response);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Map<String, Object>> eliminar(@PathVariable Integer id) {
+    public ResponseEntity<Map<String, Object>> eliminar(@PathVariable Long id) {
         Map<String, Object> response = ciudadService.eliminar(id);
         codigo = (Integer) response.get("codigo");
         return ResponseEntity.status(codigo).body(response);

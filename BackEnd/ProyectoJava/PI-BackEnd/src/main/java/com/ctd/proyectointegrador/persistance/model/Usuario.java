@@ -1,5 +1,6 @@
 package com.ctd.proyectointegrador.persistance.model;
 
+import com.ctd.proyectointegrador.enums.Role;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -21,7 +22,7 @@ public class Usuario {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
-    private Integer id;
+    private Long id;
 
     @Column(name="nombre")
     private String nombre;
@@ -43,10 +44,11 @@ public class Usuario {
     @JsonIgnore
     private Set<Reserva> reservas = new HashSet<>();
 
+    @Enumerated(EnumType.STRING)
+    @Column(name = "rol")
+    private Role role;
 
-    //Relacion roles
-    @ManyToOne
-    @JoinColumn(name = "rol_id")
-    private Rol rol;
+    @Transient
+    private String token;
 
 }

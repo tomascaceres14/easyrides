@@ -49,12 +49,12 @@ public class ProductoService implements IService<ProductoDTO> {
         return buildResponse(mapper.convertValue(prodRespuesta, ProductoDTO.class), "producto creado", 201);
     }
 
-    public Map<String, Object> buscar(Integer id) {
+    public Map<String, Object> buscar(Long id) {
         Producto prodRespuesta = productoRepository.findById(id).get();
         return buildResponse(mapper.convertValue(prodRespuesta, ProductoDTO.class), "producto encontrado", 201);
     }
 
-    public Map<String,Object> listarPorCiudad(Integer id) {
+    public Map<String,Object> listarPorCiudad(Long id) {
         List<Producto> productos = productoRepository.listarPorCiudad(id);
         System.out.println(productos);
         List<ProductoDTO> productosPorCiudad = new ArrayList<>();
@@ -64,7 +64,7 @@ public class ProductoService implements IService<ProductoDTO> {
         return buildResponse(productosPorCiudad, "Lista por ciudad", 200);
     }
 
-    public Map<String, Object> actualizar(Integer id, ProductoDTO object) {
+    public Map<String, Object> actualizar(Long id, ProductoDTO object) {
         Producto actualizar = mapper.convertValue(object, Producto.class);
         Producto productoEnBD = productoRepository.findById(id).orElse(null);
         if (productoEnBD == null) {
@@ -81,7 +81,7 @@ public class ProductoService implements IService<ProductoDTO> {
         return buildResponse(mapper.convertValue(prodRespuesta, ProductoDTO.class), "cambio Exitoso", 201);
     }
 
-    public Map<String, Object> eliminar(Integer id) {
+    public Map<String, Object> eliminar(Long id) {
         if (productoRepository.findById(id).isPresent()) {
             productoRepository.deleteById(id);
             return buildResponse(new ProductoDTO(), "Producto id " + id + " eliminado", 200);
@@ -102,6 +102,17 @@ public class ProductoService implements IService<ProductoDTO> {
         }
         Collections.shuffle(listaDTO);
         return buildResponse(listaDTO, "lista creada", 200);
+    }
 
+    public Map<String, Object> listarPorCiudadYFechas(Long ciudad_id, String checkIn, String checkOut) {
+        List<Producto> listaProd = productoRepository.listarPorFechaYCiudad(ciudad_id, checkIn, checkOut);
+
+        List<ProductoDTO> listaDTO = new ArrayList<>();
+
+        for (Producto p : listaProd) {
+            ProductoDTO prodDTO = mapper.convertValue(p, ProductoDTO.class);
+            listaDTO.add(prodDTO);
+        }
+        return buildResponse(listaDTO, "lista creada", 200);
     }
 }
