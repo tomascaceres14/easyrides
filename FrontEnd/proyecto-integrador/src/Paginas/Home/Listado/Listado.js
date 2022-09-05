@@ -21,7 +21,7 @@ export default function Listado() {
     <div className="listado-container">
       <p className="cardsProductos-titulo">Recomendaciones</p>
       <div className="cardsProductos">
-        {mostrarCategorias ? (
+        {mostrarCategorias  ? (
           <ListadoCategorias />
         ) : dataProductos ? (
           data &&
@@ -51,12 +51,10 @@ export default function Listado() {
               </Link>
             </div>
           ))
-        ) : !dataProductos ? (
+        ) : !dataProductos && !mostrarCategorias ? (
           <ListadoCiudades />
-        ) : // : mostrarCategorias ? (
-        //   <ListadoCategorias />
-        // )
-        null}
+        ) :null
+        }
       </div>
     </div>
   );
