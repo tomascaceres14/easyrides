@@ -7,6 +7,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Map;
 
 @RestController
@@ -57,4 +60,12 @@ public class ProductoController {
         codigo=(Integer) response.get("codigo");
         return ResponseEntity.status(codigo).body(response);
     }
+
+    @GetMapping("/{ciudad}/{checkIn}/{checkOut}")
+    public ResponseEntity<Map<String, Object>> filtroCiudadYFecha(@PathVariable Long ciudad_id, @PathVariable String checkIn, String checkOut) throws ParseException {
+        Map<String, Object> response = productoService.filtroCiudadYFechas(ciudad_id, checkIn, checkOut);
+        codigo=(Integer) response.get("codigo");
+        return ResponseEntity.status(codigo).body(response);
+    }
+
 }

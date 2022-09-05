@@ -12,11 +12,9 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.*;
 
 @Service
 public class ProductoService implements IService<ProductoDTO> {
@@ -104,8 +102,13 @@ public class ProductoService implements IService<ProductoDTO> {
         return buildResponse(listaDTO, "lista creada", 200);
     }
 
-    public Map<String, Object> listarPorCiudadYFechas(Long ciudad_id, String checkIn, String checkOut) {
-        List<Producto> listaProd = productoRepository.listarPorFechaYCiudad(ciudad_id, checkIn, checkOut);
+    public Map<String, Object> filtroCiudadYFechas(Long ciudad_id, String checkIn, String checkOut) throws ParseException {
+
+        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+        Date checkInD = formatter.parse(checkIn);
+        Date checkOutD = formatter.parse(checkOut);
+
+        List<Producto> listaProd = productoRepository.listarPorFechaYCiudad(ciudad_id, checkInD, checkOutD);
 
         List<ProductoDTO> listaDTO = new ArrayList<>();
 
