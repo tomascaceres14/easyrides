@@ -1,47 +1,51 @@
 package com.ctd.proyectointegrador.controller;
 
-
-import com.ctd.proyectointegrador.persistance.dto.CiudadDTO;
-import com.ctd.proyectointegrador.service.impl.CiudadService;
+import com.ctd.proyectointegrador.persistance.model.jwt.UserPrinciple;
+import com.ctd.proyectointegrador.enums.Role;
+import com.ctd.proyectointegrador.persistance.dto.UsuarioDTO;
+import com.ctd.proyectointegrador.service.impl.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
-import java.util.HashMap;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/ciudades")
-public class CiudadController {
+@RequestMapping("/usuarios")
+public class UsuarioController {
     @Autowired
-    CiudadService ciudadService;
+    UsuarioService usuarioService;
 
     private Integer codigo;
 
+
     @PostMapping()
-    public ResponseEntity<Map<String, Object>> guardar(@RequestBody CiudadDTO ciudad){
-        Map<String, Object> response = ciudadService.guardar(ciudad);
-        return ResponseEntity.created(URI.create("/ciudades")).body(response);
+    public ResponseEntity<Map<String, Object>> guardar(@RequestBody UsuarioDTO usuario) {
+        Map<String, Object> response = usuarioService.guardar(usuario);
+        return ResponseEntity.created(URI.create("/usuarios")).body(response);
     }
+
 
     @GetMapping("/{id}")
     public ResponseEntity<Map<String, Object>> buscar(@PathVariable Long id) {
-        Map<String, Object> response = ciudadService.buscar(id);
+        Map<String, Object> response = usuarioService.buscar(id);
         codigo = (Integer) response.get("codigo");
         return ResponseEntity.status(codigo).body(response);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Map<String, Object>> actualizar(@PathVariable Long id, @RequestBody CiudadDTO c) {
-        Map<String, Object> response = ciudadService.actualizar(id, c);
+    public ResponseEntity<Map<String, Object>> actualizar(@PathVariable Long id, @RequestBody UsuarioDTO u) {
+        Map<String, Object> response = usuarioService.actualizar(id, u);
         codigo = (Integer) response.get("codigo");
         return ResponseEntity.status(codigo).body(response);
     }
 
+
     @DeleteMapping("/{id}")
     public ResponseEntity<Map<String, Object>> eliminar(@PathVariable Long id) {
-        Map<String, Object> response = ciudadService.eliminar(id);
+        Map<String, Object> response = usuarioService.eliminar(id);
         codigo = (Integer) response.get("codigo");
         return ResponseEntity.status(codigo).body(response);
     }
@@ -49,8 +53,9 @@ public class CiudadController {
 
     @GetMapping()
     public ResponseEntity<Map<String, Object>> listarTodos(){
-        Map<String, Object> response = ciudadService.listarTodos();
+        Map<String, Object> response = usuarioService.listarTodos();
         codigo = (Integer) response.get("codigo");
         return ResponseEntity.status(codigo).body(response);
     }
+
 }

@@ -24,21 +24,21 @@ public class ProductoController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Map<String, Object>> buscar(@PathVariable Integer id) {
+    public ResponseEntity<Map<String, Object>> buscar(@PathVariable Long id) {
         Map<String, Object> response = productoService.buscar(id);
         codigo = (Integer) response.get("codigo");
         return ResponseEntity.status(codigo).body(response);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Map<String, Object>> actualizar(@PathVariable Integer id, @RequestBody ProductoDTO p) {
+    public ResponseEntity<Map<String, Object>> actualizar(@PathVariable Long id, @RequestBody ProductoDTO p) {
         Map<String, Object> response = productoService.actualizar(id, p);
         codigo = (Integer) response.get("codigo");
         return ResponseEntity.status(codigo).body(response);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Map<String, Object>> eliminar(@PathVariable Integer id) {
+    public ResponseEntity<Map<String, Object>> eliminar(@PathVariable Long id) {
         Map<String, Object> response = productoService.eliminar(id);
         codigo = (Integer) response.get("codigo");
         return ResponseEntity.status(codigo).body(response);
@@ -52,7 +52,7 @@ public class ProductoController {
     }
 
     @GetMapping("/ciudad/{id}")
-    public ResponseEntity<Map<String, Object>> listarPorCiudad(@PathVariable Integer id){
+    public ResponseEntity<Map<String, Object>> listarPorCiudad(@PathVariable Long id){
         Map<String, Object> response = productoService.listarPorCiudad(id);
         codigo=(Integer) response.get("codigo");
         return ResponseEntity.status(codigo).body(response);

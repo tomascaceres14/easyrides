@@ -24,21 +24,21 @@ public class CategoriaController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Map<String, Object>> buscar(@PathVariable Integer id) {
+    public ResponseEntity<Map<String, Object>> buscar(@PathVariable Long id) {
         Map<String, Object> response = categoriaService.buscar(id);
         codigo = (Integer) response.get("codigo");
         return ResponseEntity.status(codigo).body(response);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Map<String, Object>> actualizar(@PathVariable Integer id, @RequestBody CategoriaDTO c) {
+    public ResponseEntity<Map<String, Object>> actualizar(@PathVariable Long id, @RequestBody CategoriaDTO c) {
         Map<String, Object> response = categoriaService.actualizar(id, c);
         codigo = (Integer) response.get("codigo");
         return ResponseEntity.status(codigo).body(response);
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Map<String, Object>> eliminar(@PathVariable Integer id) {
+    public ResponseEntity<Map<String, Object>> eliminar(@PathVariable Long id) {
         Map<String, Object> response = categoriaService.eliminar(id);
         codigo = (Integer) response.get("codigo");
         return ResponseEntity.status(codigo).body(response);

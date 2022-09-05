@@ -33,13 +33,13 @@ public class CategoriaService implements IService<CategoriaDTO> {
         return buildResponse(mapper.convertValue(nuevaCat, CategoriaDTO.class), "Categoria guardada",201);
     }
 
-    public Map<String, Object> buscar(Integer id){
+    public Map<String, Object> buscar(Long id){
         Categoria categoria = categoriaRepository.findById(id).get();
         return buildResponse(mapper.convertValue(categoria, CategoriaDTO.class),"Categoria id "+ id + "encontrada",201);
     }
 
 
-    public Map<String, Object> actualizar(Integer id, CategoriaDTO object){
+    public Map<String, Object> actualizar(Long id, CategoriaDTO object){
      Categoria actualizar = mapper.convertValue(object, Categoria.class);
      Categoria categoriaenBD =categoriaRepository.findById(id).orElse(null);
      if (categoriaenBD == null){
@@ -53,7 +53,7 @@ public class CategoriaService implements IService<CategoriaDTO> {
     }
     
 
-    public Map<String, Object> eliminar(Integer id) {
+    public Map<String, Object> eliminar(Long id) {
 
         if (categoriaRepository.findById(id).isPresent()) {
             categoriaRepository.deleteById(id);
