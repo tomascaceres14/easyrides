@@ -34,7 +34,7 @@ public class ReservaService implements IService<ReservaDTO> {
 
     private Map<String, Object> buildResponse(Object dto, String message, Integer code) {
         Map<String, Object> response = new HashMap<>();
-        response.put("reserva", dto);
+        response.put("reservas", dto);
         response.put("message", message);
         response.put("codigo", code);
         return response;
@@ -55,7 +55,7 @@ public class ReservaService implements IService<ReservaDTO> {
     @Override
     public Map<String, Object> buscar(Long id) {
         Reserva reservas = reservaRepository.findById(id).get();
-        return buildResponse(mapper.convertValue(reservas, ReservaDTO.class), "Reserva encontrada",201);
+        return buildResponse(mapper.convertValue(reservas, ReservaDTO.class), "Reserva encontrada",200);
     }
 
 
@@ -78,7 +78,7 @@ public class ReservaService implements IService<ReservaDTO> {
     public Map<String, Object> eliminar(Long id) {
         if (reservaRepository.findById(id).isPresent()) {
             reservaRepository.deleteById(id);
-            return buildResponse(new ReservaDTO(), "Reserva id "+ id + " eliminada", 201);
+            return buildResponse(new ReservaDTO(), "Reserva id "+ id + " eliminada", 200);
         }else
             return buildResponse(new ReservaDTO(), "Reserva id "+ id +" no existe",404);
     }

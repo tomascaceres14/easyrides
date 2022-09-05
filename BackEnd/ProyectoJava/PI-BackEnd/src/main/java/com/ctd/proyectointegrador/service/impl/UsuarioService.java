@@ -27,7 +27,7 @@ public class UsuarioService implements IService<UsuarioDTO> {
 
     private Map<String, Object> buildResponse(Object dto, String message, Integer code) {
         Map<String, Object> response = new HashMap<>();
-        response.put("usuario", dto);
+        response.put("usuarios", dto);
         response.put("message", message);
         response.put("codigo", code);
         return response;

@@ -61,8 +61,9 @@ public class ProductoController {
         return ResponseEntity.status(codigo).body(response);
     }
 
-    @GetMapping("/{ciudad}/{checkIn}/{checkOut}")
-    public ResponseEntity<Map<String, Object>> filtroCiudadYFecha(@PathVariable Long ciudad_id, @PathVariable String checkIn, String checkOut) throws ParseException {
+    @GetMapping("/{ciudad_id}/{checkIn}/{checkOut}")
+    public ResponseEntity<Map<String, Object>> filtroCiudadYFecha(@PathVariable Long ciudad_id, @PathVariable String checkIn, @PathVariable String checkOut) throws ParseException {
+
         Map<String, Object> response = productoService.filtroCiudadYFechas(ciudad_id, checkIn, checkOut);
         codigo=(Integer) response.get("codigo");
         return ResponseEntity.status(codigo).body(response);
