@@ -1,7 +1,7 @@
 import { useRef, useContext } from "react";
 import React from "react";
 import "./Header.css";
-import logoeasyrides from "./logoeasyrides.png";
+import easyride from "./easyride.png";
 import { FaBars, FaTimes} from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { useInitialState } from "../../../Hooks/useInitialState";
@@ -21,9 +21,12 @@ navRef.current.classList.toggle("responsive-header");
 };
 return (
 <header className="header">
-  <Link to="/">
-  <img className="header-logo" src={logoeasyrides} alt="logo" />
-  </Link>
+  <div className="header-logo">
+    <Link to="/">
+      <img className="header-logo-img" src={easyride} alt="logo" />
+    </Link>
+  </div>
+  
   <nav ref={navRef} className="header-derecha">
     {/*mostrar avatar en un solo compontente */}
     {auth ?

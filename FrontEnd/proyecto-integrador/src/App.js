@@ -1,5 +1,5 @@
 import "./App.css";
-import React from "react";
+import React, { useContext } from "react";
 import { Login } from "./Paginas/Login/Login.js";
 import Registro from "./Paginas/Registro/Registro.js";
 import { Home } from "./Paginas/Home/Home";
@@ -11,33 +11,44 @@ import AppContext from "./Context/AppContext";
 import { AuthProvider } from "./Context/AuthContext";
 import { CiudadesProvider } from "./Context/CiudadesContext";
 import { DataProductosProvider } from "./Context/DataProductosContext";
+import { CategoriasProvider } from "./Context/CategoriasContext";
+import { DataPaginaProductosProvider } from "./Context/DataPaginaProductosContext";
 import Producto from "./Paginas/Home/Listado/Producto/Producto";
+import { MostrarCategoriasProvider } from "./Context/MostrarCategoriasContext";
+
 
 function App() {
   const initialState = useInitialState();
+  // const { elegirDataPaginaProductos } = useContext(DataPaginaProductosContext)
+
   return (
     <div className="App">
+      
       <AppContext.Provider value={initialState}>
-          <CiudadesProvider>
-            <DataProductosProvider>
-            <AuthProvider>
-              <BrowserRouter>
-                <Header user={initialState} />
-                  <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/login" element={<Login />} />
-                    <Route path="/registro" element={<Registro />} />
-                    <Route path="/producto" element={<Producto />} />
-                  </Routes>
-                <Footer />
-              </BrowserRouter>
-            </AuthProvider>
-            </DataProductosProvider>
-          </CiudadesProvider>
-        
-        
-        
+        <DataPaginaProductosProvider >
+          <MostrarCategoriasProvider>
+            <CategoriasProvider>
+              <CiudadesProvider>
+                <DataProductosProvider>
+                  <AuthProvider>
+                    <BrowserRouter>
+                      <Header user={initialState} />
+                      <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/login" element={<Login />} />
+                        <Route path="/registro" element={<Registro />} />
+                        <Route path={"/producto/:id"} element={<Producto />} />
+                      </Routes>
+                      <Footer />
+                    </BrowserRouter>
+                  </AuthProvider>
+                </DataProductosProvider>
+              </CiudadesProvider>
+            </CategoriasProvider>
+          </MostrarCategoriasProvider>
+        </DataPaginaProductosProvider>  
       </AppContext.Provider>
+      
     </div>
   );
 }

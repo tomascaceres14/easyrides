@@ -20,7 +20,7 @@ public class Caracteristica {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
-    private Integer id;
+    private Long id;
     @Column(name = "titulo", nullable = false)
     private String titulo;
 

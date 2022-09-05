@@ -3,50 +3,61 @@ import React, { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import useFetch from "../../../Hooks/useFetch";
 import ListadoCiudades from "./ListadoCiudades";
+import ListadoCategorias from "./ListadoCategorias";
 import { DataProductosContext } from "../../../Context/DataProductosContext";
+import { MostrarCategoriasContext } from "../../../Context/MostrarCategoriasContext";
+import { DataPaginaProductosContext } from "../../../Context/DataPaginaProductosContext";
+
 
 export default function Listado() {
-  // traigo el context y hago el booleano
+  
   const urlProductos = "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/productos";
-  //context que guarde data con un state 
   const { data } = useFetch(urlProductos);
-  const {dataProductos, setDataProductos} = useContext(DataProductosContext)
+  const { dataProductos } = useContext(DataProductosContext)
+  const { mostrarCategorias, setMostrarCategorias } = useContext(MostrarCategoriasContext);
+  const { elegirDataPaginaProductos, setElegirDataPaginaProductos } = useContext(DataPaginaProductosContext)
+  
   return (
     <div className="listado-container">
       <p className="cardsProductos-titulo">Recomendaciones</p>
       <div className="cardsProductos">
-        {dataProductos ? (
-          data&&
+        {mostrarCategorias ? (
+          <ListadoCategorias />
+        ) : dataProductos ? (
+          data &&
           data.productos.map((prod) => (
-            <div className="cardsProductos-unidad" key={prod.id}>
+            <div className="listado-unidad" key={prod.id}>
+              {/* {setElegirDataPaginaProductos(prod.id)} */}
               <img
                 key={prod.id}
                 src={prod.imagenes[0].url}
                 alt=""
                 className="cardsProductos-unidad-img"
               />
-              <h2 className="cardsProductos-unidad-nombre">{prod.titulo}</h2>
+              <h2 className="listado-unidad-nombre">{prod.titulo}</h2>
               <p className="cardsProductos-unidad-descripcion">
-                {prod.descripcion}
+                {prod.ciudad.nombre + ", " + prod.ciudad.provincia}
               </p>
-              <Link to="/producto">
+              {/* <img className="cardsProductos-unidad-caracteristica" src={prod.caracteristicas.url}/> */}
+
+              <Link onClick= {() =>
+                    {setElegirDataPaginaProductos(prod.id)}
+              } to={`/producto/${prod.id}`}>
                 <button
-                  className="cardsProductos-unidad-boton"
-                  onClick={() =>
-                    localStorage.setItem("producto", JSON.stringify(prod))
-                  }
+                  className="listado-unidad-boton"
                 >
                   Ver Más
                 </button>
               </Link>
             </div>
           ))
-        ) : (
-          <ListadoCiudades /> 
-          
-        )}
+        ) : !dataProductos ? (
+          <ListadoCiudades />
+        ) : // : mostrarCategorias ? (
+        //   <ListadoCategorias />
+        // )
+        null}
       </div>
-      {/* <ListadoCiudades /> */}
     </div>
   );
 }

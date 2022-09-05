@@ -17,7 +17,7 @@ export const SearchBar = () => {
   const manejadorSelect = (event) => {
     setElegirCiudades(event.label);
   };
-  
+  // cambiar propiedades de fetch
   return (
     <div className="searchBar">
       <Select
@@ -31,6 +31,8 @@ export const SearchBar = () => {
           }))
         }
         onChange={manejadorSelect}
+        placeholder={<div>Elegí tu ciudad</div>}
+        
       />
     </div>
   );

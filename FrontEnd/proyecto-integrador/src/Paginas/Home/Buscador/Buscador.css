@@ -1,27 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Aldrich&family=Open+Sans:wght@300&display=swap');
 
-:root {
-    --naranja: #F0572D;
-    --fuente1: 'Aldrich', sans-serif;
-    --fuente2: 'Open Sans', sans-serif;
-}
+
 
 .buscador {
     /*Contenedor del buscador*/
-    height: 296px;
+    height: 25rem;
     display: flex;
-    flex-direction: row;
-    padding: 50px;
-    background-image: url('./FondoDel\ Buscador.svg');
-    justify-content: space-between;
-    align-items: center;
+    background-image: url('https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80');
+    background-position: center ;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 .buscadores {
     /*Contenedor del buscador para ingresar datos*/
+    height: 6rem;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1rem;
+    background-color: #ffff;
+    border: 3px solid transparent;
+    border-radius: .5rem;
+    box-shadow: 0 1px 4px rgb(0 0 0 / 50%);
+    margin-top: 22.5rem;
+    margin-left: 15rem;
 }
 
 .buscador-fecha {
@@ -31,25 +36,24 @@
     cursor: pointer;
 }
 
-.buscador>h1 {
+.buscador-titulo {
     /*Mensaje del buscador*/
     color: white;
-    font-size: 40px;
-    text-align: center;
-    font-family: var(--fuente2);
+    font-size: 70px;
+    margin-left: 3rem;
+    margin-top: 1.5rem;
+    position: absolute;
 }
 
 .buscador-submit {
     /*Boton del buscador*/
-    padding: 1rem 2rem;
-    border-radius: 5px;
+    padding: .8rem 3rem;
+    border-radius: .8rem;
     border: none;
     background-color: #F0572D;
-    border-style: none;
     color: white;
     cursor: pointer;
-    width: 150px;
-    font-family: var(--fuente1);
+    font-weight: 600;
     justify-content: center;
 }
 
@@ -58,23 +62,37 @@
 ---------------------------------------*/
 
 @media only screen and (max-width: 900px) {
-    .buscador {
-        /*Contenedor del buscador para que cambien a column*/
-        flex-direction: column;  
+    .buscadores{
+        height: 12rem;
+        gap: 0rem;
+        flex-direction: column;
+        margin-top: 20rem;
+        margin-left: 14rem;
     }
-
+    .buscador-titulo {
+            /*Mensaje del buscador*/
+            color: white;
+            font-size: 50px;
+            margin-left: 3rem;
+            margin-top: 1.5rem;
+            position: absolute;
+    }
 }
 @media only screen and (max-width: 695px) {
-    .buscador>h1 {
-        /*Mensaje del buscador*/
-        font-size: 36px;
+    .buscadores {
+        gap: 0rem;
+        flex-direction: column;
+        margin-left: 3rem;
+        
     }
 
 }
-@media only screen and (max-width: 650px) {
-    .buscador>h1 {
-        /*Mensaje del buscador*/
-        font-size: 30px;     
+@media only screen and (max-width: 400px) {
+    .buscadores {
+            gap: 0rem;
+            flex-direction: column;
+            margin-top: 20rem;
+            margin-left: 1rem;
     }
    
 }

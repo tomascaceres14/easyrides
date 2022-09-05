@@ -1,17 +1,15 @@
 .calendario {
-    background-color: white;
     margin-top: 20px;
     margin-bottom: 20px;
     text-align: center;
-    padding: 5px;
-    border-radius: 5px;
-    border-style: none;
-    border: none;
     cursor: pointer;
     border: none;
-    width:100%;
 }
 .calendario .react-daterange-picker__wrapper {
+    border-radius: .4rem;
     border: none;
+    background-color: rgb(237, 238, 238);
+    width: 300px;
+    padding: .3rem;
 }
 

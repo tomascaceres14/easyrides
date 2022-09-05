@@ -1,9 +1,9 @@
 package com.ctd.proyectointegrador.persistance.model;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import net.minidev.json.annotate.JsonIgnore;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -12,13 +12,14 @@ import java.util.List;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
 @Setter
 @Table(name = "categorias")
 public class Categoria {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
-    private Integer id;
+    private Long id;
 
     @Column(name = "titulo", nullable = false)
     private String titulo;
@@ -30,6 +31,7 @@ public class Categoria {
     private String url;
 
     @OneToMany(mappedBy = "categoria")
+    @JsonIgnore
     private List<Producto> productos;
 
     public Categoria(String titulo, String descripcion, String url) {
@@ -37,22 +39,6 @@ public class Categoria {
         this.descripcion = descripcion;
         this.url = url;
         this.productos = new ArrayList<>();
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public String getTitulo() {
-        return titulo;
-    }
-
-    public String getDescripcion() {
-        return descripcion;
-    }
-
-    public String getUrl() {
-        return url;
     }
 
 }
