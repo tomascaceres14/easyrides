@@ -15,6 +15,8 @@ import { CategoriasProvider } from "./Context/CategoriasContext";
 import { DataPaginaProductosProvider } from "./Context/DataPaginaProductosContext";
 import Producto from "./Paginas/Home/Listado/Producto/Producto";
 import { MostrarCategoriasProvider } from "./Context/MostrarCategoriasContext";
+import Reservas from "./Paginas/Reservas/Reservas";
+import { FechasCalendarioProvider } from "./Context/FechasCalendarioContext";
 
 
 function App() {
@@ -23,32 +25,39 @@ function App() {
 
   return (
     <div className="App">
-      
       <AppContext.Provider value={initialState}>
-        <DataPaginaProductosProvider >
+        <DataPaginaProductosProvider>
           <MostrarCategoriasProvider>
-            <CategoriasProvider>
-              <CiudadesProvider>
-                <DataProductosProvider>
-                  <AuthProvider>
-                    <BrowserRouter>
-                      <Header user={initialState} />
-                      <Routes>
-                        <Route path="/" element={<Home />} />
-                        <Route path="/login" element={<Login />} />
-                        <Route path="/registro" element={<Registro />} />
-                        <Route path={"/producto/:id"} element={<Producto />} />
-                      </Routes>
-                      <Footer />
-                    </BrowserRouter>
-                  </AuthProvider>
-                </DataProductosProvider>
-              </CiudadesProvider>
-            </CategoriasProvider>
+            <FechasCalendarioProvider>
+              <CategoriasProvider>
+                <CiudadesProvider>
+                  <DataProductosProvider>
+                    <AuthProvider>
+                      <BrowserRouter>
+                        <Header user={initialState} />
+                        <Routes>
+                          <Route path="/" element={<Home />} />
+                          <Route path="/login" element={<Login />} />
+                          <Route path="/registro" element={<Registro />} />
+                          <Route
+                            path={"/producto/:id"}
+                            element={<Producto />}
+                          />
+                          <Route
+                            path={"/producto/:id/reservas"}
+                            element={<Reservas />}
+                          />
+                        </Routes>
+                        <Footer />
+                      </BrowserRouter>
+                    </AuthProvider>
+                  </DataProductosProvider>
+                </CiudadesProvider>
+              </CategoriasProvider>
+            </FechasCalendarioProvider>
           </MostrarCategoriasProvider>
-        </DataPaginaProductosProvider>  
+        </DataPaginaProductosProvider>
       </AppContext.Provider>
-      
     </div>
   );
 }

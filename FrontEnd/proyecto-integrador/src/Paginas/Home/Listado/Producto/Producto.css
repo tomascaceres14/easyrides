@@ -1,8 +1,3 @@
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
 
 .header-producto {
   background: #ffff;
@@ -55,26 +50,6 @@
   color: white;
 }
 
-.cuerpo {
-  display: flex;
-  flex-direction: column;
-  margin-left: 4rem;
-}
-
-.icons-prod {
-  padding: 10px 0px 0px 10px;
-  display: flex;
-  align-items: center;
-  margin-left: 4rem;
-  gap: 10px;
-}
-
-.icons-prod button {
-  background: white;
-  border: none;
-  cursor: pointer;
-  color: #31363f;
-}
 
 /*---------------------------------------------------------------
                     Galeria Detalle de producto
@@ -84,8 +59,8 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  gap: 10px;
-  padding: 20px 60px 60px 60px;
+  padding: 10px 70px 0px 70px;
+  gap: .5rem;
 }
 
 img {
@@ -104,21 +79,25 @@ img {
   overflow: hidden;
 }
 
-.galeriaImg a:hover img {
+/* .galeriaImg a:hover img {
   filter: brightness(0.7);
   transform: rotatey(10deg)
-}
+} */
 
 .img1 {
   grid-area: 1 / 1 / 3 / 3;
+  border-bottom-left-radius: 1rem;
+  border-top-left-radius: 1rem;
 }
 
 .img2 {
   grid-area: 1 / 3 / 2 / 4;
+  
 }
 
 .img3 {
   grid-area: 1 / 4 / 2 / 5;
+  border-top-right-radius: 1rem;
 }
 
 .img4 {
@@ -127,6 +106,7 @@ img {
 
 .img5 {
   grid-area: 2 / 4 / 3 / 5;
+  border-bottom-right-radius: 1rem;
 }
 .light-box{
   /*Creo que habra q modificar tamaño*/
@@ -154,12 +134,10 @@ img {
 .close{
   display: block;
   position:absolute;
-  top:40px;
   right:40px;
   color: white;
   background-color: #f0572dd3;
   width: 40px;
-  height:40px;
   text-decoration: none;
   text-align: center;
   line-height: 40px;
@@ -187,7 +165,7 @@ img {
   left: 0;
   transition: transform 0.3s ease-in-out;
   width: 100%;
-  height: 100vh;
+
   z-index: 1000;
   display: flex;
   justify-content: center;
@@ -233,36 +211,82 @@ img {
 
 /*----------------------------------------------------------------*/
 
+.cuerpo {
+  margin-left: 4.2rem;
+}
+.cuerpo > h2{
+  font-weight: 600;
+  font-size: 25px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+/* .cuerpo-linea{
+  border: 1px solid  #EBEBEB;
+} */
+.icons-prod {
+  padding: 10px 0px 0px 10px;
+  display: flex;
+  align-items: center;
+  margin-left: 4rem;
+  gap: 10px;
+}
 
+.icons-prod button {
+  background: white;
+  border: none;
+  cursor: pointer;
+  color: #31363f;
+}
+
+.botones-boton {
+  cursor: pointer;
+}
 .descripcion {
-  width: 100%;
-  text-align: justify;
-  padding: 5px 0px;
+  padding: 0rem 30rem 0rem 0rem;
+  margin-top: 1rem;
+  line-height: 1.5rem;
 }
 
 .caracteristicas {
-  padding: 5px 20px;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(5, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  margin-top: 2rem;
+  margin-left: 4rem;
 }
-
+.caracteristicas-titulo{
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
 .reservaProductos {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 100px;
+  justify-content: space-between;
 }
-
+.reservaProductos-calendario{
+  margin-left: 4rem;
+  margin-top: 2rem;
+}
+.reservaProductos-calendario > h2{
+  font-weight: 600;
+  font-size: 25px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.reservaProductos-calendario > p {
+  margin-top: -.5rem;
+  margin-bottom: 2rem;
+  font-size: 18px;
+}
 .botones {
   text-align: center;
-  background-color: #31363f;
-  color: white;
+  background-color: #ffff;
+  border: 3px solid transparent;
+  border-radius: .5rem;
+  box-shadow: 0 1px 4px rgb(0 0 0 / 50%);
+  color: black;
   border-radius: 5px;
-  width: 300px;
-  padding: 50px;
+  width: 20rem;
+  padding: 1rem;
+  margin-right: 4rem;
   display: flex;
   gap: 20px;
   flex-direction: column;
@@ -271,11 +295,12 @@ img {
 .botones button {
   padding: 5px;
   background: #000;
-  border: none;
-  border-radius: 5px;
-  color: #b34121;
-  font-size: 20px;
-  font-weight: 700;
+  border-radius: .5rem;
+  padding: 1rem;
+  width: 100%;
+  background-color: #F0572D;
+  color: white;
+  border: solid 1px;
 }
 
 .calendario-prod {

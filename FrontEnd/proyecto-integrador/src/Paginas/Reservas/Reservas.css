@@ -1,0 +1,97 @@
+.reserva > h2{
+    font-size: 30px;
+    font-weight: 600;
+    margin-left: 4rem;
+}
+.reserva-superior{
+    display: flex;
+    justify-content: space-between;
+}
+.reserva-superior-formulario{
+    border-radius: .5rem;
+    box-shadow: 0 1px 4px rgb(0 0 0 / 25%);
+    padding: 2rem;
+    margin: 2rem 2rem 2rem 4rem;
+}
+.reserva-superior-formulario > p{
+    border-radius: .5rem;
+    color: rgb(105, 103, 103) ;
+    border: solid 1px;
+    padding: 01rem;
+    margin: 0rem 0rem 1.2rem 0rem;
+}
+.reserva-superior-detalle{
+    border-radius: .5rem;
+    box-shadow: 0 1px 4px rgb(0 0 0 / 25%);
+    margin: 1rem 4rem 2rem 0rem;
+    padding: 2rem 2rem;
+    
+
+}
+.reserva-superior-detalle-top{
+    display: flex;
+    /* position: sticky ;
+    top: 0;
+    overflow: visible;  */
+}
+
+.reserva-superior-imagen{
+    width: 10rem;   
+    height: 7rem;
+    border-radius: .5rem;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-top: .2rem;
+}
+.reserva-superior-descripcion{
+    margin-left: .8rem;
+}
+.reserva-superior-nombre{
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom: .8rem;
+}
+
+.reserva-superior-descripcion > p{
+    font-size: 18px;
+
+}
+
+.reserva-superior-calendario > button {
+    border-radius: .5rem;
+    padding: 1rem;
+    width: 95%;
+    margin-left: .5rem;
+    background-color: #F0572D;
+    color: white;
+    border: solid 1px;
+    align-content: stretch;
+    font-weight: 500;
+    font-size: 18px;
+    cursor: pointer;
+}
+.reserva-superior-calendario > p {
+    font-size: 20px;
+    font-weight: 500;
+    margin-top: 1rem;
+    margin-bottom: -1rem;
+}
+.reserva-horario{
+    padding: 1rem;
+    border-radius: .5rem;
+    box-shadow: 0 1px 4px rgb(0 0 0 / 25%);
+    margin: 1rem 4rem ;
+}
+.reserva-inferior{
+    margin-left: 4rem;
+    margin-bottom: 2rem;
+}
+.reserva-inferior > p {
+    margin-bottom: 2rem;
+    font-size: 18px;
+}
+.reserva-inferior-titulo{
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}

@@ -35,12 +35,11 @@ const ListadoCategorias = () => {
                   onClick={() => {
                     setElegirDataPaginaProductos(prod.id);
                   }}
-                  to={`/producto/${elegirDataPaginaProductos}`}
+                  to={`/producto/${prod.id}`}
                 >
                   <button className="listado-unidad-boton">Ver Más</button>
                 </Link>
               </div>
-              
             ) : null}
           </>
         ))}
