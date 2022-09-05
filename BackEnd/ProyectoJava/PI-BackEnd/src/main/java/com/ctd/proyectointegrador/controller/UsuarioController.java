@@ -1,9 +1,12 @@
 package com.ctd.proyectointegrador.controller;
 
+import com.ctd.proyectointegrador.persistance.model.jwt.UserPrinciple;
+import com.ctd.proyectointegrador.enums.Role;
 import com.ctd.proyectointegrador.persistance.dto.UsuarioDTO;
 import com.ctd.proyectointegrador.service.impl.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
 import java.net.URI;
@@ -18,7 +21,7 @@ public class UsuarioController {
     private Integer codigo;
 
 
-        @PostMapping()
+    @PostMapping()
     public ResponseEntity<Map<String, Object>> guardar(@RequestBody UsuarioDTO usuario) {
         Map<String, Object> response = usuarioService.guardar(usuario);
         return ResponseEntity.created(URI.create("/usuarios")).body(response);
@@ -53,8 +56,6 @@ public class UsuarioController {
         Map<String, Object> response = usuarioService.listarTodos();
         codigo = (Integer) response.get("codigo");
         return ResponseEntity.status(codigo).body(response);
-}
-
-
+    }
 
 }

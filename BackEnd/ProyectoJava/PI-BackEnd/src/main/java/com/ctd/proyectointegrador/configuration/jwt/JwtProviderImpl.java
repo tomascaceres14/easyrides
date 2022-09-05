@@ -1,7 +1,7 @@
 package com.ctd.proyectointegrador.configuration.jwt;
 
 import com.ctd.proyectointegrador.configuration.SecurityUtils;
-import com.ctd.proyectointegrador.configuration.UserPrinciple;
+import com.ctd.proyectointegrador.persistance.model.jwt.UserPrinciple;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;

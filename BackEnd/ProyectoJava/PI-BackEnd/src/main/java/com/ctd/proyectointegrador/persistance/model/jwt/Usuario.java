@@ -1,6 +1,7 @@
-package com.ctd.proyectointegrador.persistance.model;
+package com.ctd.proyectointegrador.persistance.model.jwt;
 
 import com.ctd.proyectointegrador.enums.Role;
+import com.ctd.proyectointegrador.persistance.model.Reserva;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -46,6 +47,7 @@ public class Usuario {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "rol")
+    @JsonIgnore
     private Role role;
 
     @Transient

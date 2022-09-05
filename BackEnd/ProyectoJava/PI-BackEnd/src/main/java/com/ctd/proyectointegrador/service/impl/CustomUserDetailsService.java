@@ -1,7 +1,7 @@
 package com.ctd.proyectointegrador.service.impl;
 import com.ctd.proyectointegrador.configuration.SecurityUtils;
-import com.ctd.proyectointegrador.configuration.UserPrinciple;
-import com.ctd.proyectointegrador.persistance.model.Usuario;
+import com.ctd.proyectointegrador.persistance.model.jwt.UserPrinciple;
+import com.ctd.proyectointegrador.persistance.model.jwt.Usuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;

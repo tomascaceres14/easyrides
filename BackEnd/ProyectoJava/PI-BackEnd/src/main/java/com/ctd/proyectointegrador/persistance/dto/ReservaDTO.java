@@ -24,4 +24,6 @@ public class ReservaDTO {
     private String fechaFinal;
 
     private ProductoDTO producto;
+
+    private UsuarioDTO usuario;
 }

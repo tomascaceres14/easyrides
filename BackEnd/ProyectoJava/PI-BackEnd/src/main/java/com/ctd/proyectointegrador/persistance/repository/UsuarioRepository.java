@@ -1,7 +1,7 @@
 package com.ctd.proyectointegrador.persistance.repository;
 
 import com.ctd.proyectointegrador.enums.Role;
-import com.ctd.proyectointegrador.persistance.model.Usuario;
+import com.ctd.proyectointegrador.persistance.model.jwt.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;

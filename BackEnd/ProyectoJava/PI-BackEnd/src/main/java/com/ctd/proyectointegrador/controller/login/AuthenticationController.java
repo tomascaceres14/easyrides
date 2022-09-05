@@ -1,10 +1,9 @@
 package com.ctd.proyectointegrador.controller.login;
 
 import com.ctd.proyectointegrador.persistance.dto.UsuarioDTO;
-import com.ctd.proyectointegrador.persistance.model.Usuario;
+import com.ctd.proyectointegrador.persistance.model.jwt.Usuario;
 import com.ctd.proyectointegrador.service.impl.AuthenticationService;
 import com.ctd.proyectointegrador.service.impl.UsuarioService;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/authentication")
+@RequestMapping("/auth")
 public class AuthenticationController {
     @Autowired
     private AuthenticationService authenticationService;

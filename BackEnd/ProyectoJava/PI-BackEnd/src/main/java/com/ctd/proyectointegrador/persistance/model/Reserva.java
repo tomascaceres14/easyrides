@@ -1,5 +1,6 @@
 package com.ctd.proyectointegrador.persistance.model;
 
+import com.ctd.proyectointegrador.persistance.model.jwt.Usuario;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -29,7 +30,6 @@ public class Reserva {
     @Column(name = "fecha_final")
     private String fechaFinal;
 
-
     //Relación Muchos a Uno con la tabla “productos”
     @ManyToOne
     @JoinColumn(name ="producto_id")
@@ -39,7 +39,5 @@ public class Reserva {
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "usuario_id")
     private Usuario usuario;
-
-
 
 }

@@ -1,11 +1,12 @@
 package com.ctd.proyectointegrador.service.impl;
 
 import com.ctd.proyectointegrador.persistance.dto.ReservaDTO;
-import com.ctd.proyectointegrador.persistance.model.Ciudad;
 import com.ctd.proyectointegrador.persistance.model.Producto;
 import com.ctd.proyectointegrador.persistance.model.Reserva;
+import com.ctd.proyectointegrador.persistance.model.jwt.Usuario;
 import com.ctd.proyectointegrador.persistance.repository.ProductoRepository;
 import com.ctd.proyectointegrador.persistance.repository.ReservaRepository;
+import com.ctd.proyectointegrador.persistance.repository.UsuarioRepository;
 import com.ctd.proyectointegrador.service.IService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,9 @@ public class ReservaService implements IService<ReservaDTO> {
     ProductoRepository productoRepository;
 
     @Autowired
+    UsuarioRepository usuarioRepository;
+
+    @Autowired
     ObjectMapper mapper;
 
     private Map<String, Object> buildResponse(Object dto, String message, Integer code) {
@@ -41,6 +45,8 @@ public class ReservaService implements IService<ReservaDTO> {
         Reserva reserva= mapper.convertValue(object, Reserva.class);
         Producto productoBD = productoRepository.findById(reserva.getProducto().getId()).get();
         reserva.setProducto(productoBD);
+        Usuario usuarioBD = usuarioRepository.findById(reserva.getUsuario().getId()).get();
+        reserva.setUsuario(usuarioBD);
         Reserva reservaRespuesta = reservaRepository.save(reserva);
         return buildResponse(mapper.convertValue(reservaRespuesta, ReservaDTO.class), "Reserva guardada",201);
     }

@@ -1,6 +1,5 @@
-package com.ctd.proyectointegrador.configuration;
+package com.ctd.proyectointegrador.persistance.model.jwt;
 
-import com.ctd.proyectointegrador.persistance.model.Usuario;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
