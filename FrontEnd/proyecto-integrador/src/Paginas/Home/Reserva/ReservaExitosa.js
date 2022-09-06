@@ -15,7 +15,7 @@ function Reserva() {
                 <p>Su reserva se ha realizado con éxito</p>
 
                 <Link to="/">
-                    <button className="boton">Ok</button>
+                    <button className="boton">OK</button>
                 </Link>
 
             </div>

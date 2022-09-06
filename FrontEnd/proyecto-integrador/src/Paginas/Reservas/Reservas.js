@@ -22,10 +22,21 @@ const Reservas = () => {
       <h2>Solicitá tu reserva</h2>
       <div className="reserva-superior">
         <div className="reserva-superior-formulario">
-          <p>Completa tus datos</p>
-          <p>Completa tus datos</p>
-          <p>Completa tus datos</p>
+          <div className="reserva-superior-formulario-linea1">
+            <p>Nombre</p>
+            <input></input>
+            <p>Correo Electrónico</p>
+            <input></input>
+          </div>
+          <div className="reserva-superior-formulario-linea2">
+            <p>Apellido</p>
+            <input></input>
+            <p>Ciudad</p>
+            <input></input>
+          </div>
+        
         </div>
+        
         <div className="reserva-superior-detalle">
           <div className="reserva-superior-detalle-top">
             <img
@@ -43,6 +54,7 @@ const Reservas = () => {
               </p>
             </div>
           </div>
+
           <div className="reserva-superior-calendario">
             <p>Fecha seleccionada</p>
             <Calendario />
@@ -50,12 +62,14 @@ const Reservas = () => {
           </div>
         </div>
       </div>
-      <div className='reserva-horario'>
+      <div className="reserva-horario">
         <h2>Elegí tu horario de llegada</h2>
         <p>Indica tu horario estimado de llegada</p>
       </div>
       <div className="reserva-inferior">
-        <h2 className="reserva-inferior-titulo">Seleccioná la fecha de tu reserva</h2>
+        <h2 className="reserva-inferior-titulo">
+          Seleccioná la fecha de tu reserva
+        </h2>
         <p>
           Agregá la fecha de tu viaje para poder obtener los mejores precios.
         </p>

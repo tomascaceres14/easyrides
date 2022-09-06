@@ -34,7 +34,6 @@ const Producto = () => {
               <Link to="/">
                 <button className="boton-volver">
                   <MdOutlineArrowBackIos size={"30"} />
-                  
                 </button>
               </Link>
             </div>
