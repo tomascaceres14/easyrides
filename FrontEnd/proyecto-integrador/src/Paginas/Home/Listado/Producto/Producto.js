@@ -34,6 +34,7 @@ const Producto = () => {
               <Link to="/">
                 <button className="boton-volver">
                   <MdOutlineArrowBackIos size={"30"} />
+
                 </button>
               </Link>
             </div>
@@ -47,7 +48,11 @@ const Producto = () => {
               </div>
             </div>
           </header>
-          <section>
+
+
+          {/*Bloque de galeria y informacion*/}
+
+          <section classame="Seccion-Detalle">
             <div className="icons-prod">
               <button>
                 <AiFillHeart size={"26"} />
@@ -177,13 +182,13 @@ const Producto = () => {
               </article>
             </div>
 
-            <article className="cuerpo">
-              <div>
+            <article className="cuerpo-contenedor">
+              <div className="Seccion1">
                 <h2 className="cuerpo-titulo">
                   {data && data.productos.titulo}
                 </h2>
                 {/* <hr className="cuerpo-linea"/> */}
-                <p className="descripcion">
+                <p className="cuerpo-descripcion">
                   {data && data.productos.descripcion}
                 </p>
               </div>
@@ -198,7 +203,8 @@ const Producto = () => {
                 </Link>
               </div> */}
             </article>
-            <article>
+
+            <article >
               <div>
                 <div className="caracteristicas">
                   <h2 className="caracteristicas-titulo">¿Qué ofrece este auto?</h2>
@@ -212,26 +218,40 @@ const Producto = () => {
                 </div>
               </div>
             </article>
+
+
+            <article >
+              <div>
+                <div className="seleccionaFecha">
+                  <h2 className="seleccionaFecha-titulo">Seleccioná la fecha de tu reserva</h2>
+                  <p className="seleccionaFecha-descripcion">
+                    Agregá la fecha de tu viaje para poder obtener los mejores
+                    precios.
+                  </p>
+                </div>
+              </div>
+            </article>
+
           </section>
+
+
           <div className="reservaProductos">
-            <div className="reservaProductos-calendario">
-              <h2>Seleccioná la fecha de tu reserva</h2>
-              <p>
-                Agregá la fecha de tu viaje para poder obtener los mejores
-                precios.
-              </p>
+            <div className="contenedor-calendario">
               <CalendarioProducto />
             </div>
-            <div className="botones">
+           
+
+            <div className="contenedor-IniciarReserva">
               <p>
                 Elegi las fechas que necesites tu vehiculo y comenza con la
                 aventura!
               </p>
               <Link to={`/producto/${id}/reservas`}>
-                <button className="botones-boton">Iniciar Reserva</button>
+                <button className="IniciarReserva-boton">Iniciar Reserva</button>
               </Link>
             </div>
           </div>
+
         </>
       </>
     </div>

@@ -1,4 +1,3 @@
-
 .header-producto {
   background: #ffff;
   padding: 10px 20px;
@@ -51,6 +50,22 @@
 }
 
 
+.icons-prod {
+  padding: 10px 0px 0px 10px;
+  display: flex;
+  align-items: center;
+  margin-left: 4rem;
+  gap: 10px;
+}
+
+.icons-prod button {
+  background: white;
+  border: none;
+  cursor: pointer;
+  color: #31363f;
+}
+
+
 /*---------------------------------------------------------------
                     Galeria Detalle de producto
 ---------------------------------------------------------------*/
@@ -79,10 +94,10 @@ img {
   overflow: hidden;
 }
 
-/* .galeriaImg a:hover img {
+.galeriaImg a:hover img {
   filter: brightness(0.7);
   transform: rotatey(10deg)
-} */
+}
 
 .img1 {
   grid-area: 1 / 1 / 3 / 3;
@@ -92,7 +107,7 @@ img {
 
 .img2 {
   grid-area: 1 / 3 / 2 / 4;
-  
+
 }
 
 .img3 {
@@ -108,55 +123,7 @@ img {
   grid-area: 2 / 4 / 3 / 5;
   border-bottom-right-radius: 1rem;
 }
-.light-box{
-  /*Creo que habra q modificar tamaño*/
-  position:fixed;
-  top:0;
-  left:0;
-  transition: transform 0.3s ease-in-out;
-  width:100%;
-  height:100vh;
-  z-index: 1000;
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  transform: scale(0);
-  backdrop-filter: blur(20px)
-  
-}
-.light-box img{
-  width:75vw;
-  max-height: 70vh;
-}
-.light-box:target{
-  transform: scale(1)
-}
-.close{
-  display: block;
-  position:absolute;
-  right:40px;
-  color: white;
-  background-color: #f0572dd3;
-  width: 40px;
-  text-decoration: none;
-  text-align: center;
-  line-height: 40px;
-  border-radius: 50%;
-}
-
-.next{
-  display: block;
-  color: white;
-  background-color: #f0572dd3;
-  width: 30px;
-  height:30px;
-  text-decoration: none;
-  text-align: center;
-  line-height: 30px;
-}
-
-/*----------------------------------------------------------------*/
-
+/*------------------------------------------*/
 
 .light-box {
   /*Creo que habra q modificar tamaño*/
@@ -165,7 +132,7 @@ img {
   left: 0;
   transition: transform 0.3s ease-in-out;
   width: 100%;
-
+  height: 100vh;
   z-index: 1000;
   display: flex;
   justify-content: center;
@@ -186,12 +153,10 @@ img {
 .close {
   display: block;
   position: absolute;
-  top: 40px;
   right: 40px;
   color: white;
   background-color: #f0572dd3;
   width: 40px;
-  height: 40px;
   text-decoration: none;
   text-align: center;
   line-height: 40px;
@@ -209,74 +174,107 @@ img {
   line-height: 30px;
 }
 
-/*----------------------------------------------------------------*/
 
-.cuerpo {
+/*---------------------------------------------------------------
+              Comienzan las secciones de información
+---------------------------------------------------------------*/
+
+/*----> Articulo nombre del carro y descripcion <----*/
+
+.cuerpo-contenedor {
+  /*Container de la seccion*/
   margin-left: 4.2rem;
 }
-.cuerpo > h2{
+
+.cuerpo-titulo {
+  /*Titulo: Nombre del carro */
   font-weight: 600;
   font-size: 25px;
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
+
 /* .cuerpo-linea{
   border: 1px solid  #EBEBEB;
 } */
-.icons-prod {
-  padding: 10px 0px 0px 10px;
-  display: flex;
-  align-items: center;
-  margin-left: 4rem;
-  gap: 10px;
-}
 
-.icons-prod button {
-  background: white;
-  border: none;
-  cursor: pointer;
-  color: #31363f;
-}
-
-.botones-boton {
-  cursor: pointer;
-}
-.descripcion {
-  padding: 0rem 30rem 0rem 0rem;
+.cuerpo-descripcion {
+  /*Parrafo: Descripcion del carro */
+  padding: 0rem 5rem 0rem 0rem;
   margin-top: 1rem;
   line-height: 1.5rem;
+  text-align: justify;
 }
+
+/*----> Articulo que ofrece el auto <----*/
 
 .caracteristicas {
   margin-top: 2rem;
   margin-left: 4rem;
 }
-.caracteristicas-titulo{
+
+.caracteristicas-titulo {
   font-size: 25px;
   font-weight: 600;
   margin-bottom: 1rem;
 }
-.reservaProductos {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.reservaProductos-calendario{
-  margin-left: 4rem;
+
+/*----> Articulo seleccionar la fecha de tu reserva <----*/
+
+.seleccionaFecha{
   margin-top: 2rem;
+  margin-left: 4rem;
 }
-.reservaProductos-calendario > h2{
-  font-weight: 600;
+
+.seleccionaFecha-titulo{
   font-size: 25px;
-  margin-top: 1rem;
+  font-weight: 600;
   margin-bottom: 1rem;
 }
-.reservaProductos-calendario > p {
-  margin-top: -.5rem;
-  margin-bottom: 2rem;
-  font-size: 18px;
+.seleccionaFecha-descripcion{
+  padding: 0rem 5rem 0rem 0rem;
+  margin-top: 1rem;
+  line-height: 1.5rem;
+  text-align: justify;
 }
-.botones {
+
+
+
+
+/*---------------------------------------------------------------
+                        Seccion de reserva
+---------------------------------------------------------------*/
+.reservaProductos {
+  /*Container de la seccion*/
+  width: 100%;
+  display: flex;
+  margin-top: 2rem;
+  justify-content:center;
+  align-items: center;
+}
+
+.contenedor-calendario{
+  width:70%;
+}
+
+.calendarioInteractivo {
+  background-color: white;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 5px;
+  border-radius: 5px;
+  border-style: none;
+  border: none;
+  cursor: pointer;
+  border: none;
+  width: 70%;
+  
+}
+
+/*----> 2 DIV <----*/
+
+.contenedor-IniciarReserva {
+  /*contenedor donde va el calendario Y el container del boton iniciar reserva*/
   text-align: center;
   background-color: #ffff;
   border: 3px solid transparent;
@@ -285,17 +283,15 @@ img {
   color: black;
   border-radius: 5px;
   width: 20rem;
+  height:150px;
   padding: 1rem;
-  margin-right: 4rem;
   display: flex;
   gap: 20px;
   flex-direction: column;
 }
-.botones>p {
-  font-size: 20px;
-  font-weight: 500;
-}
-.botones button {
+
+
+.contenedor-IniciarReserva button {
   padding: 5px;
   background: #000;
   border-radius: .5rem;
@@ -304,20 +300,50 @@ img {
   background-color: #F0572D;
   color: white;
   border: solid 1px;
-  font-weight: 600;
-  font-size: 18px;
+  
 }
 
-.calendario-prod {
-  background-color: white;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  text-align: center;
-  padding: 5px;
-  border-radius: 5px;
-  border-style: none;
-  border: none;
-  cursor: pointer;
-  border: none;
-  width: 100%;
+.IniciarReserva-boton {
+  cursor: pointer; 
 }
+
+
+/*---------------------------------------------------------------
+                        RESPONSIVE
+---------------------------------------------------------------*/
+/*
+
+SE ENCUENTRA EN ESTADO DE PRUEBA - EL CALENDARIO ROMPE TODO, MEJORAR RESPONSIVE 
+
+@media only screen and (max-width: 1200px) {
+  
+  .reservaProductos {
+    /*Container de la seccion
+    width: 100%;
+    display: flex;
+    flex-direction:column;
+    margin-top: 2rem;
+    justify-content:center;
+    align-items: center;
+    text-align:center;
+    margin-left: 4.2rem;
+  }
+
+  .contenedor-IniciarReserva {
+    /*contenedor donde va el calendario Y el container del boton iniciar reserva
+    text-align: center;
+    background-color: #ffff;
+    border: 3px solid transparent;
+    border-radius: .5rem;
+    box-shadow: 0 1px 4px rgb(0 0 0 / 50%);
+    color: black;
+    border-radius: 5px;
+    width: 20rem;
+    height:150px;
+    padding: 1rem;
+    display: flex;
+    gap: 20px;
+    margin-right: 15rem;
+}}
+  
+  */

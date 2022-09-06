@@ -10,7 +10,7 @@ function CalendarioProducto() {
   // const [value, onChange] = useState([new Date(), new Date()]);
   const {fechasCalendario, setFechasCalendario} = useContext(FechasCalendarioContext);
   return (
-    <div className="calendario">
+    <div className="calendarioInteractivo">
       <Calendar
         onChange={setFechasCalendario}
         value={fechasCalendario}
