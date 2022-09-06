@@ -14,9 +14,8 @@ import axios from "axios";
 function Login() {
 
   const navigate = useNavigate();
-  const [respuestaPost, setRespuestaPost] = useState()
   const [cerrarLogin, setCerrarLogin] = useState(false);
-  const { auth, setAuth } = useContext(AuthContext);
+  const { setAuth } = useContext(AuthContext);
   const { tokenUsuario, setTokenUsuario } = useContext( TokenUsuarioContext );
   const urlLogin =
     "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/auth/login";
@@ -30,10 +29,10 @@ function Login() {
     })
       .then(function (response) {
         //handle success
-        console.log("1");
-        setRespuestaPost(response.data)
+        
         setAuth(response.data)
-        setTokenUsuario(response.data)
+        console.log("auth");
+        setTokenUsuario(response.data.token)
         setCerrarLogin(true)
       })
       .catch(function (response) {
@@ -51,9 +50,9 @@ function Login() {
         password: "",
       }}
       onSubmit={(values, onSubmitProps) => {
-        getUsuario(JSON.stringify(values));
         // console.log(values)
         // Comparar con mi base de datos de usuarios registrado
+        getUsuario(values)
         if (!cerrarLogin) {
           navigate("/");
         } else {
