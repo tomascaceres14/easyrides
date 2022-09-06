@@ -6,9 +6,7 @@ export const Avatar = () => {
   const { auth, setAuth } = useContext(AuthContext);
 
   const cerrarSesion = () => {
-    localStorage.clear();
     setAuth(null)
-    // window.location.reload()
   }
   return (
     <div className='avatar'>

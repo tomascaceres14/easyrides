@@ -7,7 +7,7 @@ import { MostrarCategoriasContext } from "../../../Context/MostrarCategoriasCont
 export default function Cards() {
   const urlCategorias = "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/categorias";
   const { data } = useFetch(urlCategorias)
-  const { elegirCategorias, setElegirCategorias } = useContext(CategoriasContext);
+  const {  setElegirCategorias } = useContext(CategoriasContext);
   const {setMostrarCategorias } = useContext(MostrarCategoriasContext);
   
   

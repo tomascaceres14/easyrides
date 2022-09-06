@@ -11,7 +11,7 @@ function  Buscador(){
   // creo un estado global que llegue a listado y ahi hago una condicional de si esta en falso muestro 
   // todo el listado y si cambia a true cambio a listado ciudades
   // aca traigo el estado de un context
-  const {dataProductos, setDataProductos} = useContext(DataProductosContext);
+  const {setDataProductos} = useContext(DataProductosContext);
 
   return (
     <div className="buscador">

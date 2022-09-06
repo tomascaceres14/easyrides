@@ -1,18 +1,16 @@
 import "./Registro.css";
 import React, { useContext, useEffect } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import AppContext from "../../Context/AppContext";
 import { useInitialState } from "../../Hooks/useInitialState";
-import axios from "axios"; 
-
+import axios from "axios";
 
 function Registro() {
   const { valores, setValores } = useContext(AppContext);
   const navigate = useNavigate();
   const urlRegistro =
     "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/auth/register";
-  
 
   //validacion contraseña
   const validarContraseña = (values) => {
@@ -39,23 +37,21 @@ function Registro() {
     return error;
   };
   const postRegistro = (objetoUsuario) => {
-    
-      axios({
-        method: "post",
-        url: urlRegistro,
-        data: objetoUsuario,
-        headers: { "Content-Type": "application/json" },
-   
+    axios({
+      method: "post",
+      url: urlRegistro,
+      data: objetoUsuario,
+      headers: { "Content-Type": "application/json" },
+    })
+      .then(function (response) {
+        //handle success
+        console.log(response);
       })
-        .then(function (response) {
-          //handle success
-          console.log(response);
-        })
-        .catch(function (response) {
-          //handle error
-          console.log(response);
-        });
-  }
+      .catch(function (response) {
+        //handle error
+        console.log(response);
+      });
+  };
 
   return (
     <React.Fragment>
@@ -68,13 +64,11 @@ function Registro() {
           ciudad: "cordoba",
           confirmarContraseña: "",
         }}
-
         onSubmit={(values) => {
-          delete values.confirmarContraseña
+          delete values.confirmarContraseña;
           postRegistro(JSON.stringify(values));
-          // console.log(values);
-          // setValores(values);
-          // console.log(valores);
+          console.log(values);
+          setValores(values);
           navigate("/login");
         }}
         validate={(valores) => {
@@ -107,6 +101,8 @@ function Registro() {
             errores.email =
               "El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.";
           }
+
+   
           return errores;
         }}
       >
@@ -195,9 +191,9 @@ function Registro() {
               <p className="ParrafoTienesCuenta">
                 {" "}
                 ¿Ya tienes cuenta?{" "}
-                <a href="/login" target="_self">
+                <Link to="/login" >
                   Iniciar sesión
-                </a>
+                </Link>
               </p>
             </div>
           </Form>

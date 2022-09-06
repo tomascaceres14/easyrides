@@ -1,9 +1,8 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import Calendar from "react-calendar";
 import "@wojtekmaj/react-daterange-picker/dist/DateRangePicker.css";
 import "react-calendar/dist/Calendar.css";
 import "react-calendar/dist/Calendar.css";
-import Calendario from "../../Buscador/Calendario";
 import { FechasCalendarioContext } from "../../../../Context/FechasCalendarioContext";
 
 function CalendarioProducto() {

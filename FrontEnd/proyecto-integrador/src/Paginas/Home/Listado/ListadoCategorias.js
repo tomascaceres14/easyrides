@@ -12,7 +12,7 @@ const ListadoCategorias = () => {
     "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/productos";
   const { data } = useFetch(urlProductos);
   const { elegirCategorias } = useContext(CategoriasContext);
-  const { elegirDataPaginaProductos, setElegirDataPaginaProductos } =
+  const { setElegirDataPaginaProductos } =
     useContext(DataPaginaProductosContext);
 
   return (
