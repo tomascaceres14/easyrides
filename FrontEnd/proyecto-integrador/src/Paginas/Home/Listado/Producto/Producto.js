@@ -7,7 +7,7 @@ import { Link, useParams } from "react-router-dom";
 import useFetch from "../../../../Hooks/useFetch";
 import CalendarioProducto from "./CalendarioProducto";
 import { DataPaginaProductosContext } from "../../../../Context/DataPaginaProductosContext";
-
+import AuthContext from "../../../../Context/AuthContext";
 const Producto = () => {
   const { id } = useParams();
   // pasar id a la url de fetch
@@ -16,6 +16,8 @@ const Producto = () => {
   const { elegirDataPaginaProductos, setElegirDataPaginaProductos } =
     useContext(DataPaginaProductosContext);
   const { data } = useFetch(urlProductos);
+  const { auth } = useContext(AuthContext);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -34,7 +36,6 @@ const Producto = () => {
               <Link to="/">
                 <button className="boton-volver">
                   <MdOutlineArrowBackIos size={"30"} />
-
                 </button>
               </Link>
             </div>
@@ -48,7 +49,6 @@ const Producto = () => {
               </div>
             </div>
           </header>
-
 
           {/*Bloque de galeria y informacion*/}
 
@@ -204,10 +204,12 @@ const Producto = () => {
               </div> */}
             </article>
 
-            <article >
+            <article>
               <div>
                 <div className="caracteristicas">
-                  <h2 className="caracteristicas-titulo">¿Qué ofrece este auto?</h2>
+                  <h2 className="caracteristicas-titulo">
+                    ¿Qué ofrece este auto?
+                  </h2>
                   {data &&
                     data.productos.caracteristicas.map((carac) => (
                       <>
@@ -219,11 +221,12 @@ const Producto = () => {
               </div>
             </article>
 
-
-            <article >
+            <article>
               <div>
                 <div className="seleccionaFecha">
-                  <h2 className="seleccionaFecha-titulo">Seleccioná la fecha de tu reserva</h2>
+                  <h2 className="seleccionaFecha-titulo">
+                    Seleccioná la fecha de tu reserva
+                  </h2>
                   <p className="seleccionaFecha-descripcion">
                     Agregá la fecha de tu viaje para poder obtener los mejores
                     precios.
@@ -231,27 +234,33 @@ const Producto = () => {
                 </div>
               </div>
             </article>
-
           </section>
-
 
           <div className="reservaProductos">
             <div className="contenedor-calendario">
               <CalendarioProducto />
             </div>
-           
 
             <div className="contenedor-IniciarReserva">
               <p>
                 Elegi las fechas que necesites tu vehiculo y comenza con la
                 aventura!
               </p>
-              <Link to={`/producto/${id}/reservas`}>
-                <button className="IniciarReserva-boton">Iniciar Reserva</button>
-              </Link>
+              {auth ? (
+                <Link to={`/producto/${id}/reservas`}>
+                  <button className="IniciarReserva-boton">
+                    Iniciar Reserva
+                  </button>
+                </Link>
+              ) : (
+                <Link to={`/login`}>
+                  <button className="IniciarReserva-boton">
+                    Iniciar Reserva
+                  </button>
+                </Link>
+              )}
             </div>
           </div>
-
         </>
       </>
     </div>

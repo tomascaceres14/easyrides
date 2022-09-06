@@ -5,6 +5,8 @@ import Calendario from '../Home/Buscador/Calendario';
 import "./Reservas.css";
 import { FechasCalendarioContext } from '../../Context/FechasCalendarioContext';
 import CalendarioProducto from '../Home/Listado/Producto/CalendarioProducto';
+import AuthContext from '../../Context/AuthContext';
+
 
 const Reservas = () => {
   const { id } = useParams();
@@ -13,18 +15,22 @@ const Reservas = () => {
     "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/productos/" +
     id;
   const { data } = useFetch(urlProductos);
-  const { fechasCalendario, setFechasCalendario } = useContext( FechasCalendarioContext )
+  // const { fechasCalendario, setFechasCalendario } = useContext( FechasCalendarioContext )
+  const { auth, setAuth } = useContext(AuthContext);
+
+   
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
   return (
     <div className="reserva">
+      {console.log(auth)}
       <h2>Solicitá tu reserva</h2>
       <div className="reserva-superior">
         <div className="reserva-superior-formulario">
           <div className="reserva-superior-formulario-linea1">
             <p>Nombre</p>
-            <input></input>
+            <input placeholder={auth ? auth.nombre : null}></input>
             <p>Correo Electrónico</p>
             <input></input>
           </div>
