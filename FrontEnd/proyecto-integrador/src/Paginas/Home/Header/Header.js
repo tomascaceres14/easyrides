@@ -11,7 +11,7 @@ import { Avatar } from "./Avatar";
 
 const Header = () => {
 const navRef = useRef();
-const initialState = useInitialState();
+
 
 const { auth } = useContext(AuthContext);
 

@@ -17,6 +17,7 @@ import Producto from "./Paginas/Home/Listado/Producto/Producto";
 import { MostrarCategoriasProvider } from "./Context/MostrarCategoriasContext";
 import Reservas from "./Paginas/Reservas/Reservas";
 import { FechasCalendarioProvider } from "./Context/FechasCalendarioContext";
+import { TokenUsuarioProvider } from "./Context/TokenUsuarioContext";
 
 
 function App() {
@@ -25,7 +26,8 @@ function App() {
 
   return (
     <div className="App">
-      <AppContext.Provider value={initialState}>
+      <TokenUsuarioProvider>
+        <AppContext.Provider value={initialState}>
         <DataPaginaProductosProvider>
           <MostrarCategoriasProvider>
             <FechasCalendarioProvider>
@@ -58,6 +60,8 @@ function App() {
           </MostrarCategoriasProvider>
         </DataPaginaProductosProvider>
       </AppContext.Provider>
+      </TokenUsuarioProvider>
+      
     </div>
   );
 }
