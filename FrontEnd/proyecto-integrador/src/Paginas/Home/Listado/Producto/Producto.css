@@ -291,7 +291,10 @@ img {
   gap: 20px;
   flex-direction: column;
 }
-
+.botones>p {
+  font-size: 20px;
+  font-weight: 500;
+}
 .botones button {
   padding: 5px;
   background: #000;
@@ -301,6 +304,8 @@ img {
   background-color: #F0572D;
   color: white;
   border: solid 1px;
+  font-weight: 600;
+  font-size: 18px;
 }
 
 .calendario-prod {

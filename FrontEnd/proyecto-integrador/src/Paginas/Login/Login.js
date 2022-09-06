@@ -101,9 +101,9 @@ function Login() {
               <p>
                 {" "}
                 ¿Aún no tienes cuenta?{" "}
-                <a href="/registro" target="_self">
+                <Link to="/registro">
                   Registrate
-                </a>
+                </Link>
               </p>
             </div>
           </Form>

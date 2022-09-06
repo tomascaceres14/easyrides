@@ -1,13 +1,18 @@
 import "./Registro.css";
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useNavigate } from "react-router-dom";
 import AppContext from "../../Context/AppContext";
 import { useInitialState } from "../../Hooks/useInitialState";
+import axios from "axios"; 
+
 
 function Registro() {
-  const { setValores } = useContext(AppContext);
+  const { valores, setValores } = useContext(AppContext);
   const navigate = useNavigate();
+  const urlRegistro =
+    "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/auth/register";
+  
 
   //validacion contraseña
   const validarContraseña = (values) => {
@@ -33,6 +38,24 @@ function Registro() {
     }
     return error;
   };
+  const postRegistro = (objetoUsuario) => {
+    
+      axios({
+        method: "post",
+        url: urlRegistro,
+        data: objetoUsuario,
+        headers: { "Content-Type": "application/json" },
+   
+      })
+        .then(function (response) {
+          //handle success
+          console.log(response);
+        })
+        .catch(function (response) {
+          //handle error
+          console.log(response);
+        });
+  }
 
   return (
     <React.Fragment>
@@ -40,13 +63,18 @@ function Registro() {
         initialValues={{
           nombre: "",
           apellido: "",
-          correo: "",
-          contraseña: "",
+          email: "",
+          password: "",
+          ciudad: "cordoba",
           confirmarContraseña: "",
         }}
+
         onSubmit={(values) => {
-          setValores(values);
-          console.log(values);
+          delete values.confirmarContraseña
+          postRegistro(JSON.stringify(values));
+          // console.log(values);
+          // setValores(values);
+          // console.log(valores);
           navigate("/login");
         }}
         validate={(valores) => {
@@ -69,14 +97,14 @@ function Registro() {
           }
 
           //validacion correo
-          if (!valores.correo) {
-            errores.correo = "Por favor ingresa un correo electronico";
+          if (!valores.email) {
+            errores.email = "Por favor ingresa un correo electronico";
           } else if (
             !/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(
-              valores.correo
+              valores.email
             )
           ) {
-            errores.correo =
+            errores.email =
               "El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.";
           }
           return errores;
@@ -118,28 +146,28 @@ function Registro() {
                 <label htmlFor="correo electrónico">Correo electrónico</label>
                 <Field
                   type="email"
-                  name="correo"
+                  name="email"
                   placeholder="Ej: correo@correo.com"
-                  id="correo"
+                  id="email"
                 />
                 <ErrorMessage
-                  name="correo"
-                  component={() => <div className="error">{errors.correo}</div>}
+                  name="email"
+                  component={() => <div className="error">{errors.email}</div>}
                 />
 
                 <div className="form-contraseña">
                   <label htmlFor="contraseña">Contraseña</label>
                   <Field
                     type="password"
-                    name="contraseña"
+                    name="password"
                     validate={validarContraseña}
                   />
                 </div>
 
                 <ErrorMessage
-                  name="contraseña"
+                  name="password"
                   component={() => (
-                    <div className="error">{errors.contraseña}</div>
+                    <div className="error">{errors.password}</div>
                   )}
                 />
 
@@ -149,7 +177,7 @@ function Registro() {
                     type="password"
                     name="confirmarContraseña"
                     validate={(value) =>
-                      validateConfirmarContraseña(values.contraseña, value)
+                      validateConfirmarContraseña(values.password, value)
                     }
                   />
                   <ErrorMessage

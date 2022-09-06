@@ -12,12 +12,31 @@
     box-shadow: 0 1px 4px rgb(0 0 0 / 25%);
     padding: 2rem;
     margin: 2rem 2rem 2rem 4rem;
+    height: 13rem;
+    width: 45rem;
+    display: flex;
+    justify-content: space-between;
+}
+.reserva-superior-formulario-linea1 > input{
+    display: flex;
+    padding: .5rem;
+    width: 20rem;
+    border-radius: .5rem;
+    font-size: 12px;
+}
+
+.reserva-superior-formulario-linea2 > input {
+    display: flex;
+    padding: .5rem;
+    width: 20rem;
+    border-radius: .5rem;
+    font-size: 12px;
+    padding: .5rem;
+
 }
 .reserva-superior-formulario > p{
     border-radius: .5rem;
-    color: rgb(105, 103, 103) ;
     border: solid 1px;
-    padding: 01rem;
     margin: 0rem 0rem 1.2rem 0rem;
 }
 .reserva-superior-detalle{
@@ -78,10 +97,13 @@
     margin-bottom: -1rem;
 }
 .reserva-horario{
+    display: flex;
+    flex-direction: column;
     padding: 1rem;
     border-radius: .5rem;
     box-shadow: 0 1px 4px rgb(0 0 0 / 25%);
     margin: 1rem 4rem ;
+    width: 45rem;
 }
 .reserva-inferior{
     margin-left: 4rem;
