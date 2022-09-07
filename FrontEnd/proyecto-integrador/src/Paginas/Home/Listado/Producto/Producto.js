@@ -213,8 +213,8 @@ const Producto = () => {
                   {data &&
                     data.productos.caracteristicas.map((carac) => (
                       <>
-                        <p key={carac.id}>{carac.titulo}</p>
-                        <p key={carac.id}>{carac.url}</p>
+                      <p key={carac.id}><i class = {carac.url}></i> {carac.titulo} </p>
+                        
                       </>
                     ))}
                 </div>

@@ -80,8 +80,8 @@ function Login() {
         //validacion contraseña
         if (!valores.password) {
           errores.password = "Por favor ingresa tu contraseña";
-        } else if (!/^.{8,8}$/.test(valores.password)) {
-          errores.password = "Por favor ingrese una contraseña de 8 caracteres";
+        } else if (!/^.{4,12}$/.test(valores.password)) {
+          errores.password = "Por favor ingrese una contraseña de 4 a 12 caracteres";
         }
         return errores;
 

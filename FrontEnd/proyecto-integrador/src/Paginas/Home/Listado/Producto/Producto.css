@@ -219,6 +219,10 @@ img {
   margin-bottom: 1rem;
 }
 
+.caracteristicas p {
+  margin-top:20px;
+}
+
 /*----> Articulo seleccionar la fecha de tu reserva <----*/
 
 .seleccionaFecha{
