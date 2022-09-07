@@ -15,7 +15,7 @@ function Login() {
 
   const navigate = useNavigate();
   const [cerrarLogin, setCerrarLogin] = useState(false);
-  const { setAuth } = useContext(AuthContext);
+  const { auth, setAuth } = useContext(AuthContext);
   const { tokenUsuario, setTokenUsuario } = useContext( TokenUsuarioContext );
   const urlLogin =
     "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/auth/login";
@@ -29,15 +29,14 @@ function Login() {
     })
       .then(function (response) {
         //handle success
-        
         setAuth(response.data)
-        console.log("auth");
+        console.log(auth);
         setTokenUsuario(response.data.token)
         setCerrarLogin(true)
       })
       .catch(function (response) {
         //handle error
-        console.log(response);
+        // console.log(response);
       });
   }
   
