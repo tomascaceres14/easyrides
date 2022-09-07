@@ -8,6 +8,8 @@ import useFetch from "../../../../Hooks/useFetch";
 import CalendarioProducto from "./CalendarioProducto";
 import { DataPaginaProductosContext } from "../../../../Context/DataPaginaProductosContext";
 import AuthContext from "../../../../Context/AuthContext";
+
+
 const Producto = () => {
   const { id } = useParams();
   // pasar id a la url de fetch
@@ -25,7 +27,7 @@ const Producto = () => {
   return (
     <div>
       <>
-        {console.log(data && data.productos)}
+        
         <>
           <header>
             <div className="header-producto">
