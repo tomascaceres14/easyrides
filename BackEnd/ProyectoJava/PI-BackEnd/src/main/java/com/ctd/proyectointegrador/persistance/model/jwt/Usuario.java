@@ -53,4 +53,12 @@ public class Usuario {
     @Transient
     private String token;
 
+    public Usuario(String nombre, String apellido, String email, String password, String ciudad, Role role) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.email = email;
+        this.password = password;
+        this.ciudad = ciudad;
+        this.role = role;
+    }
 }
