@@ -39,9 +39,9 @@ INSERT INTO imagenes VALUES (null, 'https://img.motoryracing.com/noticias/portad
 
 
 INSERT INTO caracteristicas VALUES (null, 'Transmision Automatica', 'fa-solid fa-gears');
-INSERT INTO caracteristicas VALUES (null, 'Sistema de navegacion', 'fa-solid fa-circle-location-arrow');
+INSERT INTO caracteristicas VALUES (null, 'Sistema de navegacion', 'fa-sharp fa-solid fa-location-dot');
 INSERT INTO caracteristicas VALUES (null, 'Control crucero', 'fa-solid fa-ship');
-INSERT INTO caracteristicas VALUES (null, 'Detección de puntos ciegos', 'fa-solid fa-ey');
+INSERT INTO caracteristicas VALUES (null, 'Detección de puntos ciegos', 'fa-solid fa-eye');
 
 INSERT INTO producto_caracteristica VALUES (1, 1);
 INSERT INTO producto_caracteristica VALUES (1, 2);
