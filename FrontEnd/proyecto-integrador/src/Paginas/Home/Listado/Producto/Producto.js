@@ -248,19 +248,19 @@ const Producto = () => {
                 Elegi las fechas que necesites tu vehiculo y comenza con la
                 aventura!
               </p>
-              {auth ? (
+              {/* {auth ? ( */}
                 <Link to={`/producto/${id}/reservas`}>
                   <button className="IniciarReserva-boton">
                     Iniciar Reserva
                   </button>
                 </Link>
-              ) : (
+              {/* ) : (
                 <Link to={`/login`}>
                   <button className="IniciarReserva-boton">
                     Iniciar Reserva
                   </button>
-                </Link>
-              )}
+                </Link> */}
+              {/* )} */}
             </div>
           </div>
         </>
