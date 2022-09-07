@@ -41,7 +41,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 .antMatchers(HttpMethod.POST,"/auth/**").permitAll()
                 .antMatchers(HttpMethod.GET,"/**").permitAll()
-                .antMatchers("/**").hasRole(Role.USER.name())
+                .antMatchers(HttpMethod.POST, "/productos/**", "/categorias/**"
+                        , "/ciudades/**", "/caracteristicas/**",
+                        "/imagenes/**").hasAnyRole(Role.ADMIN.name())
+                .antMatchers(HttpMethod.PUT, "/productos/**", "/categorias/**"
+                        , "/ciudades/**", "/caracteristicas/**",
+                        "/imagenes/**", "/reservas/**").hasAnyRole(Role.ADMIN.name())
+                .antMatchers(HttpMethod.DELETE, "/productos/**", "/categorias/**"
+                        , "/ciudades/**", "/caracteristicas/**",
+                        "/imagenes/**", "/reservas/**").hasAnyRole(Role.ADMIN.name())
                 .anyRequest().authenticated();
         http.addFilterBefore(jwtAuthorizationFilter(), UsernamePasswordAuthenticationFilter.class);
     }
@@ -70,5 +78,31 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             }
         };
     }
+
+    /*agregar al metodo post aparte de auth/** , el endpoint de usuarioController y agrega referencia a endpoint
+del metodo buscar por ciudad y por fechas ..
+n: .antMatchers(HttpMethod.POST, "/auth/**", "/usuarios/**","/api/v1/search-filter/**").permitAll()
+
+ hace un permit all de producto, categoria, ciudad politicas etc
+tenemos
+
+metodo post de producto, categoria, rol a hasanyrol("ADMIN")
+ .antMatchers(HttpMethod.POST, "productos/**", "categorias/**"
+                        , "/ciudades/**", "/caracteristicas/**",
+                        , "/api/v1/role/**").hasAnyRole("ADMIN")
+metodo put  de todo a admin
+.antMatchers(HttpMethod.PUT, "/productos**", "/categorias/**"
+                        , "/ciudades/**", "/caracteristicas/**",
+                        , "/api/v1/role/**", "/usuarios/**").hasAnyRole("ADMIN")
+
+metodo delete de todo a admin
+
+metodo get de usuario y rol a  admin
+
+metodo post de reserva y favorito a admin y usuario
+
+metodo put de reserva y favorito a admin y user
+*/
+
 
 }
