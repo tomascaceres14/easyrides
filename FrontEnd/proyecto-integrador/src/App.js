@@ -18,6 +18,7 @@ import { MostrarCategoriasProvider } from "./Context/MostrarCategoriasContext";
 import Reservas from "./Paginas/Reservas/Reservas";
 import { FechasCalendarioProvider } from "./Context/FechasCalendarioContext";
 import { TokenUsuarioProvider } from "./Context/TokenUsuarioContext";
+import { RequerirAuth } from "./Paginas/Reservas/RequerirAuth";
 
 
 function App() {
@@ -38,17 +39,20 @@ function App() {
                       <BrowserRouter>
                         <Header user={initialState} />
                         <Routes>
-                          <Route path="/" element={<Home />} />
+                          <Route path="/*" element={<Home />} />
                           <Route path="/login" element={<Login />} />
                           <Route path="/registro" element={<Registro />} />
                           <Route
                             path={"/producto/:id"}
                             element={<Producto />}
                           />
-                          <Route
+                          <Route element={<RequerirAuth />}>
+                            <Route
                             path={"/producto/:id/reservas"}
                             element={<Reservas />}
-                          />
+                            />
+                          </Route>
+                          
                         </Routes>
                         <Footer />
                       </BrowserRouter>
