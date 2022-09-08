@@ -35,9 +35,6 @@ build:
 deploy:
   stage: deploy
   image: alpine
-  only:
-    refs:
-      - Develop
   before_script:
     - echo "Deploy pre script"
     - apk add openssh-client
