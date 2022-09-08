@@ -94,34 +94,44 @@ img {
   overflow: hidden;
 }
 
-.galeriaImg a:hover img {
-  filter: brightness(0.7);
-  transform: rotatey(10deg)
-}
-
 .img1 {
   grid-area: 1 / 1 / 3 / 3;
   border-bottom-left-radius: 1rem;
   border-top-left-radius: 1rem;
 }
-
+.img1:hover {
+  filter: brightness(0.7);
+  transform: rotatey(10deg)
+}
 .img2 {
   grid-area: 1 / 3 / 2 / 4;
-
 }
-
+.img2:hover {
+  filter: brightness(0.7);
+  transform: rotatey(10deg)
+}
 .img3 {
   grid-area: 1 / 4 / 2 / 5;
   border-top-right-radius: 1rem;
 }
-
+.img3:hover {
+  filter: brightness(0.7);
+  transform: rotatey(10deg)
+}
 .img4 {
   grid-area: 2 / 3 / 3 / 4;
 }
-
+.img4:hover {
+  filter: brightness(0.7);
+  transform: rotatey(10deg)
+}
 .img5 {
   grid-area: 2 / 4 / 3 / 5;
   border-bottom-right-radius: 1rem;
+}
+.img5:hover {
+  filter: brightness(0.7);
+  transform: rotatey(10deg)
 }
 /*------------------------------------------*/
 
@@ -150,18 +160,21 @@ img {
   transform: scale(1)
 }
 
-.close {
+.close{
   display: block;
-  position: absolute;
-  right: 40px;
+  position:absolute;
+  top:40px;
+  right:40px;
   color: white;
   background-color: #f0572dd3;
   width: 40px;
+  height:40px;
   text-decoration: none;
   text-align: center;
   line-height: 40px;
   border-radius: 50%;
 }
+
 
 .next {
   display: block;
@@ -258,7 +271,7 @@ img {
 }
 
 .contenedor-calendario{
-  width:70%;
+  width:900px;
 }
 
 .calendarioInteractivo {
@@ -312,42 +325,52 @@ img {
 }
 
 
+
+
+
 /*---------------------------------------------------------------
                         RESPONSIVE
 ---------------------------------------------------------------*/
-/*
 
-SE ENCUENTRA EN ESTADO DE PRUEBA - EL CALENDARIO ROMPE TODO, MEJORAR RESPONSIVE 
 
-@media only screen and (max-width: 1200px) {
-  
-  .reservaProductos {
-    /*Container de la seccion
-    width: 100%;
-    display: flex;
-    flex-direction:column;
-    margin-top: 2rem;
-    justify-content:center;
-    align-items: center;
-    text-align:center;
-    margin-left: 4.2rem;
+@media only screen and (max-width: 1200px) { 
+
+  /*HAY QUE MODIFICAR LA IMAGEN GRANDE PARA QUE QUEDE EN LA PARTE DE ARRIBA
+  .galeriaImg {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    padding: 10px 70px 0px 70px;
+    gap: .5rem;*/
+
+    .reservaProductos {
+      /*Container de la seccion*/
+      
+      flex-direction: column;
+    
+    }
+    .contenedor-calendario{
+      width:900px;
+    }
+    
+    .calendarioInteractivo {
+      margin: 0 auto; 
+    }
+
+    .contenedor-IniciarReserva {
+      margin-top: 40px; 
+      margin-bottom: 40px;
+    }
   }
 
-  .contenedor-IniciarReserva {
-    /*contenedor donde va el calendario Y el container del boton iniciar reserva
-    text-align: center;
-    background-color: #ffff;
-    border: 3px solid transparent;
-    border-radius: .5rem;
-    box-shadow: 0 1px 4px rgb(0 0 0 / 50%);
-    color: black;
-    border-radius: 5px;
-    width: 20rem;
-    height:150px;
-    padding: 1rem;
-    display: flex;
-    gap: 20px;
-    margin-right: 15rem;
-}}
-  
-  */
+  @media only screen and (max-width: 700px) { 
+    .contenedor-calendario{
+      width:800px;
+    }
+  }
+
+  @media only screen and (max-width: 600px) { 
+      .contenedor-calendario{
+        width:750px;
+      }
+    }
