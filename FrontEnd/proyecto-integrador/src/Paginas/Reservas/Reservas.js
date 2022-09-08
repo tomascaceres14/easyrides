@@ -7,6 +7,7 @@ import { FechasCalendarioContext } from '../../Context/FechasCalendarioContext';
 import CalendarioProducto from '../Home/Listado/Producto/CalendarioProducto';
 import AuthContext from '../../Context/AuthContext';
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const Reservas = () => {
   const { id } = useParams();
@@ -61,20 +62,19 @@ const Reservas = () => {
 
   return (
     <div className="reserva">
-      
       <h2>Solicitá tu reserva</h2>
       <div className="reserva-superior">
         <div className="reserva-superior-formulario">
           <div className="reserva-superior-formulario-linea1">
-            <p className="reserva-titulo">Nombre</p>
-            <input placeholder={auth ? auth.nombre : null}></input>
-            <p className="reserva-titulo2">Correo Electrónico</p>
-            <input placeholder={auth ? auth.email : null}></input>
+            <p>Nombre</p>
+            <input placeholder={auth ? auth.nombre : null} readonly="readonly"></input>
+            <p>Correo Electrónico</p>
+            <input placeholder={auth ? auth.email : null} readonly="readonly"></input>
           </div>
           <div className="reserva-superior-formulario-linea2">
-            <p className="reserva-titulo">Apellido</p>
-            <input placeholder={auth ? auth.apellido : null}></input>
-            <p className="reserva-titulo2">Ciudad</p>
+            <p>Apellido</p>
+            <input placeholder={auth ? auth.apellido : null} readonly="readonly"></input>
+            <p>Ciudad</p>
             <input placeholder="Ingresa la ciudad de retiro"></input>
           </div>
         </div>
@@ -100,11 +100,14 @@ const Reservas = () => {
           <div className="reserva-superior-calendario">
             <p>Fecha seleccionada</p>
             <Calendario />
-            <button onClick={ () => postReserva(JSON.stringify(infoPostReserva)) }
-            >
-              Reservar
-            </button>
-            
+            <Link to="/producto/:id/reservas/ok">
+              <button
+                className="reserva-superior-calendario-boton"
+                onClick={() => postReserva(JSON.stringify(infoPostReserva))}
+              >
+                Reservar
+              </button>
+            </Link>
           </div>
         </div>
       </div>

@@ -22,7 +22,7 @@ function  Buscador(){
         <Calendario className="calendario" />
         <button
           className="buscador-submit"
-          onClick={() => setDataProductos(false)}
+          onClick={() => setDataProductos(true)}
         >
           Buscar
         </button>
