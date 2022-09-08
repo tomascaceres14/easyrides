@@ -20,7 +20,8 @@ function Login() {
   const urlLogin =
     "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/auth/login";
 
-  const getUsuario = (objetoUsuario) => {
+  
+    const getUsuario = (objetoUsuario) => {
     axios({
       method: "post",
       url: urlLogin,
@@ -32,11 +33,20 @@ function Login() {
         setAuth(response.data)
         console.log(auth);
         setTokenUsuario(response.data.token)
+        localStorage.setItem('sesiontoken', response.data.token)
         setCerrarLogin(true)
+        navigate("/");
       })
       .catch(function (response) {
+        navigate("/login");
+        setAuth(null);
+        setTokenUsuario(null);
+        localStorage.removeItem('sesiontoken')
+        alert("Usuario o contraseña incorrectos");        
+        
         //handle error
-        // console.log(response);
+        
+        
       });
   }
   
@@ -48,19 +58,20 @@ function Login() {
         email: "",
         password: "",
       }}
+      
       onSubmit={(values, onSubmitProps) => {
+        
         // console.log(values)
         // Comparar con mi base de datos de usuarios registrado
         getUsuario(values)
-        if (!cerrarLogin) {
-          navigate("/");
-        } else {
-          console.log("segundo error");        
-        }
+        
         //VER ESTO PARA RESETEAR FORM
         onSubmitProps.resetForm();
 
+        
+
       }}
+
       validate={(valores) => {
         let errores = {};
 
@@ -87,7 +98,11 @@ function Login() {
         // crear validacion logeo
 
         
+
+
+        
       }}
+      
 
     >
       {({ errors }) => (
