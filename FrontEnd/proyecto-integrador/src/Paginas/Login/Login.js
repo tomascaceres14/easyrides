@@ -20,7 +20,8 @@ function Login() {
   const urlLogin =
     "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/auth/login";
 
-  const getUsuario = (objetoUsuario) => {
+  
+    const getUsuario = (objetoUsuario) => {
     axios({
       method: "post",
       url: urlLogin,
@@ -32,11 +33,15 @@ function Login() {
         setAuth(response.data)
         console.log(auth);
         setTokenUsuario(response.data.token)
+        localStorage.setItem('sesiontoken', response.data.token)
         setCerrarLogin(true)
+        navigate("/");
       })
       .catch(function (response) {
+        navigate("/login");
         //handle error
-        // console.log(response);
+        
+        
       });
   }
   
@@ -53,7 +58,7 @@ function Login() {
         // Comparar con mi base de datos de usuarios registrado
         getUsuario(values)
         if (!cerrarLogin) {
-          navigate("/");
+          navigate("/login");
         } else {
           console.log("segundo error");        
         }
@@ -82,9 +87,15 @@ function Login() {
         } else if (!/^.{4,12}$/.test(valores.password)) {
           errores.password = "Por favor ingrese una contraseña de 4 a 12 caracteres";
         }
-        return errores;
+        
 
         // crear validacion logeo
+
+        if(!cerrarLogin){
+          errores.email = "El correo o la contraseña son incorrectos";
+        }
+        return errores;
+
 
         
       }}
