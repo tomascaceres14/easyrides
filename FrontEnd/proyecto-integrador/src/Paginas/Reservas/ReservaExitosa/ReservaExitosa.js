@@ -3,7 +3,7 @@ import "./ReservaExitosa.css";
 import checked from "./checked-car.png";
 import { Link } from "react-router-dom";
 
-function Reserva() {
+function ReservaExitosa() {
 
     return (
         <div className="contenedor">
@@ -23,4 +23,4 @@ function Reserva() {
     );
 }
 
-export default Reserva;
+export default ReservaExitosa;
