@@ -12,6 +12,8 @@ INSERT INTO productos VALUES (null, 'El Dodge Charger es un automóvil deportivo
 INSERT INTO productos VALUES (null, 'El Lamborghini Veneno es un automóvil superdeportivo de 2 puertas de tijera biplaza, con motor central-trasero montado longitudinalmente y tracción en las cuatro ruedas, producido por fabricante italiano Lamborghini.', 'Lamborghini Veneno', 2, 2);
 INSERT INTO productos VALUES (null, 'El Ford Fiesta es un automóvil de turismo del segmento B desarrollado por la filial europea de la empresa estadounidense Ford Motor Company, y fabricado en Alemania, España, Brasil, México, China, India y Sudáfrica.', 'Ford Fiesta', 3, 3);
 INSERT INTO productos VALUES (null, 'El Fiat 600 fue un pequeño automóvil diseñado por Dante Giacosa y construido por la empresa italiana Fiat desde 1955 hasta 1969. Fue un éxito mundial que se fabricó en muchos países, en la mayoría de ellos bajo la marca Fiat.', 'Fiat 600', 4, 4);
+INSERT INTO productos VALUES (null, 'El Volkswagen Golf, el rey de los compactos. Desde su nacimiento en 1974 el alemán se ha convertido no solo en la referencia de su segmento, también en uno de los coches más populares y exitosos del mundo. También es uno de los modelos más longevos del mercado actual.', 'Volkswagen 600', 1, 3);
+INSERT INTO productos VALUES (null, 'El Mercedes-Benz Clase S (Sonderklasse) es un automóvil de lujo del segmento F producido por el fabricante alemán Mercedes-Benz. Actualmente es el turismo más grande y lujoso de la gama. Comenzó a fabricarse desde mediados de los años 1950, y desde entonces es el sedán de lujo más vendido del mundo debido a su alta seguridad que le convierten en el sedán más seguro del mundo.', 'Clase S', 2, 3);
 
 INSERT INTO imagenes VALUES (null, 'https://www.autonocion.com/wp-content/uploads/2021/02/dodge-charger6-930x639.jpg', 1);
 INSERT INTO imagenes VALUES (null, 'https://i.pinimg.com/originals/d9/af/d2/d9afd24841980df5550c9e66867a179a.jpg', 1);
@@ -37,6 +39,17 @@ INSERT INTO imagenes VALUES (null, 'https://img.motoryracing.com/noticias/portad
 INSERT INTO imagenes VALUES (null, 'https://i.pinimg.com/originals/94/51/cd/9451cd4a14cbe30ea99345e1102a7ad4.jpg', 4);
 INSERT INTO imagenes VALUES (null, 'https://img.motoryracing.com/noticias/portada/25000/25024-n.jpg', 4);
 
+INSERT INTO imagenes VALUES (null, 'https://images.unsplash.com/photo-1572634302117-74d5936414ce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1229&q=80', 5);
+INSERT INTO imagenes VALUES (null, 'https://images.unsplash.com/photo-1572811298995-74b11ebea596?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1240&q=80', 5);
+INSERT INTO imagenes VALUES (null, 'https://images.unsplash.com/photo-1572811298797-9eecadf6cb24?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80', 5);
+INSERT INTO imagenes VALUES (null, 'https://upload.wikimedia.org/wikipedia/commons/3/3e/Volkswagen_Golf_VIII_IMG_2517.jpg', 5);
+INSERT INTO imagenes VALUES (null, 'https://www.diariomotor.com/imagenes/2019/01/volkswagen-golf-r-interior-1-mdm.jpg', 5);
+
+INSERT INTO imagenes VALUES (null, 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/2014_Mercedes-Benz_S550_%28US%29_lwb.jpg/250px-2014_Mercedes-Benz_S550_%28US%29_lwb.jpg', 6);
+INSERT INTO imagenes VALUES (null, 'https://cdn.motor1.com/images/mgl/b04yv/s1/el-nuevo-mercedes-benz-clase-s-dobla-con-las-cuatro-ruedas-y-es-autonomo-pero-solo-en-los-paises-donde-se-permita.jpg', 6);
+INSERT INTO imagenes VALUES (null, 'https://www.diariomotor.com/imagenes/2020/08/mercedes-clase-s-2021-0820-01.jpg', 6);
+INSERT INTO imagenes VALUES (null, 'https://www.diariomotor.com/imagenes/2020/08/mercedes-clase-s-2021-0820-01.jpg', 6);
+INSERT INTO imagenes VALUES (null, 'https://siempreauto.com/wp-content/uploads/sites/9/2020/10/robert-locke-D199s7KvGvk-unsplash-e1605674766144.jpg?quality=60&strip=all&w=1200', 6);
 
 INSERT INTO caracteristicas VALUES (null, 'Transmision Automatica', 'fa-solid fa-gears');
 INSERT INTO caracteristicas VALUES (null, 'Sistema de navegacion', 'fa-sharp fa-solid fa-location-dot');
@@ -54,3 +67,12 @@ INSERT INTO producto_caracteristica VALUES (2, 4);
 INSERT INTO producto_caracteristica VALUES (3, 2);
 INSERT INTO producto_caracteristica VALUES (3, 4);
 INSERT INTO producto_caracteristica VALUES (4, 4);
+INSERT INTO producto_caracteristica VALUES (5, 1);
+INSERT INTO producto_caracteristica VALUES (5, 2);
+INSERT INTO producto_caracteristica VALUES (5, 3);
+INSERT INTO producto_caracteristica VALUES (5, 4);
+INSERT INTO producto_caracteristica VALUES (6, 1);
+INSERT INTO producto_caracteristica VALUES (6, 2);
+INSERT INTO producto_caracteristica VALUES (6, 3);
+INSERT INTO producto_caracteristica VALUES (6, 4);
+
