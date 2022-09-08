@@ -39,6 +39,11 @@ function Login() {
       })
       .catch(function (response) {
         navigate("/login");
+        setAuth(null);
+        setTokenUsuario(null);
+        localStorage.removeItem('sesiontoken')
+        alert("Usuario o contraseña incorrectos");        
+        
         //handle error
         
         
@@ -53,19 +58,20 @@ function Login() {
         email: "",
         password: "",
       }}
+      
       onSubmit={(values, onSubmitProps) => {
+        
         // console.log(values)
         // Comparar con mi base de datos de usuarios registrado
         getUsuario(values)
-        if (!cerrarLogin) {
-          navigate("/login");
-        } else {
-          console.log("segundo error");        
-        }
+        
         //VER ESTO PARA RESETEAR FORM
         onSubmitProps.resetForm();
 
+        
+
       }}
+
       validate={(valores) => {
         let errores = {};
 
@@ -87,18 +93,16 @@ function Login() {
         } else if (!/^.{4,12}$/.test(valores.password)) {
           errores.password = "Por favor ingrese una contraseña de 4 a 12 caracteres";
         }
-        
+        return errores;
 
         // crear validacion logeo
 
-        if(!cerrarLogin){
-          errores.email = "El correo o la contraseña son incorrectos";
-        }
-        return errores;
+        
 
 
         
       }}
+      
 
     >
       {({ errors }) => (
