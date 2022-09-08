@@ -20,7 +20,7 @@ public class CustomUserDetailsService implements UserDetailsService {
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         Usuario user = userService.findByUserEmail(email)
                 .orElseThrow(() -> new UsernameNotFoundException(email));
-        Set<GrantedAuthority> authorities =Set.of(SecurityUtils.convertToAuthority(user.getRole().name()));
+        Set<GrantedAuthority> authorities =Set.of(SecurityUtils.convertToAuthority(user.getRol().name()));
 
         return UserPrinciple.builder()
                 .user(user)

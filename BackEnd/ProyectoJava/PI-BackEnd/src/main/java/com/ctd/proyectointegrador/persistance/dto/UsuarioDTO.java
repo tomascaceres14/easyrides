@@ -24,6 +24,4 @@ public class UsuarioDTO {
     private String password;
 
     private String ciudad;
-
-    private Role rol;
 }

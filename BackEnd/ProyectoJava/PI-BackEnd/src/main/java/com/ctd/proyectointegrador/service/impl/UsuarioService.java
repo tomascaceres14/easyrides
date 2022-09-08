@@ -9,7 +9,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.*;
 
@@ -37,7 +36,7 @@ public class UsuarioService implements IService<UsuarioDTO> {
     public Map<String, Object> guardar(UsuarioDTO object) {
         Usuario user = mapper.convertValue(object, Usuario.class);
         user.setPassword(passwordEncoder.encode(user.getPassword()));
-        user.setRole(Role.USER);
+        user.setRol(Role.USER);
         Usuario nuevoUsuario= usuarioRepository.save(user);
         return buildResponse(mapper.convertValue(nuevoUsuario, UsuarioDTO.class),"Usuario guardado",201);
     }
