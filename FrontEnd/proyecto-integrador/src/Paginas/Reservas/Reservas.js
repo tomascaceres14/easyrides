@@ -66,15 +66,15 @@ const Reservas = () => {
       <div className="reserva-superior">
         <div className="reserva-superior-formulario">
           <div className="reserva-superior-formulario-linea1">
-            <p>Nombre</p>
+            <p className="reserva-titulo">Nombre</p>
             <input placeholder={auth ? auth.nombre : null}></input>
-            <p>Correo Electrónico</p>
+            <p className="reserva-titulo2">Correo Electrónico</p>
             <input placeholder={auth ? auth.email : null}></input>
           </div>
           <div className="reserva-superior-formulario-linea2">
-            <p>Apellido</p>
+            <p className="reserva-titulo">Apellido</p>
             <input placeholder={auth ? auth.apellido : null}></input>
-            <p>Ciudad</p>
+            <p className="reserva-titulo2">Ciudad</p>
             <input placeholder="Ingresa la ciudad de retiro"></input>
           </div>
         </div>
