@@ -3,7 +3,7 @@ import { useParams } from 'react-router';
 import useFetch from '../../Hooks/useFetch';
 import Calendario from '../Home/Buscador/Calendario';
 import "./Reservas.css";
-import { FechasCalendarioContext } from '../../Context/FechasCalendarioContext';
+import { FechasParaReservaContext } from '../../Context/FechasParaReservaContext';
 import CalendarioProducto from '../Home/Listado/Producto/CalendarioProducto';
 import AuthContext from '../../Context/AuthContext';
 import axios from "axios";
@@ -18,10 +18,10 @@ const Reservas = () => {
   const urlReservas =
     "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/reservas";
   const { data } = useFetch(urlProductos);
-  const { fechasCalendario } = useContext( FechasCalendarioContext )
+  // const { fechasCalendario } = useContext( FechasCalendarioContext )
   const { auth, setAuth } = useContext(AuthContext);
-  const { fechaInicio, setFechaInicio } = useContext(FechasCalendarioContext);
-  const { fechaFin, setFechaFin } = useContext(FechasCalendarioContext);
+  const { fechaInicio, setFechaInicio } = useContext(FechasParaReservaContext);
+  const { fechaFin, setFechaFin } = useContext(FechasParaReservaContext);
   const [ submitForm, setSubmitForm ] = useState(false)
 
 
