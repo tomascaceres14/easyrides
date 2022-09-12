@@ -23,9 +23,8 @@ public class Producto {
     @Column(name = "titulo", nullable = false)
     private String titulo;
 
-    @Column(name = "descripcion", nullable = false)
+    @Column(name = "descripcion", nullable = false, length = 1020)
     private String descripcion;
-
 
     @OneToMany(mappedBy = "producto")
     private List<Imagen> imagenes;
