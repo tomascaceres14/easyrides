@@ -15,7 +15,7 @@ public interface ProductoRepository extends JpaRepository<Producto, Long> {
             nativeQuery = true)
     List<Producto> listarPorCiudad(Long id);
 
-    @Query(value = "SELECT p.* FROM Productos p INNER JOIN Reservas r ON p.id = r.producto_id WHERE p.ciudad = ?1 AND r.check_in = ?2 AND check_out = ?3 ", nativeQuery = true)
-    List<Producto> listarPorFechaYCiudad(Long ciudad_id, String checkInD, String checkOut);
+    @Query(value = "SELECT p.* FROM Productos p WHERE p.id NOT IN (SELECT r.producto_id FROM Reservas r WHERE r.fecha_inicial < ?3 AND r.fecha_final >  ?2 ) AND p.ciudad_id = ?1", nativeQuery = true)
+    List<Producto> listarPorFechaYCiudad(Long ciudad_id, Date checkInD, Date checkOut);
 
 }

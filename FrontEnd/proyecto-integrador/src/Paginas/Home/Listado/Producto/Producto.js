@@ -1,22 +1,25 @@
 import React, { useEffect, useState, useContext } from "react";
 import "./Producto.css";
-import { FaShare, FaCity } from "react-icons/fa";
+import { FaShare } from "react-icons/fa";
 import { MdOutlineArrowBackIos } from "react-icons/md";
 import { AiFillHeart } from "react-icons/ai";
 import { Link, useParams } from "react-router-dom";
 import useFetch from "../../../../Hooks/useFetch";
 import CalendarioProducto from "./CalendarioProducto";
 import { DataPaginaProductosContext } from "../../../../Context/DataPaginaProductosContext";
+import AuthContext from "../../../../Context/AuthContext";
+
 
 const Producto = () => {
   const { id } = useParams();
   // pasar id a la url de fetch
   const urlProductos =
-    "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/productos/" +
-    id;
+    "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/productos/" + id;
   const { elegirDataPaginaProductos, setElegirDataPaginaProductos } =
     useContext(DataPaginaProductosContext);
   const { data } = useFetch(urlProductos);
+  const { auth } = useContext(AuthContext);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -24,7 +27,7 @@ const Producto = () => {
   return (
     <div>
       <>
-        {console.log(data && data.productos)}
+        
         <>
           <header>
             <div className="header-producto">
@@ -35,7 +38,6 @@ const Producto = () => {
               <Link to="/">
                 <button className="boton-volver">
                   <MdOutlineArrowBackIos size={"30"} />
-                  <strong>Volver al Inicio</strong>
                 </button>
               </Link>
             </div>
@@ -47,13 +49,12 @@ const Producto = () => {
                   {data && data.productos.ciudad.pais}
                 </p>
               </div>
-              <div className="valoracion">
-                <h4>Puntuación:</h4>
-                <h2>10</h2>
-              </div>
             </div>
           </header>
-          <section>
+
+          {/*Bloque de galeria y informacion*/}
+
+          <section classame="Seccion-Detalle">
             <div className="icons-prod">
               <button>
                 <AiFillHeart size={"26"} />
@@ -183,32 +184,83 @@ const Producto = () => {
               </article>
             </div>
 
-            <article className="cuerpo">
-              <h2>{data && data.productos.titulo}</h2>
-              <p className="descripcion">
-                {data && data.productos.descripcion}
-              </p>
+            <article className="cuerpo-contenedor">
+              <div className="Seccion1">
+                <h2 className="cuerpo-titulo">
+                  {data && data.productos.titulo}
+                </h2>
+                {/* <hr className="cuerpo-linea"/> */}
+                <p className="cuerpo-descripcion">
+                  {data && data.productos.descripcion}
+                </p>
+              </div>
+
+              {/* <div className="botones">
+                <p>
+                  Elegi las fechas que necesites tu vehiculo y comenza con la
+                  aventura!
+                </p>
+                <Link to={`/producto/${id}/reservas`}>
+                  <button className="botones-boton">Iniciar Reserva</button>
+                </Link>
+              </div> */}
             </article>
-            <article className="cuerpo">
-              <h2>Que ofrece este producto?</h2>
-              <ul className="caracteristicas">
-                {data &&
-                  data.productos.caracteristicas.map((carac) => (
-                    <li key={carac.id}>{carac.titulo}</li>
-                  ))}
-              </ul>
+
+            <article>
+              <div>
+                <div className="caracteristicas">
+                  <h2 className="caracteristicas-titulo">
+                    ¿Qué ofrece este auto?
+                  </h2>
+                  {data &&
+                    data.productos.caracteristicas.map((carac) => (
+                      <>
+                      <p key={carac.id}><i class = {carac.url}></i> {carac.titulo} </p>
+                        
+                      </>
+                    ))}
+                </div>
+              </div>
+            </article>
+
+            <article>
+              <div>
+                <div className="seleccionaFecha">
+                  <h2 className="seleccionaFecha-titulo">
+                    Seleccioná la fecha de tu reserva
+                  </h2>
+                  <p className="seleccionaFecha-descripcion">
+                    Agregá la fecha de tu viaje para poder obtener los mejores
+                    precios.
+                  </p>
+                </div>
+              </div>
             </article>
           </section>
+
           <div className="reservaProductos">
-            <div>
+            <div className="contenedor-calendario">
               <CalendarioProducto />
             </div>
-            <div className="botones">
+
+            <div className="contenedor-IniciarReserva">
               <p>
                 Elegi las fechas que necesites tu vehiculo y comenza con la
                 aventura!
               </p>
-              <button>Iniciar Reserva</button>
+              {/* {auth ? ( */}
+                <Link to={`/producto/${id}/reservas`}>
+                  <button className="IniciarReserva-boton">
+                    Iniciar Reserva
+                  </button>
+                </Link>
+              {/* ) : (
+                <Link to={`/login`}>
+                  <button className="IniciarReserva-boton">
+                    Iniciar Reserva
+                  </button>
+                </Link> */}
+              {/* )} */}
             </div>
           </div>
         </>

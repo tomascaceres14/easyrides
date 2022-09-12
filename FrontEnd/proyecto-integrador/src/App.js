@@ -15,7 +15,11 @@ import { CategoriasProvider } from "./Context/CategoriasContext";
 import { DataPaginaProductosProvider } from "./Context/DataPaginaProductosContext";
 import Producto from "./Paginas/Home/Listado/Producto/Producto";
 import { MostrarCategoriasProvider } from "./Context/MostrarCategoriasContext";
-
+import Reservas from "./Paginas/Reservas/Reservas";
+import { FechasCalendarioProvider } from "./Context/FechasCalendarioContext";
+import { TokenUsuarioProvider } from "./Context/TokenUsuarioContext";
+import { RequerirAuth } from "./Paginas/Reservas/RequerirAuth";
+import ReservaExitosa from "./Paginas/Reservas/ReservaExitosa/ReservaExitosa";
 
 function App() {
   const initialState = useInitialState();
@@ -23,32 +27,47 @@ function App() {
 
   return (
     <div className="App">
-      
-      <AppContext.Provider value={initialState}>
-        <DataPaginaProductosProvider >
-          <MostrarCategoriasProvider>
-            <CategoriasProvider>
-              <CiudadesProvider>
-                <DataProductosProvider>
-                  <AuthProvider>
-                    <BrowserRouter>
-                      <Header user={initialState} />
-                      <Routes>
-                        <Route path="/" element={<Home />} />
-                        <Route path="/login" element={<Login />} />
-                        <Route path="/registro" element={<Registro />} />
-                        <Route path={"/producto/:id"} element={<Producto />} />
-                      </Routes>
-                      <Footer />
-                    </BrowserRouter>
-                  </AuthProvider>
-                </DataProductosProvider>
-              </CiudadesProvider>
-            </CategoriasProvider>
-          </MostrarCategoriasProvider>
-        </DataPaginaProductosProvider>  
-      </AppContext.Provider>
-      
+      <TokenUsuarioProvider>
+        <AppContext.Provider value={initialState}>
+          <DataPaginaProductosProvider>
+            <MostrarCategoriasProvider>
+              <FechasCalendarioProvider>
+                <CategoriasProvider>
+                  <CiudadesProvider>
+                    <DataProductosProvider>
+                      <AuthProvider>
+                        <BrowserRouter>
+                          <Header user={initialState} />
+                          <Routes>
+                            <Route path="/*" element={<Home />} />
+                            <Route path="/login" element={<Login />} />
+                            <Route path="/registro" element={<Registro />} />
+                            <Route
+                              path={"/producto/:id"}
+                              element={<Producto />}
+                            />
+                            <Route element={<RequerirAuth />}>
+                              <Route
+                                path={"/producto/:id/reservas"}
+                                element={<Reservas />}
+                              />
+                            </Route>
+                            <Route
+                              path="/producto/:id/reservas/ok"
+                              element={<ReservaExitosa/>}
+                            />
+                          </Routes>
+                          <Footer />
+                        </BrowserRouter>
+                      </AuthProvider>
+                    </DataProductosProvider>
+                  </CiudadesProvider>
+                </CategoriasProvider>
+              </FechasCalendarioProvider>
+            </MostrarCategoriasProvider>
+          </DataPaginaProductosProvider>
+        </AppContext.Provider>
+      </TokenUsuarioProvider>
     </div>
   );
 }

@@ -1,66 +1,109 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import "./Login.css";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import AppContext from "../../Context/AppContext";
 import AuthContext from "../../Context/AuthContext";
+import { TokenUsuarioContext } from "../../Context/TokenUsuarioContext";
+import axios from "axios";
+//creo un estado y guardo response en el post despues saco el token 
+// y lo guardo en un estado global 
+
 
 function Login() {
-  const navigate = useNavigate();
 
-  const { state } = useContext(AppContext);
-  const { setAuth } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const [cerrarLogin, setCerrarLogin] = useState(false);
+  const { auth, setAuth } = useContext(AuthContext);
+  const { tokenUsuario, setTokenUsuario } = useContext( TokenUsuarioContext );
+  const urlLogin =
+    "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/auth/login";
+
+  
+    const getUsuario = (objetoUsuario) => {
+    axios({
+      method: "post",
+      url: urlLogin,
+      data: objetoUsuario,
+      headers: { "Content-Type": "application/json" },
+    })
+      .then(function (response) {
+        //handle success
+        setAuth(response.data)
+        console.log(auth);
+        setTokenUsuario(response.data.token)
+        localStorage.setItem('sesiontoken', response.data.token)
+        setCerrarLogin(true)
+        navigate("/");
+      })
+      .catch(function (response) {
+        navigate("/login");
+        setAuth(null);
+        setTokenUsuario(null);
+        localStorage.removeItem('sesiontoken')
+        alert("Usuario o contraseña incorrectos");        
+        
+        //handle error
+        
+        
+      });
+  }
+  
+
 
   return (
     <Formik
       initialValues={{
-        correo: "",
-        contraseña: "",
+        email: "",
+        password: "",
       }}
+      
       onSubmit={(values, onSubmitProps) => {
+        
+        // console.log(values)
         // Comparar con mi base de datos de usuarios registrado
-        const foundUser = state.userRegister.find(
-          (user) =>
-            user.correo === values.correo &&
-            user.contraseña === values.contraseña
-        );
-        if (foundUser) {
-          setAuth(foundUser);
-          localStorage.setItem("user", JSON.stringify(foundUser));
-          navigate("/");
-        } else {
-          // si no existe el usuario, mostrar error
-        }
+        getUsuario(values)
+        
         //VER ESTO PARA RESETEAR FORM
         onSubmitProps.resetForm();
-        console.log(values);
+
+        
+
       }}
+
       validate={(valores) => {
         let errores = {};
 
         //validacion correo
-        if (!valores.correo) {
-          errores.correo = "Por favor ingresa un correo electronico";
+        if (!valores.email) {
+          errores.email = "Por favor ingresa un correo electronico";
         } else if (
           !/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(
-            valores.correo
+            valores.email
           )
         ) {
-          errores.correo =
+          errores.email =
             "El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.";
         }
 
         //validacion contraseña
-        if (!valores.contraseña) {
-          errores.contraseña = "Por favor ingresa tu contraseña";
-        } else if (!/^.{4,12}$/.test(valores.contraseña)) {
-          errores.contraseña =
-            "Por favor ingrese una contraseña de 4 a 12 digitos";
+        if (!valores.password) {
+          errores.password = "Por favor ingresa tu contraseña";
+        } else if (!/^.{4,12}$/.test(valores.password)) {
+          errores.password = "Por favor ingrese una contraseña de 4 a 12 caracteres";
         }
-
         return errores;
+
+        // crear validacion logeo
+
+        
+
+
+        
       }}
+      
+
     >
       {({ errors }) => (
         <div className="contenedor">
@@ -71,13 +114,13 @@ function Login() {
               <label htmlFor="correo">Correo electrónico</label>
               <Field
                 type="email"
-                name="correo"
+                name="email"
                 placeholder="Ej: micorreo@gmail.com"
-                id="correo"
+                id="email"
               />
               <ErrorMessage
-                name="correo"
-                component={() => <div className="error">{errors.correo}</div>}
+                name="email"
+                component={() => <div className="error">{errors.email}</div>}
               />
             </div>
 
@@ -85,15 +128,13 @@ function Login() {
               <label htmlFor="contraseña">Contraseña</label>
               <Field
                 type="password"
-                name="contraseña"
+                name="password"
                 placeholder="Ingrese su contraseña"
-                id="contraseña"
+                id="password"
               />
               <ErrorMessage
-                name="contraseña"
-                component={() => (
-                  <div className="error">{errors.contraseña}</div>
-                )}
+                name="password"
+                component={() => <div className="error">{errors.password}</div>}
               />
             </div>
 
@@ -101,10 +142,7 @@ function Login() {
               <button type="submit">Ingresar</button>
               <p>
                 {" "}
-                ¿Aún no tienes cuenta?{" "}
-                <a href="/registro" target="_self">
-                  Registrate
-                </a>
+                ¿Aún no tienes cuenta? <Link to="/registro">Registrate</Link>
               </p>
             </div>
           </Form>

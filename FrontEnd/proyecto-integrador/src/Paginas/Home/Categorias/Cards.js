@@ -3,13 +3,13 @@ import "./Cards.css";
 import useFetch from "../../../Hooks/useFetch";
 import { CategoriasContext } from "../../../Context/CategoriasContext";
 import { MostrarCategoriasContext } from "../../../Context/MostrarCategoriasContext";
-
+import { DataProductosContext } from "../../../Context/DataProductosContext";
 export default function Cards() {
   const urlCategorias = "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/categorias";
   const { data } = useFetch(urlCategorias)
-  const { elegirCategorias, setElegirCategorias } = useContext(CategoriasContext);
+  const {  setElegirCategorias } = useContext(CategoriasContext);
   const {setMostrarCategorias } = useContext(MostrarCategoriasContext);
-  
+  const { setDataProductos } = useContext(DataProductosContext);
   
   
   return (
@@ -23,7 +23,7 @@ export default function Cards() {
               key={cat.id}
               className="cardsCategoria-unidad"
               onClick={
-                () => {setMostrarCategorias(true) ;setElegirCategorias(cat.titulo) }
+                () => {setMostrarCategorias(true) ;setElegirCategorias(cat.titulo); setDataProductos(false) }
               }
             >
               <img

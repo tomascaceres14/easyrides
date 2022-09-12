@@ -13,7 +13,7 @@ import lombok.*;
 /*@JsonInclude(JsonInclude.Include.NON_NULL)*/
 public class UsuarioDTO {
 
-    private Integer id;
+    private Long id;
 
     private String nombre;
 
@@ -24,6 +24,4 @@ public class UsuarioDTO {
     private String password;
 
     private String ciudad;
-
-    private Role rol;
 }

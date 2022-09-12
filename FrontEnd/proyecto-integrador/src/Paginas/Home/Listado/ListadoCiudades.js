@@ -11,7 +11,7 @@ const ListadoCiudades = () => {
     const urlProductos = "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/productos";
     const { data } = useFetch(urlProductos);
     const { elegirCiudades } = useContext(CiudadesContext);
-    const { elegirDataPaginaProductos, setElegirDataPaginaProductos } = useContext(DataPaginaProductosContext)
+    const { setElegirDataPaginaProductos } = useContext(DataPaginaProductosContext)
   
     return (
       <div className="listado-container">
@@ -33,11 +33,10 @@ const ListadoCiudades = () => {
                     onClick={() => {
                       setElegirDataPaginaProductos(prod.id);
                     }}
-                    to={`/producto/${elegirDataPaginaProductos}`}
+                    to={`/producto/${prod.id}`}
                   >
                     <button className="listado-unidad-boton">Ver Más</button>
                   </Link>
-                  
                 </div>
               ) : null}
             </>

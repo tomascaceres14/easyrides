@@ -10,11 +10,24 @@ body {
 	font-family: var(--font-family);
 }
 .contenedor {
-	height: 100vh;
-
+	width: 100%;
+	height: 70vh;
 	display: flex;
 	justify-content: center;
+	align-items: center;
+	margin-top: 130px;
 }
+
+@media only screen and (min-height: 1355px) {
+	.contenedor {
+		width: 100%;
+		height: 100px;
+		display: flex;
+		justify-content: center;
+		margin-top: 130px;
+	}
+}
+
 @media only screen and (min-width: 600px) {
 	.formulario {
 		width: 40%;
@@ -71,6 +84,7 @@ margin-bottom: 20px;
 }
 
 .Buttom {
+	height: 35vh !important;
     margin-top:40px;
     display:flex;
     flex-flow:column;

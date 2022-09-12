@@ -3,9 +3,11 @@
     color: black;
     background-color: rgb(237, 238, 238);
     box-shadow: 0 1px 4px rgb(0 0 0 / 15%);
+  
 }
 
 .footer > p {
     padding: 5px;
     font-size: 16px;
 }
+

@@ -3,10 +3,8 @@ package com.ctd.proyectointegrador.persistance.model.jwt;
 import com.ctd.proyectointegrador.enums.Role;
 import com.ctd.proyectointegrador.persistance.model.Reserva;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -35,6 +33,7 @@ public class Usuario {
     private String email;
 
     @Column(name="password")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
 
     @Column(name="ciudad")
@@ -48,9 +47,18 @@ public class Usuario {
     @Enumerated(EnumType.STRING)
     @Column(name = "rol")
     @JsonIgnore
-    private Role role;
+    private Role rol;
 
     @Transient
     private String token;
+
+    public Usuario(String nombre, String apellido, String email, String password, String ciudad, Role rol) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.email = email;
+        this.password = password;
+        this.ciudad = ciudad;
+        this.rol = rol;
+    }
 
 }
