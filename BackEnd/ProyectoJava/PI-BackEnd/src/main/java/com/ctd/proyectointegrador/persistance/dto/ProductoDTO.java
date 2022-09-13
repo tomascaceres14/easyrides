@@ -32,10 +32,5 @@ public class ProductoDTO {
 
     private Set<CaracteristicaDTO> caracteristicas;
 
-
-
-/*    @NotEmpty(message = "no debe estar vacio")
-    @NotNull(message = "no debe ser nulo")
-    private Set<Reserva> reservas = new HashSet<>();
-    private Set<ReservaDTO> reservas;*/
+    private Set<ReservaDTO> reservas;
 }

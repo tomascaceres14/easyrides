@@ -1,5 +1,6 @@
 package com.ctd.proyectointegrador.service.impl;
 
+import com.ctd.proyectointegrador.exceptions.BadRequestException;
 import com.ctd.proyectointegrador.persistance.dto.ReservaDTO;
 import com.ctd.proyectointegrador.persistance.model.Producto;
 import com.ctd.proyectointegrador.persistance.model.Reserva;
@@ -12,10 +13,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @Service
 public class ReservaService implements IService<ReservaDTO> {
@@ -41,11 +39,14 @@ public class ReservaService implements IService<ReservaDTO> {
     }
 
     @Override
-    public Map<String, Object> guardar(ReservaDTO object) {
+    public Map<String, Object> guardar(ReservaDTO object) throws BadRequestException {
         Reserva reserva= mapper.convertValue(object, Reserva.class);
-        Producto productoBD = productoRepository.findById(reserva.getProducto().getId()).get();
+        Producto productoBD = productoRepository.findById(reserva.getProducto().getId()).orElse(null);
+        Usuario usuarioBD = usuarioRepository.findById(reserva.getUsuario().getId()).orElse(null);
+        if (productoBD == null || usuarioBD == null) {
+            throw new BadRequestException("Id de usuario y/o producto no existe");
+        }
         reserva.setProducto(productoBD);
-        Usuario usuarioBD = usuarioRepository.findById(reserva.getUsuario().getId()).get();
         reserva.setUsuario(usuarioBD);
         Reserva reservaRespuesta = reservaRepository.save(reserva);
         return buildResponse(mapper.convertValue(reservaRespuesta, ReservaDTO.class), "Reserva guardada",201);

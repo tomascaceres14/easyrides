@@ -1,5 +1,6 @@
 package com.ctd.proyectointegrador.service.impl;
 
+import com.ctd.proyectointegrador.exceptions.ResourceNotFoundException;
 import com.ctd.proyectointegrador.persistance.dto.ProductoDTO;
 import com.ctd.proyectointegrador.persistance.model.Categoria;
 import com.ctd.proyectointegrador.persistance.model.Ciudad;
@@ -47,19 +48,12 @@ public class ProductoService implements IService<ProductoDTO> {
         return buildResponse(mapper.convertValue(prodRespuesta, ProductoDTO.class), "producto creado", 201);
     }
 
-    public Map<String, Object> buscar(Long id) {
-        Producto prodRespuesta = productoRepository.findById(id).get();
-        return buildResponse(mapper.convertValue(prodRespuesta, ProductoDTO.class), "producto encontrado", 201);
-    }
-
-    public Map<String,Object> listarPorCiudad(Long id) {
-        List<Producto> productos = productoRepository.listarPorCiudad(id);
-        System.out.println(productos);
-        List<ProductoDTO> productosPorCiudad = new ArrayList<>();
-        for (Producto producto : productos) {
-            productosPorCiudad.add(mapper.convertValue(producto, ProductoDTO.class));
+    public Map<String, Object> buscar(Long id) throws ResourceNotFoundException {
+        Producto prodRespuesta = productoRepository.findById(id).orElse(null);
+        if (prodRespuesta == null){
+            throw new ResourceNotFoundException("No se encuentra producto con id " + id);
         }
-        return buildResponse(productosPorCiudad, "Lista por ciudad", 200);
+        return buildResponse(mapper.convertValue(prodRespuesta, ProductoDTO.class), "producto encontrado", 201);
     }
 
     public Map<String, Object> actualizar(Long id, ProductoDTO object) {
@@ -72,8 +66,9 @@ public class ProductoService implements IService<ProductoDTO> {
         productoEnBD.setTitulo(actualizar.getTitulo());
         productoEnBD.setDescripcion(actualizar.getDescripcion());
         productoEnBD.setImagenes(actualizar.getImagenes());
-        /* productoEnBD.setCaracteristicas(actualizar.getCaracteristicas()); */
+        productoEnBD.setCaracteristicas(actualizar.getCaracteristicas());
         productoEnBD.setCiudad(ciudadRepository.findById(actualizar.getCiudad().getId()).get());
+        productoEnBD.setCategoria(actualizar.getCategoria());
         Producto prodRespuesta = productoRepository.save(productoEnBD);
 
         return buildResponse(mapper.convertValue(prodRespuesta, ProductoDTO.class), "cambio Exitoso", 201);
@@ -100,6 +95,16 @@ public class ProductoService implements IService<ProductoDTO> {
         }
         Collections.shuffle(listaDTO);
         return buildResponse(listaDTO, "lista creada", 200);
+    }
+
+    public Map<String,Object> listarPorCiudad(Long id) {
+        List<Producto> productos = productoRepository.listarPorCiudad(id);
+        System.out.println(productos);
+        List<ProductoDTO> productosPorCiudad = new ArrayList<>();
+        for (Producto producto : productos) {
+            productosPorCiudad.add(mapper.convertValue(producto, ProductoDTO.class));
+        }
+        return buildResponse(productosPorCiudad, "Lista por ciudad", 200);
     }
 
     public Map<String, Object> filtroCiudadYFechas(Long ciudad_id, String checkIn, String checkOut) throws ParseException {
