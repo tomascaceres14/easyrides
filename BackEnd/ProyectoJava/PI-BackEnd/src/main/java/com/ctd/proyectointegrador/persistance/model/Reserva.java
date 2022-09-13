@@ -1,12 +1,15 @@
 package com.ctd.proyectointegrador.persistance.model;
 
 import com.ctd.proyectointegrador.persistance.model.jwt.Usuario;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.Comparator;
 
 
 @Entity
@@ -15,7 +18,7 @@ import javax.persistence.*;
 @Getter
 @Setter
 @Table(name = "reservas")
-public class Reserva {
+public class Reserva implements Comparator<Reserva> {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id")
@@ -40,4 +43,19 @@ public class Reserva {
     @JoinColumn(name = "usuario_id")
     private Usuario usuario;
 
+    @JsonIgnore
+    public Producto getProducto() {
+        return producto;
+    }
+
+    @JsonProperty
+    public void setProducto(Producto producto) {
+        this.producto = producto;
+    }
+
+
+    @Override
+    public int compare(Reserva o1, Reserva o2) {
+        return o1.getId().compareTo(o2.getId());
+    }
 }

@@ -50,6 +50,5 @@ public class Producto {
 
 
     @OneToMany(mappedBy = "producto")
-    @JsonIgnore
     private Set<Reserva> reservas = new HashSet<>();
 }
