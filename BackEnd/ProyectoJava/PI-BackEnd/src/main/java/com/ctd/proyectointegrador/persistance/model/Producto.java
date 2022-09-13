@@ -24,7 +24,7 @@ public class Producto {
     private String descripcion;
 
     @OneToMany(mappedBy = "producto")
-    private List<Imagen> imagenes;
+    private List<Imagen> imagenes = new ArrayList<>();
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "ciudad_id")
@@ -43,8 +43,6 @@ public class Producto {
             joinColumns = { @JoinColumn(name = "producto_id") },
             inverseJoinColumns = { @JoinColumn(name = "caracteristica_id") })
     private List<Caracteristica> caracteristicas = new ArrayList<>();
-
-
 
     @OneToMany(mappedBy = "producto")
     private List<Reserva> reservas = new ArrayList<>();

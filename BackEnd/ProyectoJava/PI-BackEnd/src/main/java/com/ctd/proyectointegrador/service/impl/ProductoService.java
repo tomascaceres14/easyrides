@@ -1,15 +1,10 @@
 package com.ctd.proyectointegrador.service.impl;
 
 import com.ctd.proyectointegrador.exceptions.ResourceNotFoundException;
+import com.ctd.proyectointegrador.persistance.dto.ImagenDTO;
 import com.ctd.proyectointegrador.persistance.dto.ProductoDTO;
-import com.ctd.proyectointegrador.persistance.model.Caracteristica;
-import com.ctd.proyectointegrador.persistance.model.Categoria;
-import com.ctd.proyectointegrador.persistance.model.Ciudad;
-import com.ctd.proyectointegrador.persistance.model.Producto;
-import com.ctd.proyectointegrador.persistance.repository.CaracteristicaRepository;
-import com.ctd.proyectointegrador.persistance.repository.CategoriaRepository;
-import com.ctd.proyectointegrador.persistance.repository.CiudadRepository;
-import com.ctd.proyectointegrador.persistance.repository.ProductoRepository;
+import com.ctd.proyectointegrador.persistance.model.*;
+import com.ctd.proyectointegrador.persistance.repository.*;
 import com.ctd.proyectointegrador.service.IService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +22,8 @@ public class ProductoService implements IService<ProductoDTO> {
     CiudadRepository ciudadRepository;
     @Autowired
     CategoriaRepository categoriaRepository;
+    @Autowired
+    ImagenRepository imgRepository;
 
     @Autowired
     CaracteristicaRepository caracteristicaRepository;
@@ -59,6 +56,15 @@ public class ProductoService implements IService<ProductoDTO> {
         producto.setCategoria(categoriaDB);
 
         Producto prodRespuesta = productoRepository.save(producto);
+
+        System.out.println(producto.getImagenes());
+
+        for (Imagen img :
+                producto.getImagenes()) {
+            img.setProducto(prodRespuesta);
+            imgRepository.save(img);
+        }
+
         return buildResponse(mapper.convertValue(prodRespuesta, ProductoDTO.class), "producto creado", 201);
     }
 
