@@ -2,9 +2,11 @@ package com.ctd.proyectointegrador.service.impl;
 
 import com.ctd.proyectointegrador.exceptions.ResourceNotFoundException;
 import com.ctd.proyectointegrador.persistance.dto.ProductoDTO;
+import com.ctd.proyectointegrador.persistance.model.Caracteristica;
 import com.ctd.proyectointegrador.persistance.model.Categoria;
 import com.ctd.proyectointegrador.persistance.model.Ciudad;
 import com.ctd.proyectointegrador.persistance.model.Producto;
+import com.ctd.proyectointegrador.persistance.repository.CaracteristicaRepository;
 import com.ctd.proyectointegrador.persistance.repository.CategoriaRepository;
 import com.ctd.proyectointegrador.persistance.repository.CiudadRepository;
 import com.ctd.proyectointegrador.persistance.repository.ProductoRepository;
@@ -21,12 +23,13 @@ import java.util.*;
 public class ProductoService implements IService<ProductoDTO> {
     @Autowired
     ProductoRepository productoRepository;
-
     @Autowired
     CiudadRepository ciudadRepository;
-
     @Autowired
     CategoriaRepository categoriaRepository;
+
+    @Autowired
+    CaracteristicaRepository caracteristicaRepository;
     @Autowired
     ObjectMapper mapper;
 
@@ -39,11 +42,22 @@ public class ProductoService implements IService<ProductoDTO> {
     }
 
     public Map<String, Object> guardar(ProductoDTO p) {
+
         Producto producto = mapper.convertValue(p, Producto.class);
+
+        List<Caracteristica> nuevasCarac = new ArrayList<>();
+        for (Caracteristica cat :
+                producto.getCaracteristicas()) {
+            nuevasCarac.add(caracteristicaRepository.findById(cat.getId()).get());
+        }
+        producto.setCaracteristicas(nuevasCarac);
+
         Ciudad ciudadBD = ciudadRepository.findById(producto.getCiudad().getId()).get();
         producto.setCiudad(ciudadBD);
+
         Categoria categoriaDB = categoriaRepository.findById(producto.getCategoria().getId()).get();
         producto.setCategoria(categoriaDB);
+
         Producto prodRespuesta = productoRepository.save(producto);
         return buildResponse(mapper.convertValue(prodRespuesta, ProductoDTO.class), "producto creado", 201);
     }
