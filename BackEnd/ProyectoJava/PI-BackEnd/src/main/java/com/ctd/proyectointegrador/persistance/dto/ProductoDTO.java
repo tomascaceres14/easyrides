@@ -30,7 +30,7 @@ public class ProductoDTO {
 
     private CategoriaDTO categoria;
 
-    private Set<CaracteristicaDTO> caracteristicas;
+    private List<CaracteristicaDTO> caracteristicas;
 
-    private Set<ReservaDTO> reservas;
+    private List<ReservaDTO> reservas;
 }

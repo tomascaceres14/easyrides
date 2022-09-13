@@ -1,12 +1,9 @@
 package com.ctd.proyectointegrador.persistance.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;
-
 import javax.persistence.*;
-import java.util.HashSet;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 @NoArgsConstructor
@@ -27,7 +24,7 @@ public class Producto {
     private String descripcion;
 
     @OneToMany(mappedBy = "producto")
-    private List<Imagen> imagenes;
+    private List<Imagen> imagenes = new ArrayList<>();
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "ciudad_id")
@@ -45,10 +42,8 @@ public class Producto {
     @JoinTable(name = "producto_caracteristica",
             joinColumns = { @JoinColumn(name = "producto_id") },
             inverseJoinColumns = { @JoinColumn(name = "caracteristica_id") })
-    private Set<Caracteristica> caracteristicas = new HashSet<>();
-
-
+    private List<Caracteristica> caracteristicas = new ArrayList<>();
 
     @OneToMany(mappedBy = "producto")
-    private Set<Reserva> reservas = new HashSet<>();
+    private List<Reserva> reservas = new ArrayList<>();
 }

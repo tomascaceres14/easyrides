@@ -3,6 +3,7 @@ package com.ctd.proyectointegrador.service.impl;
 import com.ctd.proyectointegrador.persistance.dto.ImagenDTO;
 import com.ctd.proyectointegrador.persistance.model.Imagen;
 import com.ctd.proyectointegrador.persistance.repository.ImagenRepository;
+import com.ctd.proyectointegrador.persistance.repository.ProductoRepository;
 import com.ctd.proyectointegrador.service.IService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,8 @@ public class ImagenService implements IService<ImagenDTO> {
 
     @Autowired
     ImagenRepository imagenRepository;
+    @Autowired
+    ProductoRepository productoRepository;
 
     @Autowired
     ObjectMapper mapper;
@@ -33,9 +36,10 @@ public class ImagenService implements IService<ImagenDTO> {
 
     @Override
         public Map<String, Object> guardar(ImagenDTO object) {
-            Imagen imagenes = mapper.convertValue(object, Imagen.class);
-            Imagen nuevaImagenes= imagenRepository.save(imagenes);
-            return buildResponse(mapper.convertValue(nuevaImagenes, ImagenDTO.class), "Imagen guardada", 201);
+            Imagen imagen = mapper.convertValue(object, Imagen.class);
+            imagen.setProducto(productoRepository.findById(imagen.getProducto().getId()).get());
+            Imagen nuevaImagen= imagenRepository.save(imagen);
+            return buildResponse(mapper.convertValue(nuevaImagen, ImagenDTO.class), "Imagen guardada", 201);
         }
 
 

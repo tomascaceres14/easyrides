@@ -66,5 +66,4 @@ public class ProductoController {
         codigo=(Integer) response.get("codigo");
         return ResponseEntity.status(codigo).body(response);
     }
-
 }
