@@ -1,5 +1,6 @@
 package com.ctd.proyectointegrador.controller;
 
+import com.ctd.proyectointegrador.exceptions.BadRequestException;
 import com.ctd.proyectointegrador.persistance.dto.ReservaDTO;
 import com.ctd.proyectointegrador.service.impl.ReservaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,7 @@ public class ReservaController {
     private Integer codigo;
 
     @PostMapping()
-    public ResponseEntity<Map<String, Object>> guardar(@RequestBody ReservaDTO reserva) {
+    public ResponseEntity<Map<String, Object>> guardar(@RequestBody ReservaDTO reserva) throws BadRequestException {
         Map<String, Object> response = reservaService.guardar(reserva);
         return ResponseEntity.created(URI.create("/reservas")).body(response);
     }
