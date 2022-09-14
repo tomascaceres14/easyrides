@@ -56,7 +56,7 @@ deploy_prod:
   image: alpine
   only:
     refs:
-      - Main
+      - main
   before_script:
     - echo "Deploy pre script"
     - apk add openssh-client
