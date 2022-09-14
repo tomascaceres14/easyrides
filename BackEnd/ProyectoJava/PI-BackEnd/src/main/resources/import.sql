@@ -60,13 +60,13 @@ INSERT INTO caracteristicas VALUES (null, 'Transmision Automatica', 'fa-solid fa
 INSERT INTO caracteristicas VALUES (null, 'Sistema de navegacion', 'fa-sharp fa-solid fa-location-dot');
 INSERT INTO caracteristicas VALUES (null, 'Control crucero', 'fa-solid fa-ship');
 INSERT INTO caracteristicas VALUES (null, 'Detección de puntos ciegos', 'fa-solid fa-eye');
-INSERT INTO caracteristicas VALUES (null, 'Techo corredizo', 'fa-solid fa-eye');
-INSERT INTO caracteristicas VALUES (null, 'Reproductor de peliculas', 'fa-solid fa-eye');
+INSERT INTO caracteristicas VALUES (null, 'Techo corredizo', 'fa-sharp fa-solid fa-sparkles');
+INSERT INTO caracteristicas VALUES (null, 'Reproductor de peliculas', 'fa-solid fa-film');
 INSERT INTO caracteristicas VALUES (null, '4x4', 'fa-solid fa-eye');
-INSERT INTO caracteristicas VALUES (null, 'Asientos de cuero', 'fa-solid fa-eye');
+INSERT INTO caracteristicas VALUES (null, 'Asientos de cuero', 'fa-sharp fa-solid fa-cow');
 INSERT INTO caracteristicas VALUES (null, 'Hibrido', 'fa-solid fa-eye');
-INSERT INTO caracteristicas VALUES (null, 'Conectividad Bluetooth', 'fa-solid fa-eye');
-INSERT INTO caracteristicas VALUES (null, 'Camara de reversa', 'fa-solid fa-eye');
+INSERT INTO caracteristicas VALUES (null, 'Conectividad Bluetooth', 'fa-sharp fa-solid fa-bluetooth');
+INSERT INTO caracteristicas VALUES (null, 'Camara de reversa', 'fa-solid fa-camera');
 
 INSERT INTO producto_caracteristica VALUES (1, 1);
 INSERT INTO producto_caracteristica VALUES (1, 2);

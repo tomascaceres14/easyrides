@@ -16,7 +16,8 @@ import { DataPaginaProductosProvider } from "./Context/DataPaginaProductosContex
 import Producto from "./Paginas/Home/Listado/Producto/Producto";
 import { MostrarCategoriasProvider } from "./Context/MostrarCategoriasContext";
 import Reservas from "./Paginas/Reservas/Reservas";
-import { FechasCalendarioProvider } from "./Context/FechasCalendarioContext";
+import { FechasParaReservaProvider } from "./Context/FechasParaReservaContext";
+import { FechasCalendarioPersistenciaProvider } from "./Context/FechasCalendarioPersistenciaContext";
 import { TokenUsuarioProvider } from "./Context/TokenUsuarioContext";
 import { RequerirAuth } from "./Paginas/Reservas/RequerirAuth";
 import ReservaExitosa from "./Paginas/Reservas/ReservaExitosa/ReservaExitosa";
@@ -31,39 +32,41 @@ function App() {
         <AppContext.Provider value={initialState}>
           <DataPaginaProductosProvider>
             <MostrarCategoriasProvider>
-              <FechasCalendarioProvider>
-                <CategoriasProvider>
-                  <CiudadesProvider>
-                    <DataProductosProvider>
-                      <AuthProvider>
-                        <BrowserRouter>
-                          <Header user={initialState} />
-                          <Routes>
-                            <Route path="/*" element={<Home />} />
-                            <Route path="/login" element={<Login />} />
-                            <Route path="/registro" element={<Registro />} />
-                            <Route
-                              path={"/producto/:id"}
-                              element={<Producto />}
-                            />
-                            <Route element={<RequerirAuth />}>
+              <FechasParaReservaProvider>
+                <FechasCalendarioPersistenciaProvider>
+                  <CategoriasProvider>
+                    <CiudadesProvider>
+                      <DataProductosProvider>
+                        <AuthProvider>
+                          <BrowserRouter>
+                            <Header user={initialState} />
+                            <Routes>
+                              <Route path="/*" element={<Home />} />
+                              <Route path="/login" element={<Login />} />
+                              <Route path="/registro" element={<Registro />} />
                               <Route
-                                path={"/producto/:id/reservas"}
-                                element={<Reservas />}
+                                path={"/producto/:id"}
+                                element={<Producto />}
                               />
-                            </Route>
-                            <Route
-                              path="/producto/:id/reservas/ok"
-                              element={<ReservaExitosa/>}
-                            />
-                          </Routes>
-                          <Footer />
-                        </BrowserRouter>
-                      </AuthProvider>
-                    </DataProductosProvider>
-                  </CiudadesProvider>
-                </CategoriasProvider>
-              </FechasCalendarioProvider>
+                              <Route element={<RequerirAuth />}>
+                                <Route
+                                  path={"/producto/:id/reservas"}
+                                  element={<Reservas />}
+                                />
+                              </Route>
+                              <Route
+                                path="/producto/:id/reservas/ok"
+                                element={<ReservaExitosa />}
+                              />
+                            </Routes>
+                            <Footer />
+                          </BrowserRouter>
+                        </AuthProvider>
+                      </DataProductosProvider>
+                    </CiudadesProvider>
+                  </CategoriasProvider>
+                </FechasCalendarioPersistenciaProvider>
+              </FechasParaReservaProvider>
             </MostrarCategoriasProvider>
           </DataPaginaProductosProvider>
         </AppContext.Provider>
