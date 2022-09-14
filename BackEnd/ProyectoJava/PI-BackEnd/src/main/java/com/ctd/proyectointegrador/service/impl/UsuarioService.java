@@ -1,6 +1,7 @@
 package com.ctd.proyectointegrador.service.impl;
 
 import com.ctd.proyectointegrador.enums.Role;
+import com.ctd.proyectointegrador.exceptions.ResourceNotFoundException;
 import com.ctd.proyectointegrador.persistance.dto.ReservaDTO;
 import com.ctd.proyectointegrador.persistance.dto.UsuarioDTO;
 import com.ctd.proyectointegrador.persistance.model.Reserva;
@@ -13,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import javax.management.relation.RelationServiceNotRegisteredException;
 import java.util.*;
 
 @Service
@@ -49,16 +51,16 @@ public class UsuarioService implements IService<UsuarioDTO> {
 
     @Override
     public Map<String, Object> buscar(Long id) {
-        Usuario usuarios = usuarioRepository.findById(id).get();
+        Usuario usuarios = usuarioRepository.findById(id).orElse(null);
         return buildResponse(mapper.convertValue(usuarios, UsuarioDTO.class), "Usuario encontrado",200);
     }
 
     @Override
-    public Map<String, Object> actualizar(Long id, UsuarioDTO object) {
+    public Map<String, Object> actualizar(Long id, UsuarioDTO object) throws ResourceNotFoundException {
         Usuario usuarior= mapper.convertValue(object, Usuario.class);
         Usuario usuarioBD= usuarioRepository.findById(id).orElse(null);
         if(usuarioBD == null){
-            return buildResponse(new UsuarioDTO(), "no existe usuario con id "+id, 404);
+            throw new ResourceNotFoundException("no existe usuario id " + id);
         }
         usuarioBD.setNombre(usuarior.getNombre());
         usuarioBD.setApellido(usuarior.getApellido());

@@ -1,15 +1,13 @@
 package com.ctd.proyectointegrador.controller;
 
+import com.ctd.proyectointegrador.exceptions.ResourceNotFoundException;
 import com.ctd.proyectointegrador.persistance.dto.ProductoDTO;
 import com.ctd.proyectointegrador.service.impl.ProductoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.net.URI;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Map;
 
 @RestController
@@ -27,7 +25,7 @@ public class ProductoController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Map<String, Object>> buscar(@PathVariable Long id) {
+    public ResponseEntity<Map<String, Object>> buscar(@PathVariable Long id) throws ResourceNotFoundException {
         Map<String, Object> response = productoService.buscar(id);
         codigo = (Integer) response.get("codigo");
         return ResponseEntity.status(codigo).body(response);
@@ -68,5 +66,4 @@ public class ProductoController {
         codigo=(Integer) response.get("codigo");
         return ResponseEntity.status(codigo).body(response);
     }
-
 }
