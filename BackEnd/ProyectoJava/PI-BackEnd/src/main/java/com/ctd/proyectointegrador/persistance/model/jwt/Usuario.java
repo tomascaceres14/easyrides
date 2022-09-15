@@ -48,7 +48,11 @@ public class Usuario {
     @Column(name = "rol")
     @JsonIgnore
     private Role rol;
-
+ /*
+  @ManyToOne En caso de necesitar relacio a rol - no enum roles
+    @JoinColumn(name = "roles_id", referencedColumnName="id", nullable = false)
+    private Rol rol;
+  */
     @Transient
     private String token;
 

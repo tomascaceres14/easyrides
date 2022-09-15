@@ -96,3 +96,12 @@ INSERT INTO producto_caracteristica VALUES (6, 2);
 INSERT INTO producto_caracteristica VALUES (6, 3);
 INSERT INTO producto_caracteristica VALUES (6, 4);
 
+INSERT INTO politicas VALUES (null, 'La/s personas que alquile/n el auto deben ser la/s misma/s que lo conduce/n');
+INSERT INTO politicas VALUES (null, 'Mayor de 21 años para alquilar el vehiculo.');
+INSERT INTO politicas VALUES (null, 'Deposito de 15% extra del valor total en caso de daños.');
+INSERT INTO politicas VALUES (null, 'Devolver el auto en condiciones aceptables de limpieza.');
+INSERT INTO politicas VALUES (null, 'Cancelación hasta 24 horas antes del retiro.');
+INSERT INTO politicas VALUES (null, 'Cobertura por daño y robo con franquicia.');
+
+INSERT INTO roles VALUES (null, 'ADMIN');
+INSERT INTO roles VALUES (null, 'USER');
