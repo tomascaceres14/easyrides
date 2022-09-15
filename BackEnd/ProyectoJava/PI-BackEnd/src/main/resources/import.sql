@@ -102,3 +102,6 @@ INSERT INTO politicas VALUES (null, 'Deposito de 15% extra del valor total en ca
 INSERT INTO politicas VALUES (null, 'Devolver el auto en condiciones aceptables de limpieza.');
 INSERT INTO politicas VALUES (null, 'Cancelación hasta 24 horas antes del retiro.');
 INSERT INTO politicas VALUES (null, 'Cobertura por daño y robo con franquicia.');
+
+INSERT INTO roles VALUES (null, 'ADMIN');
+INSERT INTO roles VALUES (null, 'USER');
