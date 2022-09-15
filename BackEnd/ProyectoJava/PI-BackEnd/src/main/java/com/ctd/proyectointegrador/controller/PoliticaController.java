@@ -12,7 +12,6 @@ import java.util.Map;
 @RestController
 @RequestMapping("/politicas")
 public class PoliticaController {
-
     @Autowired
     PoliticaService politicaService;
 
