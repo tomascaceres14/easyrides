@@ -15,7 +15,7 @@ export default function Listado() {
   const { data } = useFetch(urlProductos);
   const { setDataProductos, dataProductos } = useContext(DataProductosContext);
   const { mostrarCategorias, setMostrarCategorias } = useContext(MostrarCategoriasContext);
-  const { elegirDataPaginaProductos, setElegirDataPaginaProductos } = useContext(DataPaginaProductosContext)
+  const { elegirDataPaginaProductos, setElegirDataPaginaProductos } = useContext(DataPaginaProductosContext);
 
   return (
     <div className="listado-container">
@@ -36,6 +36,11 @@ export default function Listado() {
                     className="cardsProductos-unidad-img"
                   />
                   <h2 className="listado-unidad-nombre">{prod.titulo}</h2>
+                  
+                  <div className= "card-caracteristicas">{prod.caracteristicas.map((carac)=>{
+                    return <p key={carac.id}><i class = {carac.url}></i></p>
+                  }) }
+                  </div>
                   <p className="cardsProductos-unidad-descripcion">
                     {prod.ciudad.nombre + ", " + prod.ciudad.provincia}
                   </p>

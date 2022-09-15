@@ -225,6 +225,25 @@ const Producto = () => {
 
             <article>
               <div>
+                <div className="politicas">
+                  <h2 className="politicas-titulo">
+                  Requisitos para alquilar un carro 
+                  </h2> {/*FALTA MODIFICAR EL data.producto.map y cambiar los id y titulo */}
+                  <h2>{data &&
+                    data.productos.caracteristicas.map((carac) => (
+                      <>
+                      
+                      <p key={carac.id}><i class = {carac.url}></i> {carac.titulo} </p>
+                        
+                      </>
+                    ))}
+                    </h2>
+                </div>
+              </div>
+            </article>
+
+            <article>
+              <div>
                 <div className="seleccionaFecha">
                   <h2 className="seleccionaFecha-titulo">
                     Seleccioná la fecha de tu reserva
