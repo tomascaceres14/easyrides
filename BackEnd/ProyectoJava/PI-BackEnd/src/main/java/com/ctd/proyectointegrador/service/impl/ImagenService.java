@@ -37,9 +37,7 @@ public class ImagenService implements IService<ImagenDTO> {
 
     @Override
         public Map<String, Object> guardar(ImagenDTO object) {
-        System.out.println(object);
             Imagen imagen = mapper.convertValue(object, Imagen.class);
-        System.out.println(imagen);
             Producto productoDB = productoRepository.findById(imagen.getProducto().getId()).orElse(null);
             imagen.setProducto(productoDB);
             Imagen imgRespuesta = imagenRepository.save(imagen);
