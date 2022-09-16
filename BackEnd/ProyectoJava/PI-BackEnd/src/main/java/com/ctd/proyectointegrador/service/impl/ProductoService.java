@@ -9,11 +9,13 @@ import com.ctd.proyectointegrador.service.IService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
+@Transactional
 @Service
 public class ProductoService implements IService<ProductoDTO> {
     @Autowired
@@ -96,6 +98,9 @@ public class ProductoService implements IService<ProductoDTO> {
 
     public Map<String, Object> eliminar(Long id) {
         if (productoRepository.findById(id).isPresent()) {
+            productoRepository.removeImagenes(id);
+            productoRepository.removeCarac(id);
+            productoRepository.removeReservas(id);
             productoRepository.deleteById(id);
             return buildResponse(new ProductoDTO(), "Producto id " + id + " eliminado", 200);
         } else {
@@ -144,3 +149,6 @@ public class ProductoService implements IService<ProductoDTO> {
         return buildResponse(listaDTO, "lista creada", 200);
     }
 }
+
+
+
