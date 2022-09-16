@@ -47,4 +47,16 @@ public class Producto {
 
     @OneToMany(mappedBy = "producto", cascade = CascadeType.REMOVE)
     private List<Reserva> reservas = new ArrayList<>();
+
+    @Override
+    public String toString() {
+        return "Producto{" +
+                "id=" + id +
+                ", titulo='" + titulo + '\'' +
+                ", descripcion='" + descripcion + '\'' +
+                ", imagenes=" + imagenes +
+                ", ciudad=" + ciudad +
+                ", categoria=" + categoria +
+                '}';
+    }
 }

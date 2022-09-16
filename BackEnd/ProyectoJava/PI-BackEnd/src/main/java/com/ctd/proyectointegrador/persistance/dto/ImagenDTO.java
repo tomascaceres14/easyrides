@@ -24,7 +24,7 @@ public class ImagenDTO {
 
     @NotEmpty(message = "no debe estar vacio")
     @NotNull(message = "no debe ser nulo")
-    private ProductoDTO productoDTO;
+    private ProductoDTO producto;
 
 
 }

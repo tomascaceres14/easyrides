@@ -35,7 +35,6 @@ public class PoliticaService implements IPoliticaService<PoliticaDTO> {
     @Override
     public Map<String, Object> listarTodos() {
         List<Politica> listaPoliticas = politicaRepository.findAll();
-
         List<PoliticaDTO> listaPoliticasDTO = new ArrayList<>();
 
         for(Politica p : listaPoliticas){

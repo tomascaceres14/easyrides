@@ -24,7 +24,7 @@ public class ProductoDTO {
 
     private String descripcion;
 
-    private List<Imagen> imagenes;
+    private List<ImagenDTO> imagenes;
 
     private CiudadDTO ciudad;
 

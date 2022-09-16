@@ -59,7 +59,7 @@ public class ProductoService implements IService<ProductoDTO> {
 
         Producto prodRespuesta = productoRepository.save(producto);
 
-        System.out.println(producto.getImagenes());
+        System.out.println(prodRespuesta);
 
         for (Imagen img :
                 producto.getImagenes()) {
