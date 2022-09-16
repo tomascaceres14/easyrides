@@ -26,13 +26,4 @@ public class Imagen {
     @JoinColumn(name = "producto_id")
     @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Producto producto;
-
-    @Override
-    public String toString() {
-        return "Imagen{" +
-                "id=" + id +
-                ", url='" + url + '\'' +
-                ", producto=" + producto +
-                '}';
-    }
 }
