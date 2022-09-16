@@ -68,7 +68,7 @@ public class ReservaService implements IService<ReservaDTO> {
             return buildResponse(new ReservaDTO(),"No existe reserva con id"+ id,404);
     }
         reservaBD.setHoraInicio(actualizar.getHoraInicio());
-        reservaBD.setFechaInicial(actualizar.getFechaFinal());
+        reservaBD.setFechaInicial(actualizar.getFechaInicial()); // mod
         reservaBD.setFechaFinal(actualizar.getFechaFinal());
         Reserva reservaAct = reservaRepository.save(reservaBD);
         return buildResponse(mapper.convertValue(reservaAct, ReservaDTO.class), "Actualizacion exitosa", 201);
