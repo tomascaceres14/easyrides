@@ -18,11 +18,12 @@ const ListadoCategorias = () => {
 
   return (
     <div className="listado-container">
+      <div className="cardsProductos">
       {data &&
         data.productos.map((prod) => (
           <>
             {prod.categoria.titulo == elegirCategorias ? (
-              <div key={prod.id} className="listado-unidad">
+              <div className="listado-unidad" key={prod.id}>
                 <img
                   src={prod.imagenes[0].url}
                   alt=""
@@ -45,6 +46,8 @@ const ListadoCategorias = () => {
             ) : null}
           </>
         ))}
+      </div>
+      
     </div>
   );
 };

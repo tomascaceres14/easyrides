@@ -2,11 +2,10 @@
 
 
 .buscador {
-    
     height: 25rem;
     display: flex;
     background-image: url('https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80');
-    background-position: center ;
+    background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -25,8 +24,7 @@
     border-radius: .5rem;
     box-shadow: 0 1px 4px rgb(0 0 0 / 50%);
     margin: 0 auto;
-   margin-top: 350px;
-   
+    margin-top: 350px;
 }
 
 .buscador-fecha {
@@ -61,23 +59,18 @@
         DESAROLLO DEL RESPONSIVE
 ---------------------------------------*/
 
-@media only screen and (max-width: 900px) {
-    .buscadores{
+@media only screen and (max-width: 1026px) {
+    .buscadores {
+        height: 6rem;
+        gap: .2rem;
+    }
+}
+@media only screen and (max-width: 950px) {
+    .buscadores {
         height: 15rem;
         gap: 0rem;
         flex-direction: column;
         margin-top: 17rem;
-        
-        
-    }
-    .buscador-titulo {
-            
-            color: white;
-            font-size: 50px;
-            margin-left: 3rem;
-            margin-top: 1.5rem;
-            position: absolute;
-            
     }
 }
 @media only screen and (max-width: 695px) {
@@ -85,20 +78,20 @@
         padding: 1rem;
         gap: 0rem;
         flex-direction: column;
-        
-        
-        
-        
     }
-
+}
+@media only screen and (max-width: 640px) {
+    .buscador-titulo {
+        font-size: 50px;
+        margin-left: 3rem;
+        margin-top: 1.5rem;
+        position: absolute;
+    }
 }
 @media only screen and (max-width: 400px) {
     .buscadores {
         gap: 0rem;
         flex-direction: column;
         margin-top: 20rem;
-       
-        
     }
-   
 }

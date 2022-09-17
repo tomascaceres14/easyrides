@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Aldrich&family=Open+Sans:wght@300&display=swap');
 
-
-.listado-container{
-    
-}
 .cardsProductos {
     
     padding: 60px;
@@ -78,13 +74,6 @@
     transition: 0.3s;
 }
 
-@media only screen and (max-width: 1024px) {
-   
-}
-
-@media only screen and (max-width: 668px) {
-  
-}
 @media only screen and (max-width: 650px) {
     .cardsProductos {
         padding: 40px;

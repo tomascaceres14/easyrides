@@ -10,7 +10,7 @@ import { DataPaginaProductosContext } from "../../../Context/DataPaginaProductos
 
 
 export default function Listado() {
-  
+
   const urlProductos = "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/productos";
   const { data } = useFetch(urlProductos);
   const { setDataProductos, dataProductos } = useContext(DataProductosContext);
@@ -23,7 +23,7 @@ export default function Listado() {
       <div className="cardsProductos">
         {/* // if comun si a es verdadero y b y c es false va a y ciudades */}
         {(() => {
-          if ( !mostrarCategorias && !dataProductos ) {
+          if (!mostrarCategorias && !dataProductos) {
             return (
               data &&
               data.productos.map((prod) => (
@@ -36,14 +36,16 @@ export default function Listado() {
                     className="cardsProductos-unidad-img"
                   />
                   <h2 className="listado-unidad-nombre">{prod.titulo}</h2>
-                  
-                  <div className= "card-caracteristicas">{prod.caracteristicas.map((carac)=>{
-                    return <p key={carac.id}><i class = {carac.url}></i></p>
-                  }) }
-                  </div>
+
+
                   <p className="cardsProductos-unidad-descripcion">
                     {prod.ciudad.nombre + ", " + prod.ciudad.provincia}
                   </p>
+
+                  <div className="card-caracteristicas">{prod.caracteristicas.map((carac) => {
+                    return <p key={carac.id}><i class={carac.url}></i></p>
+                  })}
+                  </div>
                   {/* <img className="cardsProductos-unidad-caracteristica" src={prod.caracteristicas.url}/> */}
 
                   <Link
@@ -57,9 +59,9 @@ export default function Listado() {
                 </div>
               ))
             );
-          } else if ( dataProductos ) {
+          } else if (dataProductos) {
             return <ListadoCiudades />;
-          } else if ( mostrarCategorias ) {
+          } else if (mostrarCategorias) {
             return <ListadoCategorias />;
           }
         })()}

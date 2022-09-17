@@ -8,6 +8,7 @@ import useFetch from "../../../../Hooks/useFetch";
 import CalendarioProducto from "./CalendarioProducto";
 import { DataPaginaProductosContext } from "../../../../Context/DataPaginaProductosContext";
 import AuthContext from "../../../../Context/AuthContext";
+import Politicas from "./Politicas.jsx";
 
 
 const Producto = () => {
@@ -15,9 +16,10 @@ const Producto = () => {
   // pasar id a la url de fetch
   const urlProductos =
     "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/productos/" + id;
+  const urlPoliticas = "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/politicas/listaPoliticas";
   const { elegirDataPaginaProductos, setElegirDataPaginaProductos } =
     useContext(DataPaginaProductosContext);
-  const { data } = useFetch(urlProductos);
+  const { data } = useFetch(urlProductos );
   const { auth } = useContext(AuthContext);
 
   useEffect(() => {
@@ -228,16 +230,8 @@ const Producto = () => {
                 <div className="politicas">
                   <h2 className="politicas-titulo">
                   Requisitos para alquilar un carro 
-                  </h2> {/*FALTA MODIFICAR EL data.producto.map y cambiar los id y titulo */}
-                  <h2>{data &&
-                    data.productos.caracteristicas.map((carac) => (
-                      <>
-                      
-                      <p key={carac.id}><i class = {carac.url}></i> {carac.titulo} </p>
-                        
-                      </>
-                    ))}
-                    </h2>
+                  </h2>
+                  <Politicas></Politicas>
                 </div>
               </div>
             </article>
