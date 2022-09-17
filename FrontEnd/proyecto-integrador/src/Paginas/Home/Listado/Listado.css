@@ -1,10 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Aldrich&family=Open+Sans:wght@300&display=swap');
 
 .cardsProductos {
-    
     padding: 60px;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-template-columns: 25vw 25vw 25vw;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.cardsProductos-categoria{
+    width: 90vw;
+    padding: 60px;
+    display: grid;
+    grid-template-columns: 25vw 25vw 25vw;
+    justify-content: space-between;
     gap: 20px;
 }
 
@@ -14,6 +23,7 @@
     margin-left: 1rem;
     padding-top: 0.6rem;
     padding-bottom: 0.3rem;
+    justify-content: space-between;
 }
 
 .card-caracteristicas p{

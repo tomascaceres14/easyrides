@@ -18,7 +18,7 @@ const ListadoCategorias = () => {
 
   return (
     <div className="listado-container">
-      <div className="cardsProductos">
+      <div className="cardsProductos-categoria">
       {data &&
         data.productos.map((prod) => (
           <>
