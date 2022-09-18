@@ -22,6 +22,7 @@ INSERT INTO productos VALUES (null, 'El Mercedes-Benz Clase S (Sonderklasse) es 
 INSERT INTO productos VALUES (null, 'La Toyota Hilux es un todoterreno pick-up fabricado por Toyota desde 1968, se caracteriza por ofrecer una estética continuista y fácilmente reconocible dentro de su estirpe.', 'Toyota Hilux', 5, 1);
 INSERT INTO productos VALUES (null, 'El Peugeot 5008 es un crossover familiar con alma de monovolumen, del segmento D, fabricado por Peugeot desde 2009.', 'Peugeot 5008', 3, 3);
 
+/*INSERT INTO productos VALUES (null, 'El Toyota Corolla es un automóvil del segmento C producido por el fabricante japonés de automóviles Toyota desde el año 1966. En 1997, el Corolla se convirtió en el automóvil más vendido del mundo, desplazando de dicho sitial al Volkswagen Escarabajo, superando en la actualidad las 50 millones de unidades vendidas', 'Toyota Corolla', 3, 2);*/
 
 INSERT INTO imagenes VALUES (null, 'https://www.autonocion.com/wp-content/uploads/2021/02/dodge-charger6-930x639.jpg', 1);
 INSERT INTO imagenes VALUES (null, 'https://i.pinimg.com/originals/d9/af/d2/d9afd24841980df5550c9e66867a179a.jpg', 1);
@@ -70,6 +71,12 @@ INSERT INTO imagenes VALUES (null, 'https://www.diariomotor.com/imagenes/2020/09
 INSERT INTO imagenes VALUES (null, 'https://www.diariomotor.com/imagenes/2020/09/peugeot-5008-2021-0820-012-180x120.jpg',8);
 INSERT INTO imagenes VALUES (null, 'https://www.diariomotor.com/imagenes/2020/09/peugeot-5008-2021-0820-013-1024x732.jpg',8);
 INSERT INTO imagenes VALUES (null, 'https://www.diariomotor.com/imagenes/2020/09/peugeot-5008-2021-0820-011-180x120.jpg',8);
+
+INSERT INTO imagenes VALUES (null, 'https://images2.alphacoders.com/105/1051135.jpg', 9);
+INSERT INTO imagenes VALUES (null, 'https://www.toyota.com.ar/storage/submodels/QOtSyH6UKG.jpg',9);
+INSERT INTO imagenes VALUES (null, 'https://cdn.carbuzz.com/gallery-images/2022-toyota-corolla-sedan-rear-angle-view-carbuzz-599395-1600.jpg',9);
+INSERT INTO imagenes VALUES (null, 'https://static.vecteezy.com/system/resources/previews/008/158/980/non_2x/side-turkey-march-01-2022-silver-toyota-corolla-is-parked-on-the-street-on-a-warm-day-against-the-backdrop-of-a-buildung-shops-free-photo.jpg',9);
+INSERT INTO imagenes VALUES (null, 'https://cdn.motor1.com/images/mgl/MB3LX/s1/lanzamiento-toyota-corolla-gr-sport.webp',9);
 
 
 
