@@ -66,4 +66,11 @@ public class ProductoController {
         codigo=(Integer) response.get("codigo");
         return ResponseEntity.status(codigo).body(response);
     }
+
+    @GetMapping("/{id}/reservas")
+    public ResponseEntity<Map<String, Object>> listarPorId(@PathVariable Long id){
+        Map<String, Object> response = productoService.reservasPorId(id);
+        codigo = (Integer) response.get("codigo");
+        return ResponseEntity.status(codigo).body(response);
+    }
 }
