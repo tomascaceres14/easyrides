@@ -8,6 +8,7 @@ import { useInitialState } from "../../../Hooks/useInitialState";
 import AuthContext from "../../../Context/AuthContext";
 import { BotonesLoginRegister } from "./BotonesLoginRegister";
 import { Avatar } from "./Avatar";
+import { AvatarAdmin } from "./AvatarAdmin";
 
 const Header = () => {
 const navRef = useRef();
@@ -20,28 +21,41 @@ const mostrarNavBar = () => {
 navRef.current.classList.toggle("responsive-header");
 };
 return (
-<header className="header">
-  <div className="header-logo">
-    <Link to="/">
-      <img className="header-logo-img" src={easyride} alt="logo" />
-    </Link>
-  </div>
-  
-  <nav ref={navRef} className="header-derecha">
-    {/*mostrar avatar en un solo compontente */}
-    {auth ?
-    <Avatar /> :
-    <BotonesLoginRegister />}
+  <header className="header">
+    <div className="header-logo">
+      <Link to="/">
+        <img className="header-logo-img" src={easyride} alt="logo" />
+      </Link>
+    </div>
 
-    {/* botones para mobile */}
-    <button className="header-boton header-cerrar-boton" onClick={mostrarNavBar}>
-      <FaTimes />
+    <nav ref={navRef} className="header-derecha">
+      {/*mostrar avatar en un solo compontente */}
+      {auth && auth.id == 1 ? <AvatarAdmin /> : <BotonesLoginRegister />}
+      {/* {(() => {
+      
+      
+      if (auth && auth.id == 1) {
+        return <AvatarAdmin />
+      }
+      else if (!auth) {
+        return <BotonesLoginRegister />;
+      } 
+
+      })} */}
+      {/* {auth ? <Avatar /> : <BotonesLoginRegister />} */}
+
+      {/* botones para mobile */}
+      <button
+        className="header-boton header-cerrar-boton"
+        onClick={mostrarNavBar}
+      >
+        <FaTimes />
+      </button>
+    </nav>
+    <button className="header-boton" onClick={mostrarNavBar}>
+      <FaBars />
     </button>
-  </nav>
-  <button className="header-boton" onClick={mostrarNavBar}>
-    <FaBars />
-  </button>
-</header>
+  </header>
 );
 };
 

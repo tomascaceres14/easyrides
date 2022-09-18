@@ -21,6 +21,7 @@ import { FechasCalendarioPersistenciaProvider } from "./Context/FechasCalendario
 import { TokenUsuarioProvider } from "./Context/TokenUsuarioContext";
 import { RequerirAuth } from "./Paginas/Reservas/RequerirAuth";
 import ReservaExitosa from "./Paginas/Reservas/ReservaExitosa/ReservaExitosa";
+import { Administrador } from "./Paginas/Home/Administrador/Administrador";
 
 function App() {
   const initialState = useInitialState();
@@ -57,6 +58,10 @@ function App() {
                               <Route
                                 path="/producto/:id/reservas/ok"
                                 element={<ReservaExitosa />}
+                              />
+                              <Route
+                                path="/admin"
+                                element={<Administrador />}
                               />
                             </Routes>
                             <Footer />
