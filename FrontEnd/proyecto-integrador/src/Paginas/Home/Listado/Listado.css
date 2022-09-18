@@ -7,16 +7,16 @@
     justify-content: space-between;
     gap: 20px;
 }
-
+/*CUANDO SELECCIONAS UNA CATEGORIA*/
 .cardsProductos-categoria{
     width: 90vw;
-    padding: 60px;
+    padding: 3px;
     display: grid;
     grid-template-columns: 25vw 25vw 25vw;
     justify-content: space-between;
     gap: 20px;
 }
-
+/*-----------------------------------------*/
 .card-caracteristicas{
     display: flex;
     flex-flow: row wrap;
@@ -25,26 +25,22 @@
     padding-bottom: 0.3rem;
     justify-content: space-between;
 }
-
 .card-caracteristicas p{
     margin: 0;
     margin-right: 1rem;
 }
-
 .cardsProductos-titulo {
     font-size: 30px;
     font-weight: 600;
     margin-left: 3.8rem;
     padding-top: 2rem;
 }
-
 .listado-unidad {
     border-radius: 1rem;
     box-shadow: 0 1px 4px rgb(0 0 0 / 15%);
     display: flex;
     flex-direction: column;
 }
-
 .cardsProductos-unidad-img {
     width: 100%;
     border-radius: 15px 15px 0px 0px;
@@ -52,13 +48,11 @@
     object-fit: cover;
     object-position: center;
 }
-
 .cardsProductos-unidad-descripcion {
     margin-top: 5px;
     margin-bottom: 5px;
     margin-left: 1rem;
 }
-
 .listado-unidad-boton {
     border: none;
     background-color: #F0572D;
@@ -91,6 +85,14 @@
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
         gap: 20px;
         cursor: pointer;
+    }
+    .cardsProductos-categoria{
+        width: 90vw;
+        padding: 3px;
+        justify-content: space-between;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 20px;
     }
 
     
