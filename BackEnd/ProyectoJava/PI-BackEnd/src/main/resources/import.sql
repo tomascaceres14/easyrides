@@ -60,7 +60,7 @@ INSERT INTO caracteristicas VALUES (null, 'Transmision Automatica', 'fa-solid fa
 INSERT INTO caracteristicas VALUES (null, 'Sistema de navegacion', 'fa-sharp fa-solid fa-location-dot');
 INSERT INTO caracteristicas VALUES (null, 'Control crucero', 'fa-solid fa-ship');
 INSERT INTO caracteristicas VALUES (null, 'Detección de puntos ciegos', 'fa-solid fa-eye');
-INSERT INTO caracteristicas VALUES (null, 'Techo corredizo', 'fa-sharp fa-solid fa-sparkles');
+INSERT INTO caracteristicas VALUES (null, 'Techo corredizo', 'fa-duotone fa-house');
 INSERT INTO caracteristicas VALUES (null, 'Reproductor de peliculas', 'fa-solid fa-film');
 INSERT INTO caracteristicas VALUES (null, '4x4', 'fa-solid fa-eye');
 INSERT INTO caracteristicas VALUES (null, 'Asientos de cuero', 'fa-sharp fa-solid fa-cow');
