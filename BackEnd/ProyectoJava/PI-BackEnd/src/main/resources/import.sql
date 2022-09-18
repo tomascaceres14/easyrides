@@ -19,6 +19,9 @@ INSERT INTO productos VALUES (null, 'El Ford Fiesta es un automóvil de turismo 
 INSERT INTO productos VALUES (null, 'El Fiat 600 fue un pequeño automóvil diseñado por Dante Giacosa y construido por la empresa italiana Fiat desde 1955 hasta 1969. Fue un éxito mundial que se fabricó en muchos países, en la mayoría de ellos bajo la marca Fiat.', 'Fiat 600', 4, 4);
 INSERT INTO productos VALUES (null, 'El Volkswagen Golf, el rey de los compactos. Desde su nacimiento en 1974 el alemán se ha convertido no solo en la referencia de su segmento, también en uno de los coches más populares y exitosos del mundo. También es uno de los modelos más longevos del mercado actual.', 'Volkswagen Golf', 3, 5);
 INSERT INTO productos VALUES (null, 'El Mercedes-Benz Clase S (Sonderklasse) es un automóvil de lujo del segmento F producido por el fabricante alemán Mercedes-Benz. Actualmente es el turismo más grande y lujoso de la gama. Comenzó a fabricarse desde mediados de los años 1950, y desde entonces es el sedán de lujo más vendido del mundo debido a su alta seguridad que le convierten en el sedán más seguro del mundo.', 'Mercedes-Benz Clase S', 2, 6);
+INSERT INTO productos VALUES (null, 'La Toyota Hilux es un todoterreno pick-up fabricado por Toyota desde 1968, se caracteriza por ofrecer una estética continuista y fácilmente reconocible dentro de su estirpe.', 'Toyota Hilux', 5, 1);
+INSERT INTO productos VALUES (null, 'El Peugeot 5008 es un crossover familiar con alma de monovolumen, del segmento D, fabricado por Peugeot desde 2009.', 'Peugeot 5008', 3, 3);
+
 
 INSERT INTO imagenes VALUES (null, 'https://www.autonocion.com/wp-content/uploads/2021/02/dodge-charger6-930x639.jpg', 1);
 INSERT INTO imagenes VALUES (null, 'https://i.pinimg.com/originals/d9/af/d2/d9afd24841980df5550c9e66867a179a.jpg', 1);
@@ -55,6 +58,20 @@ INSERT INTO imagenes VALUES (null, 'https://cdn.motor1.com/images/mgl/b04yv/s1/e
 INSERT INTO imagenes VALUES (null, 'https://www.diariomotor.com/imagenes/2020/08/mercedes-clase-s-2021-0820-01.jpg', 6);
 INSERT INTO imagenes VALUES (null, 'https://www.diariomotor.com/imagenes/2020/08/mercedes-clase-s-2021-0820-01.jpg', 6);
 INSERT INTO imagenes VALUES (null, 'https://siempreauto.com/wp-content/uploads/sites/9/2020/10/robert-locke-D199s7KvGvk-unsplash-e1605674766144.jpg?quality=60&strip=all&w=1200', 6);
+
+INSERT INTO imagenes VALUES (null, 'https://www.diariomotor.com/imagenes/picscache/1920x1600c/toyota-hilux-2021-preventa-01_1920x1600c.jpg',7);
+INSERT INTO imagenes VALUES (null, 'https://www.diariomotor.com/imagenes/2020/06/toyota-hilux-2021-07-1024x768.jpg',7);
+INSERT INTO imagenes VALUES (null, 'https://www.diariomotor.com/imagenes/2020/06/toyota-hilux-2021-06-1024x768.jpg',7);
+INSERT INTO imagenes VALUES (null, 'https://www.diariomotor.com/imagenes/2020/06/toyota-hilux-2021-05-1024x866.jpg',7);
+INSERT INTO imagenes VALUES (null, 'https://www.diariomotor.com/imagenes/2020/06/toyota-hilux-2021-02-1024x768.jpg',7);
+
+INSERT INTO imagenes VALUES (null, 'https://www.diariomotor.com/imagenes/picscache/1920x1600c/peugeot-5008-2021-0820-006_1920x1600c.jpg',8);
+INSERT INTO imagenes VALUES (null, 'https://www.diariomotor.com/imagenes/2020/09/peugeot-5008-2021-0820-008-1024x657.jpg',8);
+INSERT INTO imagenes VALUES (null, 'https://www.diariomotor.com/imagenes/2020/09/peugeot-5008-2021-0820-012-180x120.jpg',8);
+INSERT INTO imagenes VALUES (null, 'https://www.diariomotor.com/imagenes/2020/09/peugeot-5008-2021-0820-013-1024x732.jpg',8);
+INSERT INTO imagenes VALUES (null, 'https://www.diariomotor.com/imagenes/2020/09/peugeot-5008-2021-0820-011-180x120.jpg',8);
+
+
 
 INSERT INTO caracteristicas VALUES (null, 'Transmision Automatica', 'fa-solid fa-gears');
 INSERT INTO caracteristicas VALUES (null, 'Sistema de navegacion', 'fa-sharp fa-solid fa-location-dot');
