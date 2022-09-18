@@ -34,6 +34,10 @@ const ListadoCategorias = () => {
                 <p className="cardsProductos-unidad-descripcion">
                   {prod.ciudad.nombre + ", " + prod.ciudad.provincia}
                 </p>
+                <div className="card-caracteristicas">{prod.caracteristicas.map((carac) => {
+                    return <p key={carac.id}><i class={carac.url}></i></p>
+                  })}
+                </div>
                 <Link
                   onClick={() => {
                     setElegirDataPaginaProductos(prod.id);
