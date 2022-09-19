@@ -31,18 +31,17 @@ return (
     <nav ref={navRef} className="header-derecha">
       {/*mostrar avatar en un solo compontente */}
       {auth && auth.id == 1 ? <AvatarAdmin /> : <BotonesLoginRegister />}
+
       {/* {(() => {
-      
-      
       if (auth && auth.id == 1) {
-        return <AvatarAdmin />
-      }
-      else if (!auth) {
+        return <AvatarAdmin />;
+      } else if (auth && auth.id !== 1) {
+        return <Avatar />;
+      } else if (!auth) {
         return <BotonesLoginRegister />;
       } 
 
       })} */}
-      {/* {auth ? <Avatar /> : <BotonesLoginRegister />} */}
 
       {/* botones para mobile */}
       <button

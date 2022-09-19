@@ -68,9 +68,6 @@ function Login() {
         
         //VER ESTO PARA RESETEAR FORM
         onSubmitProps.resetForm();
-
-        
-
       }}
 
       validate={(valores) => {
