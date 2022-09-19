@@ -235,6 +235,22 @@ img {
 .caracteristicas p {
   margin-top:20px;
 }
+/*----> Articulo que politicas del auto <----*/
+.politicas {
+  margin-top: 2rem;
+  margin-left: 4rem;
+}
+
+.politicas-titulo {
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.politicas p {
+  margin-top:20px;
+}
+
 
 /*----> Articulo seleccionar la fecha de tu reserva <----*/
 

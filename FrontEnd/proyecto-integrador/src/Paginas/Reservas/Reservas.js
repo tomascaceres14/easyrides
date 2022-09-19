@@ -5,6 +5,7 @@ import Calendario from '../Home/Buscador/Calendario';
 import "./Reservas.css";
 import { FechasParaReservaContext } from '../../Context/FechasParaReservaContext';
 import CalendarioProducto from '../Home/Listado/Producto/CalendarioProducto';
+import { Formik, Form, Field, ErrorMessage } from "formik";
 import AuthContext from '../../Context/AuthContext';
 import axios from "axios";
 import { Link } from "react-router-dom";
@@ -22,14 +23,14 @@ const Reservas = () => {
   const { auth, setAuth } = useContext(AuthContext);
   const { fechaInicio, setFechaInicio } = useContext(FechasParaReservaContext);
   const { fechaFin, setFechaFin } = useContext(FechasParaReservaContext);
-  const [ submitForm, setSubmitForm ] = useState(false)
+  const [submitForm, setSubmitForm] = useState(false)
 
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
   const infoPostReserva = {
-    horaInicio : "",
+    horaInicio: "",
     fechaInicial: fechaInicio,
     fechaFinal: fechaFin,
     producto: {
@@ -64,20 +65,128 @@ const Reservas = () => {
     <div className="reserva">
       <h2>Solicitá tu reserva</h2>
       <div className="reserva-superior">
-        <div className="reserva-superior-formulario">
-          <div className="reserva-superior-formulario-linea1">
-            <p>Nombre</p>
-            <input placeholder={auth ? auth.nombre : null} readonly="readonly"></input>
-            <p>Correo Electrónico</p>
-            <input placeholder={auth ? auth.email : null} readonly="readonly"></input>
-          </div>
-          <div className="reserva-superior-formulario-linea2">
-            <p>Apellido</p>
-            <input placeholder={auth ? auth.apellido : null} readonly="readonly"></input>
-            <p>Ciudad</p>
-            <input placeholder="Ingresa la ciudad de retiro"></input>
-          </div>
-        </div>
+
+        <Formik
+
+          initialValues={{
+            nombre: "",
+            apellido: "",
+            email: "",
+            ciudad: "",
+
+          }}
+
+          validate={(valores) => {
+            let errores = {};
+
+            //validacion nombre
+            if (!valores.nombre) {
+              errores.nombre = "Por favor ingrese su nombre";
+            } else if (!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(valores.nombre)) {
+              errores.nombre =
+                "El nombre solo puede contener letras y espacios, pueden llevar acentos.";
+            }
+
+            //validacion apellido
+            if (!valores.apellido) {
+              errores.apellido = "Por favor ingrese su apellido";
+            } else if (!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(valores.nombre)) {
+              errores.apellido =
+                "El apellido solo puede contener letras y espacios, pueden llevar acentos.";
+            }
+
+            //validacion correo
+            if (!valores.email) {
+              errores.email = "Por favor ingresa un correo electronico";
+            } else if (
+              !/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/.test(
+                valores.email
+              )
+            ) {
+              errores.email =
+                "El correo solo puede contener letras, numeros, puntos, guiones y guion bajo.";
+            }
+
+            //validacion ciudad
+            if (!valores.ciudad) {
+              errores.ciudad = "Por favor ingrese la ciudad deseada";
+            } else if (!/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(valores.ciudad)) {
+              errores.nombre =
+                "La ciudad solo puede contener letras y espacios, pueden llevar acentos.";
+            }
+
+
+            return errores;
+          }}
+        >
+
+          {({ errors, values }) => (
+            <Form className="reserva-superior-formulario">
+
+              <div className="reserva-superior-formulario-linea1">
+
+                <p>Nombre</p>
+                <Field
+                  type="text"
+                  name="nombre"
+                  placeholder={auth ? auth.nombre : null}
+                  id="nombre"
+                  readonly="readonly"
+                />
+                <ErrorMessage
+                  name="nombre"
+                  component={() => <div className="error">{errors.nombre}</div>}
+                />
+
+                <p>Correo electrónico</p>
+                <Field
+                  type="email"
+                  name="email"
+                  placeholder={auth ? auth.email : null}
+                  id="email"
+                  readonly="readonly"
+                />
+                <ErrorMessage
+                  name="email"
+                  component={() => <div className="error">{errors.email}</div>}
+                />
+              </div>
+
+
+              <div className="reserva-superior-formulario-linea2">
+
+                <p>Apellido</p>
+                <Field
+                  type="text"
+                  name="apellido"
+                  placeholder={auth ? auth.apellido : null}
+                  id="apellido"
+                  readonly="readonly"
+                />
+                <ErrorMessage
+                  name="apellido"
+                  component={() => (
+                    <div className="error">{errors.apellido}</div>
+                  )}
+                />
+
+                <p>Ciudad</p>
+                <Field
+                  type="text"
+                  name="ciudad"
+                  placeholder="Ingresa la ciudad de retiro"
+                  id="ciudad"
+                />
+                <ErrorMessage
+                  name="ciudad"
+                  component={() => (
+                    <div className="error">{errors.ciudad}</div>
+                  )}
+                />
+              </div>
+            </Form>
+          )}
+        </Formik>
 
         <div className="reserva-superior-detalle">
           <div className="reserva-superior-detalle-top">
@@ -111,6 +220,8 @@ const Reservas = () => {
           </div>
         </div>
       </div>
+
+
       <div className="reserva-horario">
         <h2>Elegí tu horario de llegada</h2>
         <p>Indica tu horario estimado de llegada</p>
@@ -124,6 +235,7 @@ const Reservas = () => {
         </p>
         <CalendarioProducto />
       </div>
+
     </div>
   );
 }

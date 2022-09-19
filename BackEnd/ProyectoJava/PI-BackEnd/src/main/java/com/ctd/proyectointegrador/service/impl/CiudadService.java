@@ -54,7 +54,8 @@ public class CiudadService implements IService<CiudadDTO> {
         ciudadBD.setNombre(actualizar.getNombre());
         ciudadBD.setProvincia(actualizar.getProvincia());
         ciudadBD.setPais(actualizar.getPais());
-        return buildResponse(mapper.convertValue(ciudadBD, CiudadDTO.class), "ciudad actualizada", 201);
+        Ciudad ciudad = ciudadRespository.save(ciudadBD);
+        return buildResponse(mapper.convertValue(ciudad, CiudadDTO.class), "ciudad actualizada", 201);
     }
 
     public Map<String, Object> eliminar(Long id) {

@@ -1,5 +1,6 @@
 package com.ctd.proyectointegrador.persistance.model;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -23,6 +24,6 @@ public class Imagen {
     private String url;
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "producto_id")
-    @JsonIgnore
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Producto producto;
 }

@@ -1,8 +1,12 @@
 package com.ctd.proyectointegrador.service.impl;
 
 import com.ctd.proyectointegrador.enums.Role;
+import com.ctd.proyectointegrador.exceptions.ResourceNotFoundException;
+import com.ctd.proyectointegrador.persistance.dto.ReservaDTO;
 import com.ctd.proyectointegrador.persistance.dto.UsuarioDTO;
+import com.ctd.proyectointegrador.persistance.model.Reserva;
 import com.ctd.proyectointegrador.persistance.model.jwt.Usuario;
+import com.ctd.proyectointegrador.persistance.repository.ReservaRepository;
 import com.ctd.proyectointegrador.persistance.repository.UsuarioRepository;
 import com.ctd.proyectointegrador.service.IService;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -16,6 +20,9 @@ import java.util.*;
 public class UsuarioService implements IService<UsuarioDTO> {
     @Autowired
     UsuarioRepository usuarioRepository;
+
+    @Autowired
+    ReservaRepository reservaRepository;
 
     @Autowired
     PasswordEncoder passwordEncoder;
@@ -43,16 +50,16 @@ public class UsuarioService implements IService<UsuarioDTO> {
 
     @Override
     public Map<String, Object> buscar(Long id) {
-        Usuario usuarios = usuarioRepository.findById(id).get();
-        return buildResponse(mapper.convertValue(usuarios, UsuarioDTO.class), "Usuario encontrado",201);
+        Usuario usuarios = usuarioRepository.findById(id).orElse(null);
+        return buildResponse(mapper.convertValue(usuarios, UsuarioDTO.class), "Usuario encontrado",200);
     }
 
     @Override
-    public Map<String, Object> actualizar(Long id, UsuarioDTO object) {
+    public Map<String, Object> actualizar(Long id, UsuarioDTO object) throws ResourceNotFoundException {
         Usuario usuarior= mapper.convertValue(object, Usuario.class);
         Usuario usuarioBD= usuarioRepository.findById(id).orElse(null);
         if(usuarioBD == null){
-            return buildResponse(new UsuarioDTO(), "no existe usuario con id "+id, 404);
+            throw new ResourceNotFoundException("no existe usuario id " + id);
         }
         usuarioBD.setNombre(usuarior.getNombre());
         usuarioBD.setApellido(usuarior.getApellido());
@@ -67,7 +74,7 @@ public class UsuarioService implements IService<UsuarioDTO> {
     public Map<String, Object> eliminar(Long id) {
         if (usuarioRepository.findById(id).isPresent()) {
             usuarioRepository.deleteById(id);
-            return buildResponse(new UsuarioDTO(), "Usuario eliminado", 201);
+            return buildResponse(new UsuarioDTO(), "Usuario eliminado", 200);
         }else {
             return buildResponse(new UsuarioDTO(), "No existe el usuario", 404);
         }
@@ -80,11 +87,22 @@ public class UsuarioService implements IService<UsuarioDTO> {
             UsuarioDTO usuarioDTO= mapper.convertValue(u, UsuarioDTO.class);
             listaDTO.add(usuarioDTO);
         }
-        return buildResponse(listaDTO, "Lista creada", 201);
+        return buildResponse(listaDTO, "Lista creada", 200);
     }
 
     public Optional<Usuario> findByUserEmail(String email) {
         return usuarioRepository.findByEmail(email);
+    }
+
+    public Map<String, Object> reservasPorId(Long id) {
+        List<Reserva> listaReservas = reservaRepository.reservasPorIdUsuario(id);
+        List<ReservaDTO> listaDTO = new ArrayList<>();
+
+        for(Reserva r : listaReservas){
+            ReservaDTO reservaDTO= mapper.convertValue(r, ReservaDTO.class);
+            listaDTO.add(reservaDTO);
+        }
+        return buildResponse(listaDTO, "Lista creada", 200);
     }
 
 }

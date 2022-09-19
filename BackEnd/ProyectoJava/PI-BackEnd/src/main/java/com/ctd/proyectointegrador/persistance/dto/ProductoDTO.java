@@ -18,24 +18,19 @@ import java.util.Set;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ProductoDTO {
 
-    private Integer id;
+    private Long id;
 
     private String titulo;
 
     private String descripcion;
 
-    private List<Imagen> imagenes;
+    private List<ImagenDTO> imagenes;
 
     private CiudadDTO ciudad;
 
     private CategoriaDTO categoria;
 
-    private Set<CaracteristicaDTO> caracteristicas;
+    private List<CaracteristicaDTO> caracteristicas;
 
-
-
-/*    @NotEmpty(message = "no debe estar vacio")
-    @NotNull(message = "no debe ser nulo")
-    private Set<Reserva> reservas = new HashSet<>();
-    private Set<ReservaDTO> reservas;*/
+    private List<ReservaDTO> reservas;
 }

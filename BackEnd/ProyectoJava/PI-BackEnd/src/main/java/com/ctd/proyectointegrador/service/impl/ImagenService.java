@@ -2,7 +2,9 @@ package com.ctd.proyectointegrador.service.impl;
 
 import com.ctd.proyectointegrador.persistance.dto.ImagenDTO;
 import com.ctd.proyectointegrador.persistance.model.Imagen;
+import com.ctd.proyectointegrador.persistance.model.Producto;
 import com.ctd.proyectointegrador.persistance.repository.ImagenRepository;
+import com.ctd.proyectointegrador.persistance.repository.ProductoRepository;
 import com.ctd.proyectointegrador.service.IService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +20,8 @@ public class ImagenService implements IService<ImagenDTO> {
 
     @Autowired
     ImagenRepository imagenRepository;
+    @Autowired
+    ProductoRepository productoRepository;
 
     @Autowired
     ObjectMapper mapper;
@@ -33,9 +37,11 @@ public class ImagenService implements IService<ImagenDTO> {
 
     @Override
         public Map<String, Object> guardar(ImagenDTO object) {
-            Imagen imagenes = mapper.convertValue(object, Imagen.class);
-            Imagen nuevaImagenes= imagenRepository.save(imagenes);
-            return buildResponse(mapper.convertValue(nuevaImagenes, ImagenDTO.class), "Imagen guardada", 201);
+            Imagen imagen = mapper.convertValue(object, Imagen.class);
+            Producto productoDB = productoRepository.findById(imagen.getProducto().getId()).orElse(null);
+            imagen.setProducto(productoDB);
+            Imagen imgRespuesta = imagenRepository.save(imagen);
+            return buildResponse(mapper.convertValue(imgRespuesta, ImagenDTO.class), "Imagen guardada", 201);
         }
 
 
@@ -43,7 +49,7 @@ public class ImagenService implements IService<ImagenDTO> {
     @Override
     public Map<String, Object> buscar(Long id) {
         Imagen imagenes = imagenRepository.findById(id).get();
-        return buildResponse(mapper.convertValue(imagenes, ImagenDTO.class),"Imagen encontrada ",201);
+        return buildResponse(mapper.convertValue(imagenes, ImagenDTO.class),"Imagen encontrada",201);
     }
 
 

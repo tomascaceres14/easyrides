@@ -18,11 +18,12 @@ const ListadoCategorias = () => {
 
   return (
     <div className="listado-container">
+      <div className="cardsProductos-categoria">
       {data &&
         data.productos.map((prod) => (
           <>
             {prod.categoria.titulo == elegirCategorias ? (
-              <div key={prod.id} className="listado-unidad">
+              <div className="listadoUnidad-categoria" key={prod.id}>
                 <img
                   src={prod.imagenes[0].url}
                   alt=""
@@ -33,6 +34,10 @@ const ListadoCategorias = () => {
                 <p className="cardsProductos-unidad-descripcion">
                   {prod.ciudad.nombre + ", " + prod.ciudad.provincia}
                 </p>
+                <div className="card-caracteristicas">{prod.caracteristicas.map((carac) => {
+                    return <p key={carac.id}><i class={carac.url}></i></p>
+                  })}
+                </div>
                 <Link
                   onClick={() => {
                     setElegirDataPaginaProductos(prod.id);
@@ -45,6 +50,8 @@ const ListadoCategorias = () => {
             ) : null}
           </>
         ))}
+      </div>
+      
     </div>
   );
 };

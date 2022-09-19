@@ -1,5 +1,6 @@
 .avatar{
     display: flex;
+    margin-top:10rem;
 }
 .avatar-nombre{
     margin-top: .4rem;
