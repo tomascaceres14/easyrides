@@ -222,25 +222,22 @@ INSERT INTO producto_caracteristica VALUES (15, 1);
 INSERT INTO producto_caracteristica VALUES (15, 2);
 INSERT INTO producto_caracteristica VALUES (15, 4);
 INSERT INTO producto_caracteristica VALUES (15, 5);
-INSERT INTO producto_caracteristica VALUES (16, );
-INSERT INTO producto_caracteristica VALUES (16, );
-INSERT INTO producto_caracteristica VALUES (16, );
-INSERT INTO producto_caracteristica VALUES (16, );
-INSERT INTO producto_caracteristica VALUES (17, );
-INSERT INTO producto_caracteristica VALUES (17, );
-INSERT INTO producto_caracteristica VALUES (17, );
-INSERT INTO producto_caracteristica VALUES (17, );
-INSERT INTO producto_caracteristica VALUES (18, );
-INSERT INTO producto_caracteristica VALUES (18, );
-INSERT INTO producto_caracteristica VALUES (18, );
-INSERT INTO producto_caracteristica VALUES (18, );
-INSERT INTO producto_caracteristica VALUES (19, );
-INSERT INTO producto_caracteristica VALUES (19, );
-INSERT INTO producto_caracteristica VALUES (19, );
-INSERT INTO producto_caracteristica VALUES (19, );
-
-
-
+INSERT INTO producto_caracteristica VALUES (16, 1);
+INSERT INTO producto_caracteristica VALUES (16, 2);
+INSERT INTO producto_caracteristica VALUES (16, 3);
+INSERT INTO producto_caracteristica VALUES (16, 4);
+INSERT INTO producto_caracteristica VALUES (17, 5);
+INSERT INTO producto_caracteristica VALUES (17, 6);
+INSERT INTO producto_caracteristica VALUES (17, 7);
+INSERT INTO producto_caracteristica VALUES (17, 8);
+INSERT INTO producto_caracteristica VALUES (18, 9);
+INSERT INTO producto_caracteristica VALUES (18, 10);
+INSERT INTO producto_caracteristica VALUES (18, 11);
+INSERT INTO producto_caracteristica VALUES (18, 6);
+INSERT INTO producto_caracteristica VALUES (19, 5);
+INSERT INTO producto_caracteristica VALUES (19, 4);
+INSERT INTO producto_caracteristica VALUES (19, 3);
+INSERT INTO producto_caracteristica VALUES (19, 10);
 
 INSERT INTO politicas VALUES (null, 'La/s personas que alquile/n el auto deben ser la/s misma/s que lo conduce/n');
 INSERT INTO politicas VALUES (null, 'Mayor de 21 años para alquilar el vehiculo.');
