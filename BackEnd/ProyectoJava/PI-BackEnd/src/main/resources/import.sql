@@ -2,7 +2,6 @@ INSERT INTO categorias VALUES (null, 'Velocidad y desempeño', 'Deportivos', 'ht
 INSERT INTO categorias VALUES (null, 'Detallado, refinado y caro',  'De Lujo', 'https://images.unsplash.com/photo-1616789916437-bbf724d10dae?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
 INSERT INTO categorias VALUES (null, 'Espacioso y comodo para grandes y niños',  'Familiares', 'https://images.unsplash.com/photo-1648902180388-e52c0fdebcd4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80');
 INSERT INTO categorias VALUES (null, 'Ideal para viajes de bajo presupuesto',  'Economicos', 'https://images.unsplash.com/photo-1639640163962-9e845bd7294a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
-INSERT INTO categorias VALUES (null, 'Ideal para aventuras por la naturaleza',  'Camionetas', 'https://images.unsplash.com/photo-1551830820-330a71b99659?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
 
 INSERT INTO ciudades VALUES (null, 'Mendoza', 'Argentina', 'Mendoza');
 INSERT INTO ciudades VALUES (null, 'Bogota', 'Colombia', 'Cundinamarca');
