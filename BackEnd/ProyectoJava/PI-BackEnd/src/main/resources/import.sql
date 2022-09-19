@@ -150,6 +150,33 @@ INSERT INTO producto_caracteristica VALUES (7, 1);
 INSERT INTO producto_caracteristica VALUES (7, 8);
 INSERT INTO producto_caracteristica VALUES (7, 10);
 INSERT INTO producto_caracteristica VALUES (7, 11);
+INSERT INTO producto_caracteristica VALUES (8, 1);
+INSERT INTO producto_caracteristica VALUES (8, 2);
+INSERT INTO producto_caracteristica VALUES (8, 6);
+INSERT INTO producto_caracteristica VALUES (8, 10);
+INSERT INTO producto_caracteristica VALUES (8, 11);
+INSERT INTO producto_caracteristica VALUES (9, 6);
+INSERT INTO producto_caracteristica VALUES (9, 10);
+INSERT INTO producto_caracteristica VALUES (10, 1);
+INSERT INTO producto_caracteristica VALUES (10, 2);
+INSERT INTO producto_caracteristica VALUES (10, 3);
+INSERT INTO producto_caracteristica VALUES (10, 8);
+INSERT INTO producto_caracteristica VALUES (10, 11);
+INSERT INTO producto_caracteristica VALUES (11, 1);
+INSERT INTO producto_caracteristica VALUES (11, 2);
+INSERT INTO producto_caracteristica VALUES (11, 3);
+INSERT INTO producto_caracteristica VALUES (11, 6);
+INSERT INTO producto_caracteristica VALUES (11, 7);
+INSERT INTO producto_caracteristica VALUES (11, 8);
+INSERT INTO producto_caracteristica VALUES (11, 11);
+INSERT INTO producto_caracteristica VALUES (12, 6);
+INSERT INTO producto_caracteristica VALUES (12, 10);
+INSERT INTO producto_caracteristica VALUES (12, 10);
+INSERT INTO producto_caracteristica VALUES (13, 1);
+INSERT INTO producto_caracteristica VALUES (13, 2);
+INSERT INTO producto_caracteristica VALUES (13, 4);
+INSERT INTO producto_caracteristica VALUES (13, 8);
+INSERT INTO producto_caracteristica VALUES (13, 11);
 
 
 
