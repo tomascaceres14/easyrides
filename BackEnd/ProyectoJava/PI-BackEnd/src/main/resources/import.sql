@@ -2,7 +2,6 @@ INSERT INTO categorias VALUES (null, 'Velocidad y desempeño', 'Deportivos', 'ht
 INSERT INTO categorias VALUES (null, 'Detallado, refinado y caro',  'De Lujo', 'https://images.unsplash.com/photo-1616789916437-bbf724d10dae?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
 INSERT INTO categorias VALUES (null, 'Espacioso y comodo para grandes y niños',  'Familiares', 'https://images.unsplash.com/photo-1648902180388-e52c0fdebcd4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80');
 INSERT INTO categorias VALUES (null, 'Ideal para viajes de bajo presupuesto',  'Economicos', 'https://images.unsplash.com/photo-1639640163962-9e845bd7294a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
-INSERT INTO categorias VALUES (null, 'Ideal para aventuras por la naturaleza',  'Camionetas', 'https://images.unsplash.com/photo-1551830820-330a71b99659?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
 
 INSERT INTO ciudades VALUES (null, 'Mendoza', 'Argentina', 'Mendoza');
 INSERT INTO ciudades VALUES (null, 'Bogota', 'Colombia', 'Cundinamarca');
@@ -17,14 +16,14 @@ INSERT INTO productos VALUES (null, 'El Ford Fiesta es un automóvil de turismo 
 INSERT INTO productos VALUES (null, 'El Fiat 600 fue un pequeño automóvil diseñado por Dante Giacosa y construido por la empresa italiana Fiat desde 1955 hasta 1969. Fue un éxito mundial que se fabricó en muchos países, en la mayoría de ellos bajo la marca Fiat.', 'Fiat 600', 4, 4);
 INSERT INTO productos VALUES (null, 'El Volkswagen Golf, el rey de los compactos. Desde su nacimiento en 1974 el alemán se ha convertido no solo en la referencia de su segmento, también en uno de los coches más populares y exitosos del mundo. También es uno de los modelos más longevos del mercado actual.', 'Volkswagen Golf', 3, 5);
 INSERT INTO productos VALUES (null, 'El Mercedes-Benz Clase S (Sonderklasse) es un automóvil de lujo del segmento F producido por el fabricante alemán Mercedes-Benz. Actualmente es el turismo más grande y lujoso de la gama. Comenzó a fabricarse desde mediados de los años 1950, y desde entonces es el sedán de lujo más vendido del mundo debido a su alta seguridad que le convierten en el sedán más seguro del mundo.', 'Mercedes-Benz Clase S', 2, 6);
-INSERT INTO productos VALUES (null, 'La Toyota Hilux es un todoterreno pick-up fabricado por Toyota desde 1968, se caracteriza por ofrecer una estética continuista y fácilmente reconocible dentro de su estirpe.', 'Toyota Hilux', 5, 1);
+INSERT INTO productos VALUES (null, 'La Toyota Hilux es un todoterreno pick-up fabricado por Toyota desde 1968, se caracteriza por ofrecer una estética continuista y fácilmente reconocible dentro de su estirpe.', 'Toyota Hilux', 2, 1);
 INSERT INTO productos VALUES (null, 'El Peugeot 5008 es un crossover familiar con alma de monovolumen, del segmento D, fabricado por Peugeot desde 2009. Emplea materiales y ajustes de buena calidad, una amplia dotación tecnológica y un diseño atractivo, con tintes futuristas que pretenden diferenciarlo del resto', 'Peugeot 5008', 3, 3);
 INSERT INTO productos VALUES (null, 'El Toyota Etios es un automóvil del Segmento B, producido por el fabricante de automotores japonés Toyota para el mercado automovilístico sudafricano y brasileño desde 2012.', 'Toyota Etios', 4, 4);
 INSERT INTO productos VALUES (null, 'El Chevrolet Corvette es un automóvil deportivo producido por el fabricante estadounidense Chevrolet, división de General Motors(GM), desde 1953. Se trata de la octava generación del Corvette y la más distinta al resto pues supone un punto de inflexión en la historia de este automóvil', 'Chevrolet Corvette C8 Stingray', 1, 2);
-INSERT INTO productos VALUES (null, 'La Toyota Tundra es una camioneta fabricada en Estados Unidos por el fabricante japonés Toyota desde mayo de 1999. Fue la segunda camioneta de tamaño completo construida por un fabricante japonés (la primera fue la Toyota T-100), y la primera camioneta de tamaño completo construida por un fabricante japonés en América del Norte.', 'Toyota Tundra', 5, 4);
+INSERT INTO productos VALUES (null, 'La Toyota Tundra es una camioneta fabricada en Estados Unidos por el fabricante japonés Toyota desde mayo de 1999. Fue la segunda camioneta de tamaño completo construida por un fabricante japonés (la primera fue la Toyota T-100), y la primera camioneta de tamaño completo construida por un fabricante japonés en América del Norte.', 'Toyota Tundra', 3, 4);
 INSERT INTO productos VALUES (null, 'El Fiat Mobi es un automóvil de turismo del segmento A que el fabricante italiano Fiat produce en Brasil para Latinoamérica desde el año 2016. El modelo reemplaza indirectamente como entrada de gama al Fiat Uno al ser la entrada de gama a la marca y hace frente a rivales de otras marcas como el Volkswagen up!, Chery QQ, Ford Ka y Renault Kwid, entre otros.', 'Fiat Mobi', 4, 6);
 INSERT INTO productos VALUES (null, 'El Nissan GT-R es un automóvil deportivo gran turismo cupé 2+2 con motor delantero montado longitudinalmente y tracción en las cuatro ruedas, producido por el fabricante japonés Nissan, lanzado en Japón el 6 de diciembre de 2007, en Estados Unidos el 7 de julio de 2008 y en el resto del mundo en marzo de 2009.', 'Nissan GT-R', 1, 3);
-INSERT INTO productos VALUES (null, 'La Nissan Frontier X-Gear se ubica en la gama media del segmento de pickups, Esta 4x4 cuenta con motor 2.3 bi-turbo diésel 190 cv y 450 nm de torque.', 'Nissan XGEAR', 5, 3);
+INSERT INTO productos VALUES (null, 'La Nissan Frontier X-Gear se ubica en la gama media del segmento de pickups, Esta 4x4 cuenta con motor 2.3 bi-turbo diésel 190 cv y 450 nm de torque.', 'Nissan XGEAR', 3, 3);
 INSERT INTO productos VALUES (null, 'El Mazda MX-5 es un automóvil deportivo tracción trasera con carrocería descapotable, es decir, un roadster, producido por el fabricante de automóviles Japonés Mazda desde 1989.', 'Mazda MX-5', 1, 1);
 INSERT INTO productos VALUES (null, 'El Toyota Corolla es un automóvil del segmento C producido por el fabricante japonés de automóviles Toyota desde el año 1966. En 1997, el Corolla se convirtió en el automóvil más vendido del mundo, desplazando de dicho sitial al Volkswagen Escarabajo, superando en la actualidad las 50 millones de unidades vendidas', 'Toyota Corolla', 3, 2);
 INSERT INTO productos VALUES (null, 'El Porsche 911 es un automóvil deportivo de lujo producido por el fabricante alemán Porsche AG, desde 1964. A través de los años, ha pasado por varias regeneraciones. De todas formas, muchas de las características del modelo original se conservan, como su configuración «todo atrás», su carrocería coupé fastback, el motor bóxer de seis cilindros y un interior con configuración 2+2 plazas.', 'Porsche 911', 2, 6);
@@ -53,7 +52,7 @@ INSERT INTO imagenes VALUES (null, 'https://www.autopista.es/uploads/s1/57/79/29
 INSERT INTO imagenes VALUES (null, 'https://noficcionweb.com.ar/wp-content/uploads/2021/07/WhatsApp-Image-2021-04-08-at-3.28.19-PM-1-1024x682.jpeg', 4);
 INSERT INTO imagenes VALUES (null, 'https://img.motoryracing.com/noticias/portada/25000/25024-n.jpg', 4);
 INSERT INTO imagenes VALUES (null, 'https://i.pinimg.com/originals/94/51/cd/9451cd4a14cbe30ea99345e1102a7ad4.jpg', 4);
-INSERT INTO imagenes VALUES (null, 'https://img.motoryracing.com/noticias/portada/25000/25024-n.jpg', 4);
+INSERT INTO imagenes VALUES (null, 'https://s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2018/03/08121006/Sergio-Ramos-llego-a-la-practica-del-Real-Madrid-en-un-Fiat-600-1920.jpg', 4);
 
 INSERT INTO imagenes VALUES (null, 'https://images.unsplash.com/photo-1572634302117-74d5936414ce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1229&q=80', 5);
 INSERT INTO imagenes VALUES (null, 'https://images.unsplash.com/photo-1572811298995-74b11ebea596?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1240&q=80', 5);
@@ -85,7 +84,7 @@ INSERT INTO imagenes VALUES (null, 'https://paraguaysobreruedas.com/wp-content/u
 INSERT INTO imagenes VALUES (null, 'https://www.amiun.com.ar/img/nuevos/31_348.jpg', 9);
 INSERT INTO imagenes VALUES (null, 'https://i0.wp.com/www.blogdecoches.net/wp-content/uploads/2018/03/Los-nuevos-Toyota-Etios-2019-Sed%C3%A1n-y-Hatch-06.jpg?w=640&ssl=1', 9);
 
-INSERT INTO imagenes VALUES (null, 'https://cuyomotor.com.ar/wp-content/uploads/2021/05/1620417607_%C2%A1Finalmente-Es-oficial-el-Corvette-Stingray-llegara-a-Europa-en.jpeg', 10);
+INSERT INTO imagenes VALUES (null, 'https://wallpaperaccess.com/full/1789781.jpg', 10);
 INSERT INTO imagenes VALUES (null, 'https://cdn.autobild.es/sites/navi.axelspringer.es/public/styles/855/public/media/image/2020/03/prueba-chevrolet-corvette-c8-stingray-1884005.jpg?itok=IjaUIF3_', 10);
 INSERT INTO imagenes VALUES (null, 'https://cdn.autobild.es/sites/navi.axelspringer.es/public/styles/855/public/media/image/2020/03/prueba-chevrolet-corvette-c8-stingray-1884013.jpg?itok=kUX6oYE9', 10);
 INSERT INTO imagenes VALUES (null, 'https://img.remediosdigitales.com/5233ad/308688/1366_2000.jpeg', 10);
@@ -100,7 +99,7 @@ INSERT INTO imagenes VALUES (null, 'https://mobi.fiat.com.ar/content/dam/fiat/ar
 INSERT INTO imagenes VALUES (null, 'https://mobi.fiat.com.ar/content/dam/fiat/argentina/products/341/galeria-mobi-02%402x.jpg', 12);
 INSERT INTO imagenes VALUES (null, 'https://mobi.fiat.com.ar/content/dam/fiat/argentina/products/341/Mobi_Like_0045.png', 12);
 INSERT INTO imagenes VALUES (null, 'https://www.megautos.com/wp-content/uploads/2020/10/Fiat-Mobi-Trekking-interior.jpg', 12);
-INSERT INTO imagenes VALUES (null, 'https://www.carpixel.net/w/5d96f75dfd2a0d00e9447573541f3932/fiat-mobi-way-wallpaper-hd-43891.jpg', 12);
+INSERT INTO imagenes VALUES (null, 'https://d1mcpktd27z5n0.cloudfront.net/cdn/blogdacarboni.com.br/uploads/20200506135914/Mobi_Extreme_002-scaled.jpeg', 12);
 
 INSERT INTO imagenes VALUES (null, 'https://images8.alphacoders.com/485/thumb-1920-485057.jpg', 13);
 INSERT INTO imagenes VALUES (null, 'https://rare-gallery.com/mocahbig/81929-nissan-gtr-nissan-cars-hd-behance-4k.jpg', 13);
@@ -126,14 +125,14 @@ INSERT INTO imagenes VALUES (null, 'https://cdn.carbuzz.com/gallery-images/2022-
 INSERT INTO imagenes VALUES (null, 'https://static.vecteezy.com/system/resources/previews/008/158/980/non_2x/side-turkey-march-01-2022-silver-toyota-corolla-is-parked-on-the-street-on-a-warm-day-against-the-backdrop-of-a-buildung-shops-free-photo.jpg', 16);
 INSERT INTO imagenes VALUES (null, 'https://cdn.motor1.com/images/mgl/MB3LX/s1/lanzamiento-toyota-corolla-gr-sport.webp', 16);
 
-INSERT INTO imagenes VALUES (null, 'https://www.carpixel.net/w/2a21cb1d938428c0f3014ae4a79b4058/porsche-911-carrera-gts-wallpaper-hd-106068.jpg', 17);
-INSERT INTO imagenes VALUES (null, 'https://www.carpointnews.com.br/wp-content/uploads/2021/06/2022-porsche-911-carrera-gts-rear-3-44.jpg', 17);
-INSERT INTO imagenes VALUES (null, 'https://www.carpixel.net/w/f0f88c9e37a25a496dc8f913d7176604/porsche-911-carrera-gts-wallpaper-hd-106072.jpg', 17);
-INSERT INTO imagenes VALUES (null, 'https://www.hdcarwallpapers.com/walls/porsche_911_carrera_4_2019_interior_4k-HD.jpg', 17);
-INSERT INTO imagenes VALUES (null, 'https://www.carpixel.net/w/7c718dee9e8d83b356fca8711896e731/porsche-911-carrera-gts-wallpaper-hd-106070.jpg', 17);
+INSERT INTO imagenes VALUES (null, 'https://cdn.motor1.com/images/mgl/YAAX6r/s1/porsche-911-sally-special.jpg', 17);
+INSERT INTO imagenes VALUES (null, 'https://autosrodando.com.mx/wp-content/uploads/2022/08/porsche-911-sally-special-01.jpg', 17);
+INSERT INTO imagenes VALUES (null, 'http://parentesis.com/imagesPosts/porsche-911-sally-special-7.jpg', 17);
+INSERT INTO imagenes VALUES (null, 'https://e00-elmundo.uecdn.es/assets/multimedia/imagenes/2022/08/16/16606613258662.jpg', 17);
+INSERT INTO imagenes VALUES (null, 'https://gossipvehiculo.com/wp-content/uploads/2022/08/porsche-911-sally-special-charity-auction-2022-rm-sotheby-s-2.jpg', 17);
 
 INSERT INTO imagenes VALUES (null, 'https://cdn.group.renault.com/ren/ar/modelos/logan/logan-L46-ph2-actualizacion-header-001.jpg.ximg.mediumx2.webp/670dbf262b.webp', 18);
-INSERT INTO imagenes VALUES (null, 'https://www.carpixel.net/w/03e391a22f7e6603808f34ec4cbbd699/dacia-logan-car-wallpaper-5981.jpg', 18);
+INSERT INTO imagenes VALUES (null, 'https://s1.1zoom.me/b5050/214/Renault_2018-19_Logan_Stepway_City_Wine_color_561136_1920x1080.jpg', 18);
 INSERT INTO imagenes VALUES (null, 'https://fotos.perfil.com/2020/01/15/renault-logan-intense-cvt-871260.jpg', 18);
 INSERT INTO imagenes VALUES (null, 'https://fotos.perfil.com/2020/01/15/renault-logan-intense-cvt-871256.jpg', 18);
 INSERT INTO imagenes VALUES (null, 'https://cdn.motor1.com/images/mgl/e2jKK/s1/critica-renault-logan-cvt.webp', 18);
