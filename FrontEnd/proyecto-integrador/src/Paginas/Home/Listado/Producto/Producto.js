@@ -27,7 +27,6 @@ const Producto = () => {
   return (
     <div>
       <>
-        
         <>
           <header>
             <div className="header-producto">
@@ -215,8 +214,9 @@ const Producto = () => {
                   {data &&
                     data.productos.caracteristicas.map((carac) => (
                       <>
-                      <p key={carac.id}><i class = {carac.url}></i> {carac.titulo} </p>
-                        
+                        <p key={carac.id}>
+                          <i class={carac.url}></i> {carac.titulo}{" "}
+                        </p>
                       </>
                     ))}
                 </div>
@@ -249,11 +249,11 @@ const Producto = () => {
                 aventura!
               </p>
               {/* {auth ? ( */}
-                <Link to={`/producto/${id}/reservas`}>
-                  <button className="IniciarReserva-boton">
-                    Iniciar Reserva
-                  </button>
-                </Link>
+              <Link to={`/producto/${id}/reservas`}>
+                <button className="IniciarReserva-boton">
+                  Iniciar Reserva
+                </button>
+              </Link>
               {/* ) : (
                 <Link to={`/login`}>
                   <button className="IniciarReserva-boton">

@@ -8,6 +8,9 @@ import { TokenUsuarioContext } from '../../../Context/TokenUsuarioContext';
 import { SearchBar } from '../Buscador/SearchBar';
 import useFetch from '../../../Hooks/useFetch';
 
+
+
+
 function Administrador(){
 
   const navigate = useNavigate();
@@ -24,7 +27,7 @@ function Administrador(){
   const { data } = useFetch(urlCiudades);
   const { data: dataCategorias } = useFetch(urlCategorias)
   const { data: dataCaracteristicas } = useFetch(urlCaracteristicas); 
-
+  
 
 
   const crearProducto = (objetoUsuario) => {
@@ -242,14 +245,12 @@ function Administrador(){
                       <label htmlFor="caracteristicas">{carac.titulo}</label>
                       <Field
                         type="checkbox"
-                        name="caracteristicas[].id"
-                        id="caracteristicas"
-                        value={carac.id}
-                        // checked={errors.carac.includes(`${carac.id}`)}
+                        name="caracteristicas"
+                        key={carac.id}
+                        id={carac.id}
                       />
                     </>
                   ))}
-
                 {/* ----------------------------checkbox---------------- */}
                 <div className="imagenes">
                   <label htmlFor="imagenes">Imagenes</label>

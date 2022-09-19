@@ -17,7 +17,8 @@ export const SearchBar = () => {
   
   const manejadorSelect = (event) => {
     
-    setElegirCiudades(event.label);
+    // setElegirCiudades(event.label);
+    setElegirCiudades(event.value);
     setDataProductos(false)
     setMostrarCategorias(false)
   };

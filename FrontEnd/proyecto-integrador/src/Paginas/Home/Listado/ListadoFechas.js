@@ -3,23 +3,26 @@ import { CiudadesContext } from "../../../Context/CiudadesContext";
 import useFetch from "../../../Hooks/useFetch";
 import { Link } from "react-router-dom";
 import { DataPaginaProductosContext } from "../../../Context/DataPaginaProductosContext";
+import { FechasParaReservaContext } from "../../../Context/FechasParaReservaContext";
 
-const ListadoCiudades = () => {
+const ListadoFechas = () => {
   // aca consumo el context de data
-  const urlProductos =
-    "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/productos";
-  const { data } = useFetch(urlProductos);
+  
   const { elegirCiudades } = useContext(CiudadesContext);
+  const { fechaInicio, setFechaInicio } = useContext(FechasParaReservaContext);
+  const { fechaFin, setFechaFin } = useContext(FechasParaReservaContext);
+  const urlProductos =
+    "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/productos/"+elegirCiudades+"/"+fechaInicio+"/"+fechaFin;
+  const { data } = useFetch(urlProductos);
   const { setElegirDataPaginaProductos } = useContext(
     DataPaginaProductosContext
   );
 
   return (
     <div className="listado-container">
-      {data &&
-        data.productos.map((prod) => (
-          <>
-            {prod.ciudad.id == elegirCiudades ? (
+        {data &&
+          data.productos.map((prod) => (
+            <>
               <div key={prod.id} className="listado-unidad">
                 <img
                   src={prod.imagenes[0].url}
@@ -39,11 +42,10 @@ const ListadoCiudades = () => {
                   <button className="listado-unidad-boton">Ver Más</button>
                 </Link>
               </div>
-            ) : null}
-          </>
-        ))}
+            </>
+          ))}
     </div>
   );
 };
 
-export default ListadoCiudades;
+export default ListadoFechas;

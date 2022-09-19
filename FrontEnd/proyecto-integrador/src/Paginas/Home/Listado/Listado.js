@@ -7,7 +7,8 @@ import ListadoCategorias from "./ListadoCategorias";
 import { DataProductosContext } from "../../../Context/DataProductosContext";
 import { MostrarCategoriasContext } from "../../../Context/MostrarCategoriasContext";
 import { DataPaginaProductosContext } from "../../../Context/DataPaginaProductosContext";
-
+import ListadoFechas from "./ListadoFechas";
+import { FechasParaReservaContext } from "../../../Context/FechasParaReservaContext";
 
 export default function Listado() {
   
@@ -16,6 +17,7 @@ export default function Listado() {
   const { setDataProductos, dataProductos } = useContext(DataProductosContext);
   const { mostrarCategorias, setMostrarCategorias } = useContext(MostrarCategoriasContext);
   const { elegirDataPaginaProductos, setElegirDataPaginaProductos } = useContext(DataPaginaProductosContext)
+  const { fechaInicio, setFechaInicio } = useContext(FechasParaReservaContext);
 
   return (
     <div className="listado-container">
@@ -23,7 +25,7 @@ export default function Listado() {
       <div className="cardsProductos">
         {/* // if comun si a es verdadero y b y c es false va a y ciudades */}
         {(() => {
-          if ( !mostrarCategorias && !dataProductos ) {
+          if (!mostrarCategorias && !dataProductos) {
             return (
               data &&
               data.productos.map((prod) => (
@@ -52,9 +54,14 @@ export default function Listado() {
                 </div>
               ))
             );
-          } else if ( dataProductos ) {
-            return <ListadoCiudades />;
-          } else if ( mostrarCategorias ) {
+          } 
+          // else if (dataProductos ) {
+          //   return <ListadoCiudades />;
+          // } 
+          else if (dataProductos ) {
+            return <ListadoFechas />;
+          } 
+          else if (mostrarCategorias) {
             return <ListadoCategorias />;
           }
         })()}
