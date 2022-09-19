@@ -59,7 +59,7 @@ public class UsuarioController {
     }
 
     @GetMapping("/{id}/reservas")
-    public ResponseEntity<Map<String, Object>> listarPorId(@PathVariable Long id){
+    public ResponseEntity<Map<String, Object>> reservaPorId(@PathVariable Long id){
         Map<String, Object> response = usuarioService.reservasPorId(id);
         codigo = (Integer) response.get("codigo");
         return ResponseEntity.status(codigo).body(response);

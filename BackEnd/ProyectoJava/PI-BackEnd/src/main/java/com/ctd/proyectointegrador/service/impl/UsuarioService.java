@@ -14,7 +14,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import javax.management.relation.RelationServiceNotRegisteredException;
 import java.util.*;
 
 @Service
@@ -96,8 +95,7 @@ public class UsuarioService implements IService<UsuarioDTO> {
     }
 
     public Map<String, Object> reservasPorId(Long id) {
-        List<Reserva> listaReservas = reservaRepository.reservasPorId(id);
-        System.out.println(listaReservas);
+        List<Reserva> listaReservas = reservaRepository.reservasPorIdUsuario(id);
         List<ReservaDTO> listaDTO = new ArrayList<>();
 
         for(Reserva r : listaReservas){

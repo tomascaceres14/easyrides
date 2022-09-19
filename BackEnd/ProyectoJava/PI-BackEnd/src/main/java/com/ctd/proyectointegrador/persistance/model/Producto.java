@@ -1,5 +1,6 @@
 package com.ctd.proyectointegrador.persistance.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -45,6 +46,7 @@ public class Producto {
             inverseJoinColumns = { @JoinColumn(name = "caracteristica_id") })
     private List<Caracteristica> caracteristicas = new ArrayList<>();
 
-    @OneToMany(mappedBy = "producto", cascade = CascadeType.REMOVE)
+    @OneToMany(mappedBy = "producto", cascade = CascadeType.ALL)
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private List<Reserva> reservas = new ArrayList<>();
 }

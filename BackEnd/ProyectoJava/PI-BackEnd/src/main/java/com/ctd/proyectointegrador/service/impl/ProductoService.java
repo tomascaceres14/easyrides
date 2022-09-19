@@ -3,6 +3,7 @@ package com.ctd.proyectointegrador.service.impl;
 import com.ctd.proyectointegrador.exceptions.ResourceNotFoundException;
 import com.ctd.proyectointegrador.persistance.dto.ImagenDTO;
 import com.ctd.proyectointegrador.persistance.dto.ProductoDTO;
+import com.ctd.proyectointegrador.persistance.dto.ReservaDTO;
 import com.ctd.proyectointegrador.persistance.model.*;
 import com.ctd.proyectointegrador.persistance.repository.*;
 import com.ctd.proyectointegrador.service.IService;
@@ -26,6 +27,9 @@ public class ProductoService implements IService<ProductoDTO> {
     CategoriaRepository categoriaRepository;
     @Autowired
     ImagenRepository imgRepository;
+
+    @Autowired
+    ReservaRepository reservaRepository;
 
     @Autowired
     CaracteristicaRepository caracteristicaRepository;
@@ -147,6 +151,17 @@ public class ProductoService implements IService<ProductoDTO> {
             listaDTO.add(prodDTO);
         }
         return buildResponse(listaDTO, "lista creada", 200);
+    }
+
+    public Map<String, Object> reservasPorId(Long id) {
+        List<Reserva> listaReservas = reservaRepository.reservasPorIdProducto(id);
+        List<ReservaDTO> listaDTO = new ArrayList<>();
+
+        for(Reserva r : listaReservas){
+            ReservaDTO reservaDTO= mapper.convertValue(r, ReservaDTO.class);
+            listaDTO.add(reservaDTO);
+        }
+        return buildResponse(listaDTO, "Lista creada", 200);
     }
 }
 
