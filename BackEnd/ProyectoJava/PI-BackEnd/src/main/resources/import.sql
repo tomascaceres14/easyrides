@@ -25,6 +25,8 @@ INSERT INTO productos VALUES (null, 'La Toyota Tundra es una camioneta fabricada
 INSERT INTO productos VALUES (null, 'El Fiat Mobi es un automóvil de turismo del segmento A que el fabricante italiano Fiat produce en Brasil para Latinoamérica desde el año 2016. El modelo reemplaza indirectamente como entrada de gama al Fiat Uno al ser la entrada de gama a la marca y hace frente a rivales de otras marcas como el Volkswagen up!, Chery QQ, Ford Ka y Renault Kwid, entre otros.', 'Fiat Mobi', 4, 6);
 INSERT INTO productos VALUES (null, 'El Nissan GT-R es un automóvil deportivo gran turismo cupé 2+2 con motor delantero montado longitudinalmente y tracción en las cuatro ruedas, producido por el fabricante japonés Nissan, lanzado en Japón el 6 de diciembre de 2007, en Estados Unidos el 7 de julio de 2008 y en el resto del mundo en marzo de 2009.', 'Nissan GT-R', 1, 3);
 /*INSERT INTO productos VALUES (null, 'El Toyota Corolla es un automóvil del segmento C producido por el fabricante japonés de automóviles Toyota desde el año 1966. En 1997, el Corolla se convirtió en el automóvil más vendido del mundo, desplazando de dicho sitial al Volkswagen Escarabajo, superando en la actualidad las 50 millones de unidades vendidas', 'Toyota Corolla', 3, 2);*/
+INSERT INTO productos VALUES (null, 'La Nissan Frontier X-Gear se ubica en la gama media del segmento de pickups, Esta 4x4 cuenta con motor 2.3 bi-turbo diésel 190 cv y 450 nm de torque.', 'Nissan XGEAR', 5, 3);
+
 
 INSERT INTO imagenes VALUES (null, 'https://www.autonocion.com/wp-content/uploads/2021/02/dodge-charger6-930x639.jpg', 1);
 INSERT INTO imagenes VALUES (null, 'https://i.pinimg.com/originals/d9/af/d2/d9afd24841980df5550c9e66867a179a.jpg', 1);
@@ -103,6 +105,12 @@ INSERT INTO imagenes VALUES (null, 'https://www.hdcarwallpapers.com/walls/nissan
 INSERT INTO imagenes VALUES (null, 'https://cdn.motor1.com/images/mgl/gv4Q8/s1/2020-nissan-gt-r-nismo.jpg', 13);
 INSERT INTO imagenes VALUES (null, 'https://cdn.motor1.com/images/mgl/0bQAW/s1/2018-nissan-gt-r-nismo-gt3.jpg', 13);
 
+INSERT INTO imagenes VALUES (null, 'https://cdn.motor1.com/images/mgl/nOWQ6/s1/lanzamiento-nissan-frontier-x-gear.jpg', 14);
+INSERT INTO imagenes VALUES (null, 'https://cdn.motor1.com/images/mgl/eEqwK/s1/lanzamiento-nissan-frontier-x-gear.jpg', 14);
+INSERT INTO imagenes VALUES (null, 'https://cdn.motor1.com/images/mgl/qAXGq/s1/lanzamiento-nissan-frontier-x-gear.jpg', 14);
+INSERT INTO imagenes VALUES (null, 'https://cdn.motor1.com/images/mgl/Nr9VM/s1/lanzamiento-nissan-frontier-x-gear.jpg', 14);
+INSERT INTO imagenes VALUES (null, 'https://cdn.motor1.com/images/mgl/Qjkr7/s1/lanzamiento-nissan-frontier-x-gear.jpg', 14);
+
 INSERT INTO caracteristicas VALUES (null, 'Transmision Automatica', 'fa-solid fa-gears');
 INSERT INTO caracteristicas VALUES (null, 'Sistema de navegacion', 'fa-sharp fa-solid fa-location-dot');
 INSERT INTO caracteristicas VALUES (null, 'Control crucero', 'fa-solid fa-ship');
@@ -173,6 +181,10 @@ INSERT INTO producto_caracteristica VALUES (13, 2);
 INSERT INTO producto_caracteristica VALUES (13, 4);
 INSERT INTO producto_caracteristica VALUES (13, 8);
 INSERT INTO producto_caracteristica VALUES (13, 11);
+INSERT INTO producto_caracteristica VALUES (14, 1);
+INSERT INTO producto_caracteristica VALUES (14, 2);
+INSERT INTO producto_caracteristica VALUES (14, 3);
+INSERT INTO producto_caracteristica VALUES (14, 7);
 
 INSERT INTO politicas VALUES (null, 'La/s personas que alquile/n el auto deben ser la/s misma/s que lo conduce/n');
 INSERT INTO politicas VALUES (null, 'Mayor de 21 años para alquilar el vehiculo.');
