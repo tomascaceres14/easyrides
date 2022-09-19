@@ -24,9 +24,12 @@ INSERT INTO productos VALUES (null, 'El Chevrolet Corvette es un automóvil depo
 INSERT INTO productos VALUES (null, 'La Toyota Tundra es una camioneta fabricada en Estados Unidos por el fabricante japonés Toyota desde mayo de 1999. Fue la segunda camioneta de tamaño completo construida por un fabricante japonés (la primera fue la Toyota T-100), y la primera camioneta de tamaño completo construida por un fabricante japonés en América del Norte.', 'Toyota Tundra', 5, 4);
 INSERT INTO productos VALUES (null, 'El Fiat Mobi es un automóvil de turismo del segmento A que el fabricante italiano Fiat produce en Brasil para Latinoamérica desde el año 2016. El modelo reemplaza indirectamente como entrada de gama al Fiat Uno al ser la entrada de gama a la marca y hace frente a rivales de otras marcas como el Volkswagen up!, Chery QQ, Ford Ka y Renault Kwid, entre otros.', 'Fiat Mobi', 4, 6);
 INSERT INTO productos VALUES (null, 'El Nissan GT-R es un automóvil deportivo gran turismo cupé 2+2 con motor delantero montado longitudinalmente y tracción en las cuatro ruedas, producido por el fabricante japonés Nissan, lanzado en Japón el 6 de diciembre de 2007, en Estados Unidos el 7 de julio de 2008 y en el resto del mundo en marzo de 2009.', 'Nissan GT-R', 1, 3);
-/*INSERT INTO productos VALUES (null, 'El Toyota Corolla es un automóvil del segmento C producido por el fabricante japonés de automóviles Toyota desde el año 1966. En 1997, el Corolla se convirtió en el automóvil más vendido del mundo, desplazando de dicho sitial al Volkswagen Escarabajo, superando en la actualidad las 50 millones de unidades vendidas', 'Toyota Corolla', 3, 2);*/
 INSERT INTO productos VALUES (null, 'La Nissan Frontier X-Gear se ubica en la gama media del segmento de pickups, Esta 4x4 cuenta con motor 2.3 bi-turbo diésel 190 cv y 450 nm de torque.', 'Nissan XGEAR', 5, 3);
-
+INSERT INTO productos VALUES (null, 'El Mazda MX-5 es un automóvil deportivo tracción trasera con carrocería descapotable, es decir, un roadster, producido por el fabricante de automóviles Japonés Mazda desde 1989.', 'Mazda MX-5', 1, 1);
+INSERT INTO productos VALUES (null, 'El Toyota Corolla es un automóvil del segmento C producido por el fabricante japonés de automóviles Toyota desde el año 1966. En 1997, el Corolla se convirtió en el automóvil más vendido del mundo, desplazando de dicho sitial al Volkswagen Escarabajo, superando en la actualidad las 50 millones de unidades vendidas', 'Toyota Corolla', 3, 2);
+INSERT INTO productos VALUES (null, 'El Porsche 911 es un automóvil deportivo de lujo producido por el fabricante alemán Porsche AG, desde 1964. A través de los años, ha pasado por varias regeneraciones. De todas formas, muchas de las características del modelo original se conservan, como su configuración «todo atrás», su carrocería coupé fastback, el motor bóxer de seis cilindros y un interior con configuración 2+2 plazas.', 'Porsche 911', 2, 1);
+INSERT INTO productos VALUES (null, 'El Dacia Logan es un automóvil de turismo del segmento B, diseñado por la firma francesa de automóviles Renault para su filial rumana Dacia. Se fabrica desde el año 2004 con motor delantero transversal y tracción delantera. Se ofrece en versiones sedán de cuatro puertas y familiar de cinco puertas, conocido como "Dacia Logan MCV". Es considerado un automóvil low cost, con un enfoque a mercados emergentes y regiones con infraestructuras en vías en desarrollo, el cual tiene una relación de costo beneficio.', 'Dacia Logan', 4, 1);
+INSERT INTO productos VALUES (null, 'El Volkswagen Gol es un automóvil del segmento B diseñado y producido en Brasil para América Latina por el fabricante alemán Volkswagen. Reemplazó al Volkswagen Brasilia y al Volkswagen Escarabajo como automóvil de bajo costo. El Gol fue líder en ventas en el mercado brasileño por más de veinte años.', 'Volkswagen Gol', 4, 1);
 
 INSERT INTO imagenes VALUES (null, 'https://www.autonocion.com/wp-content/uploads/2021/02/dodge-charger6-930x639.jpg', 1);
 INSERT INTO imagenes VALUES (null, 'https://i.pinimg.com/originals/d9/af/d2/d9afd24841980df5550c9e66867a179a.jpg', 1);
@@ -87,17 +90,17 @@ INSERT INTO imagenes VALUES (null, 'https://cdn.autobild.es/sites/navi.axelsprin
 INSERT INTO imagenes VALUES (null, 'https://cdn.autobild.es/sites/navi.axelspringer.es/public/styles/855/public/media/image/2020/03/prueba-chevrolet-corvette-c8-stingray-1884013.jpg?itok=kUX6oYE9', 10);
 INSERT INTO imagenes VALUES (null, 'https://img.remediosdigitales.com/5233ad/308688/1366_2000.jpeg', 10);
 
-INSERT INTO imagenes VALUES (null, 'https://toyotaassets.scene7.com/is/image/toyota/TUN_MY22_0077_V001-2?fmt=jpeg&fit=crop&qlt=90&wid=1500',11);
-INSERT INTO imagenes VALUES (null, 'https://toyotaassets.scene7.com/is/image/toyota/TUN_MY22_0088_V001-2?fmt=jpeg&fit=crop&qlt=90&wid=1500',11);
-INSERT INTO imagenes VALUES (null, 'https://toyotaassets.scene7.com/is/image/toyota/TUN_MY22_0050_V001-1?fmt=jpeg&fit=crop&qlt=90&wid=1500',11);
-INSERT INTO imagenes VALUES (null, 'https://toyotaassets.scene7.com/is/image/toyota/TUN_MY22_0087_V001-1?fmt=jpeg&fit=crop&qlt=90&wid=1500',11);
-INSERT INTO imagenes VALUES (null, 'https://toyotaassets.scene7.com/is/image/toyota/TUN_MY22_0047_V001-1?fmt=jpeg&fit=crop&qlt=90&wid=1500',11);
+INSERT INTO imagenes VALUES (null, 'https://toyotaassets.scene7.com/is/image/toyota/TUN_MY22_0077_V001-2?fmt=jpeg&fit=crop&qlt=90&wid=1500', 11);
+INSERT INTO imagenes VALUES (null, 'https://toyotaassets.scene7.com/is/image/toyota/TUN_MY22_0088_V001-2?fmt=jpeg&fit=crop&qlt=90&wid=1500', 11);
+INSERT INTO imagenes VALUES (null, 'https://toyotaassets.scene7.com/is/image/toyota/TUN_MY22_0050_V001-1?fmt=jpeg&fit=crop&qlt=90&wid=1500', 11);
+INSERT INTO imagenes VALUES (null, 'https://toyotaassets.scene7.com/is/image/toyota/TUN_MY22_0087_V001-1?fmt=jpeg&fit=crop&qlt=90&wid=1500', 11);
+INSERT INTO imagenes VALUES (null, 'https://toyotaassets.scene7.com/is/image/toyota/TUN_MY22_0047_V001-1?fmt=jpeg&fit=crop&qlt=90&wid=1500', 11);
 
-INSERT INTO imagenes VALUES (null, 'https://mobi.fiat.com.ar/content/dam/fiat/argentina/products/341/galeria-mobi-01%402x.jpg',12);
-INSERT INTO imagenes VALUES (null, 'https://mobi.fiat.com.ar/content/dam/fiat/argentina/products/341/galeria-mobi-02%402x.jpg',12);
-INSERT INTO imagenes VALUES (null, 'https://mobi.fiat.com.ar/content/dam/fiat/argentina/products/341/Mobi_Like_0045.png',12);
-INSERT INTO imagenes VALUES (null, 'https://www.megautos.com/wp-content/uploads/2020/10/Fiat-Mobi-Trekking-interior.jpg',12);
-INSERT INTO imagenes VALUES (null, 'https://www.carpixel.net/w/5d96f75dfd2a0d00e9447573541f3932/fiat-mobi-way-wallpaper-hd-43891.jpg',12);
+INSERT INTO imagenes VALUES (null, 'https://mobi.fiat.com.ar/content/dam/fiat/argentina/products/341/galeria-mobi-01%402x.jpg', 12);
+INSERT INTO imagenes VALUES (null, 'https://mobi.fiat.com.ar/content/dam/fiat/argentina/products/341/galeria-mobi-02%402x.jpg', 12);
+INSERT INTO imagenes VALUES (null, 'https://mobi.fiat.com.ar/content/dam/fiat/argentina/products/341/Mobi_Like_0045.png', 12);
+INSERT INTO imagenes VALUES (null, 'https://www.megautos.com/wp-content/uploads/2020/10/Fiat-Mobi-Trekking-interior.jpg', 12);
+INSERT INTO imagenes VALUES (null, 'https://www.carpixel.net/w/5d96f75dfd2a0d00e9447573541f3932/fiat-mobi-way-wallpaper-hd-43891.jpg', 12);
 
 INSERT INTO imagenes VALUES (null, 'https://images8.alphacoders.com/485/thumb-1920-485057.jpg', 13);
 INSERT INTO imagenes VALUES (null, 'https://rare-gallery.com/mocahbig/81929-nissan-gtr-nissan-cars-hd-behance-4k.jpg', 13);
@@ -110,6 +113,36 @@ INSERT INTO imagenes VALUES (null, 'https://cdn.motor1.com/images/mgl/eEqwK/s1/l
 INSERT INTO imagenes VALUES (null, 'https://cdn.motor1.com/images/mgl/qAXGq/s1/lanzamiento-nissan-frontier-x-gear.jpg', 14);
 INSERT INTO imagenes VALUES (null, 'https://cdn.motor1.com/images/mgl/Nr9VM/s1/lanzamiento-nissan-frontier-x-gear.jpg', 14);
 INSERT INTO imagenes VALUES (null, 'https://cdn.motor1.com/images/mgl/Qjkr7/s1/lanzamiento-nissan-frontier-x-gear.jpg', 14);
+
+INSERT INTO imagenes VALUES (null, 'https://www.diariomotor.com/imagenes/2014/09/mazda-mx-5-directo-2015-01-1024x759.jpg', 15);
+INSERT INTO imagenes VALUES (null, 'https://www.diariomotor.com/imagenes/2014/09/mazda-mx-5-directo-2015-02-1024x629.jpg', 15);
+INSERT INTO imagenes VALUES (null, 'https://www.mazda.mx/siteassets/mazda-mx/mycos-2021/mazda-mx-5/configura/interior/mx5-conf-int-piel-negra-2021.jpg', 15);
+INSERT INTO imagenes VALUES (null, 'https://www.mazda.mx/siteassets/mazda-mx/mycos-2022/mazda-mx-5/features/interior/mx-5_asientos_interior.jpg', 15);
+INSERT INTO imagenes VALUES (null, 'https://www.mazda.mx/siteassets/mazda-mx/mycos-2022/mazda-mx-5/features/interior/mx-5_applecarplay-interior.jpg', 15);
+
+INSERT INTO imagenes VALUES (null, 'https://images2.alphacoders.com/105/1051135.jpg', 16);
+INSERT INTO imagenes VALUES (null, 'https://www.toyota.com.ar/storage/submodels/QOtSyH6UKG.jpg', 16);
+INSERT INTO imagenes VALUES (null, 'https://cdn.carbuzz.com/gallery-images/2022-toyota-corolla-sedan-rear-angle-view-carbuzz-599395-1600.jpg', 16);
+INSERT INTO imagenes VALUES (null, 'https://static.vecteezy.com/system/resources/previews/008/158/980/non_2x/side-turkey-march-01-2022-silver-toyota-corolla-is-parked-on-the-street-on-a-warm-day-against-the-backdrop-of-a-buildung-shops-free-photo.jpg', 16);
+INSERT INTO imagenes VALUES (null, 'https://cdn.motor1.com/images/mgl/MB3LX/s1/lanzamiento-toyota-corolla-gr-sport.webp', 16);
+
+INSERT INTO imagenes VALUES (null, 'https://www.carpixel.net/w/2a21cb1d938428c0f3014ae4a79b4058/porsche-911-carrera-gts-wallpaper-hd-106068.jpg', 17);
+INSERT INTO imagenes VALUES (null, 'https://www.carpointnews.com.br/wp-content/uploads/2021/06/2022-porsche-911-carrera-gts-rear-3-44.jpg', 17);
+INSERT INTO imagenes VALUES (null, 'https://www.carpixel.net/w/f0f88c9e37a25a496dc8f913d7176604/porsche-911-carrera-gts-wallpaper-hd-106072.jpg', 17);
+INSERT INTO imagenes VALUES (null, 'https://www.hdcarwallpapers.com/walls/porsche_911_carrera_4_2019_interior_4k-HD.jpg', 17);
+INSERT INTO imagenes VALUES (null, 'https://www.carpixel.net/w/7c718dee9e8d83b356fca8711896e731/porsche-911-carrera-gts-wallpaper-hd-106070.jpg', 17);
+
+INSERT INTO imagenes VALUES (null, 'https://cdn.group.renault.com/ren/ar/modelos/logan/logan-L46-ph2-actualizacion-header-001.jpg.ximg.mediumx2.webp/670dbf262b.webp', 18);
+INSERT INTO imagenes VALUES (null, 'https://www.carpixel.net/w/03e391a22f7e6603808f34ec4cbbd699/dacia-logan-car-wallpaper-5981.jpg', 18);
+INSERT INTO imagenes VALUES (null, 'https://fotos.perfil.com/2020/01/15/renault-logan-intense-cvt-871260.jpg', 18);
+INSERT INTO imagenes VALUES (null, 'https://fotos.perfil.com/2020/01/15/renault-logan-intense-cvt-871256.jpg', 18);
+INSERT INTO imagenes VALUES (null, 'https://cdn.motor1.com/images/mgl/e2jKK/s1/critica-renault-logan-cvt.webp', 18);
+
+INSERT INTO imagenes VALUES (null, 'https://cdn.motor1.com/images/mgl/7OAnW/s1/critica-volkswagen-gol-msi-tiptronic.webp', 19);
+INSERT INTO imagenes VALUES (null, 'https://cdn.motor1.com/images/mgl/OXEkR/s1/critica-volkswagen-gol-msi-tiptronic.jpg', 19);
+INSERT INTO imagenes VALUES (null, 'https://cdn.motor1.com/images/mgl/1bO3X/s1/critica-volkswagen-gol-msi-tiptronic.jpg', 19);
+INSERT INTO imagenes VALUES (null, 'https://cdn.motor1.com/images/mgl/owLRp/s1/critica-volkswagen-gol-msi-tiptronic.jpg', 19);
+INSERT INTO imagenes VALUES (null, 'https://cdn.motor1.com/images/mgl/JqElJ/s1/critica-volkswagen-gol-msi-tiptronic.jpg', 19);
 
 INSERT INTO caracteristicas VALUES (null, 'Transmision Automatica', 'fa-solid fa-gears');
 INSERT INTO caracteristicas VALUES (null, 'Sistema de navegacion', 'fa-sharp fa-solid fa-location-dot');
@@ -185,6 +218,29 @@ INSERT INTO producto_caracteristica VALUES (14, 1);
 INSERT INTO producto_caracteristica VALUES (14, 2);
 INSERT INTO producto_caracteristica VALUES (14, 3);
 INSERT INTO producto_caracteristica VALUES (14, 7);
+INSERT INTO producto_caracteristica VALUES (15, 1);
+INSERT INTO producto_caracteristica VALUES (15, 2);
+INSERT INTO producto_caracteristica VALUES (15, 4);
+INSERT INTO producto_caracteristica VALUES (15, 5);
+INSERT INTO producto_caracteristica VALUES (16, );
+INSERT INTO producto_caracteristica VALUES (16, );
+INSERT INTO producto_caracteristica VALUES (16, );
+INSERT INTO producto_caracteristica VALUES (16, );
+INSERT INTO producto_caracteristica VALUES (17, );
+INSERT INTO producto_caracteristica VALUES (17, );
+INSERT INTO producto_caracteristica VALUES (17, );
+INSERT INTO producto_caracteristica VALUES (17, );
+INSERT INTO producto_caracteristica VALUES (18, );
+INSERT INTO producto_caracteristica VALUES (18, );
+INSERT INTO producto_caracteristica VALUES (18, );
+INSERT INTO producto_caracteristica VALUES (18, );
+INSERT INTO producto_caracteristica VALUES (19, );
+INSERT INTO producto_caracteristica VALUES (19, );
+INSERT INTO producto_caracteristica VALUES (19, );
+INSERT INTO producto_caracteristica VALUES (19, );
+
+
+
 
 INSERT INTO politicas VALUES (null, 'La/s personas que alquile/n el auto deben ser la/s misma/s que lo conduce/n');
 INSERT INTO politicas VALUES (null, 'Mayor de 21 años para alquilar el vehiculo.');
