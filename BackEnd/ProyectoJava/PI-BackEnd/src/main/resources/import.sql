@@ -1,7 +1,7 @@
 INSERT INTO categorias VALUES (null, 'Velocidad y desempeño', 'Deportivos', 'https://images.unsplash.com/photo-1588127333419-b9d7de223dcf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80');
 INSERT INTO categorias VALUES (null, 'Detallado, refinado y caro',  'De Lujo', 'https://images.unsplash.com/photo-1616789916437-bbf724d10dae?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
 INSERT INTO categorias VALUES (null, 'Espacioso y comodo para grandes y niños',  'Familiares', 'https://images.unsplash.com/photo-1648902180388-e52c0fdebcd4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80');
-INSERT INTO categorias VALUES (null, 'Espacioso y comodo para grandes y niños',  'Economicos', 'https://images.unsplash.com/photo-1639640163962-9e845bd7294a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+INSERT INTO categorias VALUES (null, 'Ideal para viajes de bajo presupuesto',  'Economicos', 'https://images.unsplash.com/photo-1639640163962-9e845bd7294a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
 INSERT INTO categorias VALUES (null, 'Ideal para aventuras por la naturaleza',  'Camionetas', 'https://images.unsplash.com/photo-1639640163962-9e845bd7294a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
 
 
@@ -26,8 +26,6 @@ INSERT INTO productos VALUES (null, 'El Chevrolet Corvette es un automóvil depo
 INSERT INTO productos VALUES (null, 'La Toyota Tundra es una camioneta fabricada en Estados Unidos por el fabricante japonés Toyota desde mayo de 1999. Fue la segunda camioneta de tamaño completo construida por un fabricante japonés (la primera fue la Toyota T-100), y la primera camioneta de tamaño completo construida por un fabricante japonés en América del Norte.', 'Toyota Tundra', 5, 4);
 INSERT INTO productos VALUES (null, 'El Fiat Mobi es un automóvil de turismo del segmento A que el fabricante italiano Fiat produce en Brasil para Latinoamérica desde el año 2016. El modelo reemplaza indirectamente como entrada de gama al Fiat Uno al ser la entrada de gama a la marca y hace frente a rivales de otras marcas como el Volkswagen up!, Chery QQ, Ford Ka y Renault Kwid, entre otros.', 'Fiat Mobi', 4, 6);
 INSERT INTO productos VALUES (null, 'El Nissan GT-R es un automóvil deportivo gran turismo cupé 2+2 con motor delantero montado longitudinalmente y tracción en las cuatro ruedas, producido por el fabricante japonés Nissan, lanzado en Japón el 6 de diciembre de 2007, en Estados Unidos el 7 de julio de 2008 y en el resto del mundo en marzo de 2009.', 'Nissan GT-R', 1, 3);
-
-
 /*INSERT INTO productos VALUES (null, 'El Toyota Corolla es un automóvil del segmento C producido por el fabricante japonés de automóviles Toyota desde el año 1966. En 1997, el Corolla se convirtió en el automóvil más vendido del mundo, desplazando de dicho sitial al Volkswagen Escarabajo, superando en la actualidad las 50 millones de unidades vendidas', 'Toyota Corolla', 3, 2);*/
 
 INSERT INTO imagenes VALUES (null, 'https://www.autonocion.com/wp-content/uploads/2021/02/dodge-charger6-930x639.jpg', 1);
@@ -94,13 +92,6 @@ INSERT INTO imagenes VALUES (null, 'https://toyotaassets.scene7.com/is/image/toy
 INSERT INTO imagenes VALUES (null, 'https://toyotaassets.scene7.com/is/image/toyota/TUN_MY22_0050_V001-1?fmt=jpeg&fit=crop&qlt=90&wid=1500',11);
 INSERT INTO imagenes VALUES (null, 'https://toyotaassets.scene7.com/is/image/toyota/TUN_MY22_0087_V001-1?fmt=jpeg&fit=crop&qlt=90&wid=1500',11);
 INSERT INTO imagenes VALUES (null, 'https://toyotaassets.scene7.com/is/image/toyota/TUN_MY22_0047_V001-1?fmt=jpeg&fit=crop&qlt=90&wid=1500',11);
-
-INSERT INTO imagenes VALUES (null, 'https://images2.alphacoders.com/105/1051135.jpg', 9);
-INSERT INTO imagenes VALUES (null, 'https://www.toyota.com.ar/storage/submodels/QOtSyH6UKG.jpg',9);
-INSERT INTO imagenes VALUES (null, 'https://cdn.carbuzz.com/gallery-images/2022-toyota-corolla-sedan-rear-angle-view-carbuzz-599395-1600.jpg',9);
-INSERT INTO imagenes VALUES (null, 'https://static.vecteezy.com/system/resources/previews/008/158/980/non_2x/side-turkey-march-01-2022-silver-toyota-corolla-is-parked-on-the-street-on-a-warm-day-against-the-backdrop-of-a-buildung-shops-free-photo.jpg',9);
-INSERT INTO imagenes VALUES (null, 'https://cdn.motor1.com/images/mgl/MB3LX/s1/lanzamiento-toyota-corolla-gr-sport.webp',9);
-
 
 INSERT INTO imagenes VALUES (null, 'https://mobi.fiat.com.ar/content/dam/fiat/argentina/products/341/galeria-mobi-01%402x.jpg',12);
 INSERT INTO imagenes VALUES (null, 'https://mobi.fiat.com.ar/content/dam/fiat/argentina/products/341/galeria-mobi-02%402x.jpg',12);
