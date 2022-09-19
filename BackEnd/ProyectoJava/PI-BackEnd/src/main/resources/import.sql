@@ -85,9 +85,10 @@ INSERT INTO imagenes VALUES (null, 'https://www.amiun.com.ar/img/nuevos/31_348.j
 INSERT INTO imagenes VALUES (null, 'https://i0.wp.com/www.blogdecoches.net/wp-content/uploads/2018/03/Los-nuevos-Toyota-Etios-2019-Sed%C3%A1n-y-Hatch-06.jpg?w=640&ssl=1', 9);
 
 INSERT INTO imagenes VALUES (null, 'https://wallpaperaccess.com/full/1789781.jpg', 10);
-INSERT INTO imagenes VALUES (null, 'https://cdn.autobild.es/sites/navi.axelspringer.es/public/styles/855/public/media/image/2020/03/prueba-chevrolet-corvette-c8-stingray-1884005.jpg?itok=IjaUIF3_', 10);
-INSERT INTO imagenes VALUES (null, 'https://cdn.autobild.es/sites/navi.axelspringer.es/public/styles/855/public/media/image/2020/03/prueba-chevrolet-corvette-c8-stingray-1884013.jpg?itok=kUX6oYE9', 10);
-INSERT INTO imagenes VALUES (null, 'https://img.remediosdigitales.com/5233ad/308688/1366_2000.jpeg', 10);
+INSERT INTO imagenes VALUES (null, 'https://i0.wp.com/tecnologiageek.com/wp-content/uploads/2019/07/2020-chevrolet-corvette-stingray.jpg?fit=1920%2C1080&ssl=1', 10);
+INSERT INTO imagenes VALUES (null, 'https://www.motoradictos.com/images/2019/07/oficial-nuevo-chevrolet-corvette-c8-stingray-1.jpg', 10);
+INSERT INTO imagenes VALUES (null, 'https://cdn.motor1.com/images/mgl/2oMAg/s1/2020-chevrolet-corvette-stingray-screenshot.jpg', 10);
+INSERT INTO imagenes VALUES (null, 'https://cdn.motor1.com/images/mgl/Bqxem/s1/2021-chevy-corvette-c8-red-mist-paint.webp', 10);
 
 INSERT INTO imagenes VALUES (null, 'https://toyotaassets.scene7.com/is/image/toyota/TUN_MY22_0077_V001-2?fmt=jpeg&fit=crop&qlt=90&wid=1500', 11);
 INSERT INTO imagenes VALUES (null, 'https://toyotaassets.scene7.com/is/image/toyota/TUN_MY22_0088_V001-2?fmt=jpeg&fit=crop&qlt=90&wid=1500', 11);
