@@ -2,8 +2,7 @@ INSERT INTO categorias VALUES (null, 'Velocidad y desempeño', 'Deportivos', 'ht
 INSERT INTO categorias VALUES (null, 'Detallado, refinado y caro',  'De Lujo', 'https://images.unsplash.com/photo-1616789916437-bbf724d10dae?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
 INSERT INTO categorias VALUES (null, 'Espacioso y comodo para grandes y niños',  'Familiares', 'https://images.unsplash.com/photo-1648902180388-e52c0fdebcd4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1172&q=80');
 INSERT INTO categorias VALUES (null, 'Ideal para viajes de bajo presupuesto',  'Economicos', 'https://images.unsplash.com/photo-1639640163962-9e845bd7294a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
-INSERT INTO categorias VALUES (null, 'Ideal para aventuras por la naturaleza',  'Camionetas', 'https://images.unsplash.com/photo-1639640163962-9e845bd7294a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
-
+INSERT INTO categorias VALUES (null, 'Ideal para aventuras por la naturaleza',  'Camionetas', 'https://images.unsplash.com/photo-1551830820-330a71b99659?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
 
 INSERT INTO ciudades VALUES (null, 'Mendoza', 'Argentina', 'Mendoza');
 INSERT INTO ciudades VALUES (null, 'Bogota', 'Colombia', 'Cundinamarca');
@@ -11,7 +10,6 @@ INSERT INTO ciudades VALUES (null, 'Cordoba', 'Argentina', 'Cordoba');
 INSERT INTO ciudades VALUES (null, 'Medellin', 'Colombia', 'Antioquia');
 INSERT INTO ciudades VALUES (null, 'CABA', 'Argentina', 'Buenos Aires');
 INSERT INTO ciudades VALUES (null, 'Cali', 'Colombia', 'Valle del Cauca');
-
 
 INSERT INTO productos VALUES (null, 'El Dodge Charger es un automóvil deportivo producido por el fabricante estadounidense Dodge, división del grupo Stellantis. A la fecha, existen diferentes generaciones en tres diferentes plataformas.', 'Dodge Charger', 1, 1);
 INSERT INTO productos VALUES (null, 'El Lamborghini Veneno es un automóvil superdeportivo de 2 puertas de tijera biplaza, con motor central-trasero montado longitudinalmente y tracción en las cuatro ruedas, producido por fabricante italiano Lamborghini.', 'Lamborghini Veneno', 2, 2);
@@ -175,9 +173,6 @@ INSERT INTO producto_caracteristica VALUES (13, 2);
 INSERT INTO producto_caracteristica VALUES (13, 4);
 INSERT INTO producto_caracteristica VALUES (13, 8);
 INSERT INTO producto_caracteristica VALUES (13, 11);
-
-
-
 
 INSERT INTO politicas VALUES (null, 'La/s personas que alquile/n el auto deben ser la/s misma/s que lo conduce/n');
 INSERT INTO politicas VALUES (null, 'Mayor de 21 años para alquilar el vehiculo.');
