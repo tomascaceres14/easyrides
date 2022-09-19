@@ -53,7 +53,7 @@ INSERT INTO imagenes VALUES (null, 'https://www.autopista.es/uploads/s1/57/79/29
 INSERT INTO imagenes VALUES (null, 'https://noficcionweb.com.ar/wp-content/uploads/2021/07/WhatsApp-Image-2021-04-08-at-3.28.19-PM-1-1024x682.jpeg', 4);
 INSERT INTO imagenes VALUES (null, 'https://img.motoryracing.com/noticias/portada/25000/25024-n.jpg', 4);
 INSERT INTO imagenes VALUES (null, 'https://i.pinimg.com/originals/94/51/cd/9451cd4a14cbe30ea99345e1102a7ad4.jpg', 4);
-INSERT INTO imagenes VALUES (null, 'https://img.motoryracing.com/noticias/portada/25000/25024-n.jpg', 4);
+INSERT INTO imagenes VALUES (null, 'https://s3.amazonaws.com/arc-wordpress-client-uploads/infobae-wp/wp-content/uploads/2018/03/08121006/Sergio-Ramos-llego-a-la-practica-del-Real-Madrid-en-un-Fiat-600-1920.jpg', 4);
 
 INSERT INTO imagenes VALUES (null, 'https://images.unsplash.com/photo-1572634302117-74d5936414ce?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1229&q=80', 5);
 INSERT INTO imagenes VALUES (null, 'https://images.unsplash.com/photo-1572811298995-74b11ebea596?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1240&q=80', 5);
@@ -85,7 +85,7 @@ INSERT INTO imagenes VALUES (null, 'https://paraguaysobreruedas.com/wp-content/u
 INSERT INTO imagenes VALUES (null, 'https://www.amiun.com.ar/img/nuevos/31_348.jpg', 9);
 INSERT INTO imagenes VALUES (null, 'https://i0.wp.com/www.blogdecoches.net/wp-content/uploads/2018/03/Los-nuevos-Toyota-Etios-2019-Sed%C3%A1n-y-Hatch-06.jpg?w=640&ssl=1', 9);
 
-INSERT INTO imagenes VALUES (null, 'https://cuyomotor.com.ar/wp-content/uploads/2021/05/1620417607_%C2%A1Finalmente-Es-oficial-el-Corvette-Stingray-llegara-a-Europa-en.jpeg', 10);
+INSERT INTO imagenes VALUES (null, 'https://wallpaperaccess.com/full/1789781.jpg', 10);
 INSERT INTO imagenes VALUES (null, 'https://cdn.autobild.es/sites/navi.axelspringer.es/public/styles/855/public/media/image/2020/03/prueba-chevrolet-corvette-c8-stingray-1884005.jpg?itok=IjaUIF3_', 10);
 INSERT INTO imagenes VALUES (null, 'https://cdn.autobild.es/sites/navi.axelspringer.es/public/styles/855/public/media/image/2020/03/prueba-chevrolet-corvette-c8-stingray-1884013.jpg?itok=kUX6oYE9', 10);
 INSERT INTO imagenes VALUES (null, 'https://img.remediosdigitales.com/5233ad/308688/1366_2000.jpeg', 10);
@@ -100,7 +100,7 @@ INSERT INTO imagenes VALUES (null, 'https://mobi.fiat.com.ar/content/dam/fiat/ar
 INSERT INTO imagenes VALUES (null, 'https://mobi.fiat.com.ar/content/dam/fiat/argentina/products/341/galeria-mobi-02%402x.jpg', 12);
 INSERT INTO imagenes VALUES (null, 'https://mobi.fiat.com.ar/content/dam/fiat/argentina/products/341/Mobi_Like_0045.png', 12);
 INSERT INTO imagenes VALUES (null, 'https://www.megautos.com/wp-content/uploads/2020/10/Fiat-Mobi-Trekking-interior.jpg', 12);
-INSERT INTO imagenes VALUES (null, 'https://www.carpixel.net/w/5d96f75dfd2a0d00e9447573541f3932/fiat-mobi-way-wallpaper-hd-43891.jpg', 12);
+INSERT INTO imagenes VALUES (null, 'https://d1mcpktd27z5n0.cloudfront.net/cdn/blogdacarboni.com.br/uploads/20200506135914/Mobi_Extreme_002-scaled.jpeg', 12);
 
 INSERT INTO imagenes VALUES (null, 'https://images8.alphacoders.com/485/thumb-1920-485057.jpg', 13);
 INSERT INTO imagenes VALUES (null, 'https://rare-gallery.com/mocahbig/81929-nissan-gtr-nissan-cars-hd-behance-4k.jpg', 13);
@@ -126,14 +126,14 @@ INSERT INTO imagenes VALUES (null, 'https://cdn.carbuzz.com/gallery-images/2022-
 INSERT INTO imagenes VALUES (null, 'https://static.vecteezy.com/system/resources/previews/008/158/980/non_2x/side-turkey-march-01-2022-silver-toyota-corolla-is-parked-on-the-street-on-a-warm-day-against-the-backdrop-of-a-buildung-shops-free-photo.jpg', 16);
 INSERT INTO imagenes VALUES (null, 'https://cdn.motor1.com/images/mgl/MB3LX/s1/lanzamiento-toyota-corolla-gr-sport.webp', 16);
 
-INSERT INTO imagenes VALUES (null, 'https://www.carpixel.net/w/2a21cb1d938428c0f3014ae4a79b4058/porsche-911-carrera-gts-wallpaper-hd-106068.jpg', 17);
-INSERT INTO imagenes VALUES (null, 'https://www.carpointnews.com.br/wp-content/uploads/2021/06/2022-porsche-911-carrera-gts-rear-3-44.jpg', 17);
-INSERT INTO imagenes VALUES (null, 'https://www.carpixel.net/w/f0f88c9e37a25a496dc8f913d7176604/porsche-911-carrera-gts-wallpaper-hd-106072.jpg', 17);
-INSERT INTO imagenes VALUES (null, 'https://www.hdcarwallpapers.com/walls/porsche_911_carrera_4_2019_interior_4k-HD.jpg', 17);
-INSERT INTO imagenes VALUES (null, 'https://www.carpixel.net/w/7c718dee9e8d83b356fca8711896e731/porsche-911-carrera-gts-wallpaper-hd-106070.jpg', 17);
+INSERT INTO imagenes VALUES (null, 'https://cdn.motor1.com/images/mgl/YAAX6r/s1/porsche-911-sally-special.jpg', 17);
+INSERT INTO imagenes VALUES (null, 'https://autosrodando.com.mx/wp-content/uploads/2022/08/porsche-911-sally-special-01.jpg', 17);
+INSERT INTO imagenes VALUES (null, 'http://parentesis.com/imagesPosts/porsche-911-sally-special-7.jpg', 17);
+INSERT INTO imagenes VALUES (null, 'https://e00-elmundo.uecdn.es/assets/multimedia/imagenes/2022/08/16/16606613258662.jpg', 17);
+INSERT INTO imagenes VALUES (null, 'https://gossipvehiculo.com/wp-content/uploads/2022/08/porsche-911-sally-special-charity-auction-2022-rm-sotheby-s-2.jpg', 17);
 
 INSERT INTO imagenes VALUES (null, 'https://cdn.group.renault.com/ren/ar/modelos/logan/logan-L46-ph2-actualizacion-header-001.jpg.ximg.mediumx2.webp/670dbf262b.webp', 18);
-INSERT INTO imagenes VALUES (null, 'https://www.carpixel.net/w/03e391a22f7e6603808f34ec4cbbd699/dacia-logan-car-wallpaper-5981.jpg', 18);
+INSERT INTO imagenes VALUES (null, 'https://s1.1zoom.me/b5050/214/Renault_2018-19_Logan_Stepway_City_Wine_color_561136_1920x1080.jpg', 18);
 INSERT INTO imagenes VALUES (null, 'https://fotos.perfil.com/2020/01/15/renault-logan-intense-cvt-871260.jpg', 18);
 INSERT INTO imagenes VALUES (null, 'https://fotos.perfil.com/2020/01/15/renault-logan-intense-cvt-871256.jpg', 18);
 INSERT INTO imagenes VALUES (null, 'https://cdn.motor1.com/images/mgl/e2jKK/s1/critica-renault-logan-cvt.webp', 18);
