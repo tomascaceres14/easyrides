@@ -20,7 +20,13 @@ INSERT INTO productos VALUES (null, 'El Fiat 600 fue un pequeño automóvil dise
 INSERT INTO productos VALUES (null, 'El Volkswagen Golf, el rey de los compactos. Desde su nacimiento en 1974 el alemán se ha convertido no solo en la referencia de su segmento, también en uno de los coches más populares y exitosos del mundo. También es uno de los modelos más longevos del mercado actual.', 'Volkswagen Golf', 3, 5);
 INSERT INTO productos VALUES (null, 'El Mercedes-Benz Clase S (Sonderklasse) es un automóvil de lujo del segmento F producido por el fabricante alemán Mercedes-Benz. Actualmente es el turismo más grande y lujoso de la gama. Comenzó a fabricarse desde mediados de los años 1950, y desde entonces es el sedán de lujo más vendido del mundo debido a su alta seguridad que le convierten en el sedán más seguro del mundo.', 'Mercedes-Benz Clase S', 2, 6);
 INSERT INTO productos VALUES (null, 'La Toyota Hilux es un todoterreno pick-up fabricado por Toyota desde 1968, se caracteriza por ofrecer una estética continuista y fácilmente reconocible dentro de su estirpe.', 'Toyota Hilux', 5, 1);
-INSERT INTO productos VALUES (null, 'El Peugeot 5008 es un crossover familiar con alma de monovolumen, del segmento D, fabricado por Peugeot desde 2009.', 'Peugeot 5008', 3, 3);
+INSERT INTO productos VALUES (null, 'El Peugeot 5008 es un crossover familiar con alma de monovolumen, del segmento D, fabricado por Peugeot desde 2009. Emplea materiales y ajustes de buena calidad, una amplia dotación tecnológica y un diseño atractivo, con tintes futuristas que pretenden diferenciarlo del resto', 'Peugeot 5008', 3, 3);
+INSERT INTO productos VALUES (null, 'El Toyota Etios es un automóvil del Segmento B, producido por el fabricante de automotores japonés Toyota para el mercado automovilístico sudafricano y brasileño desde 2012.', 'Toyota Etios', 4, 4);
+INSERT INTO productos VALUES (null, 'El Chevrolet Corvette es un automóvil deportivo producido por el fabricante estadounidense Chevrolet, división de General Motors(GM), desde 1953. Se trata de la octava generación del Corvette y la más distinta al resto pues supone un punto de inflexión en la historia de este automóvil', 'Chevrolet Corvette C8 Stingray', 1, 2);
+INSERT INTO productos VALUES (null, 'La Toyota Tundra es una camioneta fabricada en Estados Unidos por el fabricante japonés Toyota desde mayo de 1999. Fue la segunda camioneta de tamaño completo construida por un fabricante japonés (la primera fue la Toyota T-100), y la primera camioneta de tamaño completo construida por un fabricante japonés en América del Norte.', 'Toyota Tundra', 5, 4);
+INSERT INTO productos VALUES (null, 'El Fiat Mobi es un automóvil de turismo del segmento A que el fabricante italiano Fiat produce en Brasil para Latinoamérica desde el año 2016. El modelo reemplaza indirectamente como entrada de gama al Fiat Uno al ser la entrada de gama a la marca y hace frente a rivales de otras marcas como el Volkswagen up!, Chery QQ, Ford Ka y Renault Kwid, entre otros.', 'Fiat Mobi', 4, 6);
+INSERT INTO productos VALUES (null, 'El Nissan GT-R es un automóvil deportivo gran turismo cupé 2+2 con motor delantero montado longitudinalmente y tracción en las cuatro ruedas, producido por el fabricante japonés Nissan, lanzado en Japón el 6 de diciembre de 2007, en Estados Unidos el 7 de julio de 2008 y en el resto del mundo en marzo de 2009.', 'Nissan GT-R', 1, 3);
+
 
 
 INSERT INTO imagenes VALUES (null, 'https://www.autonocion.com/wp-content/uploads/2021/02/dodge-charger6-930x639.jpg', 1);
@@ -60,18 +66,46 @@ INSERT INTO imagenes VALUES (null, 'https://www.diariomotor.com/imagenes/2020/08
 INSERT INTO imagenes VALUES (null, 'https://siempreauto.com/wp-content/uploads/sites/9/2020/10/robert-locke-D199s7KvGvk-unsplash-e1605674766144.jpg?quality=60&strip=all&w=1200', 6);
 
 INSERT INTO imagenes VALUES (null, 'https://www.diariomotor.com/imagenes/picscache/1920x1600c/toyota-hilux-2021-preventa-01_1920x1600c.jpg',7);
-INSERT INTO imagenes VALUES (null, 'https://www.diariomotor.com/imagenes/2020/06/toyota-hilux-2021-07-1024x768.jpg',7);
-INSERT INTO imagenes VALUES (null, 'https://www.diariomotor.com/imagenes/2020/06/toyota-hilux-2021-06-1024x768.jpg',7);
-INSERT INTO imagenes VALUES (null, 'https://www.diariomotor.com/imagenes/2020/06/toyota-hilux-2021-05-1024x866.jpg',7);
-INSERT INTO imagenes VALUES (null, 'https://www.diariomotor.com/imagenes/2020/06/toyota-hilux-2021-02-1024x768.jpg',7);
+INSERT INTO imagenes VALUES (null, 'https://www.diariomotor.com/imagenes/2020/06/toyota-hilux-2021-07-1024x768.jpg', 7);
+INSERT INTO imagenes VALUES (null, 'https://www.diariomotor.com/imagenes/2020/06/toyota-hilux-2021-06-1024x768.jpg', 7);
+INSERT INTO imagenes VALUES (null, 'https://www.diariomotor.com/imagenes/2020/06/toyota-hilux-2021-05-1024x866.jpg', 7);
+INSERT INTO imagenes VALUES (null, 'https://www.diariomotor.com/imagenes/2020/06/toyota-hilux-2021-02-1024x768.jpg', 7);
 
 INSERT INTO imagenes VALUES (null, 'https://www.diariomotor.com/imagenes/picscache/1920x1600c/peugeot-5008-2021-0820-006_1920x1600c.jpg',8);
-INSERT INTO imagenes VALUES (null, 'https://www.diariomotor.com/imagenes/2020/09/peugeot-5008-2021-0820-008-1024x657.jpg',8);
-INSERT INTO imagenes VALUES (null, 'https://www.diariomotor.com/imagenes/2020/09/peugeot-5008-2021-0820-012-180x120.jpg',8);
-INSERT INTO imagenes VALUES (null, 'https://www.diariomotor.com/imagenes/2020/09/peugeot-5008-2021-0820-013-1024x732.jpg',8);
-INSERT INTO imagenes VALUES (null, 'https://www.diariomotor.com/imagenes/2020/09/peugeot-5008-2021-0820-011-180x120.jpg',8);
+INSERT INTO imagenes VALUES (null, 'https://www.diariomotor.com/imagenes/2020/09/peugeot-5008-2021-0820-008-1024x657.jpg', 8);
+INSERT INTO imagenes VALUES (null, 'https://www.diariomotor.com/imagenes/2020/09/peugeot-5008-2021-0820-012-180x120.jpg', 8);
+INSERT INTO imagenes VALUES (null, 'https://www.diariomotor.com/imagenes/2020/09/peugeot-5008-2021-0820-013-1024x732.jpg', 8);
+INSERT INTO imagenes VALUES (null, 'https://www.diariomotor.com/imagenes/2020/09/peugeot-5008-2021-0820-011-180x120.jpg', 8);
+
+INSERT INTO imagenes VALUES (null, 'https://paraguaysobreruedas.com/wp-content/uploads/2021/05/Toyota_Etios-1.jpg', 9);
+INSERT INTO imagenes VALUES (null, 'https://paraguaysobreruedas.com/wp-content/uploads/2021/05/Panel_Toyota_Etios.jpg', 9);
+INSERT INTO imagenes VALUES (null, 'https://paraguaysobreruedas.com/wp-content/uploads/2021/05/Interior_Toyota_Etios.jpg', 9);
+INSERT INTO imagenes VALUES (null, 'https://www.amiun.com.ar/img/nuevos/31_348.jpg', 9);
+INSERT INTO imagenes VALUES (null, 'https://i0.wp.com/www.blogdecoches.net/wp-content/uploads/2018/03/Los-nuevos-Toyota-Etios-2019-Sed%C3%A1n-y-Hatch-06.jpg?w=640&ssl=1', 9);
+
+INSERT INTO imagenes VALUES (null, 'https://cuyomotor.com.ar/wp-content/uploads/2021/05/1620417607_%C2%A1Finalmente-Es-oficial-el-Corvette-Stingray-llegara-a-Europa-en.jpeg', 10);
+INSERT INTO imagenes VALUES (null, 'https://cdn.autobild.es/sites/navi.axelspringer.es/public/styles/855/public/media/image/2020/03/prueba-chevrolet-corvette-c8-stingray-1884005.jpg?itok=IjaUIF3_', 10);
+INSERT INTO imagenes VALUES (null, 'https://cdn.autobild.es/sites/navi.axelspringer.es/public/styles/855/public/media/image/2020/03/prueba-chevrolet-corvette-c8-stingray-1884013.jpg?itok=kUX6oYE9', 10);
+INSERT INTO imagenes VALUES (null, 'https://img.remediosdigitales.com/5233ad/308688/1366_2000.jpeg', 10);
+
+INSERT INTO imagenes VALUES (null, 'https://toyotaassets.scene7.com/is/image/toyota/TUN_MY22_0077_V001-2?fmt=jpeg&fit=crop&qlt=90&wid=1500',11);
+INSERT INTO imagenes VALUES (null, 'https://toyotaassets.scene7.com/is/image/toyota/TUN_MY22_0088_V001-2?fmt=jpeg&fit=crop&qlt=90&wid=1500',11);
+INSERT INTO imagenes VALUES (null, 'https://toyotaassets.scene7.com/is/image/toyota/TUN_MY22_0050_V001-1?fmt=jpeg&fit=crop&qlt=90&wid=1500',11);
+INSERT INTO imagenes VALUES (null, 'https://toyotaassets.scene7.com/is/image/toyota/TUN_MY22_0087_V001-1?fmt=jpeg&fit=crop&qlt=90&wid=1500',11);
+INSERT INTO imagenes VALUES (null, 'https://toyotaassets.scene7.com/is/image/toyota/TUN_MY22_0047_V001-1?fmt=jpeg&fit=crop&qlt=90&wid=1500',11);
 
 
+INSERT INTO imagenes VALUES (null, 'https://mobi.fiat.com.ar/content/dam/fiat/argentina/products/341/galeria-mobi-01%402x.jpg',12);
+INSERT INTO imagenes VALUES (null, 'https://mobi.fiat.com.ar/content/dam/fiat/argentina/products/341/galeria-mobi-02%402x.jpg',12);
+INSERT INTO imagenes VALUES (null, 'https://mobi.fiat.com.ar/content/dam/fiat/argentina/products/341/Mobi_Like_0045.png',12);
+INSERT INTO imagenes VALUES (null, 'https://www.megautos.com/wp-content/uploads/2020/10/Fiat-Mobi-Trekking-interior.jpg',12);
+INSERT INTO imagenes VALUES (null, 'https://www.carpixel.net/w/5d96f75dfd2a0d00e9447573541f3932/fiat-mobi-way-wallpaper-hd-43891.jpg',12);
+
+INSERT INTO imagenes VALUES (null, 'https://images8.alphacoders.com/485/thumb-1920-485057.jpg', 13);
+INSERT INTO imagenes VALUES (null, 'https://rare-gallery.com/mocahbig/81929-nissan-gtr-nissan-cars-hd-behance-4k.jpg', 13);
+INSERT INTO imagenes VALUES (null, 'https://www.hdcarwallpapers.com/walls/nissan_gt_r_naomi_osaka_2019_4k_interior-HD.jpg', 13);
+INSERT INTO imagenes VALUES (null, 'https://cdn.motor1.com/images/mgl/gv4Q8/s1/2020-nissan-gt-r-nismo.jpg', 13);
+INSERT INTO imagenes VALUES (null, 'https://cdn.motor1.com/images/mgl/0bQAW/s1/2018-nissan-gt-r-nismo-gt3.jpg', 13);
 
 INSERT INTO caracteristicas VALUES (null, 'Transmision Automatica', 'fa-solid fa-gears');
 INSERT INTO caracteristicas VALUES (null, 'Sistema de navegacion', 'fa-sharp fa-solid fa-location-dot');
@@ -112,6 +146,13 @@ INSERT INTO producto_caracteristica VALUES (6, 1);
 INSERT INTO producto_caracteristica VALUES (6, 2);
 INSERT INTO producto_caracteristica VALUES (6, 3);
 INSERT INTO producto_caracteristica VALUES (6, 4);
+INSERT INTO producto_caracteristica VALUES (7, 1);
+INSERT INTO producto_caracteristica VALUES (7, 8);
+INSERT INTO producto_caracteristica VALUES (7, 10);
+INSERT INTO producto_caracteristica VALUES (7, 11);
+
+
+
 
 INSERT INTO politicas VALUES (null, 'La/s personas que alquile/n el auto deben ser la/s misma/s que lo conduce/n');
 INSERT INTO politicas VALUES (null, 'Mayor de 21 años para alquilar el vehiculo.');
