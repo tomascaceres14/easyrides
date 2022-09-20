@@ -31,7 +31,6 @@ function Login() {
       .then(function (response) {
         //handle success
         setAuth(response.data)
-        console.log(response);
         setTokenUsuario(response.data.token)
         console.log(tokenUsuario);
         localStorage.setItem('sesiontoken', response.data.token)

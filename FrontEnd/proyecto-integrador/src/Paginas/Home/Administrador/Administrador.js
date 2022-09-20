@@ -248,6 +248,7 @@ function Administrador(){
                         name="caracteristicas"
                         key={carac.id}
                         id={carac.id}
+                        value={carac.id}
                       />
                     </>
                   ))}
