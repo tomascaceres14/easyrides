@@ -128,20 +128,40 @@ function Administrador(){
           {({ errors }) => (
             <div className="">
               <Form className="formulario-admin">
-                <div>
-                  <label htmlFor="titulo">Nombre producto</label>
-                  <Field
-                    type="text"
-                    name="titulo"
-                    placeholder="Ej: Toyota Etios"
-                    id="titulo"
-                  />
-                  <ErrorMessage
-                    name="titulo"
-                    component={() => (
-                      <div className="error">{errors.titulo}</div>
-                    )}
-                  />
+                <div className="formulario-admin-primera-linea">
+                  <div>
+                    <label htmlFor="titulo">Nombre producto</label>
+                    <Field
+                      type="text"
+                      name="titulo"
+                      placeholder="Ej: Toyota Etios"
+                      id="titulo"
+                    />
+                    <ErrorMessage
+                      name="titulo"
+                      component={() => (
+                        <div className="error">{errors.titulo}</div>
+                      )}
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="categoria">Categoria</label>
+                    <Field as="select" name="categoria.id" id="categoria">
+                      {
+                        dataCategorias &&
+                          dataCategorias.categorias.map((cat) => (
+                            <option value={cat.id}>{cat.titulo}</option>
+                          ))
+                      }
+                    </Field>
+
+                    <ErrorMessage
+                      name="url"
+                      component={() => (
+                        <div className="error">{errors.descripcion}</div>
+                      )}
+                    />
+                  </div>
                 </div>
                 <div>
                   <label htmlFor="descripcion">Descripcion</label>
@@ -197,25 +217,6 @@ function Administrador(){
                   {/* --------------------------------------------- */}
                   <ErrorMessage
                     name="ciudad"
-                    component={() => (
-                      <div className="error">{errors.descripcion}</div>
-                    )}
-                  />
-                </div>
-                <div>
-                  <label htmlFor="categoria">Categoria</label>
-                  <Field as="select" name="categoria.id" id="categoria">
-                    {
-                      // .map((ciudad) => player.id !== props.values.player1)
-                      dataCategorias &&
-                        dataCategorias.categorias.map((cat) => (
-                          <option value={cat.id}>{cat.titulo}</option>
-                        ))
-                    }
-                  </Field>
-
-                  <ErrorMessage
-                    name="url"
                     component={() => (
                       <div className="error">{errors.descripcion}</div>
                     )}
