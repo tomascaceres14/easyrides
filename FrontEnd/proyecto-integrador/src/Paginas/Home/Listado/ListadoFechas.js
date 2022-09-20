@@ -20,6 +20,7 @@ const ListadoFechas = () => {
 
   return (
     <div className="listado-container">
+      <div className="cardsProductos-categoria">
         {data &&
           data.productos.map((prod) => (
             <>
@@ -44,6 +45,7 @@ const ListadoFechas = () => {
               </div>
             </>
           ))}
+      </div>
     </div>
   );
 };
