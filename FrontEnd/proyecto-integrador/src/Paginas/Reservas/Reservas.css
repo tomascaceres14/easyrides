@@ -1,14 +1,16 @@
 .reserva>h2 {
     font-size: 30px;
     font-weight: 600;
-    margin-left: 4rem;
+    margin-left: 2rem;
     margin-top: 2rem;
 }
 
 .reserva-superior {
     display: flex;
+    flex-flow: row wrap;
     justify-content: space-between;
 }
+
 
 .reserva-titulo {
     margin-bottom: 10px;
@@ -51,7 +53,7 @@
     box-shadow: 0 1px 4px rgb(0 0 0 / 25%);
     padding: 1rem 2rem 0rem 2rem;
     padding-bottom: 1rem;
-    margin: 2rem 2rem 2rem 4rem;
+    margin: 2rem 2rem 2rem 2rem;
     height: 13rem;
     width: 45rem;
     display: flex;
@@ -89,9 +91,13 @@
 }
 
 .reserva-superior-detalle {
+    width: 35vw;
+    position: sticky;
+    top: 25vh;
+    align-self: flex-start;
     border-radius: .5rem;
     box-shadow: 0 1px 4px rgb(0 0 0 / 25%);
-    margin: 1.8rem 4rem 2rem 0rem;
+    margin-right: 27px;
     padding: 2rem 2rem;
 }
 
@@ -154,15 +160,12 @@
     padding: 1rem;
     border-radius: .5rem;
     box-shadow: 0 1px 4px rgb(0 0 0 / 25%);
-    margin: 1rem 4rem;
+    margin: 1rem 2rem;
     width: 45rem;
-    gap: 1rem;
 }
-.reserva-horario-select{
-    margin-bottom: 1rem;
-}
+
 .reserva-inferior {
-    margin-left: 4rem;
+    margin-left: 2rem;
     margin-bottom: 2rem;
 }
 
@@ -174,4 +177,62 @@
 .reserva-inferior-titulo {
     margin-bottom: 1rem;
     margin-top: 1rem;
+}
+
+@media only screen and (max-width: 1026px) {
+    .reserva-superior-detalle {
+        width: 40vw;
+        margin-bottom: 2rem;
+        margin-left: 200px;
+    }
+}
+
+@media only screen and (max-width: 1010px) {
+    .reserva-superior-detalle {
+        width: 44vw;
+        margin-bottom: 2rem;
+        margin-left: 200px;
+    }
+}
+
+@media only screen and (max-width: 940px) {
+    .reserva-superior-detalle {
+        width: 46vw;
+        margin-bottom: 2rem;
+        margin-left: 200px;
+    }
+}
+@media only screen and (max-width: 913px) {
+    .reserva-superior-detalle {
+        width: 48vw;
+        margin-bottom: 2rem;
+        margin-left: 185px;
+    }
+}
+@media only screen and (max-width: 910px) {
+    .reserva-superior-detalle {
+        margin-left: 195px;
+    }
+}
+@media only screen and (max-width: 826px) {
+    .reserva-superior-detalle {
+        width: 50vw;
+        margin-bottom: 2rem;
+        margin-left: 200px;
+    }
+}
+
+@media only screen and (max-width: 790px) {
+    .reserva-superior-detalle {
+        width: 55vw;
+        margin-bottom: 2rem;
+        margin-left: 190px;
+    }
+}
+@media only screen and (max-width: 740px) {
+    .reserva-superior-detalle {
+        width: 60vw;
+        margin-bottom: 2rem;
+        margin-left: 185px;
+    }
 }
