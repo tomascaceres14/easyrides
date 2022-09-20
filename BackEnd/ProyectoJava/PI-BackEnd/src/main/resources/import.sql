@@ -32,6 +32,8 @@ INSERT INTO productos VALUES (null, 'El Volkswagen Gol es un automóvil del segm
 INSERT INTO productos VALUES (null, 'Esta versión deportiva del Clase C está equipada con un motor 4.0 V8 y doble turbo que desarrolla una potencia de 510 CV. Pero no sólo impresiona la cifra, sino también la manera en la que la presenta sobre el asfalto, sin demasiados remilgos y envuelto en lujo.', 'Mercedes-AMG C 63', 1, 2);
 INSERT INTO productos VALUES (null, 'El Toyota GR Supra es un deportivo biplaza japonés, de propulsión trasera y motor turboalimentado de cuatro o seis cilindros, fabricado por Toyota desde 1978', 'Toyota GR Supra', 1, 4);
 INSERT INTO productos VALUES (null, 'El Fiat Cronos es un automóvil de turismo del segmento B producido en Argentina para Latinoamérica desde inicios del año 2018, por FCA.', 'Fiat Cronos', 4, 1);
+INSERT INTO productos VALUES (null, 'El Fiat Argo es un automóvil de turismo del segmento B producido en Brasil para Latinoamérica desde el año 2017, por FCA.', 'Fiat Argo', 4, 3);
+INSERT INTO productos VALUES (null, 'El Porsche Panamera es un automóvil de lujo del segmento F, producido por el fabricante alemán de automóviles Porsche. Se trata de un automóvil sedán de cuatro puertas, con diseño de carrocería estilo fastback. Es el primer automóvil de 4 puertas desarrollado y producido por Porsche.', 'Porsche Panamera', 2, 2);
 
 
 
@@ -167,6 +169,19 @@ INSERT INTO imagenes VALUES (null, 'https://i0.wp.com/www.motorwebargentina.com/
 INSERT INTO imagenes VALUES (null, 'https://acroadtrip.blob.core.windows.net/catalogo-imagenes/xl/RT_V_bf93440ba75f406c99c135422c155b90.jpg', 22);
 INSERT INTO imagenes VALUES (null, 'https://i0.wp.com/www.motorwebargentina.com/wp-content/uploads/2020/02/5394EF2D-E9EC-4359-A998-5D6BFC06C7E7-scaled.jpeg?resize=768%2C576&ssl=1', 22);
 
+INSERT INTO imagenes VALUES (null, 'https://i0.wp.com/minutomotor.com.ar/wp-content/uploads/2018/02/FiatArgoTest-05.jpg?resize=1200%2C794&ssl=1', 23);
+INSERT INTO imagenes VALUES (null, 'https://i0.wp.com/minutomotor.com.ar/wp-content/uploads/2018/02/FiatArgoTest-08.jpg?resize=1200%2C794&ssl=1', 23);
+INSERT INTO imagenes VALUES (null, 'https://i0.wp.com/minutomotor.com.ar/wp-content/uploads/2017/09/FiatArgo2017-03.jpg?resize=1200%2C794&ssl=1', 23);
+INSERT INTO imagenes VALUES (null, 'https://i0.wp.com/minutomotor.com.ar/wp-content/uploads/2017/09/FiatArgo2017-04.jpg?resize=1200%2C794&ssl=1', 23);
+INSERT INTO imagenes VALUES (null, 'https://i0.wp.com/minutomotor.com.ar/wp-content/uploads/2017/09/FiatArgo2017-02.jpg?resize=1200%2C794&ssl=1', 23);
+
+INSERT INTO imagenes VALUES (null, 'https://cdn.motor1.com/images/mgl/wYGLN/s1/lanzamiento-porsche-panamera-turbo-s-e-hybrid.jpg', 24);
+INSERT INTO imagenes VALUES (null, 'https://cdn.motor1.com/images/mgl/LQ21l/s1/lanzamiento-porsche-panamera-turbo-s-e-hybrid.jpg', 24);
+INSERT INTO imagenes VALUES (null, 'https://cdn.motor1.com/images/mgl/e2ve8/s1/lanzamiento-porsche-panamera-turbo-s-e-hybrid.jpg', 24);
+INSERT INTO imagenes VALUES (null, 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8f/Porsche_Panamera_Engine.jpg/1024px-Porsche_Panamera_Engine.jpg', 24);
+INSERT INTO imagenes VALUES (null, 'https://cdn.motor1.com/images/mgl/nJvLE/s1/lanzamiento-porsche-panamera-turbo-s-e-hybrid.jpg', 24);
+
+
 INSERT INTO caracteristicas VALUES (null, 'Transmision Automatica', 'fa-solid fa-gears');
 INSERT INTO caracteristicas VALUES (null, 'Sistema de navegacion', 'fa-sharp fa-solid fa-location-dot');
 INSERT INTO caracteristicas VALUES (null, 'Control crucero', 'fa-solid fa-ship');
@@ -277,6 +292,20 @@ INSERT INTO producto_caracteristica VALUES (22, 1);
 INSERT INTO producto_caracteristica VALUES (22, 4);
 INSERT INTO producto_caracteristica VALUES (22, 6);
 INSERT INTO producto_caracteristica VALUES (22, 10);
+INSERT INTO producto_caracteristica VALUES (23, 1);
+ INSERT INTO producto_caracteristica VALUES (23, 4);
+ INSERT INTO producto_caracteristica VALUES (23, 6);
+ INSERT INTO producto_caracteristica VALUES (23, 10);
+ INSERT INTO producto_caracteristica VALUES (24, 1);
+ INSERT INTO producto_caracteristica VALUES (24, 2);
+ INSERT INTO producto_caracteristica VALUES (24, 3);
+ INSERT INTO producto_caracteristica VALUES (24, 4);
+ INSERT INTO producto_caracteristica VALUES (24, 5);
+ INSERT INTO producto_caracteristica VALUES (24, 6);
+ INSERT INTO producto_caracteristica VALUES (24, 8);
+ INSERT INTO producto_caracteristica VALUES (24, 9);
+ INSERT INTO producto_caracteristica VALUES (24, 10);
+ INSERT INTO producto_caracteristica VALUES (24, 11);
 
 
 INSERT INTO politicas VALUES (null, 'La/s personas que alquile/n el auto deben ser la/s misma/s que lo conduce/n');
