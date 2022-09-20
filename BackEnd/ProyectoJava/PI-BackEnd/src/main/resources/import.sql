@@ -29,6 +29,11 @@ INSERT INTO productos VALUES (null, 'El Toyota Corolla es un automóvil del segm
 INSERT INTO productos VALUES (null, 'El Porsche 911 es un automóvil deportivo de lujo producido por el fabricante alemán Porsche AG, desde 1964. A través de los años, ha pasado por varias regeneraciones. De todas formas, muchas de las características del modelo original se conservan, como su configuración «todo atrás», su carrocería coupé fastback, el motor bóxer de seis cilindros y un interior con configuración 2+2 plazas.', 'Porsche 911', 2, 6);
 INSERT INTO productos VALUES (null, 'El Dacia Logan es un automóvil de turismo del segmento B, diseñado por la firma francesa de automóviles Renault para su filial rumana Dacia. Se fabrica desde el año 2004 con motor delantero transversal y tracción delantera. Se ofrece en versiones sedán de cuatro puertas y familiar de cinco puertas, conocido como "Dacia Logan MCV". Es considerado un automóvil low cost, con un enfoque a mercados emergentes y regiones con infraestructuras en vías en desarrollo, el cual tiene una relación de costo beneficio.', 'Dacia Logan', 4, 5);
 INSERT INTO productos VALUES (null, 'El Volkswagen Gol es un automóvil del segmento B diseñado y producido en Brasil para América Latina por el fabricante alemán Volkswagen. Reemplazó al Volkswagen Brasilia y al Volkswagen Escarabajo como automóvil de bajo costo. El Gol fue líder en ventas en el mercado brasileño por más de veinte años.', 'Volkswagen Gol', 4, 5);
+INSERT INTO productos VALUES (null, 'Esta versión deportiva del Clase C está equipada con un motor 4.0 V8 y doble turbo que desarrolla una potencia de 510 CV. Pero no sólo impresiona la cifra, sino también la manera en la que la presenta sobre el asfalto, sin demasiados remilgos y envuelto en lujo.', 'Mercedes-AMG C 63', 1, 2);
+INSERT INTO productos VALUES (null, 'El Toyota GR Supra es un deportivo biplaza japonés, de propulsión trasera y motor turboalimentado de cuatro o seis cilindros, fabricado por Toyota desde 1978', 'Toyota GR Supra', 1, 4);
+INSERT INTO productos VALUES (null, 'El Fiat Cronos es un automóvil de turismo del segmento B producido en Argentina para Latinoamérica desde inicios del año 2018, por FCA.', 'Fiat Cronos', 4, 1);
+
+
 
 INSERT INTO imagenes VALUES (null, 'https://www.autonocion.com/wp-content/uploads/2021/02/dodge-charger6-930x639.jpg', 1);
 INSERT INTO imagenes VALUES (null, 'https://i.pinimg.com/originals/d9/af/d2/d9afd24841980df5550c9e66867a179a.jpg', 1);
@@ -144,6 +149,24 @@ INSERT INTO imagenes VALUES (null, 'https://cdn.motor1.com/images/mgl/1bO3X/s1/c
 INSERT INTO imagenes VALUES (null, 'https://cdn.motor1.com/images/mgl/owLRp/s1/critica-volkswagen-gol-msi-tiptronic.jpg', 19);
 INSERT INTO imagenes VALUES (null, 'https://cdn.motor1.com/images/mgl/JqElJ/s1/critica-volkswagen-gol-msi-tiptronic.jpg', 19);
 
+INSERT INTO imagenes VALUES (null, 'https://img.remediosdigitales.com/5cf577/mercedes-amg-c-63-s-2019-prueba-005/1366_2000.jpg', 20);
+INSERT INTO imagenes VALUES (null, 'https://img.remediosdigitales.com/16e82c/mercedes-amg-c-63-s-2019-prueba-011/1366_2000.jpg', 20);
+INSERT INTO imagenes VALUES (null, 'https://img.remediosdigitales.com/5c6381/mercedes-amg-c-63-s-2019-prueba-002/1366_2000.jpg', 20);
+INSERT INTO imagenes VALUES (null, 'https://img.remediosdigitales.com/e8c31e/mercedes-amg-c-63-s-2019-prueba-007/1366_2000.jpg', 20);
+INSERT INTO imagenes VALUES (null, 'https://img.remediosdigitales.com/fa949c/mercedes-amg-c-63-s-2019-prueba-009/1366_2000.jpg', 20);
+
+INSERT INTO imagenes VALUES (null, 'https://www.diariomotor.com/imagenes/picscache/1920x1600c/toyota-supra-2019-051_1920x1600c.jpg', 21);
+INSERT INTO imagenes VALUES (null, 'https://www.diariomotor.com/imagenes/2019/01/toyota-supra-interio-salpicadero-2019-043-1024x683.jpg', 21);
+INSERT INTO imagenes VALUES (null, 'https://www.diariomotor.com/imagenes/2019/01/toyota-supra-2019-031-1024x683.jpg', 21);
+INSERT INTO imagenes VALUES (null, 'https://www.diariomotor.com/imagenes/2019/01/toyota-supra-motor-capo-2019-007-1024x683.jpg', 21);
+INSERT INTO imagenes VALUES (null, 'https://www.diariomotor.com/imagenes/2019/01/toyota-supra-logo-maletero-2019-011-1024x683.jpg', 21);
+
+INSERT INTO imagenes VALUES (null, 'https://i0.wp.com/www.motorwebargentina.com/wp-content/uploads/2020/02/91392A9B-BE2D-4CE8-B36B-7EB9381972C3.jpeg?resize=1320%2C990&ssl=1', 22);
+INSERT INTO imagenes VALUES (null, 'https://acroadtrip.blob.core.windows.net/catalogo-imagenes/xl/RT_V_37c58f3f97934dd1817501ccb1d171d7.jpg', 22);
+INSERT INTO imagenes VALUES (null, 'https://i0.wp.com/www.motorwebargentina.com/wp-content/uploads/2020/02/4F69B795-4A75-48C9-A17A-3B5671919504.jpeg?resize=768%2C576&ssl=1', 22);
+INSERT INTO imagenes VALUES (null, 'https://acroadtrip.blob.core.windows.net/catalogo-imagenes/xl/RT_V_bf93440ba75f406c99c135422c155b90.jpg', 22);
+INSERT INTO imagenes VALUES (null, 'https://i0.wp.com/www.motorwebargentina.com/wp-content/uploads/2020/02/5394EF2D-E9EC-4359-A998-5D6BFC06C7E7-scaled.jpeg?resize=768%2C576&ssl=1', 22);
+
 INSERT INTO caracteristicas VALUES (null, 'Transmision Automatica', 'fa-solid fa-gears');
 INSERT INTO caracteristicas VALUES (null, 'Sistema de navegacion', 'fa-sharp fa-solid fa-location-dot');
 INSERT INTO caracteristicas VALUES (null, 'Control crucero', 'fa-solid fa-ship');
@@ -238,6 +261,23 @@ INSERT INTO producto_caracteristica VALUES (19, 5);
 INSERT INTO producto_caracteristica VALUES (19, 4);
 INSERT INTO producto_caracteristica VALUES (19, 3);
 INSERT INTO producto_caracteristica VALUES (19, 10);
+INSERT INTO producto_caracteristica VALUES (20, 1);
+INSERT INTO producto_caracteristica VALUES (20, 2);
+INSERT INTO producto_caracteristica VALUES (20, 3);
+INSERT INTO producto_caracteristica VALUES (20, 4);
+INSERT INTO producto_caracteristica VALUES (20, 8);
+INSERT INTO producto_caracteristica VALUES (20, 11);
+INSERT INTO producto_caracteristica VALUES (21, 1);
+INSERT INTO producto_caracteristica VALUES (21, 2);
+INSERT INTO producto_caracteristica VALUES (21, 3);
+INSERT INTO producto_caracteristica VALUES (21, 4);
+INSERT INTO producto_caracteristica VALUES (21, 8);
+INSERT INTO producto_caracteristica VALUES (21, 11);
+INSERT INTO producto_caracteristica VALUES (22, 1);
+INSERT INTO producto_caracteristica VALUES (22, 4);
+INSERT INTO producto_caracteristica VALUES (22, 6);
+INSERT INTO producto_caracteristica VALUES (22, 10);
+
 
 INSERT INTO politicas VALUES (null, 'La/s personas que alquile/n el auto deben ser la/s misma/s que lo conduce/n');
 INSERT INTO politicas VALUES (null, 'Mayor de 21 años para alquilar el vehiculo.');
