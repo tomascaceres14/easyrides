@@ -28,6 +28,7 @@ function Calendario() {
         onChange={setFechasCalendarioPersistencia}
         value={fechasCalendarioPersistencia}
         minDate={new Date()}
+        clearIcon={null}
       />
       {setFechaInicio(
         dayjs(fechasCalendarioPersistencia[0]).format("YYYY-MM-DD")

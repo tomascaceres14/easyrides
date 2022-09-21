@@ -14,24 +14,36 @@ function CalendarioProducto() {
   const { fechaInicio, setFechaInicio } = useContext(FechasParaReservaContext);
   const { fechaFin, setFechaFin } = useContext(FechasParaReservaContext);
   const { fechasCalendarioPersistencia, setFechasCalendarioPersistencia } = useContext(FechasCalendarioPersistenciaContext);
-  const [fechaInicioDisabled,setFechaInicioDisabled] = useState()
+  const [fechaInicioDisabled, setFechaInicioDisabled] = useState();
+  const [fechaFinDisabled, setFechaFinDisabled] = useState();
   const { id } = useParams();
   const urlReservas =
-    "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/productos/"+id+"/reservas";  
-  const {data} = useFetch(urlReservas)
-  const disabledDates = [(fechaInicio)];
-  // const disabledDates = [(dayjs(fechaInicio).format("YYYY,MM,DD"))];
-  // const disabledDates = fechaInicio
+    "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/productos/" +
+    id +
+    "/reservas";
+  const { data } = useFetch(urlReservas);
+ 
+  const disabledDates = [
+    // new Date(fechaInicioDisabled),
+    // new Date(fechaFinDisabled)
+  ];
+  
+  
+
   return (
     <div className="calendarioInteractivo">
-      {console.log(fechaInicio)}
-      {console.log(disabledDates)}
       {useEffect(() => {
         data &&
           data.productos.map((prod) => (
-            <>{setFechaInicioDisabled(prod.fechaInicial)}</>
+            <>
+              <div key={prod.id}>
+                {/* {setFechaInicioDisabled(prod.fechaInicial)}, */}
+                {setFechaFinDisabled(prod.fechaFinal)},
+                {console.log(fechaFinDisabled)}
+              </div>
+            </>
           ));
-      }, [])}
+      }, [data])}
 
       <>
         <Calendar
@@ -40,15 +52,15 @@ function CalendarioProducto() {
           minDate={new Date()}
           showDoubleView={true}
           selectRange={true}
-          // tileDisabled={({ date, view }) =>
-          //   view === "month" && // Block day tiles only
-          //   disabledDates.some(
-          //     (disabledDate) =>
-          //       date.getFullYear() === disabledDate.getFullYear() &&
-          //       date.getMonth() === disabledDate.getMonth() &&
-          //       date.getDate() === disabledDate.getDate()
-          //   )
-          // }
+          tileDisabled={({ date, view }) =>
+            view === "month" && // Block day tiles only
+            disabledDates.some(
+              (disabledDate) =>
+                date.getFullYear() === disabledDate.getFullYear() &&
+                date.getMonth() === disabledDate.getMonth() &&
+                date.getDate() === disabledDate.getDate()
+            )
+          }
         />
       </>
 

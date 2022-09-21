@@ -141,10 +141,7 @@ const Reservas = () => {
                   id="nombre"
                   readonly="readonly"
                 />
-                <ErrorMessage
-                  name="nombre"
-                  component={() => <div className="error">{errors.nombre}</div>}
-                />
+                
 
                 <p>Correo electrónico</p>
                 <Field
@@ -154,10 +151,7 @@ const Reservas = () => {
                   id="email"
                   readonly="readonly"
                 />
-                <ErrorMessage
-                  name="email"
-                  component={() => <div className="error">{errors.email}</div>}
-                />
+              
               </div>
 
 
@@ -171,12 +165,7 @@ const Reservas = () => {
                   id="apellido"
                   readonly="readonly"
                 />
-                <ErrorMessage
-                  name="apellido"
-                  component={() => (
-                    <div className="error">{errors.apellido}</div>
-                  )}
-                />
+                
 
                 <p>Ciudad</p>
                 <Field

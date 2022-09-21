@@ -4,7 +4,7 @@
     text-align: center;
     cursor: pointer;
 }
-.react-daterange-picker__button:enabled:hover .react-daterange-picker__button__icon, .react-daterange-picker__button:enabled:focus .react-daterange-picker__button__icon{
+.react-daterange-picker__button:enabled:hover .react-daterange-picker__button__icon, .react-daterange-picker__button:enabled:focus .react-daterange-picker__button__icon[disabled]{
     stroke: black;
 }
 .calendario .react-daterange-picker__wrapper {
