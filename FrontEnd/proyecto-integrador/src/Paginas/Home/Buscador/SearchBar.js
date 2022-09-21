@@ -1,11 +1,14 @@
 // import { formatRelative } from "date-fns";
 import React, { useState, useContext } from "react";
 import Select from "react-select";
+import makeAnimated from "react-select/animated";
 import "./SearchBar.css";
 import useFetch from "../../../Hooks/useFetch";
 import { CiudadesContext } from "../../../Context/CiudadesContext";
 import { DataProductosContext } from "../../../Context/DataProductosContext";
 import { MostrarCategoriasContext } from "../../../Context/MostrarCategoriasContext";
+  const animatedComponents = makeAnimated();
+
 export const SearchBar = () => {
   const urlCiudades = "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/ciudades";
   const { data } = useFetch(urlCiudades);
@@ -14,7 +17,7 @@ export const SearchBar = () => {
   // context de busquedas que va a guardar elegirciudades y el resultado filtrado 
   const { elegirCiudades, setElegirCiudades } = useContext(CiudadesContext);
   const { setMostrarCategorias } = useContext(MostrarCategoriasContext);
-  
+
   const manejadorSelect = (event) => {
     
     // setElegirCiudades(event.label);
@@ -35,12 +38,8 @@ export const SearchBar = () => {
             value: ciudad.id,
           }))
         }
-        onChange={
-          manejadorSelect 
-          
-        }
+        onChange={manejadorSelect}
         placeholder={<div>Elegí tu ciudad</div>}
-        
       />
     </div>
   );

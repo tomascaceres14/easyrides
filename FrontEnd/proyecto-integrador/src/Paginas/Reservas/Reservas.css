@@ -163,7 +163,9 @@
     margin: 1rem 2rem;
     width: 45rem;
 }
-
+.reserva-horario-select {
+    margin-bottom: 1rem;
+}
 .reserva-inferior {
     margin-left: 2rem;
     margin-bottom: 2rem;

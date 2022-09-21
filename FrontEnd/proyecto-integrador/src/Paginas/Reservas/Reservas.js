@@ -63,16 +63,19 @@ const Reservas = () => {
     <div className="reserva">
       <h2>Solicitá tu reserva</h2>
       <div className="reserva-superior">
-        <div className="reserva-estatic">
-          <Formik
-            initialValues={{
-              nombre: "",
-              apellido: "",
-              email: "",
-              ciudad: "",
-            }}
-            validate={(valores) => {
-              let errores = {};
+
+        <Formik
+
+          initialValues={{
+            nombre: "",
+            apellido: "",
+            email: "",
+            ciudad: "",
+
+          }}
+
+          validate={(valores) => {
+            let errores = {};
 
               //validacion nombre
               if (!valores.nombre) {
@@ -110,91 +113,68 @@ const Reservas = () => {
                   "La ciudad solo puede contener letras y espacios, pueden llevar acentos.";
               }
 
-              return errores;
-            }}
-          >
-            {({ errors, values }) => (
-              <Form className="reserva-superior-formulario">
-                <div className="reserva-superior-formulario-linea1">
-                  <p>Nombre</p>
-                  <Field
-                    type="text"
-                    name="nombre"
-                    placeholder={auth ? auth.nombre : null}
-                    id="nombre"
-                    readonly="readonly"
-                  />
-                  <ErrorMessage
-                    name="nombre"
-                    component={() => (
-                      <div className="error">{errors.nombre}</div>
-                    )}
-                  />
 
-                  <p>Correo electrónico</p>
-                  <Field
-                    type="email"
-                    name="email"
-                    placeholder={auth ? auth.email : null}
-                    id="email"
-                    readonly="readonly"
-                  />
-                  <ErrorMessage
-                    name="email"
-                    component={() => (
-                      <div className="error">{errors.email}</div>
-                    )}
-                  />
-                </div>
+            return errores;
+          }}
+        >
 
-                <div className="reserva-superior-formulario-linea2">
-                  <p>Apellido</p>
-                  <Field
-                    type="text"
-                    name="apellido"
-                    placeholder={auth ? auth.apellido : null}
-                    id="apellido"
-                    readonly="readonly"
-                  />
-                  <ErrorMessage
-                    name="apellido"
-                    component={() => (
-                      <div className="error">{errors.apellido}</div>
-                    )}
-                  />
+          {({ errors, values }) => (
+            <Form className="reserva-superior-formulario">
 
-                  <p>Ciudad</p>
-                  <Field
-                    type="text"
-                    name="ciudad"
-                    placeholder="Ingresa la ciudad de retiro"
-                    id="ciudad"
-                  />
-                  <ErrorMessage
-                    name="ciudad"
-                    component={() => (
-                      <div className="error">{errors.ciudad}</div>
-                    )}
-                  />
-                </div>
-              </Form>
-            )}
-          </Formik>
-          <div className="reserva-horario">
-            <h2>Elegí tu horario de llegada</h2>
-            <p>Indica tu horario estimado de llegada</p>
-          </div>
-          <div className="reserva-inferior">
-            <h2 className="reserva-inferior-titulo">
-              Seleccioná la fecha de tu reserva
-            </h2>
-            <p>
-              Agregá la fecha de tu viaje para poder obtener los mejores
-              precios.
-            </p>
-            <CalendarioProducto />
-          </div>
-        </div>
+              <div className="reserva-superior-formulario-linea1">
+
+                <p>Nombre</p>
+                <Field
+                  type="text"
+                  name="nombre"
+                  placeholder={auth ? auth.nombre : null}
+                  id="nombre"
+                  readonly="readonly"
+                />
+                
+
+                <p>Correo electrónico</p>
+                <Field
+                  type="email"
+                  name="email"
+                  placeholder={auth ? auth.email : null}
+                  id="email"
+                  readonly="readonly"
+                />
+              
+              </div>
+
+
+              <div className="reserva-superior-formulario-linea2">
+
+                <p>Apellido</p>
+                <Field
+                  type="text"
+                  name="apellido"
+                  placeholder={auth ? auth.apellido : null}
+                  id="apellido"
+                  readonly="readonly"
+                />
+                
+
+                <p>Ciudad</p>
+                <Field
+                  type="text"
+                  name="ciudad"
+                  placeholder="Ingresa la ciudad de retiro"
+                  id="ciudad"
+                />
+                <ErrorMessage
+                  name="ciudad"
+                  component={() => (
+                    <div className="error">{errors.ciudad}</div>
+                  )}
+                />
+              </div>
+            </Form>
+          )}
+        </Formik>
+
         <div className="reserva-superior-detalle">
           <div className="reserva-superior-detalle-top">
             <img
