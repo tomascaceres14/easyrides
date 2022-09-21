@@ -9,8 +9,10 @@ import dayjs from "dayjs";
 import { useParams } from "react-router";
 import useFetch from "../../../../Hooks/useFetch";
 
+
 function CalendarioProducto() {
   // const [value, onChange] = useState([new Date(), new Date()]);
+
   const { fechaInicio, setFechaInicio } = useContext(FechasParaReservaContext);
   const { fechaFin, setFechaFin } = useContext(FechasParaReservaContext);
   const { fechasCalendarioPersistencia, setFechasCalendarioPersistencia } = useContext(FechasCalendarioPersistenciaContext);
@@ -24,27 +26,28 @@ function CalendarioProducto() {
   const { data } = useFetch(urlReservas);
  
   const disabledDates = [
-    // new Date(fechaInicioDisabled),
-    // new Date(fechaFinDisabled)
+    new Date(fechaInicioDisabled),
+    new Date(fechaFinDisabled),
   ];
+
   
   
 
   return (
     <div className="calendarioInteractivo">
+   
       {useEffect(() => {
         data &&
           data.productos.map((prod) => (
             <>
               <div key={prod.id}>
-                {/* {setFechaInicioDisabled(prod.fechaInicial)}, */}
+                {setFechaInicioDisabled(prod.fechaInicial)},
                 {setFechaFinDisabled(prod.fechaFinal)},
-                {console.log(fechaFinDisabled)}
               </div>
             </>
           ));
       }, [data])}
-
+    
       <>
         <Calendar
           onChange={setFechasCalendarioPersistencia}

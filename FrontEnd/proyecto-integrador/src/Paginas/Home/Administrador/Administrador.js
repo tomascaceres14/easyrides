@@ -104,7 +104,6 @@ function Administrador(){
           {({ values }) => (
             <div className="">
               <Form className="formulario-admin">
-                
                 <div className="formulario-admin-primera-linea">
                   <div>
                     <label
@@ -117,11 +116,11 @@ function Administrador(){
                       type="text"
                       name="titulo"
                       placeholder="Ej: Toyota Etios"
-                      id="titulo"
+                      id="descripcion"
                     />
                   </div>
-
-                  <div>
+                  
+                  
                     <div className="formulario-admin-selects">
                       <div>
                         <label htmlFor="categoria">Categoria</label>
@@ -142,43 +141,46 @@ function Administrador(){
                           ))}
                       </Field>
                       {/* --------------------------------------------- */}
-                      </div>
 
-                      <div key={caracteristicas0.id}>
-                        <Field as="select" name="caracteristicas[0].id">
-                          <option defaultValue>Elegi tu categoria</option>
-                          <option value={caracteristicas0Id}>
-                            {caracteristicas0Titulo}
-                          </option>
-                        </Field>
-                      </div>
-                      <div key={caracteristicas1.id}>
-                        <Field as="select" name="caracteristicas[1].id">
-                          <option defaultValue>Elegi tu categoria</option>
-                          <option value={caracteristicas1Id}>
-                            {caracteristicas1Titulo}
-                          </option>
-                        </Field>
-                      </div>
-                      <div key={caracteristicas2.id}>
-                        <Field as="select" name="caracteristicas[2].id">
-                          <option defaultValue>Elegi tu categoria</option>
-                          <option value={caracteristicas2Id}>
-                            {caracteristicas2Titulo}
-                          </option>
-                        </Field>
-                      </div>
-                      <div key={caracteristicas3.id}>
-                        <Field as="select" name="caracteristicas[3].id">
-                          <option defaultValue>Elegi tu categoria</option>
-                          <option value={caracteristicas3Id}>
-                            {caracteristicas3Titulo}
-                          </option>
-                        </Field>
-                      </div>
+                    <div key={caracteristicas0.id}>
+                      <Field as="select" name="caracteristicas[0].id">
+                        <option defaultValue>Elegi la caracteristica</option>
+                        <option value={caracteristicas0Id}>
+                          {caracteristicas0Titulo}
+                        </option>
+                      </Field>
+                    </div>
+                    <div key={caracteristicas1.id}>
+                      <Field as="select" name="caracteristicas[1].id">
+                        <option defaultValue>Elegi la caracteristica</option>
+                        <option value={caracteristicas1Id}>
+                          {caracteristicas1Titulo}
+                        </option>
+                      </Field>
+                    </div>
+                    <div key={caracteristicas2.id}>
+                      <Field as="select" name="caracteristicas[2].id">
+                        <option defaultValue>Elegi la caracteristica</option>
+                        <option value={caracteristicas2Id}>
+                          {caracteristicas2Titulo}
+                        </option>
+                      </Field>
+                    </div>
+                    <div key={caracteristicas3.id}>
+                      <Field as="select" name="caracteristicas[3].id">
+                        <option defaultValue>Elegi la caracteristica</option>
+                        <option value={caracteristicas3Id}>
+                          {caracteristicas3Titulo}
+                        </option>
+                      </Field>
+                    </div>
+
+                    </div>
+
+                    
                   </div>
-                  
-                </div>
+                
+
                 <div>
                   <label htmlFor="descripcion">Descripcion</label>
                   <Field
