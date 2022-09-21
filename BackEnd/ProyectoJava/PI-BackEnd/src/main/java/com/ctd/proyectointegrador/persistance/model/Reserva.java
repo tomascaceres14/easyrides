@@ -43,17 +43,6 @@ public class Reserva implements Comparator<Reserva> {
     @JoinColumn(name = "usuario_id")
     private Usuario usuario;
 
-    @JsonIgnore
-    public Producto getProducto() {
-        return producto;
-    }
-
-    @JsonProperty
-    public void setProducto(Producto producto) {
-        this.producto = producto;
-    }
-
-
     @Override
     public int compare(Reserva o1, Reserva o2) {
         return o1.getId().compareTo(o2.getId());

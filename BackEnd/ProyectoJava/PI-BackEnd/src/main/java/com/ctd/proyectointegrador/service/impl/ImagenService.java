@@ -2,6 +2,7 @@ package com.ctd.proyectointegrador.service.impl;
 
 import com.ctd.proyectointegrador.persistance.dto.ImagenDTO;
 import com.ctd.proyectointegrador.persistance.model.Imagen;
+import com.ctd.proyectointegrador.persistance.model.Producto;
 import com.ctd.proyectointegrador.persistance.repository.ImagenRepository;
 import com.ctd.proyectointegrador.persistance.repository.ProductoRepository;
 import com.ctd.proyectointegrador.service.IService;
@@ -37,9 +38,10 @@ public class ImagenService implements IService<ImagenDTO> {
     @Override
         public Map<String, Object> guardar(ImagenDTO object) {
             Imagen imagen = mapper.convertValue(object, Imagen.class);
-            imagen.setProducto(productoRepository.findById(imagen.getProducto().getId()).get());
-            Imagen nuevaImagen= imagenRepository.save(imagen);
-            return buildResponse(mapper.convertValue(nuevaImagen, ImagenDTO.class), "Imagen guardada", 201);
+            Producto productoDB = productoRepository.findById(imagen.getProducto().getId()).orElse(null);
+            imagen.setProducto(productoDB);
+            Imagen imgRespuesta = imagenRepository.save(imagen);
+            return buildResponse(mapper.convertValue(imgRespuesta, ImagenDTO.class), "Imagen guardada", 201);
         }
 
 
@@ -47,7 +49,7 @@ public class ImagenService implements IService<ImagenDTO> {
     @Override
     public Map<String, Object> buscar(Long id) {
         Imagen imagenes = imagenRepository.findById(id).get();
-        return buildResponse(mapper.convertValue(imagenes, ImagenDTO.class),"Imagen encontrada ",201);
+        return buildResponse(mapper.convertValue(imagenes, ImagenDTO.class),"Imagen encontrada",201);
     }
 
 

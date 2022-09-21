@@ -31,8 +31,8 @@ function Login() {
       .then(function (response) {
         //handle success
         setAuth(response.data)
-        console.log(auth);
         setTokenUsuario(response.data.token)
+        console.log(tokenUsuario);
         localStorage.setItem('sesiontoken', response.data.token)
         setCerrarLogin(true)
         navigate("/");
@@ -67,9 +67,6 @@ function Login() {
         
         //VER ESTO PARA RESETEAR FORM
         onSubmitProps.resetForm();
-
-        
-
       }}
 
       validate={(valores) => {

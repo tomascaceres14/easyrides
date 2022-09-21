@@ -3,17 +3,20 @@ package com.ctd.proyectointegrador.service.impl;
 import com.ctd.proyectointegrador.exceptions.ResourceNotFoundException;
 import com.ctd.proyectointegrador.persistance.dto.ImagenDTO;
 import com.ctd.proyectointegrador.persistance.dto.ProductoDTO;
+import com.ctd.proyectointegrador.persistance.dto.ReservaDTO;
 import com.ctd.proyectointegrador.persistance.model.*;
 import com.ctd.proyectointegrador.persistance.repository.*;
 import com.ctd.proyectointegrador.service.IService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
+@Transactional
 @Service
 public class ProductoService implements IService<ProductoDTO> {
     @Autowired
@@ -24,6 +27,9 @@ public class ProductoService implements IService<ProductoDTO> {
     CategoriaRepository categoriaRepository;
     @Autowired
     ImagenRepository imgRepository;
+
+    @Autowired
+    ReservaRepository reservaRepository;
 
     @Autowired
     CaracteristicaRepository caracteristicaRepository;
@@ -57,7 +63,7 @@ public class ProductoService implements IService<ProductoDTO> {
 
         Producto prodRespuesta = productoRepository.save(producto);
 
-        System.out.println(producto.getImagenes());
+        System.out.println(prodRespuesta);
 
         for (Imagen img :
                 producto.getImagenes()) {
@@ -96,6 +102,9 @@ public class ProductoService implements IService<ProductoDTO> {
 
     public Map<String, Object> eliminar(Long id) {
         if (productoRepository.findById(id).isPresent()) {
+            productoRepository.removeImagenes(id);
+            productoRepository.removeCarac(id);
+            productoRepository.removeReservas(id);
             productoRepository.deleteById(id);
             return buildResponse(new ProductoDTO(), "Producto id " + id + " eliminado", 200);
         } else {
@@ -143,4 +152,18 @@ public class ProductoService implements IService<ProductoDTO> {
         }
         return buildResponse(listaDTO, "lista creada", 200);
     }
+
+    public Map<String, Object> reservasPorId(Long id) {
+        List<Reserva> listaReservas = reservaRepository.reservasPorIdProducto(id);
+        List<ReservaDTO> listaDTO = new ArrayList<>();
+
+        for(Reserva r : listaReservas){
+            ReservaDTO reservaDTO= mapper.convertValue(r, ReservaDTO.class);
+            listaDTO.add(reservaDTO);
+        }
+        return buildResponse(listaDTO, "Lista creada", 200);
+    }
 }
+
+
+

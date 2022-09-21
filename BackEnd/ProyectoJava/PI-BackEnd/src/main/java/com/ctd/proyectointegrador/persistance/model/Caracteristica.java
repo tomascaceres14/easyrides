@@ -30,7 +30,9 @@ public class Caracteristica {
     @ManyToMany(fetch = FetchType.LAZY,
             cascade = {
                     CascadeType.PERSIST,
-                    CascadeType.MERGE
+                    CascadeType.MERGE,
+                    //
+                    CascadeType.REMOVE
             },
             mappedBy = "caracteristicas")
     @JsonIgnore

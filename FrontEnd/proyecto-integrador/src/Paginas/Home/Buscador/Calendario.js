@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import DateRangePicker from "@wojtekmaj/react-daterange-picker";
 import "@wojtekmaj/react-daterange-picker/dist/DateRangePicker.css";
 import "react-calendar/dist/Calendar.css";
@@ -19,7 +19,9 @@ function Calendario() {
   
   // const [value, onChange] = useState([new Date(), new Date()]);
     
-
+     
+    
+      
   return (
     <div className="calendario">
       <DateRangePicker
@@ -33,6 +35,7 @@ function Calendario() {
       {setFechaFin(dayjs(fechasCalendarioPersistencia[1]).format("YYYY-MM-DD"))}
     </div>
   );
+
 }
 
 export default Calendario;

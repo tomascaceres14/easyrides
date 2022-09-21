@@ -1,43 +1,39 @@
 import React, { useContext } from "react";
-import "./Listado.css";
-import { CategoriasContext } from "../../../Context/CategoriasContext";
+import { CiudadesContext } from "../../../Context/CiudadesContext";
 import useFetch from "../../../Hooks/useFetch";
 import { Link } from "react-router-dom";
 import { DataPaginaProductosContext } from "../../../Context/DataPaginaProductosContext";
-import { DataProductosContext } from "../../../Context/DataProductosContext";
+import { FechasParaReservaContext } from "../../../Context/FechasParaReservaContext";
 
-const ListadoCategorias = () => {
+const ListadoFechas = () => {
   // aca consumo el context de data
-  const urlProductos =
-    "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/productos";
-  const { data } = useFetch(urlProductos);
-  const { elegirCategorias } = useContext(CategoriasContext);
   
-  const { setElegirDataPaginaProductos } =
-    useContext(DataPaginaProductosContext);
+  const { elegirCiudades } = useContext(CiudadesContext);
+  const { fechaInicio, setFechaInicio } = useContext(FechasParaReservaContext);
+  const { fechaFin, setFechaFin } = useContext(FechasParaReservaContext);
+  const urlProductos =
+    "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/productos/"+elegirCiudades+"/"+fechaInicio+"/"+fechaFin;
+  const { data } = useFetch(urlProductos);
+  const { setElegirDataPaginaProductos } = useContext(
+    DataPaginaProductosContext
+  );
 
   return (
     <div className="listado-container">
       <div className="cardsProductos-categoria">
-      {data &&
-        data.productos.map((prod) => (
-          <>
-            {prod.categoria.titulo == elegirCategorias ? (
-              <div className="listadoUnidad-categoria" key={prod.id}>
+        {data &&
+          data.productos.map((prod) => (
+            <>
+              <div key={prod.id} className="listado-unidad">
                 <img
                   src={prod.imagenes[0].url}
                   alt=""
                   className="cardsProductos-unidad-img"
-                  key={prod.id}
                 />
                 <h2 className="listado-unidad-nombre">{prod.titulo}</h2>
                 <p className="cardsProductos-unidad-descripcion">
                   {prod.ciudad.nombre + ", " + prod.ciudad.provincia}
                 </p>
-                <div className="card-caracteristicas">{prod.caracteristicas.map((carac) => {
-                    return <p key={carac.id}><i class={carac.url}></i></p>
-                  })}
-                </div>
                 <Link
                   onClick={() => {
                     setElegirDataPaginaProductos(prod.id);
@@ -47,13 +43,11 @@ const ListadoCategorias = () => {
                   <button className="listado-unidad-boton">Ver Más</button>
                 </Link>
               </div>
-            ) : null}
-          </>
-        ))}
+            </>
+          ))}
       </div>
-      
     </div>
   );
 };
 
-export default ListadoCategorias;
+export default ListadoFechas;

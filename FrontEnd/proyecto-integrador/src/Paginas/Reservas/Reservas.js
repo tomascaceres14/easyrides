@@ -9,6 +9,8 @@ import { Formik, Form, Field, ErrorMessage } from "formik";
 import AuthContext from '../../Context/AuthContext';
 import axios from "axios";
 import { Link } from "react-router-dom";
+import Select from "react-select";
+
 
 const Reservas = () => {
   const { id } = useParams();
@@ -59,8 +61,14 @@ const Reservas = () => {
         console.log(response);
       });
   };
+  const valoresHorarios = [
+    { label: "8:00 a 12:00", value: "8:00 a 12:00" },
+    { label: "12:00 a 16:00", value: "12:00 a 16:00" },
+    { label: "16:00 a 20:00", value: "16:00 a 20:00" },
+  ];
+  const handleHorarios = () => {
 
-
+  }
   return (
     <div className="reserva">
       <h2>Solicitá tu reserva</h2>
@@ -225,6 +233,13 @@ const Reservas = () => {
       <div className="reserva-horario">
         <h2>Elegí tu horario de llegada</h2>
         <p>Indica tu horario estimado de llegada</p>
+        <div className='reserva-horario-select'>
+          <Select 
+            defaultValue = {{ label: "Elegí tu horario"}}
+            options = {valoresHorarios}
+            onChange = { handleHorarios }
+          />
+        </div>
       </div>
       <div className="reserva-inferior">
         <h2 className="reserva-inferior-titulo">

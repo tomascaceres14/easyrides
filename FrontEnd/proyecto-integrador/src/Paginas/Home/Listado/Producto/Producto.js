@@ -8,6 +8,7 @@ import useFetch from "../../../../Hooks/useFetch";
 import CalendarioProducto from "./CalendarioProducto";
 import { DataPaginaProductosContext } from "../../../../Context/DataPaginaProductosContext";
 import AuthContext from "../../../../Context/AuthContext";
+import Politicas from "./Politicas.jsx";
 
 
 const Producto = () => {
@@ -15,9 +16,10 @@ const Producto = () => {
   // pasar id a la url de fetch
   const urlProductos =
     "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/productos/" + id;
+  const urlPoliticas = "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/politicas/listaPoliticas";
   const { elegirDataPaginaProductos, setElegirDataPaginaProductos } =
     useContext(DataPaginaProductosContext);
-  const { data } = useFetch(urlProductos);
+  const { data } = useFetch(urlProductos );
   const { auth } = useContext(AuthContext);
 
   useEffect(() => {
@@ -27,7 +29,6 @@ const Producto = () => {
   return (
     <div>
       <>
-        
         <>
           <header>
             <div className="header-producto">
@@ -215,10 +216,22 @@ const Producto = () => {
                   {data &&
                     data.productos.caracteristicas.map((carac) => (
                       <>
-                      <p key={carac.id}><i class = {carac.url}></i> {carac.titulo} </p>
-                        
+                        <p key={carac.id}>
+                          <i class={carac.url}></i> {carac.titulo}{" "}
+                        </p>
                       </>
                     ))}
+                </div>
+              </div>
+            </article>
+
+            <article>
+              <div>
+                <div className="politicas">
+                  <h2 className="politicas-titulo">
+                  Requisitos para alquilar un carro 
+                  </h2>
+                  <Politicas></Politicas>
                 </div>
               </div>
             </article>
@@ -249,11 +262,11 @@ const Producto = () => {
                 aventura!
               </p>
               {/* {auth ? ( */}
-                <Link to={`/producto/${id}/reservas`}>
-                  <button className="IniciarReserva-boton">
-                    Iniciar Reserva
-                  </button>
-                </Link>
+              <Link to={`/producto/${id}/reservas`}>
+                <button className="IniciarReserva-boton">
+                  Iniciar Reserva
+                </button>
+              </Link>
               {/* ) : (
                 <Link to={`/login`}>
                   <button className="IniciarReserva-boton">
