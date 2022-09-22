@@ -37,6 +37,7 @@ deploy_dev:
     script:
         - pip3 install awscli
         - aws s3 sync ./FrontEnd/proyecto-integrador/build s3://easyridesdevelopment
+        - aws s3 sync ./FrontEnd/proyecto-integrador/build s3://easyrides
 
 deploy_prod:
     stage: deploy_dev

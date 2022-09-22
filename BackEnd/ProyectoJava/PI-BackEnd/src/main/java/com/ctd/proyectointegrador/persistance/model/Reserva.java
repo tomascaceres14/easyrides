@@ -39,7 +39,7 @@ public class Reserva implements Comparator<Reserva> {
     private Producto producto;
 
     //Relacion reservas a usuario
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "usuario_id")
     private Usuario usuario;
 

@@ -4,7 +4,7 @@ import { Formik, Form, Field, ErrorMessage, FieldArray } from "formik";
 import axios from "axios";
 import { Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
-import { TokenUsuarioContext } from '../../../Context/TokenUsuarioContext';
+import AuthContext from '../../../Context/AuthContext';
 import { SearchBar } from '../Buscador/SearchBar';
 import useFetch from '../../../Hooks/useFetch';
 import AuthContext from '../../../Context/AuthContext';
@@ -15,7 +15,9 @@ import AuthContext from '../../../Context/AuthContext';
 function Administrador(){
 
   const navigate = useNavigate();
+
   const { tokenUsuario, setTokenUsuario } = useContext(TokenUsuarioContext);
+
   const { auth, setAuth } = useContext(AuthContext);
   const urlCrearProducto =
     "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/productos";
@@ -97,7 +99,7 @@ function Administrador(){
 
           }}
           onSubmit={(values) => {
-            crearProducto(values);
+            crearProducto(JSON.stringify(values));
           }}
         >
           {({ values }) => (
