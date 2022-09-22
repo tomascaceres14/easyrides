@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 import AuthContext from '../../../Context/AuthContext';
 import { SearchBar } from '../Buscador/SearchBar';
 import useFetch from '../../../Hooks/useFetch';
-
+import AuthContext from '../../../Context/AuthContext';
 
 
 
@@ -15,6 +15,8 @@ import useFetch from '../../../Hooks/useFetch';
 function Administrador(){
 
   const navigate = useNavigate();
+
+  const { tokenUsuario, setTokenUsuario } = useContext(TokenUsuarioContext);
 
   const { auth, setAuth } = useContext(AuthContext);
   const urlCrearProducto =
@@ -36,7 +38,6 @@ function Administrador(){
       method: "post",
       url: urlCrearProducto,
       data: objetoUsuario,
-      mode: "no-cors",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${auth.token}`,
@@ -69,7 +70,7 @@ function Administrador(){
     const caracteristicas3Id = [dataCaracteristicas&&dataCaracteristicas.caracteristicas[3].id]
   return (
     <div>
-      {console.log(caracteristicas0)}
+      {console.log(tokenUsuario)}
       <div className="header-admin">
         <h3 className="header-admin-titulo">Crear Producto</h3>
       </div>
@@ -95,10 +96,10 @@ function Administrador(){
                 url: "1",
               },
             ],
-            toggle: false,
+
           }}
           onSubmit={(values) => {
-            crearProducto(values);
+            crearProducto(JSON.stringify(values));
           }}
         >
           {({ values }) => (
@@ -265,11 +266,10 @@ function Administrador(){
                     id="imagenes"
                   />
                 </div>
-                <Link to="/admin/publicado">
+                
                   <div className="Buttom">
                     <button type="submit">Crear Producto</button>
                   </div>
-                </Link>
               </Form>
             </div>
           )}

@@ -32,8 +32,10 @@ function Login() {
       .then(function (response) {
         //handle success
         setAuth(response.data)
+        console.log(response.data);
         setTokenUsuario(response.data.token)
-        localStorage.setItem("user", JSON.stringify(response.data));
+        console.log(tokenUsuario);
+        // localStorage.setItem("user", JSON.stringify(response.data));
         localStorage.setItem('sesiontoken', response.data.token)
         setCerrarLogin(true)
         navigate("/");
