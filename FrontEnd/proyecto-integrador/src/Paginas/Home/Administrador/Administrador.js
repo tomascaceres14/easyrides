@@ -119,31 +119,39 @@ function Administrador(){
                       id="descripcion"
                     />
                   </div>
-                  
-                  
-                    <div className="formulario-admin-selects">
-                      <div>
-                        <label htmlFor="categoria">Categoria</label>
-                        <Field as="select" name="categoria.id" id="categoria">
-                          {dataCategorias &&
-                            dataCategorias.categorias.map((cat) => (
-                              <option value={cat.id}>{cat.titulo}</option>
-                            ))}
-                        </Field>
-                      </div>
 
-                      <label htmlFor="ciudad">Ciudad</label>
-
-                      <Field as="select" name="ciudad.id">
-                        {data &&
-                          data.ciudad.map((ciudad) => (
-                            <option value={ciudad.id}>{ciudad.nombre}</option>
+                  <div className="formulario-admin-selects">
+                    <div>
+                      <label htmlFor="categoria">Categoria</label>
+                      <Field
+                        as="select"
+                        name="categoria.id"
+                        id="categoria"
+                        className="selects"
+                      >
+                        {dataCategorias &&
+                          dataCategorias.categorias.map((cat) => (
+                            <option value={cat.id}>{cat.titulo}</option>
                           ))}
                       </Field>
-                      {/* --------------------------------------------- */}
+                    </div>
+
+                    <label htmlFor="ciudad">Ciudad</label>
+
+                    <Field as="select" name="ciudad.id" className="selects">
+                      {data &&
+                        data.ciudad.map((ciudad) => (
+                          <option value={ciudad.id}>{ciudad.nombre}</option>
+                        ))}
+                    </Field>
+                    {/* --------------------------------------------- */}
 
                     <div key={caracteristicas0.id}>
-                      <Field as="select" name="caracteristicas[0].id">
+                      <Field
+                        as="select"
+                        name="caracteristicas[0].id"
+                        className="selects"
+                      >
                         <option defaultValue>Elegi la caracteristica</option>
                         <option value={caracteristicas0Id}>
                           {caracteristicas0Titulo}
@@ -151,7 +159,11 @@ function Administrador(){
                       </Field>
                     </div>
                     <div key={caracteristicas1.id}>
-                      <Field as="select" name="caracteristicas[1].id">
+                      <Field
+                        as="select"
+                        name="caracteristicas[1].id"
+                        className="selects"
+                      >
                         <option defaultValue>Elegi la caracteristica</option>
                         <option value={caracteristicas1Id}>
                           {caracteristicas1Titulo}
@@ -159,7 +171,11 @@ function Administrador(){
                       </Field>
                     </div>
                     <div key={caracteristicas2.id}>
-                      <Field as="select" name="caracteristicas[2].id">
+                      <Field
+                        as="select"
+                        name="caracteristicas[2].id"
+                        className="selects"
+                      >
                         <option defaultValue>Elegi la caracteristica</option>
                         <option value={caracteristicas2Id}>
                           {caracteristicas2Titulo}
@@ -167,19 +183,19 @@ function Administrador(){
                       </Field>
                     </div>
                     <div key={caracteristicas3.id}>
-                      <Field as="select" name="caracteristicas[3].id">
+                      <Field
+                        as="select"
+                        name="caracteristicas[3].id"
+                        className="selects"
+                      >
                         <option defaultValue>Elegi la caracteristica</option>
                         <option value={caracteristicas3Id}>
                           {caracteristicas3Titulo}
                         </option>
                       </Field>
                     </div>
-
-                    </div>
-
-                    
                   </div>
-                
+                </div>
 
                 <div>
                   <label htmlFor="descripcion">Descripcion</label>
@@ -188,6 +204,7 @@ function Administrador(){
                     name="descripcion"
                     placeholder="Ej: El Toyota Etios es un auto que ..."
                     id="descripcion"
+                    className="formulario-descripcion"
                   />
                 </div>
 
@@ -248,10 +265,11 @@ function Administrador(){
                     id="imagenes"
                   />
                 </div>
-
-                <div className="Buttom">
-                  <button type="submit">Crear Producto</button>
-                </div>
+                <Link to="/admin/publicado">
+                  <div className="Buttom">
+                    <button type="submit">Crear Producto</button>
+                  </div>
+                </Link>
               </Form>
             </div>
           )}
@@ -262,3 +280,4 @@ function Administrador(){
 }
 
 export  {Administrador}
+

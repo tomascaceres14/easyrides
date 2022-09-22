@@ -26,8 +26,9 @@ function CalendarioProducto() {
   const { data } = useFetch(urlReservas);
  
   const disabledDates = [
-    new Date(fechaInicioDisabled),
     new Date(fechaFinDisabled),
+    new Date(fechaInicioDisabled),
+
   ];
 
   

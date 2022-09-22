@@ -5,6 +5,7 @@ import AuthContext from "../../../Context/AuthContext";
 export const Avatar = () => {
   const { auth, setAuth } = useContext(AuthContext);
 
+  
   const cerrarSesion = () => {
     setAuth(null)
   }

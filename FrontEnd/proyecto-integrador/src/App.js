@@ -22,6 +22,7 @@ import { TokenUsuarioProvider } from "./Context/TokenUsuarioContext";
 import { RequerirAuth } from "./Paginas/Reservas/RequerirAuth";
 import ReservaExitosa from "./Paginas/Reservas/ReservaExitosa/ReservaExitosa";
 import { Administrador } from "./Paginas/Home/Administrador/Administrador";
+import Politicas from "./Paginas/Home/Listado/Producto/Politicas";
 
 function App() {
   const initialState = useInitialState();
@@ -62,6 +63,10 @@ function App() {
                               <Route
                                 path="/admin"
                                 element={<Administrador />}
+                              />
+                              <Route
+                                path="/admin/publicado"
+                                element={<ReservaExitosa />}
                               />
                             </Routes>
                             <Footer />
