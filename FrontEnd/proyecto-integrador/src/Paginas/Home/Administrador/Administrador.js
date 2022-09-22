@@ -98,7 +98,7 @@ function Administrador(){
             toggle: false,
           }}
           onSubmit={(values) => {
-            crearProducto(values);
+            crearProducto(JSON.stringify(values));
           }}
         >
           {({ values }) => (
