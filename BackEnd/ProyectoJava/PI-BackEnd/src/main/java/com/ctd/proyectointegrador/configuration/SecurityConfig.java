@@ -42,7 +42,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers(HttpMethod.POST,"/auth/**").permitAll()
                 .antMatchers(HttpMethod.GET,"/**").permitAll()
                 .antMatchers(HttpMethod.GET, "/reservas", "/reservas/**").hasAnyRole(Role.USER.name(), Role.ADMIN.name())
-                .antMatchers(HttpMethod.POST, "/productos/**", "/categorias/**"
+                .antMatchers(HttpMethod.POST, "/productos", "/categorias/**"
                         , "/ciudades/**", "/caracteristicas/**",
                         "/imagenes/**").hasAnyRole(Role.ADMIN.name())
                 .antMatchers(HttpMethod.PUT, "/productos/**", "/categorias/**"
