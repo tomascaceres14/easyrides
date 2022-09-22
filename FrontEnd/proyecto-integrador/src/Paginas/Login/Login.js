@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./Login.css";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { useNavigate } from "react-router-dom";
@@ -7,6 +7,7 @@ import AppContext from "../../Context/AppContext";
 import AuthContext from "../../Context/AuthContext";
 import { TokenUsuarioContext } from "../../Context/TokenUsuarioContext";
 import axios from "axios";
+
 //creo un estado y guardo response en el post despues saco el token 
 // y lo guardo en un estado global 
 
@@ -32,7 +33,7 @@ function Login() {
         //handle success
         setAuth(response.data)
         setTokenUsuario(response.data.token)
-        console.log(tokenUsuario);
+        localStorage.setItem("user", JSON.stringify(response.data));
         localStorage.setItem('sesiontoken', response.data.token)
         setCerrarLogin(true)
         navigate("/");
@@ -52,6 +53,7 @@ function Login() {
   
 
 
+
   return (
     <Formik
       initialValues={{
@@ -61,12 +63,7 @@ function Login() {
       
       onSubmit={(values, onSubmitProps) => {
         
-        // console.log(values)
-        // Comparar con mi base de datos de usuarios registrado
-        getUsuario(values)
-        
-        //VER ESTO PARA RESETEAR FORM
-        onSubmitProps.resetForm();
+        getUsuario(values);
       }}
 
       validate={(valores) => {
@@ -137,7 +134,7 @@ function Login() {
 
             <div className="Buttom">
               <button type="submit">Ingresar</button>
-              <p>
+              <p className="registrate">
                 {" "}
                 ¿Aún no tienes cuenta? <Link to="/registro">Registrate</Link>
               </p>

@@ -5,9 +5,9 @@ import axios from "axios";
 import { Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 import AuthContext from '../../../Context/AuthContext';
-import { TokenUsuarioContext } from '../../../Context/TokenUsuarioContext';
 import { SearchBar } from '../Buscador/SearchBar';
 import useFetch from '../../../Hooks/useFetch';
+
 
 
 
@@ -15,6 +15,7 @@ import useFetch from '../../../Hooks/useFetch';
 function Administrador(){
 
   const navigate = useNavigate();
+
   const { auth, setAuth } = useContext(AuthContext);
   const urlCrearProducto =
     "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/productos";
@@ -23,7 +24,6 @@ function Administrador(){
   const urlCategorias =
       "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/categorias";
   const urlCaracteristicas = "http://ec2-3-145-197-27.us-east-2.compute.amazonaws.com:8080/caracteristicas"
-  
   
   const { data } = useFetch(urlCiudades);
   const { data: dataCategorias } = useFetch(urlCategorias)
@@ -53,19 +53,34 @@ function Administrador(){
         //handle error
       });
   };  
+
+    // perdon dani se que es un asco pero es lo que hay
+    const caracteristicas0 = [dataCaracteristicas&&dataCaracteristicas.caracteristicas[0]]
+    const caracteristicas0Titulo = [dataCaracteristicas&&dataCaracteristicas.caracteristicas[0].titulo]
+    const caracteristicas0Id = [dataCaracteristicas&&dataCaracteristicas.caracteristicas[0].id]
+    const caracteristicas1 = [dataCaracteristicas&&dataCaracteristicas.caracteristicas[1]]
+    const caracteristicas1Titulo = [dataCaracteristicas&&dataCaracteristicas.caracteristicas[1].titulo]
+    const caracteristicas1Id = [dataCaracteristicas&&dataCaracteristicas.caracteristicas[1].id]
+    const caracteristicas2 = [dataCaracteristicas&&dataCaracteristicas.caracteristicas[2]]
+    const caracteristicas2Titulo = [dataCaracteristicas&&dataCaracteristicas.caracteristicas[2].titulo]
+    const caracteristicas2Id = [dataCaracteristicas&&dataCaracteristicas.caracteristicas[2].id]
+    const caracteristicas3 = [dataCaracteristicas&&dataCaracteristicas.caracteristicas[3]]
+    const caracteristicas3Titulo = [dataCaracteristicas&&dataCaracteristicas.caracteristicas[3].titulo]
+    const caracteristicas3Id = [dataCaracteristicas&&dataCaracteristicas.caracteristicas[3].id]
   return (
     <div>
+      {console.log(caracteristicas0)}
       <div className="header-admin">
-        <h2 className="header-admin-titulo">Administracion</h2>
+        <h3 className="header-admin-titulo">Crear Producto</h3>
       </div>
-      <div className="formulario">
+      <div className="formulario admin">
         <Formik
           initialValues={{
-            titulo: "1",
-            descripcion: "1",
+            titulo: "",
+            descripcion: "",
             url: "1",
             ciudad: {
-              id: "1",
+              id: "",
             },
             categoria: {
               id: "1",
@@ -80,90 +95,108 @@ function Administrador(){
                 url: "1",
               },
             ],
+            toggle: false,
           }}
           onSubmit={(values) => {
-            // console.log(tokenUsuario);
             crearProducto(values);
-            // Comparar con mi base de datos de usuarios registrado
-
-            //VER ESTO PARA RESETEAR FORM
           }}
-          // validate={(valores) => {
-          //   let errores = {};
-
-          //   //validacion titulo
-          //   if (!valores.titulo) {
-          //     errores.titulo = "Por favor ingresa el titulo";
-          //   } else if (!/^.{4,12}$/.test(valores.titulo)) {
-          //     errores.titulo =
-          //       "Por favor ingrese un titulo de 4 a 12 caracteres";
-          //   }
-
-          //   //validacion descripcion
-          //   if (!valores.descripcion) {
-          //     errores.descripcion = "Por favor ingresa tu contraseña";
-          //   } else if (!/^.{4,12}$/.test(valores.descripcion)) {
-          //     errores.descripcion =
-          //       "Por favor ingrese una contraseña de 4 a 12 caracteres";
-          //   }
-
-          //   // validacion url
-          //   if (!valores.url) {
-          //     errores.url = "Por favor ingresa tu contraseña";
-          //   } else if (!/^.{4,12}$/.test(valores.url)) {
-          //     errores.url =
-          //       "Por favor ingrese una contraseña de 4 a 12 caracteres";
-          //   }
-          //   // validacion ciudad
-          //   if (!valores.ciudad) {
-          //     errores.ciudad = "Por favor ingresa tu contraseña";
-          //   } else if (!/^.{4,12}$/.test(valores.ciudad)) {
-          //     errores.ciudad =
-          //       "Por favor ingrese una contraseña de 4 a 12 caracteres";
-          //   }
-          //   return errores;
-
-          // crear validacion logeo
-          // }}
         >
-          {({ errors }) => (
+          {({ values }) => (
             <div className="">
               <Form className="formulario-admin">
                 <div className="formulario-admin-primera-linea">
                   <div>
-                    <label htmlFor="titulo">Nombre producto</label>
+                    <label
+                      htmlFor="titulo"
+                      className="formulario-admin-primera-linea-titulo"
+                    >
+                      Nombre producto
+                    </label>
                     <Field
                       type="text"
                       name="titulo"
                       placeholder="Ej: Toyota Etios"
-                      id="titulo"
-                    />
-                    <ErrorMessage
-                      name="titulo"
-                      component={() => (
-                        <div className="error">{errors.titulo}</div>
-                      )}
+                      id="descripcion"
                     />
                   </div>
-                  <div>
-                    <label htmlFor="categoria">Categoria</label>
-                    <Field as="select" name="categoria.id" id="categoria">
-                      {
-                        dataCategorias &&
+
+                  <div className="formulario-admin-selects">
+                    <div>
+                      <label htmlFor="categoria">Categoria</label>
+                      <Field
+                        as="select"
+                        name="categoria.id"
+                        id="categoria"
+                        className="selects"
+                      >
+                        {dataCategorias &&
                           dataCategorias.categorias.map((cat) => (
                             <option value={cat.id}>{cat.titulo}</option>
-                          ))
-                      }
-                    </Field>
+                          ))}
+                      </Field>
+                    </div>
 
-                    <ErrorMessage
-                      name="url"
-                      component={() => (
-                        <div className="error">{errors.descripcion}</div>
-                      )}
-                    />
+                    <label htmlFor="ciudad">Ciudad</label>
+
+                    <Field as="select" name="ciudad.id" className="selects">
+                      {data &&
+                        data.ciudad.map((ciudad) => (
+                          <option value={ciudad.id}>{ciudad.nombre}</option>
+                        ))}
+                    </Field>
+                    {/* --------------------------------------------- */}
+
+                    <div key={caracteristicas0.id}>
+                      <Field
+                        as="select"
+                        name="caracteristicas[0].id"
+                        className="selects"
+                      >
+                        <option defaultValue>Elegi la caracteristica</option>
+                        <option value={caracteristicas0Id}>
+                          {caracteristicas0Titulo}
+                        </option>
+                      </Field>
+                    </div>
+                    <div key={caracteristicas1.id}>
+                      <Field
+                        as="select"
+                        name="caracteristicas[1].id"
+                        className="selects"
+                      >
+                        <option defaultValue>Elegi la caracteristica</option>
+                        <option value={caracteristicas1Id}>
+                          {caracteristicas1Titulo}
+                        </option>
+                      </Field>
+                    </div>
+                    <div key={caracteristicas2.id}>
+                      <Field
+                        as="select"
+                        name="caracteristicas[2].id"
+                        className="selects"
+                      >
+                        <option defaultValue>Elegi la caracteristica</option>
+                        <option value={caracteristicas2Id}>
+                          {caracteristicas2Titulo}
+                        </option>
+                      </Field>
+                    </div>
+                    <div key={caracteristicas3.id}>
+                      <Field
+                        as="select"
+                        name="caracteristicas[3].id"
+                        className="selects"
+                      >
+                        <option defaultValue>Elegi la caracteristica</option>
+                        <option value={caracteristicas3Id}>
+                          {caracteristicas3Titulo}
+                        </option>
+                      </Field>
+                    </div>
                   </div>
                 </div>
+
                 <div>
                   <label htmlFor="descripcion">Descripcion</label>
                   <Field
@@ -171,89 +204,25 @@ function Administrador(){
                     name="descripcion"
                     placeholder="Ej: El Toyota Etios es un auto que ..."
                     id="descripcion"
-                  />
-                  <ErrorMessage
-                    name="descripcion"
-                    component={() => (
-                      <div className="error">{errors.descripcion}</div>
-                    )}
+                    className="formulario-descripcion"
                   />
                 </div>
 
                 <div>
-                  <label htmlFor="url">Url</label>
+                  {/* <label htmlFor="url">Url</label>
                   <Field
                     type="text"
                     name="url"
                     // placeholder="Ej: El Toyota Etios es un auto que ..."
                     id="url"
-                  />
-                  <ErrorMessage
-                    name="url"
-                    component={() => (
-                      <div className="error">{errors.descripcion}</div>
-                    )}
-                  />
-                </div>
-                <div>
-                  {/* <label htmlFor="ciudad.id">Ciudad</label>
-                  <Field
-                    type="text"
-                    name="ciudad.id"
-                    // placeholder="Ej: El Toyota Etios es un auto que ..."
-                    id="ciudad"
                   /> */}
-                  {/* --------------------------------------------- */}
-                  <label htmlFor="ciudad">Ciudad</label>
-
-                  <Field as="select" name="ciudad.id">
-                    {
-                      // .map((ciudad) => player.id !== props.values.player1)
-                      data &&
-                        data.ciudad.map((ciudad) => (
-                          <option value={ciudad.id}>{ciudad.nombre}</option>
-                        ))
-                    }
-                  </Field>
-                  {/* --------------------------------------------- */}
-                  <ErrorMessage
-                    name="ciudad"
-                    component={() => (
-                      <div className="error">{errors.descripcion}</div>
-                    )}
-                  />
                 </div>
 
-                {/* -----------------------checkbox--------------------------- */}
+                {/* <>
+                  <label htmlFor="caracteristicas"></label>
+                  <Field type="checkbox" name="caracteristicas[0]" />
+                </>
 
-                {/* <div>
-                  <label htmlFor="caracteristicas">Caracteristicas</label>
-                  <Field
-                    type="text"
-                    name="caracteristicas[].id"
-                    // placeholder="Ej: El Toyota Etios es un auto que ..."
-                    id="caracteristicas"
-                  />
-                  <ErrorMessage
-                    name="url"
-                    component={() => (
-                      <div className="error">{errors.descripcion}</div>
-                    )}
-                  />
-                </div> */}
-                {dataCaracteristicas &&
-                  dataCaracteristicas.caracteristicas.map((carac) => (
-                    <>
-                      <label htmlFor="caracteristicas">{carac.titulo}</label>
-                      <Field
-                        type="checkbox"
-                        name="caracteristicas"
-                        key={carac.id}
-                        id={carac.id}
-                        value={carac.id}
-                      />
-                    </>
-                  ))}
                 {/* ----------------------------checkbox---------------- */}
                 <div className="imagenes">
                   <label htmlFor="imagenes">Imagenes</label>
@@ -263,12 +232,7 @@ function Administrador(){
                     // placeholder="Ej: El Toyota Etios es un auto que ..."
                     id="imagenes"
                   />
-                  <ErrorMessage
-                    name="imagenes"
-                    component={() => (
-                      <div className="error">{errors.descripcion}</div>
-                    )}
-                  />
+
                   <label htmlFor="imagenes">Imagenes</label>
                   <Field
                     type="text"
@@ -276,12 +240,7 @@ function Administrador(){
                     // placeholder="Ej: El Toyota Etios es un auto que ..."
                     id="imagenes"
                   />
-                  <ErrorMessage
-                    name="imagenes"
-                    component={() => (
-                      <div className="error">{errors.descripcion}</div>
-                    )}
-                  />
+
                   <label htmlFor="imagenes">Imagenes</label>
                   <Field
                     type="text"
@@ -289,12 +248,7 @@ function Administrador(){
                     // placeholder="Ej: El Toyota Etios es un auto que ..."
                     id="imagenes"
                   />
-                  <ErrorMessage
-                    name="imagenes"
-                    component={() => (
-                      <div className="error">{errors.descripcion}</div>
-                    )}
-                  />
+
                   <label htmlFor="imagenes">Imagenes</label>
                   <Field
                     type="text"
@@ -302,12 +256,7 @@ function Administrador(){
                     // placeholder="Ej: El Toyota Etios es un auto que ..."
                     id="imagenes"
                   />
-                  <ErrorMessage
-                    name="imagenes"
-                    component={() => (
-                      <div className="error">{errors.descripcion}</div>
-                    )}
-                  />
+
                   <label htmlFor="imagenes">Imagenes</label>
                   <Field
                     type="text"
@@ -315,17 +264,12 @@ function Administrador(){
                     // placeholder="Ej: El Toyota Etios es un auto que ..."
                     id="imagenes"
                   />
-                  <ErrorMessage
-                    name="imagenes"
-                    component={() => (
-                      <div className="error">{errors.descripcion}</div>
-                    )}
-                  />
                 </div>
-
-                <div className="Buttom">
-                  <button type="submit">Crear Producto</button>
-                </div>
+                <Link to="/admin/publicado">
+                  <div className="Buttom">
+                    <button type="submit">Crear Producto</button>
+                  </div>
+                </Link>
               </Form>
             </div>
           )}
@@ -336,3 +280,4 @@ function Administrador(){
 }
 
 export  {Administrador}
+
