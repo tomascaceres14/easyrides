@@ -64,10 +64,7 @@ function App() {
                                 path="/admin"
                                 element={<Administrador />}
                               />
-                              <Route
-                                path="/admin/publicado"
-                                element={<ReservaExitosa />}
-                              />
+                              
                             </Routes>
                             <Footer />
                           </BrowserRouter>
