@@ -13,7 +13,7 @@ import AuthContext from '../../../Context/AuthContext';
 function Administrador(){
 
   const navigate = useNavigate();
-  const { tokenUsuario, setTokenUsuario } = useContext(TokenUsuarioContext);
+  // const { tokenUsuario, setTokenUsuario } = useContext(TokenUsuarioContext);
 
   const { auth, setAuth } = useContext(AuthContext);
   const urlCrearProducto =
@@ -67,7 +67,7 @@ function Administrador(){
     const caracteristicas3Id = [dataCaracteristicas&&dataCaracteristicas.caracteristicas[3].id]
   return (
     <div>
-      {console.log(tokenUsuario)}
+      {/* {console.log(tokenUsuario)} */}
       <div className="header-admin">
         <h3 className="header-admin-titulo">Crear Producto</h3>
       </div>
