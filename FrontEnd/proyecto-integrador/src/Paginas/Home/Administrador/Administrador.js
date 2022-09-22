@@ -4,8 +4,6 @@ import { Formik, Form, Field, ErrorMessage, FieldArray } from "formik";
 import axios from "axios";
 import { Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
-import AuthContext from '../../../Context/AuthContext';
-import { SearchBar } from '../Buscador/SearchBar';
 import useFetch from '../../../Hooks/useFetch';
 import AuthContext from '../../../Context/AuthContext';
 
@@ -15,7 +13,6 @@ import AuthContext from '../../../Context/AuthContext';
 function Administrador(){
 
   const navigate = useNavigate();
-
   const { tokenUsuario, setTokenUsuario } = useContext(TokenUsuarioContext);
 
   const { auth, setAuth } = useContext(AuthContext);
